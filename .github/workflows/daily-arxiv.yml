@@ -34,11 +34,11 @@ jobs:
 
       - name: Fetch arXiv papers and build website
         run: |
-          if [ -f data/backfill-title-abstract-v2.done ]; then
+          if [ -f data/backfill-agent-focus-v3.done ]; then
             python fetch_arxiv.py
           else
             python fetch_arxiv.py --backfill-year 2025 --max-results 200
-            touch data/backfill-title-abstract-v2.done
+            touch data/backfill-agent-focus-v3.done
           fi
 
       - name: Save the updated paper archive

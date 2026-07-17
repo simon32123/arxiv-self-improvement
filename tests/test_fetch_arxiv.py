@@ -28,6 +28,12 @@ SAMPLE_FEED = b"""<?xml version="1.0" encoding="UTF-8"?>
 
 
 class AtomParsingTests(unittest.TestCase):
+    def test_default_query_limits_every_topic_term_to_title_and_abstract(self):
+        self.assertNotIn("all:", fetch_arxiv.DEFAULT_QUERY)
+        for term in fetch_arxiv.TOPIC_TERMS:
+            self.assertIn(f'ti:"{term}"', fetch_arxiv.DEFAULT_QUERY)
+            self.assertIn(f'abs:"{term}"', fetch_arxiv.DEFAULT_QUERY)
+
     def test_parse_atom_extracts_metadata(self):
         papers = fetch_arxiv.parse_atom(SAMPLE_FEED, "2026-07-17")
         self.assertEqual(len(papers), 1)
@@ -53,6 +59,18 @@ class AtomParsingTests(unittest.TestCase):
         papers, new_count = fetch_arxiv.merge_papers([], [paper])
         self.assertEqual(new_count, 1)
         self.assertEqual(len(papers), 1)
+
+    def test_topic_match_uses_only_title_and_abstract(self):
+        paper = {
+            "title": "A General Agent Study",
+            "abstract": "We study reliable planning.",
+            "authors": ["Self-Improvement Research Group"],
+            "categories": ["agent evolution"],
+            "comment": "iterative refinement",
+        }
+        self.assertFalse(fetch_arxiv.matches_title_or_abstract(paper))
+        paper["abstract"] = "We introduce autonomous improvement for agents."
+        self.assertTrue(fetch_arxiv.matches_title_or_abstract(paper))
 
 
 class SiteBuildTests(unittest.TestCase):

@@ -84,6 +84,34 @@ class AtomParsingTests(unittest.TestCase):
         paper["title"] = "Iterative Refinement for Agentic Language Models"
         self.assertTrue(fetch_arxiv.matches_agent_self_improvement(paper))
 
+    def test_relevance_prioritizes_title_matches(self):
+        title_match = {
+            "title": "Self-Improving Agent with Reliable Reflection",
+            "abstract": "We evaluate the system.",
+            "primary_category": "cs.AI",
+        }
+        abstract_match = {
+            "title": "A General Language Model Study",
+            "abstract": "We evaluate self-improvement methods for an agent.",
+            "primary_category": "cs.CL",
+        }
+        title_score, title_reasons = fetch_arxiv.calculate_relevance(title_match)
+        abstract_score, _ = fetch_arxiv.calculate_relevance(abstract_match)
+        self.assertGreater(title_score, abstract_score)
+        self.assertLessEqual(title_score, 100)
+        self.assertIn("标题命中自进化关键词", title_reasons)
+        self.assertIn("标题命中 Agent 关键词", title_reasons)
+
+    def test_relevance_is_explainable_and_bounded(self):
+        paper = {
+            "title": "Agent Evolution through Self-Improvement and Self-Reflection",
+            "abstract": "An agentic multi-agent system performs iterative refinement.",
+            "primary_category": "cs.MA",
+        }
+        score, reasons = fetch_arxiv.calculate_relevance(paper)
+        self.assertEqual(score, 100)
+        self.assertGreaterEqual(len(reasons), 5)
+
 
 class SiteBuildTests(unittest.TestCase):
     def test_build_site_writes_file_protocol_compatible_bundle(self):

@@ -300,6 +300,95 @@ def matches_agent_self_improvement(paper: dict[str, Any]) -> bool:
     return topic_match and agent_match
 
 
+def matched_topic_terms(text: str) -> list[str]:
+    searchable = text.casefold()
+    return [term for term in TOPIC_TERMS if term.casefold() in searchable]
+
+
+def agent_term_matches(text: str) -> list[tuple[str, int]]:
+    searchable = text.casefold()
+    matches: list[tuple[str, int]] = []
+    for term in AGENT_TERMS:
+        pattern = rf"(?<![a-z0-9]){re.escape(term.casefold())}(?![a-z0-9])"
+        match = re.search(pattern, searchable)
+        if match:
+            matches.append((term, match.start()))
+    return matches
+
+
+def topic_term_positions(text: str) -> list[int]:
+    searchable = text.casefold()
+    positions: list[int] = []
+    for term in TOPIC_TERMS:
+        start = searchable.find(term.casefold())
+        if start >= 0:
+            positions.append(start)
+    return positions
+
+
+def signals_are_close(topic_positions: list[int], agent_positions: list[int], limit: int) -> bool:
+    return bool(topic_positions and agent_positions) and min(
+        abs(topic - agent)
+        for topic in topic_positions
+        for agent in agent_positions
+    ) <= limit
+
+
+def calculate_relevance(paper: dict[str, Any]) -> tuple[int, list[str]]:
+    """Score Agent self-improvement relevance with an explainable 0–100 heuristic."""
+    title = str(paper.get("title", ""))
+    abstract = str(paper.get("abstract", ""))
+    title_topics = matched_topic_terms(title)
+    abstract_topics = matched_topic_terms(abstract)
+    title_agents = agent_term_matches(title)
+    abstract_agents = agent_term_matches(abstract)
+    reasons: list[str] = []
+    score = 0
+
+    if title_topics:
+        score += 40
+        reasons.append("标题命中自进化关键词")
+    elif abstract_topics:
+        score += 18
+        reasons.append("摘要命中自进化关键词")
+
+    if title_agents:
+        score += 30
+        reasons.append("标题命中 Agent 关键词")
+    elif abstract_agents:
+        score += 15
+        reasons.append("摘要命中 Agent 关键词")
+
+    if title_topics and title_agents:
+        score += 15
+        reasons.append("标题同时包含自进化与 Agent 信号")
+        if signals_are_close(
+            topic_term_positions(title),
+            [position for _, position in title_agents],
+            80,
+        ):
+            score += 5
+            reasons.append("标题中的两类信号距离接近")
+    elif abstract_topics and abstract_agents and signals_are_close(
+        topic_term_positions(abstract),
+        [position for _, position in abstract_agents],
+        240,
+    ):
+        score += 10
+        reasons.append("摘要中的两类信号距离接近")
+
+    distinct_topics = set(title_topics) | set(abstract_topics)
+    if len(distinct_topics) > 1:
+        score += 5
+        reasons.append("覆盖多个自进化关键词")
+
+    if paper.get("primary_category") in {"cs.AI", "cs.MA"}:
+        score += 5
+        reasons.append("属于核心 Agent 相关分类")
+
+    return min(score, 100), reasons
+
+
 def atomic_write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -389,6 +478,10 @@ def main() -> int:
         # topic match and Agent-domain focus.
         papers = [paper for paper in papers if matches_agent_self_improvement(paper)]
         new_count = sum(paper.get("id") not in existing_ids for paper in papers)
+    for paper in papers:
+        score, reasons = calculate_relevance(paper)
+        paper["relevance_score"] = score
+        paper["relevance_reasons"] = reasons
     database.update(
         {
             "papers": papers,
@@ -402,6 +495,7 @@ def main() -> int:
             "new_count": 0 if args.offline else new_count,
             "total_cached": len(papers),
             "fetch_error": error_message,
+            "relevance_method": "explainable-keyword-v1",
         }
     )
     save_database(args.data_file, database)

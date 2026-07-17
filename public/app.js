@@ -102,6 +102,11 @@
     const mode = sortSelect.value;
     return [...filtered].sort((left, right) => {
       if (mode === "title") return String(left.title).localeCompare(String(right.title), "en");
+      if (mode === "relevance") {
+        const scoreDifference = Number(right.relevance_score || 0) - Number(left.relevance_score || 0);
+        if (scoreDifference) return scoreDifference;
+        return (validDate(right.published)?.getTime() || 0) - (validDate(left.published)?.getTime() || 0);
+      }
       const leftValue = validDate(left[mode])?.getTime() || 0;
       const rightValue = validDate(right[mode])?.getTime() || 0;
       return rightValue - leftValue;
@@ -124,6 +129,14 @@
       tag.textContent = category;
       categoryContainer.append(tag);
     });
+
+    const relevance = fragment.querySelector(".relevance-score");
+    const score = Math.max(0, Math.min(100, Math.round(Number(paper.relevance_score) || 0)));
+    const reasons = Array.isArray(paper.relevance_reasons) ? paper.relevance_reasons : [];
+    relevance.querySelector("strong").textContent = String(score);
+    relevance.classList.add(score >= 80 ? "high" : score >= 60 ? "medium" : "standard");
+    relevance.title = reasons.length ? reasons.join("；") : "根据标题、摘要与分类计算";
+    relevance.setAttribute("aria-label", `Agent self-improvement 相关度 ${score} 分`);
 
     const title = fragment.querySelector(".paper-title");
     title.textContent = paper.title || "未命名论文";

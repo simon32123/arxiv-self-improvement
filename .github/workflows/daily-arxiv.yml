@@ -1,0 +1,63 @@
+name: Daily arXiv Radar
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 09:15 in China Standard Time (UTC+8).
+    - cron: "15 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: arxiv-radar-pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch arXiv papers and build website
+        run: |
+          if [ -f data/papers.json ]; then
+            python fetch_arxiv.py
+          else
+            python fetch_arxiv.py --all-results --max-results 100
+          fi
+
+      - name: Save the updated paper archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/papers.json public/
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update daily arXiv radar"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -4,8 +4,6 @@
 
 项目只使用 Python 标准库，不需要安装第三方依赖。
 
-在线网站：<https://simon32123.github.io/arxiv-self-improvement/>
-
 ## 立即运行
 
 ```bash
@@ -42,9 +40,9 @@ python3 -m http.server 8000 -d public
 - `self-reflection`
 - `self-correction`
 
-结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2026-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
+结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2025-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
 
-首次回溯 2026 年以来的全部匹配结果可运行：
+首次回溯 2025 年以来的全部匹配结果可运行：
 
 ```bash
 ./run.sh --all-results --max-results 200

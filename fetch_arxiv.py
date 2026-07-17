@@ -41,11 +41,22 @@ TOPIC_TERMS = (
     "learning from self-generated feedback",
     "agent evolution",
 )
+AGENT_TERMS = (
+    "agent",
+    "agents",
+    "agentic",
+    "multi-agent",
+    "multiagent",
+)
 TITLE_ABSTRACT_QUERY = " OR ".join(
     f'(ti:"{term}" OR abs:"{term}")' for term in TOPIC_TERMS
 )
+AGENT_TITLE_ABSTRACT_QUERY = " OR ".join(
+    f'(ti:"{term}" OR abs:"{term}")' for term in AGENT_TERMS
+)
 DEFAULT_QUERY = (
     f"({TITLE_ABSTRACT_QUERY}) AND "
+    f"({AGENT_TITLE_ABSTRACT_QUERY}) AND "
     "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND "
     "submittedDate:[202501010000 TO 209912312359]"
 )
@@ -275,10 +286,18 @@ def merge_papers(
     return papers, new_count
 
 
-def matches_title_or_abstract(paper: dict[str, Any]) -> bool:
-    """Return whether a cached paper contains a topic term in its title or abstract."""
+def matches_agent_self_improvement(paper: dict[str, Any]) -> bool:
+    """Return whether title/abstract contain both topic and Agent-domain terms."""
     searchable = f'{paper.get("title", "")} {paper.get("abstract", "")}'.casefold()
-    return any(term.casefold() in searchable for term in TOPIC_TERMS)
+    topic_match = any(term.casefold() in searchable for term in TOPIC_TERMS)
+    agent_match = any(
+        re.search(
+            rf"(?<![a-z0-9]){re.escape(term.casefold())}(?![a-z0-9])",
+            searchable,
+        )
+        for term in AGENT_TERMS
+    )
+    return topic_match and agent_match
 
 
 def atomic_write_text(path: Path, content: str) -> None:
@@ -366,9 +385,9 @@ def main() -> int:
     existing_ids = {paper.get("id") for paper in existing_papers if paper.get("id")}
     papers, new_count = merge_papers(existing_papers, incoming)
     if args.query == DEFAULT_QUERY:
-        # The cache predates the title/abstract-only query. Remove records that
-        # matched older all-field searches solely through unrelated metadata.
-        papers = [paper for paper in papers if matches_title_or_abstract(paper)]
+        # Remove cached records that do not satisfy the current title/abstract
+        # topic match and Agent-domain focus.
+        papers = [paper for paper in papers if matches_agent_self_improvement(paper)]
         new_count = sum(paper.get("id") not in existing_ids for paper in papers)
     database.update(
         {

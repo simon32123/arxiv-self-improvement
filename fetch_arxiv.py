@@ -149,7 +149,12 @@ def fetch_feed(
             if error.code not in RETRYABLE_STATUS or attempt == attempts - 1:
                 raise
             retry_after = error.headers.get("Retry-After")
-            delay = int(retry_after) if retry_after and retry_after.isdigit() else 3 * (2**attempt)
+            if retry_after and retry_after.isdigit():
+                delay = int(retry_after)
+            elif error.code == 429:
+                delay = 60 * (2**attempt)
+            else:
+                delay = 3 * (2**attempt)
         except (urllib.error.URLError, TimeoutError, http.client.HTTPException):
             if attempt == attempts - 1:
                 raise
@@ -191,6 +196,34 @@ def fetch_all_papers(
         print(f"Fetched {min(start, total)} / {total} papers.", flush=True)
         if start < total:
             time.sleep(3)
+    return papers
+
+
+def fetch_year_by_month(
+    query: str,
+    year: int,
+    page_size: int,
+    user_agent: str,
+    discovered_on: str,
+) -> list[dict[str, Any]]:
+    """Backfill one year using small monthly queries to reduce arXiv API load."""
+    base_query = re.sub(
+        r"\s+AND\s+submittedDate:\[[^\]]+\]\s*$", "", query, flags=re.IGNORECASE
+    )
+    papers: list[dict[str, Any]] = []
+    for month in range(1, 13):
+        start = f"{year}{month:02d}010000"
+        if month == 12:
+            end = f"{year + 1}01010000"
+        else:
+            end = f"{year}{month + 1:02d}010000"
+        monthly_query = f"{base_query} AND submittedDate:[{start} TO {end}]"
+        print(f"Backfilling {year}-{month:02d}...", flush=True)
+        papers.extend(
+            fetch_all_papers(monthly_query, page_size, user_agent, discovered_on)
+        )
+        if month < 12:
+            time.sleep(10)
     return papers
 
 
@@ -259,6 +292,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="paginate through every result for the query (use for historical backfills)",
     )
+    parser.add_argument(
+        "--backfill-year",
+        type=int,
+        help="fetch a complete year using smaller monthly queries",
+    )
     parser.add_argument("--data-file", type=Path, default=ROOT / "data" / "papers.json")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "public")
     parser.add_argument("--source-dir", type=Path, default=ROOT / "src")
@@ -284,7 +322,15 @@ def main() -> int:
 
     if not args.offline:
         try:
-            if args.all_results:
+            if args.backfill_year:
+                incoming = fetch_year_by_month(
+                    args.query,
+                    args.backfill_year,
+                    args.max_results,
+                    args.user_agent,
+                    checked_at[:10],
+                )
+            elif args.all_results:
                 incoming = fetch_all_papers(
                     args.query, args.max_results, args.user_agent, checked_at[:10]
                 )

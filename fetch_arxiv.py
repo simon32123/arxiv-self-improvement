@@ -31,7 +31,7 @@ DEFAULT_QUERY = (
     'all:"recursive self-improvement" OR all:"self-refinement" OR '
     'all:"self-reflection" OR all:"self-correction") AND '
     '(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND '
-    'submittedDate:[202601010000 TO 209912312359]'
+    'submittedDate:[202501010000 TO 209912312359]'
 )
 DEFAULT_USER_AGENT = (
     "ArxivSelfImprovementDaily/1.0 "

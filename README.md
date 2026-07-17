@@ -1,6 +1,6 @@
 # Self-Improvement Research Radar
 
-每天检索 arXiv 上与 AI self-improvement 相关的论文，提取标题、作者、摘要、分类、论文页和 PDF 链接，并生成一个可搜索、可筛选的静态网页。
+每天检索 arXiv 上与 AI Agent self-improvement 相关的论文，提取标题、作者、摘要、分类、论文页和 PDF 链接，并生成一个可搜索、可筛选的静态网页。
 
 项目只使用 Python 标准库，不需要安装第三方依赖。
 
@@ -46,7 +46,7 @@ python3 -m http.server 8000 -d public
 - `learning from self-generated feedback`
 - `agent evolution`
 
-关键词只在论文标题和摘要中匹配。结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2025-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
+关键词只在论文标题和摘要中匹配，并要求同一篇论文同时包含 Agent 领域词：`agent`、`agents`、`agentic`、`multi-agent` 或 `multiagent`。结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2025-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
 
 首次回溯 2025 年以来的全部匹配结果可运行：
 

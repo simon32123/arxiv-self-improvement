@@ -37,7 +37,7 @@ jobs:
           if [ -f data/backfill-since-2025.done ]; then
             python fetch_arxiv.py
           else
-            python fetch_arxiv.py --all-results --max-results 100
+            python fetch_arxiv.py --all-results --max-results 50
             touch data/backfill-since-2025.done
           fi
 

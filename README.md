@@ -39,8 +39,14 @@ python3 -m http.server 8000 -d public
 - `self-refinement`
 - `self-reflection`
 - `self-correction`
+- `self-evolution`
+- `autonomous improvement`
+- `continual self-training`
+- `iterative refinement`
+- `learning from self-generated feedback`
+- `agent evolution`
 
-结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2025-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
+关键词只在论文标题和摘要中匹配。结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2025-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
 
 首次回溯 2025 年以来的全部匹配结果可运行：
 
@@ -52,7 +58,7 @@ python3 -m http.server 8000 -d public
 
 ```bash
 python3 fetch_arxiv.py \
-  --query '(all:"self-improvement" OR all:"self-refinement") AND cat:cs.AI' \
+  --query '((ti:"self-improvement" OR abs:"self-improvement") OR (ti:"self-refinement" OR abs:"self-refinement")) AND cat:cs.AI' \
   --max-results 50
 ```
 

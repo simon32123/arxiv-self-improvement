@@ -145,12 +145,6 @@
 
     const abstract = fragment.querySelector(".paper-abstract");
     abstract.textContent = paper.abstract || "暂无摘要。";
-    const toggle = fragment.querySelector(".abstract-toggle");
-    toggle.addEventListener("click", () => {
-      const expanded = abstract.classList.toggle("expanded");
-      toggle.setAttribute("aria-expanded", String(expanded));
-      toggle.textContent = expanded ? "收起摘要" : "展开摘要";
-    });
 
     const pageLink = fragment.querySelector(".paper-page");
     pageLink.href = paper.arxiv_url || "#";

@@ -413,28 +413,11 @@ main { padding: 50px 0 96px; }
 }
 
 .paper-abstract {
-  display: -webkit-box;
   max-width: 980px;
   margin: 0;
-  overflow: hidden;
   color: var(--ink-soft);
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
   font-size: 15px;
   line-height: 1.75;
-}
-
-.paper-abstract.expanded { display: block; }
-
-.abstract-toggle {
-  margin: 9px 0 0;
-  padding: 0;
-  color: #596877;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px dotted currentColor;
-  cursor: pointer;
-  font-size: 12px;
 }
 
 .paper-actions { display: flex; align-items: center; gap: 11px; margin-top: 24px; }

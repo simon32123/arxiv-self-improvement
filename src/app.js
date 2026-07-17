@@ -11,6 +11,14 @@
   const categorySelect = $("#category-select");
   const sortSelect = $("#sort-select");
   const emptyState = $("#empty-state");
+  const pagination = $("#pagination");
+  const previousPage = $("#previous-page");
+  const nextPage = $("#next-page");
+  const pageNumbers = $("#page-numbers");
+  const pageStatus = $("#page-status");
+  const resultsHead = $(".results-head");
+  const PAGE_SIZE = 30;
+  let currentPage = 1;
 
   const dateFormatter = new Intl.DateTimeFormat("zh-CN", {
     year: "numeric",
@@ -142,22 +150,98 @@
     return fragment;
   }
 
+  function paginationItems(current, total) {
+    if (total <= 7) return Array.from({ length: total }, (_, index) => index + 1);
+
+    const pages = new Set([1, total, current - 1, current, current + 1]);
+    if (current <= 3) [2, 3, 4].forEach((page) => pages.add(page));
+    if (current >= total - 2) [total - 3, total - 2, total - 1].forEach((page) => pages.add(page));
+
+    const ordered = [...pages].filter((page) => page > 0 && page <= total).sort((a, b) => a - b);
+    const items = [];
+    ordered.forEach((page, index) => {
+      if (index && page - ordered[index - 1] > 1) items.push("ellipsis");
+      items.push(page);
+    });
+    return items;
+  }
+
+  function renderPagination(totalPages) {
+    pagination.hidden = totalPages <= 1;
+    if (totalPages <= 1) {
+      pageNumbers.replaceChildren();
+      pageStatus.textContent = "";
+      return;
+    }
+
+    previousPage.disabled = currentPage === 1;
+    nextPage.disabled = currentPage === totalPages;
+    pageStatus.textContent = `第 ${currentPage} / ${totalPages} 页`;
+
+    const controls = paginationItems(currentPage, totalPages).map((item) => {
+      if (item === "ellipsis") {
+        const ellipsis = document.createElement("span");
+        ellipsis.className = "pagination-ellipsis";
+        ellipsis.textContent = "…";
+        ellipsis.setAttribute("aria-hidden", "true");
+        return ellipsis;
+      }
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "page-number";
+      button.textContent = String(item);
+      button.setAttribute("aria-label", `第 ${item} 页`);
+      if (item === currentPage) {
+        button.classList.add("active");
+        button.setAttribute("aria-current", "page");
+      }
+      button.addEventListener("click", () => changePage(item));
+      return button;
+    });
+    pageNumbers.replaceChildren(...controls);
+  }
+
   function render() {
-    const visible = sortedPapers(papers.filter(matchesFilters));
-    list.replaceChildren(...visible.map(renderPaper));
-    $("#result-count").textContent = `${visible.length} 篇论文`;
-    emptyState.hidden = visible.length !== 0;
+    const filtered = sortedPapers(papers.filter(matchesFilters));
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    currentPage = Math.min(currentPage, totalPages);
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const visible = filtered.slice(start, start + PAGE_SIZE);
+    list.replaceChildren(...visible.map((paper, index) => renderPaper(paper, start + index)));
+    $("#result-count").textContent = filtered.length
+      ? `${filtered.length} 篇论文 · 第 ${currentPage} / ${totalPages} 页`
+      : "0 篇论文";
+    emptyState.hidden = filtered.length !== 0;
+    renderPagination(filtered.length ? totalPages : 0);
+  }
+
+  function changePage(page) {
+    if (page === currentPage) return;
+    currentPage = page;
+    render();
+    resultsHead.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+  }
+
+  function resetPageAndRender() {
+    currentPage = 1;
+    render();
   }
 
   [searchInput, periodSelect, categorySelect, sortSelect].forEach((control) => {
-    control.addEventListener(control === searchInput ? "input" : "change", render);
+    control.addEventListener(control === searchInput ? "input" : "change", resetPageAndRender);
   });
+  previousPage.addEventListener("click", () => changePage(currentPage - 1));
+  nextPage.addEventListener("click", () => changePage(currentPage + 1));
   $("#clear-filters").addEventListener("click", () => {
     searchInput.value = "";
     periodSelect.value = "all";
     categorySelect.value = "all";
     sortSelect.value = "published";
-    render();
+    resetPageAndRender();
     searchInput.focus();
   });
   document.addEventListener("keydown", (event) => {
@@ -167,7 +251,7 @@
     }
     if (event.key === "Escape" && document.activeElement === searchInput) {
       searchInput.value = "";
-      render();
+      resetPageAndRender();
       searchInput.blur();
     }
   });

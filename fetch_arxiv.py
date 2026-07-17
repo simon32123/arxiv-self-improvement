@@ -25,13 +25,29 @@ from typing import Any, Iterable, Optional
 
 ROOT = Path(__file__).resolve().parent
 API_URL = "https://export.arxiv.org/api/query"
+TOPIC_TERMS = (
+    "self improvement",
+    "self-improvement",
+    "self improving",
+    "self-improving",
+    "recursive self-improvement",
+    "self-refinement",
+    "self-reflection",
+    "self-correction",
+    "self-evolution",
+    "autonomous improvement",
+    "continual self-training",
+    "iterative refinement",
+    "learning from self-generated feedback",
+    "agent evolution",
+)
+TITLE_ABSTRACT_QUERY = " OR ".join(
+    f'(ti:"{term}" OR abs:"{term}")' for term in TOPIC_TERMS
+)
 DEFAULT_QUERY = (
-    '(all:"self improvement" OR all:"self-improvement" OR '
-    'all:"self improving" OR all:"self-improving" OR '
-    'all:"recursive self-improvement" OR all:"self-refinement" OR '
-    'all:"self-reflection" OR all:"self-correction") AND '
-    '(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND '
-    'submittedDate:[202501010000 TO 209912312359]'
+    f"({TITLE_ABSTRACT_QUERY}) AND "
+    "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND "
+    "submittedDate:[202501010000 TO 209912312359]"
 )
 DEFAULT_USER_AGENT = (
     "ArxivSelfImprovementDaily/1.0 "
@@ -259,6 +275,12 @@ def merge_papers(
     return papers, new_count
 
 
+def matches_title_or_abstract(paper: dict[str, Any]) -> bool:
+    """Return whether a cached paper contains a topic term in its title or abstract."""
+    searchable = f'{paper.get("title", "")} {paper.get("abstract", "")}'.casefold()
+    return any(term.casefold() in searchable for term in TOPIC_TERMS)
+
+
 def atomic_write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -341,6 +363,10 @@ def main() -> int:
             error_message = f"{type(error).__name__}: {error}"
 
     papers, new_count = merge_papers(database.get("papers", []), incoming)
+    if args.query == DEFAULT_QUERY:
+        # The cache predates the title/abstract-only query. Remove records that
+        # matched older all-field searches solely through unrelated metadata.
+        papers = [paper for paper in papers if matches_title_or_abstract(paper)]
     database.update(
         {
             "papers": papers,

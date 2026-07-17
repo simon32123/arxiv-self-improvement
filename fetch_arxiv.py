@@ -133,7 +133,7 @@ def fetch_feed(
     max_results: int,
     user_agent: str,
     start: int = 0,
-    timeout: int = 45,
+    timeout: int = 120,
     attempts: int = 4,
 ) -> bytes:
     """Fetch one small result page, retrying temporary arXiv failures politely."""
@@ -183,12 +183,12 @@ def fetch_all_papers(
         page = parse_atom(feed, discovered_on)
         if total is None:
             total = total_results(feed)
-            print(f"arXiv matched {total} papers; fetching in pages of {page_size}.")
+            print(f"arXiv matched {total} papers; fetching in pages of {page_size}.", flush=True)
         if not page:
             break
         papers.extend(page)
         start += page_size
-        print(f"Fetched {min(start, total)} / {total} papers.")
+        print(f"Fetched {min(start, total)} / {total} papers.", flush=True)
         if start < total:
             time.sleep(3)
     return papers

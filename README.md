@@ -45,7 +45,7 @@ python3 -m http.server 8000 -d public
 首次回溯 2025 年以来的全部匹配结果可运行：
 
 ```bash
-./run.sh --all-results --max-results 200
+./run.sh --all-results --max-results 50
 ```
 
 可以临时替换检索式：

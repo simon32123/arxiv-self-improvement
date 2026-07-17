@@ -33,6 +33,9 @@ class AtomParsingTests(unittest.TestCase):
         for term in fetch_arxiv.TOPIC_TERMS:
             self.assertIn(f'ti:"{term}"', fetch_arxiv.DEFAULT_QUERY)
             self.assertIn(f'abs:"{term}"', fetch_arxiv.DEFAULT_QUERY)
+        for term in fetch_arxiv.AGENT_TERMS:
+            self.assertIn(f'ti:"{term}"', fetch_arxiv.DEFAULT_QUERY)
+            self.assertIn(f'abs:"{term}"', fetch_arxiv.DEFAULT_QUERY)
 
     def test_parse_atom_extracts_metadata(self):
         papers = fetch_arxiv.parse_atom(SAMPLE_FEED, "2026-07-17")
@@ -60,7 +63,7 @@ class AtomParsingTests(unittest.TestCase):
         self.assertEqual(new_count, 1)
         self.assertEqual(len(papers), 1)
 
-    def test_topic_match_uses_only_title_and_abstract(self):
+    def test_agent_topic_match_uses_only_title_and_abstract(self):
         paper = {
             "title": "A General Agent Study",
             "abstract": "We study reliable planning.",
@@ -68,9 +71,18 @@ class AtomParsingTests(unittest.TestCase):
             "categories": ["agent evolution"],
             "comment": "iterative refinement",
         }
-        self.assertFalse(fetch_arxiv.matches_title_or_abstract(paper))
+        self.assertFalse(fetch_arxiv.matches_agent_self_improvement(paper))
         paper["abstract"] = "We introduce autonomous improvement for agents."
-        self.assertTrue(fetch_arxiv.matches_title_or_abstract(paper))
+        self.assertTrue(fetch_arxiv.matches_agent_self_improvement(paper))
+
+    def test_topic_match_requires_agent_context(self):
+        paper = {
+            "title": "Iterative Refinement for Language Models",
+            "abstract": "A general self-improvement training method.",
+        }
+        self.assertFalse(fetch_arxiv.matches_agent_self_improvement(paper))
+        paper["title"] = "Iterative Refinement for Agentic Language Models"
+        self.assertTrue(fetch_arxiv.matches_agent_self_improvement(paper))
 
 
 class SiteBuildTests(unittest.TestCase):

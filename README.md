@@ -45,7 +45,7 @@ python3 -m http.server 8000 -d public
 首次回溯 2025 年以来的全部匹配结果可运行：
 
 ```bash
-./run.sh --all-results --max-results 50
+./run.sh --backfill-year 2025 --max-results 200
 ```
 
 可以临时替换检索式：
@@ -85,6 +85,7 @@ python3 fetch_arxiv.py --offline
 | `--query` | 内置 self-improvement 检索式 | 自定义 arXiv `search_query` |
 | `--max-results` | `100` | 每次获取的结果数，范围 1–2000 |
 | `--all-results` | 关闭 | 分页获取当前检索式的全部结果，适合历史回溯 |
+| `--backfill-year` | 关闭 | 按月回溯指定年份，降低大查询触发限流的概率 |
 | `--data-file` | `data/papers.json` | 历史缓存位置 |
 | `--output-dir` | `public` | 网页输出目录 |
 | `--user-agent` | 项目默认标识 | 自定义请求标识，公开部署时建议换成自己的项目地址 |

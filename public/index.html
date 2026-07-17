@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="每日追踪 arXiv 上关于 AI self-improvement 的最新研究。" />
+    <meta name="color-scheme" content="light" />
+    <title>自进化论文检索</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="papers-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#paper-list">跳到论文列表</a>
+
+    <header class="masthead">
+      <nav class="topbar" aria-label="主导航">
+        <a class="brand" href="#top" aria-label="Research Signal 首页">
+          <span class="brand-mark" aria-hidden="true">RS</span>
+          <span>RESEARCH SIGNAL</span>
+        </a>
+        <span class="live-pill"><span class="live-dot" aria-hidden="true"></span>DAILY ARXIV FEED</span>
+      </nav>
+
+      <div class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">SELF-IMPROVEMENT · AI AGENTS · LLM</p>
+          <h1>自进化论文检索</h1>
+          <p class="lede">
+            自动扫描 arXiv，捕捉关于模型自我改进、自我反思、自我修正与递归优化的最新研究。
+          </p>
+        </div>
+        <aside class="edition-card" aria-label="本期信息">
+          <span class="edition-label">TODAY’S EDITION</span>
+          <strong id="edition-date">—</strong>
+          <span id="edition-status">正在读取本地数据</span>
+        </aside>
+      </div>
+
+      <div class="ticker" aria-label="数据摘要">
+        <div><span>论文库</span><strong id="total-stat">0</strong></div>
+        <div><span>本次新增</span><strong id="new-stat">0</strong></div>
+        <div><span>最新论文</span><strong id="latest-stat">—</strong></div>
+        <div><span>数据来源</span><strong>arXiv API</strong></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="筛选论文">
+        <label class="search-box">
+          <span>SEARCH THE RADAR</span>
+          <span class="search-row">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="搜索标题、摘要或作者…" autocomplete="off" />
+            <kbd>/</kbd>
+          </span>
+        </label>
+
+        <label class="select-wrap">
+          <span>时间范围</span>
+          <select id="period-select">
+            <option value="all">全部时间</option>
+            <option value="7">最近 7 天</option>
+            <option value="30">最近 30 天</option>
+            <option value="365">最近一年</option>
+          </select>
+        </label>
+
+        <label class="select-wrap">
+          <span>研究分类</span>
+          <select id="category-select">
+            <option value="all">全部分类</option>
+          </select>
+        </label>
+
+        <label class="select-wrap">
+          <span>排序方式</span>
+          <select id="sort-select">
+            <option value="published">最新发布</option>
+            <option value="updated">最近更新</option>
+            <option value="title">标题 A–Z</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="results-head" aria-live="polite">
+        <div>
+          <p class="section-kicker">PAPER STREAM</p>
+          <h2>最新研究</h2>
+        </div>
+        <p id="result-count">0 篇论文</p>
+      </section>
+
+      <div id="notice" class="notice" hidden></div>
+      <div id="paper-list" class="paper-list" aria-live="polite"></div>
+
+      <section id="empty-state" class="empty-state" hidden>
+        <span aria-hidden="true">∅</span>
+        <h2>没有匹配的论文</h2>
+        <p>试试缩短关键词，或切换时间与分类范围。</p>
+        <button id="clear-filters" type="button">清除筛选</button>
+      </section>
+    </main>
+
+    <template id="paper-template">
+      <article class="paper-card">
+        <div class="paper-index" aria-hidden="true"></div>
+        <div class="paper-body">
+          <div class="paper-meta">
+            <time class="paper-date"></time>
+            <div class="paper-categories"></div>
+          </div>
+          <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
+          <p class="paper-authors"></p>
+          <p class="paper-abstract"></p>
+          <button class="abstract-toggle" type="button" aria-expanded="false">展开摘要</button>
+          <div class="paper-actions">
+            <a class="primary-action paper-page" target="_blank" rel="noopener noreferrer">查看详情 <span>↗</span></a>
+            <a class="secondary-action paper-pdf" target="_blank" rel="noopener noreferrer">PDF <span>↓</span></a>
+            <span class="arxiv-id"></span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <footer>
+      <p><strong>RESEARCH SIGNAL</strong> · 只展示论文元数据与摘要，版权归原作者所有。</p>
+      <p id="last-updated">尚未更新</p>
+    </footer>
+  </body>
+</html>

@@ -4,6 +4,8 @@
 
 项目只使用 Python 标准库，不需要安装第三方依赖。
 
+在线网站：<https://simon32123.github.io/arxiv-self-improvement/>
+
 ## 立即运行
 
 ```bash

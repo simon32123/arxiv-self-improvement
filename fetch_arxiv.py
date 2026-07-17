@@ -362,11 +362,14 @@ def main() -> int:
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ET.ParseError) as error:
             error_message = f"{type(error).__name__}: {error}"
 
-    papers, new_count = merge_papers(database.get("papers", []), incoming)
+    existing_papers = database.get("papers", [])
+    existing_ids = {paper.get("id") for paper in existing_papers if paper.get("id")}
+    papers, new_count = merge_papers(existing_papers, incoming)
     if args.query == DEFAULT_QUERY:
         # The cache predates the title/abstract-only query. Remove records that
         # matched older all-field searches solely through unrelated metadata.
         papers = [paper for paper in papers if matches_title_or_abstract(paper)]
+        new_count = sum(paper.get("id") not in existing_ids for paper in papers)
     database.update(
         {
             "papers": papers,

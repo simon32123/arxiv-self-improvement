@@ -94,6 +94,13 @@
       <div id="notice" class="notice" hidden></div>
       <div id="paper-list" class="paper-list" aria-live="polite"></div>
 
+      <nav id="pagination" class="pagination" aria-label="论文分页" hidden>
+        <button id="previous-page" class="pagination-nav" type="button">← 上一页</button>
+        <div id="page-numbers" class="page-numbers" aria-label="选择页码"></div>
+        <span id="page-status" class="page-status" aria-live="polite"></span>
+        <button id="next-page" class="pagination-nav" type="button">下一页 →</button>
+      </nav>
+
       <section id="empty-state" class="empty-state" hidden>
         <span aria-hidden="true">∅</span>
         <h2>没有匹配的论文</h2>

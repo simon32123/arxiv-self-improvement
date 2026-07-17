@@ -34,17 +34,18 @@ jobs:
 
       - name: Fetch arXiv papers and build website
         run: |
-          if [ -f data/papers.json ]; then
+          if [ -f data/backfill-since-2025.done ]; then
             python fetch_arxiv.py
           else
             python fetch_arxiv.py --all-results --max-results 100
+            touch data/backfill-since-2025.done
           fi
 
       - name: Save the updated paper archive
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/papers.json public/
+          git add data/ public/
           if ! git diff --cached --quiet; then
             git commit -m "data: update daily arXiv radar"
             git push

@@ -1,6 +1,6 @@
 # Self-Improvement Research Radar
 
-每天检索 arXiv 上与 AI Agent self-improvement 相关的论文，提取标题、作者、摘要、分类、论文页和 PDF 链接，并生成一个可搜索、可筛选的静态网页。
+每天检索 arXiv 与 OpenReview 上与 AI Agent self-improvement 相关的论文，提取标题、作者、摘要、分类/会议信息、论文页和 PDF 链接，并生成一个可搜索、可筛选的静态网页。
 
 项目只使用 Python 标准库，不需要安装第三方依赖。
 
@@ -27,7 +27,7 @@ python3 -m http.server 8000 -d public
 
 然后访问 <http://localhost:8000>。
 
-脚本每次只向 arXiv 发起一次检索请求。新结果会与 `data/papers.json` 中的历史记录合并；同一论文的新版本会覆盖旧版本，但不会产生重复卡片。
+日常运行会分别向 arXiv 和 OpenReview 获取最新匹配结果。新结果会与 `data/papers.json` 中的历史记录合并；同一来源的新版记录会覆盖旧版，跨来源的同标题论文会合并，并保留两个来源链接。
 
 ## 默认检索范围
 
@@ -46,7 +46,7 @@ python3 -m http.server 8000 -d public
 - `learning from self-generated feedback`
 - `agent evolution`
 
-关键词只在论文标题和摘要中匹配，并要求同一篇论文同时包含 Agent 领域词：`agent`、`agents`、`agentic`、`multi-agent` 或 `multiagent`。结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类，以及 2025-01-01 以后提交的论文。每日任务获取最近 100 条匹配结果，并按首次提交时间倒序处理。
+关键词只在论文标题和摘要中匹配，并要求同一篇论文同时包含 Agent 领域词：`agent`、`agents`、`agentic`、`multi-agent` 或 `multiagent`。arXiv 结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类；两个来源都只保留 2025-01-01 以后提交的论文。每日任务分别获取两个来源最近 100 条匹配结果，并按首次提交时间倒序处理。
 
 每篇论文会获得一个 0–100 的可解释相关度评分。标题中的自进化和 Agent 信号权重最高，摘要信号次之；两类关键词距离较近、覆盖多个自进化关键词，以及主要分类属于 `cs.AI` 或 `cs.MA` 时会获得额外分数。该分数只衡量与 Agent self-improvement 主题的匹配程度，不评价论文质量。
 
@@ -54,6 +54,12 @@ python3 -m http.server 8000 -d public
 
 ```bash
 ./run.sh --backfill-year 2025 --max-results 200
+```
+
+回溯 OpenReview 自 2025 年以来的全部匹配结果可运行：
+
+```bash
+./run.sh --skip-arxiv --backfill-openreview --max-results 200
 ```
 
 可以临时替换检索式：
@@ -72,7 +78,7 @@ python3 fetch_arxiv.py --offline
 
 ## 每日自动运行
 
-仓库已经包含 `.github/workflows/daily-arxiv.yml`，默认每天北京时间 09:15 运行，更新论文缓存并发布到 GitHub Pages。
+仓库已经包含 `.github/workflows/daily-arxiv.yml`，默认每天北京时间 09:15 运行，更新两个来源的论文缓存并发布到 GitHub Pages。首次运行新版任务时，会自动补齐 OpenReview 自 2025 年以来的历史结果。
 
 使用方法：
 
@@ -91,9 +97,13 @@ python3 fetch_arxiv.py --offline
 | 参数 | 默认值 | 作用 |
 | --- | --- | --- |
 | `--query` | 内置 self-improvement 检索式 | 自定义 arXiv `search_query` |
+| `--openreview-query` | 内置同主题检索式 | 自定义 OpenReview 初筛检索式；最终仍只按标题和摘要过滤 |
 | `--max-results` | `100` | 每次获取的结果数，范围 1–2000 |
 | `--all-results` | 关闭 | 分页获取当前检索式的全部结果，适合历史回溯 |
 | `--backfill-year` | 关闭 | 按月回溯指定年份，降低大查询触发限流的概率 |
+| `--backfill-openreview` | 关闭 | 分页回溯 OpenReview 自 2025 年以来的全部结果 |
+| `--skip-arxiv` | 关闭 | 本次运行不请求 arXiv |
+| `--skip-openreview` | 关闭 | 本次运行不请求 OpenReview |
 | `--data-file` | `data/papers.json` | 历史缓存位置 |
 | `--output-dir` | `public` | 网页输出目录 |
 | `--user-agent` | 项目默认标识 | 自定义请求标识，公开部署时建议换成自己的项目地址 |
@@ -119,4 +129,4 @@ tests/                         标准库单元测试
 
 ## 使用说明
 
-arXiv 的搜索结果通常每天批量更新一次，因此没有必要对相同查询高频轮询。脚本遵循每日一次、单页小批量获取的方式，并针对 429/5xx 临时错误进行退避重试。网页仅展示 arXiv 返回的论文元数据和摘要，并始终链接回原始论文页面。
+脚本遵循每日一次、小批量获取的方式，并针对 429/5xx 临时错误进行退避重试。网页仅展示 arXiv 与 OpenReview 返回的论文元数据和摘要，并始终链接回原始论文页面。

@@ -321,7 +321,11 @@ def is_openreview_submission(note: dict[str, Any]) -> bool:
         return False
     if any("Workshop_Proposals" in str(invitation) for invitation in invitations):
         return False
-    return any("Submission" in str(invitation) for invitation in invitations)
+    return any(
+        "Submission" in str(invitation)
+        or str(invitation).endswith("/-/Direct_Upload")
+        for invitation in invitations
+    )
 
 
 def parse_openreview_notes(

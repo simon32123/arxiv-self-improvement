@@ -46,7 +46,7 @@ python3 -m http.server 8000 -d public
 - `learning from self-generated feedback`
 - `agent evolution`
 
-关键词只在论文标题和摘要中匹配，并要求同一篇论文同时包含 Agent 领域词：`agent`、`agents`、`agentic`、`multi-agent` 或 `multiagent`。arXiv 结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类；两个来源都只保留 2025-01-01 以后提交的论文。每日任务分别获取两个来源最近 100 条匹配结果，并按首次提交时间倒序处理。
+关键词只在论文标题和摘要中匹配，并要求同一篇论文同时包含 Agent 领域词：`agent`、`agents`、`agentic`、`multi-agent` 或 `multiagent`。arXiv 结果限定在 `cs.AI`、`cs.CL`、`cs.LG` 和 `cs.MA` 分类；OpenReview 同时收录会议投稿和公开 Archive Direct Upload 论文。两个来源都只保留 2025-01-01 以后提交的论文。每日任务分别获取两个来源最近 100 条匹配结果，并按首次提交时间倒序处理。
 
 每篇论文会获得一个 0–100 的可解释相关度评分。标题中的自进化和 Agent 信号权重最高，摘要信号次之；两类关键词距离较近、覆盖多个自进化关键词，以及主要分类属于 `cs.AI` 或 `cs.MA` 时会获得额外分数。该分数只衡量与 Agent self-improvement 主题的匹配程度，不评价论文质量。
 
@@ -78,7 +78,7 @@ python3 fetch_arxiv.py --offline
 
 ## 每日自动运行
 
-仓库已经包含 `.github/workflows/daily-arxiv.yml`，默认每天北京时间 09:15 运行，更新两个来源的论文缓存并发布到 GitHub Pages。首次运行新版任务时，会自动补齐 OpenReview 自 2025 年以来的历史结果。
+仓库已经包含 `.github/workflows/daily-arxiv.yml`，默认每天北京时间 09:15 运行，更新两个来源的论文缓存并发布到 GitHub Pages。首次运行新版任务时，会自动补齐 OpenReview 自 2025 年以来的会议投稿和公开 Archive Direct Upload 历史结果。
 
 使用方法：
 

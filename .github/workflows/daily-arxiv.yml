@@ -37,9 +37,9 @@ jobs:
           if [ ! -f data/backfill-agent-focus-v3.done ]; then
             python fetch_arxiv.py --backfill-year 2025 --max-results 200
             touch data/backfill-agent-focus-v3.done
-          elif [ ! -f data/backfill-openreview-v1.done ]; then
+          elif [ ! -f data/backfill-openreview-direct-upload-v2.done ]; then
             python fetch_arxiv.py --backfill-openreview --max-results 200
-            touch data/backfill-openreview-v1.done
+            touch data/backfill-openreview-direct-upload-v2.done
           else
             python fetch_arxiv.py
           fi

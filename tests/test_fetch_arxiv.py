@@ -93,6 +93,23 @@ class AtomParsingTests(unittest.TestCase):
         payload = {"notes": [dict(SAMPLE_OPENREVIEW["notes"][0], invitations=["DBLP.org/-/record"])]}
         self.assertEqual(fetch_arxiv.parse_openreview_notes(payload), [])
 
+    def test_parse_openreview_accepts_public_archive_direct_upload(self):
+        payload = {
+            "notes": [
+                dict(
+                    SAMPLE_OPENREVIEW["notes"][0],
+                    id="IUltZSgLMm",
+                    invitations=[
+                        "OpenReview.net/Archive/-/Direct_Upload",
+                        "OpenReview.net/Archive/-/Edit",
+                    ],
+                )
+            ]
+        }
+        papers = fetch_arxiv.parse_openreview_notes(payload, "2026-07-20")
+        self.assertEqual(len(papers), 1)
+        self.assertEqual(papers[0]["id"], "openreview:IUltZSgLMm")
+
     def test_cross_source_deduplication_prefers_arxiv_and_keeps_links(self):
         arxiv_paper = fetch_arxiv.parse_atom(SAMPLE_FEED, "2026-07-17")[0]
         openreview_paper = fetch_arxiv.parse_openreview_notes(SAMPLE_OPENREVIEW, "2026-07-19")[0]

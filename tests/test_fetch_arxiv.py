@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+import urllib.parse
 from pathlib import Path
 
 import fetch_arxiv
@@ -26,6 +27,26 @@ SAMPLE_FEED = b"""<?xml version="1.0" encoding="UTF-8"?>
 </feed>
 """
 
+SAMPLE_OPENREVIEW = {
+    "count": 1,
+    "notes": [
+        {
+            "id": "openreview-test-123",
+            "forum": "openreview-test-123",
+            "cdate": 1735689600000,
+            "tmdate": 1735776000000,
+            "invitations": ["ICLR.cc/2025/Conference/-/Submission"],
+            "content": {
+                "title": {"value": "A Self-Improving Agent with Reliable Feedback"},
+                "abstract": {"value": "An agent uses self-reflection to improve its own workflow."},
+                "authors": {"value": ["Alice Example", "Bob Example"]},
+                "venue": {"value": "ICLR 2025 poster"},
+                "venueid": {"value": "ICLR.cc/2025/Conference"},
+            },
+        }
+    ],
+}
+
 
 class AtomParsingTests(unittest.TestCase):
     def test_default_query_limits_every_topic_term_to_title_and_abstract(self):
@@ -36,6 +57,14 @@ class AtomParsingTests(unittest.TestCase):
         for term in fetch_arxiv.AGENT_TERMS:
             self.assertIn(f'ti:"{term}"', fetch_arxiv.DEFAULT_QUERY)
             self.assertIn(f'abs:"{term}"', fetch_arxiv.DEFAULT_QUERY)
+
+    def test_openreview_batches_cover_every_topic_and_agent_term(self):
+        combined = " ".join(fetch_arxiv.OPENREVIEW_QUERY_BATCHES)
+        for term in fetch_arxiv.TOPIC_TERMS:
+            self.assertIn(f'"{term}"', combined)
+        for query in fetch_arxiv.OPENREVIEW_QUERY_BATCHES:
+            for term in fetch_arxiv.AGENT_TERMS:
+                self.assertIn(f'"{term}"', query)
 
     def test_parse_atom_extracts_metadata(self):
         papers = fetch_arxiv.parse_atom(SAMPLE_FEED, "2026-07-17")
@@ -48,6 +77,41 @@ class AtomParsingTests(unittest.TestCase):
         self.assertEqual(paper["primary_category"], "cs.AI")
         self.assertEqual(paper["categories"], ["cs.AI", "cs.LG"])
         self.assertTrue(paper["pdf_url"].startswith("https://"))
+
+    def test_parse_openreview_extracts_submission_metadata(self):
+        papers = fetch_arxiv.parse_openreview_notes(SAMPLE_OPENREVIEW, "2026-07-19")
+        self.assertEqual(len(papers), 1)
+        paper = papers[0]
+        self.assertEqual(paper["id"], "openreview:openreview-test-123")
+        self.assertEqual(paper["source"], "OpenReview")
+        self.assertEqual(paper["authors"], ["Alice Example", "Bob Example"])
+        self.assertEqual(paper["venue"], "ICLR 2025 poster")
+        self.assertEqual(paper["published"][:10], "2025-01-01")
+        self.assertEqual(paper["openreview_url"], "https://openreview.net/forum?id=openreview-test-123")
+
+    def test_parse_openreview_excludes_dblp_records(self):
+        payload = {"notes": [dict(SAMPLE_OPENREVIEW["notes"][0], invitations=["DBLP.org/-/record"])]}
+        self.assertEqual(fetch_arxiv.parse_openreview_notes(payload), [])
+
+    def test_cross_source_deduplication_prefers_arxiv_and_keeps_links(self):
+        arxiv_paper = fetch_arxiv.parse_atom(SAMPLE_FEED, "2026-07-17")[0]
+        openreview_paper = fetch_arxiv.parse_openreview_notes(SAMPLE_OPENREVIEW, "2026-07-19")[0]
+        papers = fetch_arxiv.deduplicate_papers_by_title([openreview_paper, arxiv_paper])
+        self.assertEqual(len(papers), 1)
+        self.assertEqual(papers[0]["source"], "arXiv")
+        self.assertEqual(papers[0]["sources"], ["arXiv", "OpenReview"])
+        self.assertEqual(
+            papers[0]["openreview_url"],
+            "https://openreview.net/forum?id=openreview-test-123",
+        )
+
+    def test_openreview_url_requests_forum_notes_and_title_abstract_candidates(self):
+        url = fetch_arxiv.build_openreview_url("self-improvement AND agent", 200, 20)
+        query = urllib.parse.urlparse(url).query
+        params = urllib.parse.parse_qs(query)
+        self.assertEqual(params["source"], ["forum"])
+        self.assertEqual(params["content"], ["all"])
+        self.assertEqual(params["offset"], ["20"])
 
     def test_merge_replaces_new_version_but_preserves_discovery_date(self):
         old = fetch_arxiv.parse_atom(SAMPLE_FEED, "2026-07-15")[0]

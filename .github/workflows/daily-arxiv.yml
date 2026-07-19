@@ -1,4 +1,4 @@
-name: Daily arXiv Radar
+name: Daily Research Radar
 
 on:
   push:
@@ -32,13 +32,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch arXiv papers and build website
+      - name: Fetch papers and build website
         run: |
-          if [ -f data/backfill-agent-focus-v3.done ]; then
-            python fetch_arxiv.py
-          else
+          if [ ! -f data/backfill-agent-focus-v3.done ]; then
             python fetch_arxiv.py --backfill-year 2025 --max-results 200
             touch data/backfill-agent-focus-v3.done
+          elif [ ! -f data/backfill-openreview-v1.done ]; then
+            python fetch_arxiv.py --backfill-openreview --max-results 200
+            touch data/backfill-openreview-v1.done
+          else
+            python fetch_arxiv.py
           fi
 
       - name: Save the updated paper archive
@@ -47,7 +50,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ public/
           if ! git diff --cached --quiet; then
-            git commit -m "data: update daily arXiv radar"
+            git commit -m "data: update daily research radar"
             git push
           fi
 

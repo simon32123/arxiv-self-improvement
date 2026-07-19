@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch self-improvement papers from arXiv and build a static website.
+"""Fetch self-improvement papers from arXiv/OpenReview and build a static website.
 
 The script intentionally uses only Python's standard library so it can run on a
 fresh machine or in a scheduled GitHub Action without installing dependencies.
@@ -14,6 +14,7 @@ import re
 import shutil
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -25,6 +26,7 @@ from typing import Any, Iterable, Optional
 
 ROOT = Path(__file__).resolve().parent
 API_URL = "https://export.arxiv.org/api/query"
+OPENREVIEW_API_URL = "https://api2.openreview.net/notes/search"
 TOPIC_TERMS = (
     "self improvement",
     "self-improvement",
@@ -60,6 +62,12 @@ DEFAULT_QUERY = (
     "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND "
     "submittedDate:[202501010000 TO 209912312359]"
 )
+OPENREVIEW_QUERY_BATCHES = tuple(
+    "(" + " OR ".join(f'\"{term}\"' for term in TOPIC_TERMS[start : start + 4]) + ") AND ("
+    + " OR ".join(f'\"{term}\"' for term in AGENT_TERMS)
+    + ")"
+    for start in range(0, len(TOPIC_TERMS), 4)
+)
 DEFAULT_USER_AGENT = (
     "ArxivSelfImprovementDaily/1.0 "
     "(+https://github.com/your-name/arxiv-self-improvement)"
@@ -72,6 +80,13 @@ OPENSEARCH = "http://a9.com/-/spec/opensearch/1.1/"
 def clean_text(value: Optional[str]) -> str:
     """Collapse whitespace from arXiv's line-wrapped Atom fields."""
     return re.sub(r"\s+", " ", value or "").strip()
+
+
+def valid_datetime(value: str) -> Optional[datetime]:
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
 
 
 def element_text(element: ET.Element, path: str) -> str:
@@ -137,6 +152,8 @@ def parse_atom(xml_bytes: bytes, discovered_on: Optional[str] = None) -> list[di
             "journal_ref": element_text(entry, "arxiv:journal_ref"),
             "doi": element_text(entry, "arxiv:doi"),
             "discovered_on": discovered_on,
+            "source": "arXiv",
+            "sources": ["arXiv"],
         }
         papers.append(paper)
     return papers
@@ -155,18 +172,17 @@ def build_api_url(query: str, max_results: int, start: int = 0) -> str:
     return f"{API_URL}?{params}"
 
 
-def fetch_feed(
-    query: str,
-    max_results: int,
+def fetch_url(
+    url: str,
     user_agent: str,
-    start: int = 0,
+    accept: str,
     timeout: int = 120,
     attempts: int = 4,
 ) -> bytes:
-    """Fetch one small result page, retrying temporary arXiv failures politely."""
+    """Fetch a public API URL while retrying temporary failures politely."""
     request = urllib.request.Request(
-        build_api_url(query, max_results, start),
-        headers={"User-Agent": user_agent, "Accept": "application/atom+xml"},
+        url,
+        headers={"User-Agent": user_agent, "Accept": accept},
     )
     for attempt in range(attempts):
         try:
@@ -187,7 +203,21 @@ def fetch_feed(
                 raise
             delay = 3 * (2**attempt)
         time.sleep(delay)
-    raise RuntimeError("arXiv request failed after retries")
+    raise RuntimeError("API request failed after retries")
+
+
+def fetch_feed(
+    query: str,
+    max_results: int,
+    user_agent: str,
+    start: int = 0,
+) -> bytes:
+    """Fetch one arXiv result page."""
+    return fetch_url(
+        build_api_url(query, max_results, start),
+        user_agent,
+        "application/atom+xml",
+    )
 
 
 def total_results(xml_bytes: bytes) -> int:
@@ -254,6 +284,146 @@ def fetch_year_by_month(
     return papers
 
 
+def openreview_content_value(content: dict[str, Any], field: str, default: Any = "") -> Any:
+    value = content.get(field, default)
+    if isinstance(value, dict) and "value" in value:
+        return value.get("value", default)
+    return value
+
+
+def milliseconds_to_iso(value: Any) -> str:
+    try:
+        timestamp = int(value) / 1000
+    except (TypeError, ValueError):
+        return ""
+    return datetime.fromtimestamp(timestamp, tz=timezone.utc).replace(microsecond=0).isoformat()
+
+
+def build_openreview_url(query: str, limit: int, offset: int = 0) -> str:
+    params = urllib.parse.urlencode(
+        {
+            "query": query,
+            "content": "all",
+            "source": "forum",
+            "sort": "tmdate:desc",
+            "limit": min(limit, 1000),
+            "offset": offset,
+        }
+    )
+    return f"{OPENREVIEW_API_URL}?{params}"
+
+
+def is_openreview_submission(note: dict[str, Any]) -> bool:
+    invitations = note.get("invitations") or []
+    if not isinstance(invitations, list):
+        invitations = [str(invitations)]
+    if any(str(invitation).startswith("DBLP.org/") for invitation in invitations):
+        return False
+    if any("Workshop_Proposals" in str(invitation) for invitation in invitations):
+        return False
+    return any("Submission" in str(invitation) for invitation in invitations)
+
+
+def parse_openreview_notes(
+    payload: dict[str, Any], discovered_on: Optional[str] = None
+) -> list[dict[str, Any]]:
+    """Convert public OpenReview submission notes into the site's paper schema."""
+    discovered_on = discovered_on or datetime.now(timezone.utc).date().isoformat()
+    papers: list[dict[str, Any]] = []
+    for note in payload.get("notes", []):
+        if not isinstance(note, dict) or not is_openreview_submission(note):
+            continue
+        content = note.get("content") or {}
+        if not isinstance(content, dict):
+            continue
+        title = clean_text(str(openreview_content_value(content, "title", "")))
+        abstract = clean_text(str(openreview_content_value(content, "abstract", "")))
+        note_id = clean_text(str(note.get("id", "")))
+        published = milliseconds_to_iso(note.get("cdate") or note.get("tcdate"))
+        published_date = valid_datetime(published)
+        if not note_id or not title or not abstract or not published_date:
+            continue
+        if published_date.year < 2025:
+            continue
+
+        raw_authors = openreview_content_value(content, "authors", [])
+        authors = [clean_text(str(author)) for author in raw_authors] if isinstance(raw_authors, list) else []
+        venue = clean_text(str(openreview_content_value(content, "venue", "")))
+        venue_id = clean_text(str(openreview_content_value(content, "venueid", "")))
+        forum_url = f"https://openreview.net/forum?id={note_id}"
+        paper = {
+            "id": f"openreview:{note_id}",
+            "versioned_id": note_id,
+            "title": title,
+            "authors": authors,
+            "abstract": abstract,
+            "published": published,
+            "updated": milliseconds_to_iso(note.get("tmdate") or note.get("mdate") or note.get("cdate")),
+            "categories": ["OpenReview"],
+            "primary_category": "OpenReview",
+            "arxiv_url": forum_url,
+            "openreview_url": forum_url,
+            "pdf_url": f"https://openreview.net/pdf?id={note_id}",
+            "comment": venue,
+            "journal_ref": venue,
+            "doi": clean_text(str(openreview_content_value(content, "doi", ""))),
+            "venue": venue,
+            "venue_id": venue_id,
+            "discovered_on": discovered_on,
+            "source": "OpenReview",
+            "sources": ["OpenReview"],
+        }
+        if matches_agent_self_improvement(paper):
+            papers.append(paper)
+    return papers
+
+
+def fetch_openreview_papers(
+    queries: Iterable[str],
+    page_size: int,
+    user_agent: str,
+    discovered_on: str,
+    fetch_all: bool = False,
+) -> list[dict[str, Any]]:
+    """Fetch public OpenReview submissions matching the Agent topic query."""
+    query_batches = list(queries)
+    papers_by_id: dict[str, dict[str, Any]] = {}
+    page_size = min(page_size, 1000)
+    for batch_number, query in enumerate(query_batches, start=1):
+        offset = 0
+        total: Optional[int] = None
+        while total is None or offset < total:
+            raw = fetch_url(
+                build_openreview_url(query, page_size, offset),
+                user_agent,
+                "application/json",
+            )
+            payload = json.loads(raw)
+            if not isinstance(payload, dict):
+                raise ValueError("Invalid OpenReview response")
+            if total is None:
+                total = int(payload.get("count") or 0)
+                print(
+                    f"OpenReview batch {batch_number} matched {total} notes.",
+                    flush=True,
+                )
+            page = payload.get("notes") or []
+            for paper in parse_openreview_notes(payload, discovered_on):
+                papers_by_id[paper["id"]] = paper
+            if not fetch_all or not page:
+                break
+            offset += page_size
+            print(
+                f"Fetched {min(offset, total)} / {total} notes in OpenReview batch {batch_number}.",
+                flush=True,
+            )
+            if offset < total:
+                time.sleep(1)
+        if batch_number < len(query_batches):
+            time.sleep(1)
+    return list(papers_by_id.values())
+
+
 def load_database(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {"papers": []}
@@ -284,6 +454,64 @@ def merge_papers(
         reverse=True,
     )
     return papers, new_count
+
+
+def normalized_title(title: str) -> str:
+    normalized = unicodedata.normalize("NFKC", title).casefold()
+    return re.sub(r"[^a-z0-9]+", "", normalized)
+
+
+def ensure_source_metadata(paper: dict[str, Any]) -> None:
+    source = paper.get("source") or (
+        "OpenReview" if str(paper.get("id", "")).startswith("openreview:") else "arXiv"
+    )
+    paper["source"] = source
+    sources = paper.get("sources") if isinstance(paper.get("sources"), list) else []
+    paper["sources"] = list(dict.fromkeys([*sources, source]))
+
+
+def combine_duplicate_sources(primary: dict[str, Any], duplicate: dict[str, Any]) -> dict[str, Any]:
+    combined = dict(primary)
+    sources = [*(primary.get("sources") or []), *(duplicate.get("sources") or [])]
+    combined["sources"] = list(dict.fromkeys(sources))
+    for paper in (primary, duplicate):
+        if paper.get("source") == "OpenReview":
+            if paper.get("openreview_url"):
+                combined["openreview_url"] = paper["openreview_url"]
+            venues = [*(combined.get("openreview_venues") or [])]
+            if paper.get("venue") and paper["venue"] not in venues:
+                venues.append(paper["venue"])
+            if venues:
+                combined["openreview_venues"] = venues
+    discovery_dates = [
+        value
+        for value in (primary.get("discovered_on"), duplicate.get("discovered_on"))
+        if value
+    ]
+    if discovery_dates:
+        combined["discovered_on"] = min(discovery_dates)
+    return combined
+
+
+def deduplicate_papers_by_title(papers: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Collapse exact normalized-title duplicates, preferring the arXiv record."""
+    deduplicated: dict[str, dict[str, Any]] = {}
+    for paper in papers:
+        ensure_source_metadata(paper)
+        key = normalized_title(str(paper.get("title", ""))) or str(paper.get("id", ""))
+        existing = deduplicated.get(key)
+        if existing is None:
+            deduplicated[key] = paper
+            continue
+        if paper.get("source") == "arXiv" and existing.get("source") != "arXiv":
+            deduplicated[key] = combine_duplicate_sources(paper, existing)
+        else:
+            deduplicated[key] = combine_duplicate_sources(existing, paper)
+    return sorted(
+        deduplicated.values(),
+        key=lambda paper: (paper.get("published", ""), paper.get("updated", "")),
+        reverse=True,
+    )
 
 
 def matches_agent_self_improvement(paper: dict[str, Any]) -> bool:
@@ -413,9 +641,13 @@ def build_site(database: dict[str, Any], output_dir: Path, source_dir: Path) -> 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Fetch self-improvement papers from arXiv and build a static website."
+        description="Fetch self-improvement papers from arXiv and OpenReview, then build a static website."
     )
     parser.add_argument("--query", default=DEFAULT_QUERY, help="arXiv API search_query value")
+    parser.add_argument(
+        "--openreview-query",
+        help="replace the built-in batched OpenReview query with one custom full-text query",
+    )
     parser.add_argument("--max-results", type=int, default=100, help="results requested per daily run")
     parser.add_argument(
         "--all-results",
@@ -427,6 +659,21 @@ def parse_args() -> argparse.Namespace:
         type=int,
         help="fetch a complete year using smaller monthly queries",
     )
+    parser.add_argument(
+        "--backfill-openreview",
+        action="store_true",
+        help="paginate through every OpenReview result from 2025 onward",
+    )
+    parser.add_argument(
+        "--skip-arxiv",
+        action="store_true",
+        help="skip arXiv for this run",
+    )
+    parser.add_argument(
+        "--skip-openreview",
+        action="store_true",
+        help="skip OpenReview for this run",
+    )
     parser.add_argument("--data-file", type=Path, default=ROOT / "data" / "papers.json")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "public")
     parser.add_argument("--source-dir", type=Path, default=ROOT / "src")
@@ -434,7 +681,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--offline",
         action="store_true",
-        help="rebuild the webpage from cached data without calling arXiv",
+        help="rebuild the webpage from cached data without calling external APIs",
     )
     return parser.parse_args()
 
@@ -448,36 +695,81 @@ def main() -> int:
     checked_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     database = load_database(args.data_file)
     incoming: list[dict[str, Any]] = []
-    error_message = ""
+    source_errors: list[str] = []
+    successful_sources: list[str] = []
 
     if not args.offline:
-        try:
-            if args.backfill_year:
-                incoming = fetch_year_by_month(
-                    args.query,
-                    args.backfill_year,
-                    args.max_results,
-                    args.user_agent,
-                    checked_at[:10],
+        if not args.skip_arxiv:
+            try:
+                if args.backfill_year:
+                    incoming.extend(
+                        fetch_year_by_month(
+                            args.query,
+                            args.backfill_year,
+                            args.max_results,
+                            args.user_agent,
+                            checked_at[:10],
+                        )
+                    )
+                elif args.all_results:
+                    incoming.extend(
+                        fetch_all_papers(
+                            args.query, args.max_results, args.user_agent, checked_at[:10]
+                        )
+                    )
+                else:
+                    feed = fetch_feed(args.query, args.max_results, args.user_agent)
+                    incoming.extend(parse_atom(feed, checked_at[:10]))
+                successful_sources.append("arXiv")
+            except (
+                urllib.error.URLError,
+                urllib.error.HTTPError,
+                TimeoutError,
+                http.client.HTTPException,
+                ET.ParseError,
+            ) as error:
+                source_errors.append(f"arXiv {type(error).__name__}: {error}")
+
+        if not args.skip_openreview:
+            try:
+                openreview_queries = (
+                    [args.openreview_query]
+                    if args.openreview_query
+                    else OPENREVIEW_QUERY_BATCHES
                 )
-            elif args.all_results:
-                incoming = fetch_all_papers(
-                    args.query, args.max_results, args.user_agent, checked_at[:10]
+                incoming.extend(
+                    fetch_openreview_papers(
+                        openreview_queries,
+                        args.max_results,
+                        args.user_agent,
+                        checked_at[:10],
+                        fetch_all=args.backfill_openreview,
+                    )
                 )
-            else:
-                feed = fetch_feed(args.query, args.max_results, args.user_agent)
-                incoming = parse_atom(feed, checked_at[:10])
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ET.ParseError) as error:
-            error_message = f"{type(error).__name__}: {error}"
+                successful_sources.append("OpenReview")
+            except (
+                urllib.error.URLError,
+                urllib.error.HTTPError,
+                TimeoutError,
+                http.client.HTTPException,
+                json.JSONDecodeError,
+                ValueError,
+            ) as error:
+                source_errors.append(f"OpenReview {type(error).__name__}: {error}")
+
+    error_message = "；".join(source_errors)
 
     existing_papers = database.get("papers", [])
+    for paper in existing_papers:
+        ensure_source_metadata(paper)
     existing_ids = {paper.get("id") for paper in existing_papers if paper.get("id")}
-    papers, new_count = merge_papers(existing_papers, incoming)
+    papers, _ = merge_papers(existing_papers, incoming)
     if args.query == DEFAULT_QUERY:
         # Remove cached records that do not satisfy the current title/abstract
         # topic match and Agent-domain focus.
         papers = [paper for paper in papers if matches_agent_self_improvement(paper)]
-        new_count = sum(paper.get("id") not in existing_ids for paper in papers)
+    papers = deduplicate_papers_by_title(papers)
+    new_count = sum(paper.get("id") not in existing_ids for paper in papers)
     for paper in papers:
         score, reasons = calculate_relevance(paper)
         paper["relevance_score"] = score
@@ -486,11 +778,22 @@ def main() -> int:
         {
             "papers": papers,
             "query": args.query,
-            "source": "arXiv API",
+            "openreview_query": (
+                args.openreview_query
+                if args.openreview_query
+                else list(OPENREVIEW_QUERY_BATCHES)
+            ),
+            "source": "arXiv + OpenReview",
             "source_url": API_URL,
+            "source_urls": {
+                "arXiv": API_URL,
+                "OpenReview": OPENREVIEW_API_URL,
+            },
             "last_checked": database.get("last_checked", "") if args.offline else checked_at,
             "last_success": (
-                database.get("last_success", "") if args.offline or error_message else checked_at
+                database.get("last_success", "")
+                if args.offline or not successful_sources
+                else checked_at
             ),
             "new_count": 0 if args.offline else new_count,
             "total_cached": len(papers),
@@ -501,8 +804,13 @@ def main() -> int:
     save_database(args.data_file, database)
     build_site(database, args.output_dir, args.source_dir)
 
+    expected_sources = int(not args.skip_arxiv) + int(not args.skip_openreview)
+    fatal_error = not args.offline and expected_sources > 0 and not successful_sources
+    incomplete_backfill = args.backfill_openreview and "OpenReview" not in successful_sources
     if error_message:
-        print(f"arXiv fetch failed; rebuilt the site with cached data: {error_message}", file=sys.stderr)
+        print(f"Source warning: {error_message}", file=sys.stderr)
+    if fatal_error or incomplete_backfill:
+        print("No complete update was available; rebuilt the site with cached data.", file=sys.stderr)
         return 1
     mode = "cached" if args.offline else f"{new_count} new"
     print(f"Built {args.output_dir / 'index.html'} with {len(papers)} papers ({mode}).")

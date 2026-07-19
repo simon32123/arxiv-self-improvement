@@ -63,7 +63,7 @@
     if (data.fetch_error) {
       const notice = $("#notice");
       notice.hidden = false;
-      notice.textContent = "本次 arXiv 检索未成功，当前展示最近一次缓存的数据。";
+      notice.textContent = "部分论文来源本次检索未成功，当前展示已更新数据与其余来源的最近缓存。";
     }
   }
 
@@ -79,7 +79,7 @@
 
   function matchesFilters(paper) {
     const needle = searchInput.value.trim().toLocaleLowerCase();
-    const haystack = [paper.title, paper.abstract, ...(paper.authors || []), ...(paper.categories || [])]
+    const haystack = [paper.title, paper.abstract, paper.venue, ...(paper.authors || []), ...(paper.categories || [])]
       .join(" ")
       .toLocaleLowerCase();
     if (needle && !haystack.includes(needle)) return false;
@@ -129,6 +129,13 @@
       tag.textContent = category;
       categoryContainer.append(tag);
     });
+    if (paper.venue) {
+      const venue = document.createElement("span");
+      venue.className = "category-tag venue-tag";
+      venue.textContent = paper.venue;
+      venue.title = paper.venue;
+      categoryContainer.append(venue);
+    }
 
     const relevance = fragment.querySelector(".relevance-score");
     const score = Math.max(0, Math.min(100, Math.round(Number(paper.relevance_score) || 0)));
@@ -148,11 +155,17 @@
 
     const pageLink = fragment.querySelector(".paper-page");
     pageLink.href = paper.arxiv_url || "#";
-    pageLink.setAttribute("aria-label", `在 arXiv 查看：${paper.title}`);
+    pageLink.setAttribute("aria-label", `在 ${paper.source || "论文页面"} 查看：${paper.title}`);
     const pdfLink = fragment.querySelector(".paper-pdf");
     pdfLink.href = paper.pdf_url || paper.arxiv_url || "#";
     pdfLink.setAttribute("aria-label", `打开 PDF：${paper.title}`);
-    fragment.querySelector(".arxiv-id").textContent = `arXiv:${paper.versioned_id || paper.id || "—"}`;
+    const openReviewLink = fragment.querySelector(".paper-openreview");
+    if (paper.openreview_url && paper.source !== "OpenReview") {
+      openReviewLink.hidden = false;
+      openReviewLink.href = paper.openreview_url;
+      openReviewLink.setAttribute("aria-label", `在 OpenReview 查看：${paper.title}`);
+    }
+    fragment.querySelector(".arxiv-id").textContent = `${paper.source || "arXiv"}:${paper.versioned_id || paper.id || "—"}`;
     card.dataset.paperId = paper.id || "";
     return fragment;
   }

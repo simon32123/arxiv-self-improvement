@@ -433,6 +433,15 @@ main { padding: 50px 0 96px; }
   letter-spacing: 0.06em;
 }
 
+.paper-actions a[hidden] { display: none; }
+
+.venue-tag {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .primary-action { color: white; background: var(--ink); }
 .primary-action:hover { background: var(--orange); }
 .secondary-action { border: 1px solid #b8b1a6; }

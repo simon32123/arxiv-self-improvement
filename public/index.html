@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="每日追踪 arXiv 上关于 AI Agent self-improvement 的最新研究。" />
+    <meta name="description" content="每日追踪 arXiv 与 OpenReview 上关于 AI Agent self-improvement 的最新研究。" />
     <meta name="color-scheme" content="light" />
     <title>自进化论文检索</title>
     <link rel="stylesheet" href="styles.css" />
@@ -19,7 +19,7 @@
           <span class="brand-mark" aria-hidden="true">RS</span>
           <span>RESEARCH SIGNAL</span>
         </a>
-        <span class="live-pill"><span class="live-dot" aria-hidden="true"></span>DAILY ARXIV FEED</span>
+        <span class="live-pill"><span class="live-dot" aria-hidden="true"></span>DAILY RESEARCH FEED</span>
       </nav>
 
       <div class="hero" id="top">
@@ -27,7 +27,7 @@
           <p class="eyebrow">SELF-IMPROVEMENT · AI AGENTS · LLM</p>
           <h1>自进化论文检索</h1>
           <p class="lede">
-            自动扫描 arXiv，聚焦 AI Agent 的自我改进、自我反思、自我修正与递归优化研究。
+            自动扫描 arXiv 与 OpenReview，聚焦 AI Agent 的自我改进、自我反思、自我修正与递归优化研究。
           </p>
         </div>
         <aside class="edition-card" aria-label="本期信息">
@@ -41,7 +41,7 @@
         <div><span>论文库</span><strong id="total-stat">0</strong></div>
         <div><span>本次新增</span><strong id="new-stat">0</strong></div>
         <div><span>最新论文</span><strong id="latest-stat">—</strong></div>
-        <div><span>数据来源</span><strong>arXiv API</strong></div>
+        <div><span>数据来源</span><strong>arXiv + OpenReview</strong></div>
       </div>
     </header>
 
@@ -128,6 +128,7 @@
           <div class="paper-actions">
             <a class="primary-action paper-page" target="_blank" rel="noopener noreferrer">查看详情 <span>↗</span></a>
             <a class="secondary-action paper-pdf" target="_blank" rel="noopener noreferrer">PDF <span>↓</span></a>
+            <a class="secondary-action paper-openreview" target="_blank" rel="noopener noreferrer" hidden>OpenReview <span>↗</span></a>
             <span class="arxiv-id"></span>
           </div>
         </div>

@@ -1,6 +1,40 @@
 {
   "papers": [
     {
+      "id": "openreview:B0oLDKOct6",
+      "versioned_id": "B0oLDKOct6",
+      "title": "Moral Reasoning Meta-Learning: Axiomatic Ethical Spaces and Functional Gradient Constraints for Next-Generation Artificial General Intelligence",
+      "authors": [
+        "Jincheng Zhang"
+      ],
+      "abstract": "Traditional machine learning paradigms anchored in Empirical Risk Minimization (ERM) and conventional meta-learning frameworks (e.g., MAML) face fundamental robustness bottlenecks when encountering severe distribution shifts and open-world environments. This stems from their structural reliance on local gradients of task-specific loss functions, lacking a high-level, intrinsic self-inspection mechanism independent of empirical feedback. Inspired by the supreme cognitive capacity of human moral reasoning—characterized by the governance of local actions through invariant universal principles and dynamic reconciliation under dilemma—this paper introduces a radically new machine learning paradigm: Moral Reasoning Meta-Learning (MRML). Rather than embedding subjective societal or legal rules into algorithms, MRML mathematically formalizes the abstract core of moral reasoning into a top-tier, rigorous framework using functional analysis, differential geometry, and axiomatic set theory. We establish a comprehensive axiomatic system within a real Banach space W, introducing the foundational constructs of the Deontological Feasible Region, the Categorical Imperative Functional C(w), and the Virtue Functional V. Based on these axioms, we formulate a novel Meta-Ethical Operator E that projects empirical gradients onto a constrained topological manifold, preventing catastrophic policy collapse in sparse-reward or non-stationary environments. The entire optimization trajectory is governed by a novel two-tier continuous-time functional evolution system, incorporating a Moral Introspection Term derived from higher-order Hessian curvature to smooth optimization paths. Without empirical simulations, we substantiate the superiority of the MRML paradigm through top-tier, airtight mathematical proofs. Specifically, we present three core theorems: a global convergence theorem demonstrating that the meta-ethical residue asymptotically vanishes under non-convex and non-stationary task distributions; a generalization error bound theorem proving that the dynamic evolution of the Virtue Functional introduces a positive virtue bias that contracts the Rademacher complexity, significantly lowering the generalization upper bound; and a Lyapunov stability theorem demonstrating that the system achieves Input-to-State Stability (ISS) against adversarial bounded noise. MRML bridges the gap between high-level cognitive constraints and low-level geometric optimization, offering a structurally robust mathematical foundation for the self-evolution of safe and truly generalized intelligent agents.",
+      "published": "2026-07-19T11:08:42+00:00",
+      "updated": "2026-07-19T11:08:42+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=B0oLDKOct6",
+      "openreview_url": "https://openreview.net/forum?id=B0oLDKOct6",
+      "pdf_url": "https://openreview.net/pdf?id=B0oLDKOct6",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 43,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "openreview:fx6YvEatX3",
       "versioned_id": "fx6YvEatX3",
       "title": "The Contingency Bottleneck: The Emergence of Protocol Competence in Small Language Models for Interactive Language Games",
@@ -29,6 +63,92 @@
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "openreview:HyhfhlbWGh",
+      "versioned_id": "HyhfhlbWGh",
+      "title": "Towards Long-Horizon Agents: A Survey",
+      "authors": [
+        "Guanting Dong",
+        "Xiaoshuai Song",
+        "Yuyang Hu",
+        "Jiajie Jin",
+        "Chenghao Zhang",
+        "Yifei Chen",
+        "Xiaoxi Li",
+        "Huaying Yuan",
+        "Xinyu Yang",
+        "Tongyu Wen",
+        "Jiejun Tan",
+        "Hongjin Qian",
+        "Shijue Huang",
+        "Junting Lu",
+        "Zhenyu Li",
+        "Wanjun Zhong",
+        "Yutao Zhu",
+        "Tat-Seng Chua",
+        "Zhicheng Dou",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "With the rapid advancement of LLM capabilities, expectations for AI agents are shifting from solving simple, single-turn tasks toward carrying out long-horizon tasks in the real world. We refer to such systems as long-horizon agents: agents that plan over extended horizons, interact with real-world environments, recover from their own mistakes, and adapt their strategies during execution. This capability is rapidly becoming the central bottleneck for practical agent intelligence. Despite this progress, the field still lacks a shared definition and taxonomy for long-horizon agents. Related concepts such as \"self-evolving\" or \"autonomous\" agents are often used interchangeably, none of which clearly captures what it means to build a long-horizon agent. This gap leaves the community without a principled way to attribute advances in long-horizon competence. This paper offers a unified landscape by framing long-horizon agency as the co-evolution of an externalized harness and an internalized optimization, and organizes the paper around six connected perspectives: Foundation, Evolution, Harness, Optimization, Application, and Frontier. We first formalize long-horizon agency as a harness-coupled decision process and distinguish it from neighboring concepts such as long-running execution, autonomy, and self-evolution. We then trace the field's evolution from prompt-level control to runtime agent systems, classifying existing work through the complementary lenses of externalized harnesses and internalized optimization. Building on this view, we organize five application forms of long-horizon agents by their interfaces, and review the corresponding benchmarks and resources. Finally, we discuss key challenges and frontier directions. Looking ahead, we hope this paper serves not only as a reference for existing work, but also as a foundation for building the next generation of capable, reliable long-horizon agents.",
+      "published": "2026-07-17T04:12:01+00:00",
+      "updated": "2026-07-17T04:12:01+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=HyhfhlbWGh",
+      "openreview_url": "https://openreview.net/forum?id=HyhfhlbWGh",
+      "pdf_url": "https://openreview.net/pdf?id=HyhfhlbWGh",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "openreview:rWh5beVLq4",
+      "versioned_id": "rWh5beVLq4",
+      "title": "Meta-Competition Dynamics: An Axiomatic Topological Functional Flow Theory of \"Learning How to Compete\"",
+      "authors": [
+        "Jincheng Zhang"
+      ],
+      "abstract": "This paper establishes a unified, rigorous, and axiomatic mathematical framework for the Meta-Competition Analysis Theory (MCAT), formalizing the core paradigm of \"Learning How to Compete.\" Traditional game-theoretic and meta-learning frameworks often collapse into infinite cognitive regressions when learning algorithms themselves dictate the evolving interactive environments. To overcome this limitation, we transcend traditional strategy spaces by constructing a high-order bundle configuration space over a Banach operator manifold, treating competing agents as dynamical system generators rather than static point-strategists. We formulate five fundamental axioms—Cognitive Separability, Feedback Differentiability, Non-Degenerate Meta-Evolution, Interacting Asymptotic Ergodicity, and Competitive Reflective Consistency—to guarantee the topological and dynamical coherence of meta-competitions. Under these axioms, we prove the existence of a Meta-Competition Equilibrium (MCE) via the Kakutani-Fan-Glicksberg fixed-point theorem on infinite-dimensional variational inequalities, defined by the condition: < D_{Phi_i} V_i(Phi*), Psi_i - Phi_i* > <= 0. Furthermore, we derive the Liouville-Vlasov topological fluid evolution equation to govern the macroscopic probability density of the joint meta-operators, uncovering an intrinsic ergodicity breaking mechanism characterized by a non-zero measure EB = lim_{T -> infinity} 1/T * integral_{0 to T} | integral_{B} f(Phi) * rho(Phi, t) dPhi - f(Phi(t)) |^2 dt. This restriction bounds the system into isolated cognitive islands. Finally, utilizing Morse-Smale theory on infinite-dimensional Hilbert manifolds, we present a High-Order Topological Robustness Theorem, proving that under conditions of hyperbolicity and transversal intersections, the global phase structure of meta-competition remains structurally stable against arbitrary operator-norm perturbations. This work provides the ultimate mathematical foundation for high-dimensional multi-agent evolution, strategic autonomy, and long-term dynamical control in complex adaptive systems.",
+      "published": "2026-07-16T06:19:59+00:00",
+      "updated": "2026-07-16T06:19:59+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=rWh5beVLq4",
+      "openreview_url": "https://openreview.net/forum?id=rWh5beVLq4",
+      "pdf_url": "https://openreview.net/pdf?id=rWh5beVLq4",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 43,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -1972,6 +2092,67 @@
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近",
         "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "openreview:IUltZSgLMm",
+      "versioned_id": "IUltZSgLMm",
+      "title": "Self-Improving Agents in the Era of Experience: A Survey of Self- to Meta-Evolution",
+      "authors": [
+        "Che Jiang",
+        "Jincheng Zhong",
+        "Yu Fu",
+        "Kai Tian",
+        "Junlin Yang",
+        "Kaikai Zhao",
+        "Yuchong Wang",
+        "Tianwei Luo",
+        "Weizhi Wang",
+        "Yuxin Zuo",
+        "Guoli Jia",
+        "Xingtai Lv",
+        "Dianqiao Lei",
+        "Sihang Zeng",
+        "Yuru Wang",
+        "Zhenzhao Yuan",
+        "Xinwei Long",
+        "Ermo Hua",
+        "Can Ren",
+        "Xin Jiang",
+        "Shulei Xie",
+        "Yuanchun Zheng",
+        "Youbang Sun",
+        "Biqing Qi",
+        "Ning Ding",
+        "Kaiyan Zhang",
+        "Bowen Zhou"
+      ],
+      "abstract": "In the Era of Experience, agentic AI is no longer defined only by what a model can infer from static data, but by how a deployed system accumulates, organizes, and reuses experience from interaction. This survey studies experience-driven improvement in deployed agentic AI systems. We focus on the runtime harness as the infrastructure that captures traces, routes actions, exposes feedback, and governs mutable state. Around this infrastructure, we review how experience becomes reusable skill, persistent memory, verifiable environment feedback, trainable model behavior, and meta-level control. We then identify the remaining barriers to reliable improvement, including longitudinal evaluation, transfer, verification, and safety governance. Making agents smarter after deployment is therefore a trace-to-capability problem: the field must learn how to capture experience, assign it to the right update surface, verify its value, and preserve control as the system changes.",
+      "published": "2026-06-25T08:57:08+00:00",
+      "updated": "2026-06-25T14:28:29+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=IUltZSgLMm",
+      "openreview_url": "https://openreview.net/forum?id=IUltZSgLMm",
+      "pdf_url": "https://openreview.net/pdf?id=IUltZSgLMm",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -7337,6 +7518,47 @@
       ]
     },
     {
+      "id": "openreview:FnSimngGYk",
+      "versioned_id": "FnSimngGYk",
+      "title": "The Rules of the Game: A Survey of Rubrics for Large Language Models",
+      "authors": [
+        "Wenhan Liu",
+        "Jiajie Jin",
+        "Zhaoheng Huang",
+        "Tongyu Wen",
+        "Guanting Dong",
+        "Ziliang Zhao",
+        "Yutao Zhu",
+        "Zhicheng Dou",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "Large language models (LLMs) have rapidly evolved from general text generators into increasingly capable systems for reasoning, decision-making, tool use, and long-horizon problem solving. As their application scenarios expand toward open-ended and high-stakes tasks, including deep research, medical diagnosis, multimodal generation, and agentic tool use, the question of how to specify, optimize, and evaluate model responses has become increasingly important. Simple correctness signals, holistic preference scores, and unconstrained LLM-based judgments are often insufficient for these settings, where response quality depends on multiple criteria such as factuality, completeness, safety, reasoning soundness, evidence grounding, and practical utility. Rubrics have therefore emerged as a promising mechanism for making evaluation standards explicit and operational. By decomposing broad quality expectations into structured and interpretable criteria, rubrics provide an interface for both training supervision and model evaluation. This survey presents a comprehensive and systematic overview of rubric-based research for LLMs. We first clarify the concept of rubrics and distinguish it from closely related concepts, including reward models, verifiable rewards, and LLM-as-a-judge. We then organize existing studies along three major directions. First, we summarize existing rubric construction methods and organize them into four categories: direct generation, contrastive generation, iterative refinement, and online or co-evolving generation. Second, we examine how rubrics support the training of policy models and reward models. For policy model training, we organize existing studies by their training mechanisms. For reward model training, we categorize prior work according to the functional roles that rubrics play in reward modeling. Third, we summarize rubric-driven task evaluation for both general and domain-specific tasks, and discuss the evaluation benchmarks from various perspectives. Beyond consolidating existing work, we discuss a series of key open questions, such as rubric reward hacking, the bias in rubric-based evaluation, personalization, and rubric safety. We hope this survey can serve as a structured reference for current research and a conceptual foundation for developing rubrics as transparent, adaptive, and trustworthy interfaces for future LLM systems. Given the rapid development of rubric-based research, we will keep this survey updated to incorporate new advances and emerging directions in this area.",
+      "published": "2026-05-25T03:31:27+00:00",
+      "updated": "2026-05-25T03:32:02+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=FnSimngGYk",
+      "openreview_url": "https://openreview.net/forum?id=FnSimngGYk",
+      "pdf_url": "https://openreview.net/pdf?id=FnSimngGYk",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
       "id": "openreview:zgH3Fzt0GM",
       "versioned_id": "zgH3Fzt0GM",
       "title": "SPARC-RAG: Adaptive Sequential–Parallel Scaling with Context Management for Retrieval-Augmented Generation",
@@ -8202,6 +8424,43 @@
         "标题命中 Agent 关键词",
         "标题同时包含自进化与 Agent 信号",
         "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "openreview:fvmpqAJZlJ",
+      "versioned_id": "fvmpqAJZlJ",
+      "title": "Chain-of-Interactions: Multi-step Iterative In-Context Learning for Abstractive Task-Oriented Dialogue Summarization of Conversational AI Interactions",
+      "authors": [
+        "Jason S Lucas",
+        "John Chen",
+        "Ali Al-Lawati",
+        "Mahjabin Nahar",
+        "Mahnoosh Mehrabani"
+      ],
+      "abstract": "Large Language Models (LLMs) have introduced paradigm-shifting approaches in natu- ral language processing. Yet, their transformative in-context learning (ICL) capabilities remain underutilized, especially in customer service dialogue summarization—a domain plagued by generative hallucinations, detail omission, and inconsistencies. We present Chain-of-Interactions (CoI), a novel single-instance, multi-step framework that orchestrates information extraction, self-correction, and evaluation through sequential interactive generation chains. By strategically leveraging LLMs’ ICL capabilities through precisely engineered prompts, CoI dramatically enhances abstractive task-oriented dialogue summarization (ATODS) quality and usefulness. Our comprehensive evaluation on real-world and benchmark human-agent interaction datasets demonstrates CoI’s effectiveness through rigorous testing across 11 models and 7 prompting approaches, with 9 standard automatic evaluation metrics, 3 LLM-based evaluations, and human studies involving 480 evaluators across 9 quality dimensions. Results reveal CoI’s decisive superiority, outperforming all single- step approaches and achieving 6× better entity preservation, 49% higher quality scores, and 322% improvement in accuracy compared to state-of-the-art multi-step Chain-of-Density (CoD). This research addresses critical gaps in task-oriented dialogue summarization for customer service applications and establishes new standards for harnessing LLMs’ reasoning capabilities in practical, industry-relevant contexts.",
+      "published": "2026-05-20T10:33:59+00:00",
+      "updated": "2026-05-20T10:33:59+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=fvmpqAJZlJ",
+      "openreview_url": "https://openreview.net/forum?id=fvmpqAJZlJ",
+      "pdf_url": "https://openreview.net/pdf?id=fvmpqAJZlJ",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
       ]
     },
     {
@@ -9519,6 +9778,53 @@
       ]
     },
     {
+      "id": "openreview:3YDbTwejnh",
+      "versioned_id": "3YDbTwejnh",
+      "title": "MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory",
+      "authors": [
+        "Shengtao Zhang",
+        "Jiaqian Wang",
+        "Ruiwen Zhou",
+        "Junwei Liao",
+        "Yuchen Feng",
+        "Zhuo Li",
+        "Yujie Zheng",
+        "Weinan Zhang",
+        "Ying Wen",
+        "Zhiyu li",
+        "Feiyu Xiong",
+        "Yutao Qi",
+        "Bo Tang",
+        "Muning Wen"
+      ],
+      "abstract": "The hallmark of human intelligence is the self-evolving ability to master new skills by learning from past experiences. However, current AI agents struggle to emulate this self-evolution: fine-tuning is computationally expensive and can introduce destabilizing weight updates, increasing the risk of catastrophic forgetting, while existing memory-based methods rely on passive semantic matching that often retrieves noise. To address these challenges, we propose MemRL, a non-parametric approach that evolves via reinforcement learning on episodic memory. By decoupling stable reasoning from plastic memory, MemRL employs a Two-Phase Retrieval mechanism to filter noise and identify high-utility strategies through environmental feedback. Extensive experiments on Humanity's Last Exam, BigCodeBench, ALFWorld, and Lifelong Agent Bench demonstrate that MemRL significantly outperforms state-of-the-art baselines, suggesting that MemRL offers a practical way to balance stability and plasticity during runtime improvement.",
+      "published": "2026-05-09T10:46:49+00:00",
+      "updated": "2026-05-09T10:46:49+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=3YDbTwejnh",
+      "openreview_url": "https://openreview.net/forum?id=3YDbTwejnh",
+      "pdf_url": "https://openreview.net/pdf?id=3YDbTwejnh",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "openreview:rxrupxyIxN",
       "versioned_id": "rxrupxyIxN",
       "title": "TRACE: Why LLM Agents Fail in Multi-Step and Multi-Turn Environments?",
@@ -9882,6 +10188,49 @@
       "source": "arXiv",
       "sources": [
         "arXiv"
+      ]
+    },
+    {
+      "id": "openreview:nfrGcHAqfq",
+      "versioned_id": "nfrGcHAqfq",
+      "title": "Investigating Component Contributions in Multi-Agent ML Systems",
+      "authors": [
+        "Junsung Kim",
+        "Ilia Mireskandari",
+        "Seungwan Son",
+        "Yifan Zhou",
+        "Khizer Shahid",
+        "Dylan Yihan Dai"
+      ],
+      "abstract": "Autonomous agents for machine learning engineering have advanced rapidly, yet comparing their effectiveness remains difficult. Existing systems combine different techniques---multi-agent decomposition, iterative refinement, memory management, and planning---in varying configurations, making it unclear which components actually drive performance. Complicating evaluation, existing benchmarks rely on historical competitions whose data likely contaminates LLM training corpora and whose static baselines reflect outdated human performance. To address this, we conduct over 4,000 controlled experiments systematically ablating architectural components, alongside K-live, a new benchmark of 25 active competitions that provides a contamination-free, dynamic evaluation environment. Our findings challenge common design assumptions: iterative feedback contributes more than architectural complexity, and multi-agent coordination can hurt as often as it helps. These results provide concrete guidance for practitioners building ML engineering agents.",
+      "published": "2026-05-06T00:01:57+00:00",
+      "updated": "2026-05-06T00:01:57+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=nfrGcHAqfq",
+      "openreview_url": "https://openreview.net/forum?id=FOfvTwBGUX",
+      "pdf_url": "https://openreview.net/pdf?id=nfrGcHAqfq",
+      "comment": "ICML 2026",
+      "journal_ref": "ICML 2026",
+      "doi": "",
+      "venue": "ICML 2026",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "openreview_venues": [
+        "ICML 2026",
+        "ICML 2026 regular"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -11503,7 +11852,7 @@
         "arXiv",
         "OpenReview"
       ],
-      "openreview_url": "https://openreview.net/forum?id=oNioy85d22",
+      "openreview_url": "https://openreview.net/forum?id=p5rmFRK66w",
       "openreview_venues": [
         "ACL ARR 2026 May Submission"
       ]
@@ -12184,7 +12533,12 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=PDbQSv1dzQ",
+      "openreview_venues": [
+        "WSDM 2026 GenAI4SM Workshop"
       ]
     },
     {
@@ -12708,6 +13062,44 @@
       ]
     },
     {
+      "id": "openreview:V8X58QyBEL",
+      "versioned_id": "V8X58QyBEL",
+      "title": "InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration",
+      "authors": [
+        "Zhongyu Yang",
+        "Yingfang Yuan",
+        "Xuanming Jiang",
+        "Baoyi An",
+        "Wei Pang"
+      ],
+      "abstract": "Hallucination remains a critical challenge in large language models (LLMs), hindering the development of reliable multimodal LLMs (MLLMs). However, existing solutions often rely on human intervention or underutilize the agent's ability to autonomously mitigate hallucination. To address these limitations, we draw inspiration from the way humans make reliable decisions in the real world. In particular, they begin with introspective reasoning to reduce uncertainty and form an initial judgment, then rely on external verification from diverse perspectives to reach a final decision. Motivated by this cognitive paradigm, we propose InEx, a training-free, multi-agent framework designed to autonomously mitigate hallucination. InEx introduces internal introspective reasoning, guided by entropy-based uncertainty estimation, to improve the reliability of the decision agent's reasoning process. The agent first generates a response, which is then iteratively verified and refined through external cross-modal multi-agent collaboration with the editing agent and self-reflection agents, further enhancing reliability and mitigating hallucination. Extensive experiments show that InEx consistently outperforms existing methods, achieving 4%-27% gains on general and hallucination benchmarks, and demonstrating strong robustness.",
+      "published": "2026-03-25T05:21:27+00:00",
+      "updated": "2026-03-25T05:21:27+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=V8X58QyBEL",
+      "openreview_url": "https://openreview.net/forum?id=V8X58QyBEL",
+      "pdf_url": "https://openreview.net/pdf?id=V8X58QyBEL",
+      "comment": "AAAI 2026",
+      "journal_ref": "AAAI 2026",
+      "doi": "",
+      "venue": "AAAI 2026",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2603.23910",
       "versioned_id": "2603.23910v1",
       "title": "AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents",
@@ -12744,8 +13136,10 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
-      ]
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=7ajJaPSEbz"
     },
     {
       "id": "2603.23626",
@@ -14173,7 +14567,12 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=0sphfZZy4W",
+      "openreview_venues": [
+        "ACL 2026 Main"
       ]
     },
     {
@@ -14330,6 +14729,45 @@
       "source": "arXiv",
       "sources": [
         "arXiv"
+      ]
+    },
+    {
+      "id": "openreview:Xj22DMrDvn",
+      "versioned_id": "Xj22DMrDvn",
+      "title": "Findings of the TSAR 2025 Shared Task on Readability-Controlled Text Simplification",
+      "authors": [
+        "Fernando Alva-Manchego",
+        "Regina Stodden",
+        "Joseph Marvin Imperial",
+        "Abdullah Barayan",
+        "Kai North",
+        "Harish Tayyar Madabushi"
+      ],
+      "abstract": "This paper presents the findings of the first Shared Task on Readability-Controlled Text Simplification at TSAR 2025. The task required systems to simplify English texts to specific target readability levels of the Common European Framework of Reference for Languages (CEFR). We received 48 submissions from 20 participating teams, with approaches predominantly based on large language models (LLMs), which included iterative refinement, multi-agent setups, and LLM-as-a-judge pipelines. For this shared task, we developed a new dataset of pedagogical texts and evaluated submissions using a weighted combination of semantic similarity and CEFR-level accuracy. The results of the participating teams demonstrate that while LLMs can perform substantially well on this task, dependable and controlled simplification often requires complex, multi-iterative processes. Our findings also suggest that the capabilities of current systems are beginning to saturate existing automatic evaluation metrics, underscoring the need for reevaluation and practicality.",
+      "published": "2026-03-02T09:48:47+00:00",
+      "updated": "2026-03-02T09:48:47+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=Xj22DMrDvn",
+      "openreview_url": "https://openreview.net/forum?id=Xj22DMrDvn",
+      "pdf_url": "https://openreview.net/pdf?id=Xj22DMrDvn",
+      "comment": "Proceedings of the Fourth Workshop on Text Simplification, Accessibility and Readability (TSAR 2025)",
+      "journal_ref": "Proceedings of the Fourth Workshop on Text Simplification, Accessibility and Readability (TSAR 2025)",
+      "doi": "",
+      "venue": "Proceedings of the Fourth Workshop on Text Simplification, Accessibility and Readability (TSAR 2025)",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 43,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -17253,6 +17691,44 @@
       ]
     },
     {
+      "id": "openreview:FUms500o8f",
+      "versioned_id": "FUms500o8f",
+      "title": "MERMAID: Multi-perspective Self-reflective Agents with Generative Augmentation for Emotion Recognition",
+      "authors": [
+        "Zhongyu Yang",
+        "Junhao Song",
+        "Siyang Song",
+        "Wei Pang",
+        "Yingfang Yuan"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) have demonstrated strong performance across diverse multimodal tasks, achieving promising outcomes. However, their application to emotion recognition in natural images remains underexplored. MLLMs struggle to handle ambiguous emotional expressions and implicit affective cues, whose capability is crucial for affective understanding but largely overlooked. To address these challenges, we propose MERMAID, a novel multi-agent framework that integrates a multi-perspective self-reflection module, an emotion-guided visual augmentation module, and a cross-modal verification module. These components enable agents to interact across modalities and reinforce subtle emotional semantics, thereby enhancing emotion recognition and supporting autonomous performance. Extensive experiments show that MERMAID outperforms existing methods, achieving absolute accuracy gains of 8.70%–27.90% across diverse benchmarks and exhibiting greater robustness in emotionally diverse scenarios.",
+      "published": "2026-01-25T11:07:13+00:00",
+      "updated": "2026-01-25T11:07:13+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=FUms500o8f",
+      "openreview_url": "https://openreview.net/forum?id=FUms500o8f",
+      "pdf_url": "https://openreview.net/pdf?id=FUms500o8f",
+      "comment": "EMNLP 2025",
+      "journal_ref": "EMNLP 2025",
+      "doi": "",
+      "venue": "EMNLP 2025",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "openreview:ehKGFkxIo7",
       "versioned_id": "ehKGFkxIo7",
       "title": "PosterAgent: Agentic Poster Generation via Stage-Aware Reinforcement Learning",
@@ -17325,45 +17801,6 @@
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "摘要命中 Agent 关键词"
-      ]
-    },
-    {
-      "id": "openreview:FOfvTwBGUX",
-      "versioned_id": "FOfvTwBGUX",
-      "title": "Investigating Component Contributions in Multi-Agent ML Systems",
-      "authors": [
-        "Junsung Kim",
-        "Ilia Mireskandari",
-        "Seungwan Son",
-        "Yifan Zhou",
-        "Khizer Shahid",
-        "Dylan Yihan Dai"
-      ],
-      "abstract": "Autonomous agents for machine learning engineering have advanced rapidly, yet comparing their effectiveness remains difficult. Existing systems combine different techniques---multi-agent decomposition, iterative refinement, memory management, and planning---in varying configurations, making it unclear which components actually drive performance. Complicating evaluation, existing benchmarks rely on historical competitions whose data likely contaminates LLM training corpora and whose static baselines reflect outdated human performance. To address this, we conduct over 4,000 controlled experiments systematically ablating architectural components, alongside K-live, a new benchmark of 25 active competitions that provides a contamination-free, dynamic evaluation environment. Our findings challenge common design assumptions: iterative feedback contributes more than architectural complexity, and multi-agent coordination can hurt as often as it helps. These results provide concrete guidance for practitioners building ML engineering agents.",
-      "published": "2026-01-24T07:47:17+00:00",
-      "updated": "2026-06-24T23:20:25+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=FOfvTwBGUX",
-      "openreview_url": "https://openreview.net/forum?id=FOfvTwBGUX",
-      "pdf_url": "https://openreview.net/pdf?id=FOfvTwBGUX",
-      "comment": "ICML 2026 regular",
-      "journal_ref": "ICML 2026 regular",
-      "doi": "",
-      "venue": "ICML 2026 regular",
-      "venue_id": "ICML.cc/2026/Conference",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 58,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词",
-        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -22525,6 +22962,41 @@
       ]
     },
     {
+      "id": "openreview:XuvjoP2jDq",
+      "versioned_id": "XuvjoP2jDq",
+      "title": "Enhancing safety of vision-language reasoning through model-to-model deliberation",
+      "authors": [
+        "SUNGWOO KIM",
+        "Yongjin Lee",
+        "Yunsick Sung"
+      ],
+      "abstract": "Traditional vision-language models demonstrate strong performance in tasks such as image captioning and visual question answering, but they remain limited by issues such as hallucination, lack of self-correction, and shallow reasoning. These shortcomings compromise the safety, robustness, and consistency of their reasoning, particularly in ambiguous or high-stakes scenarios. In this paper, we propose three complementary frameworks aimed at enabling more trustworthy visual reasoning through structured deliberation. The first is the Self-Reflective Reasoning Single-Agent Framework, which facilitates iterative self-revision without requiring external supervision. The second is the Structured Debate Agent Framework, in which turn-based rebuttals between agents promote contrastive, multi-perspective refinement. The third is the Progressive Two-Stage Debate Agent Framework, which enables efficient yet accurate decision-making through model-to-model deliberation between smaller and larger agents. Experiments on the COCO dataset demonstrate that all three frameworks significantly enhance reasoning performance, achieving up to a 5.4\\% improvement in intersection over union (IoU) and over a 40\\% reduction in localization error compared to a single-pass baseline. Further evaluation across robustness (IoU), safety (self-revision rate, SRR), and consistency (consistency score, CS) confirms the effectiveness of multi-round, self-corrective, and multi-agent reasoning strategies. These results establish a practical path toward safer, more robust, and more interpretable vision-language models through lightweight, deliberative inference frameworks.",
+      "published": "2025-11-12T13:17:54+00:00",
+      "updated": "2026-05-26T11:18:55+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=XuvjoP2jDq",
+      "openreview_url": "https://openreview.net/forum?id=XuvjoP2jDq",
+      "pdf_url": "https://openreview.net/pdf?id=XuvjoP2jDq",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
       "id": "2511.15715",
       "versioned_id": "2511.15715v1",
       "title": "Graph-Memoized Reasoning: Foundations Structured Workflow Reuse in Intelligent Systems",
@@ -22741,7 +23213,12 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=f9u3z49klS",
+      "openreview_venues": [
+        "arxiv"
       ]
     },
     {
@@ -23260,8 +23737,10 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
-      ]
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=bLuKoieyvT"
     },
     {
       "id": "2510.24145",
@@ -26106,6 +26585,50 @@
       "openreview_url": "https://openreview.net/forum?id=WAQhCifBSb",
       "openreview_venues": [
         "ICLR 2026 Poster"
+      ]
+    },
+    {
+      "id": "openreview:SD39zdAeNb",
+      "versioned_id": "SD39zdAeNb",
+      "title": "Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent",
+      "authors": [
+        "Christy Li",
+        "Josep Lopez Camuñas",
+        "Jake Thomas Touchet",
+        "Jacob Andreas",
+        "Agata Lapedriza",
+        "Antonio Torralba",
+        "Tamar Rott Shaham"
+      ],
+      "abstract": "When a vision model performs image recognition, which visual attributes drive its predictions? Detecting unintended use of specific visual features is critical for ensuring model robustness, preventing overfitting, and avoiding spurious correlations. We introduce an automated framework for detecting these dependencies in trained vision models. At the core of our method is a self-reflective agent that systematically generates and tests hypotheses about the unintended visual attributes that a model may rely on. This process is iterative: the agent refines its hypotheses based on experimental outcomes and uses a self-evaluation protocol to assess whether its findings accurately explain model behavior. If inconsistencies are detected, the agent self-reflects over its findings and triggers a new cycle of experimentation. We evaluate our approach on a novel benchmark of 130 models designed to exhibit diverse visual attribute dependencies across 18 categories. Our results show that the agent's performance consistently improves with self-reflection, with a significant performance increase over non-reflective baselines. We further demonstrate that the agent identifies real-world visual attribute dependencies in state-of-the-art models, including CLIP's vision encoder and the YOLOv8 object detector.",
+      "published": "2025-09-25T05:56:49+00:00",
+      "updated": "2025-09-25T05:56:49+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=SD39zdAeNb",
+      "openreview_url": "https://openreview.net/forum?id=LyH2ISbOV8",
+      "pdf_url": "https://openreview.net/pdf?id=SD39zdAeNb",
+      "comment": "NeurIPS",
+      "journal_ref": "NeurIPS",
+      "doi": "",
+      "venue": "NeurIPS",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "openreview_venues": [
+        "NeurIPS",
+        "Mech Interp Workshop (NeurIPS 2025) Poster",
+        "NeurIPS 2025 poster"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -29291,6 +29814,41 @@
       ]
     },
     {
+      "id": "openreview:5Nm8TqbNvU",
+      "versioned_id": "5Nm8TqbNvU",
+      "title": "Unfixing the mental set: Granting early-stage reasoning freedom in multi-agent debate",
+      "authors": [
+        "Jing Wu"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated remarkable performance across a wide range of tasks in recent years. While prior work has explored leveraging LLMs to generate synthetic data for self-improvement, repeated iterations often suffer from diminishing returns due to the reliance on homogeneous reasoning patterns and limited exploration of alternative perspectives. In this paper, we introduce a novel framework that enriches the reasoning process by encouraging critical thinking among multiple agents. Rather than deploying an ensemble of models with identical prompts, we propose a strategy generator that produces customized instructions tailored to each individual LLM. Acting as a critical thinking agent, the generator is iteratively fine-tuned using carefully selected strategies that are both diverse and effective. This approach fosters specialization within each model while promoting diversity across reasoning paths, enabling the system to maintain varied solution trajectories and achieve sustained performance gains through iterative refinement. We demonstrate the effectiveness of our method across a variety of agentic frameworks and complex reasoning tasks.",
+      "published": "2025-09-03T15:48:18+00:00",
+      "updated": "2025-09-03T15:48:18+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=5Nm8TqbNvU",
+      "openreview_url": "https://openreview.net/forum?id=5Nm8TqbNvU",
+      "pdf_url": "https://openreview.net/pdf?id=5Nm8TqbNvU",
+      "comment": "ICML 2025 Workshop on Multi-Agent Systems in the Era of Foundation Models",
+      "journal_ref": "ICML 2025 Workshop on Multi-Agent Systems in the Era of Foundation Models",
+      "doi": "",
+      "venue": "ICML 2025 Workshop on Multi-Agent Systems in the Era of Foundation Models",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
       "id": "openreview:gwysQdBY1q",
       "versioned_id": "gwysQdBY1q",
       "title": "Incentivizing Tool-augmented Thinking with Images for Medical Image Analysis",
@@ -30321,49 +30879,6 @@
         "摘要命中自进化关键词",
         "摘要命中 Agent 关键词",
         "摘要中的两类信号距离接近"
-      ]
-    },
-    {
-      "id": "openreview:aHoWcBakU3",
-      "versioned_id": "aHoWcBakU3",
-      "title": "Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent",
-      "authors": [
-        "Christy Li",
-        "Josep Lopez Camuñas",
-        "Jake Thomas Touchet",
-        "Jacob Andreas",
-        "Agata Lapedriza",
-        "Antonio Torralba",
-        "Tamar Rott Shaham"
-      ],
-      "abstract": "When a vision model performs image recognition, which visual attributes drive its predictions? Detecting unintended reliance on specific visual features is critical for ensuring model robustness, preventing overfitting, and avoiding spurious correlations. We introduce an automated framework for detecting such dependencies in trained vision models. At the core of our method is a self-reflective agent that systematically generates and tests hypotheses about visual attributes that a model may rely on. This process is iterative: the agent refines its hypotheses based on experimental outcomes and uses a self-evaluation protocol to assess whether its findings accurately explain model behavior. When inconsistencies arise, the agent self-reflects over its findings and triggers a new cycle of experimentation. We evaluate our approach on a novel benchmark of 130 models designed to exhibit diverse visual attribute dependencies across 18 categories. Our results show that the agent's performance consistently improves with self-reflection, with a significant performance increase over non-reflective baselines. We further demonstrate that the agent identifies real-world visual attribute dependencies in state-of-the-art models, including CLIP's vision encoder and the YOLOv8 object detector.",
-      "published": "2025-08-22T07:13:02+00:00",
-      "updated": "2025-10-24T16:16:46+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=aHoWcBakU3",
-      "openreview_url": "https://openreview.net/forum?id=LyH2ISbOV8",
-      "pdf_url": "https://openreview.net/pdf?id=aHoWcBakU3",
-      "comment": "Mech Interp Workshop (NeurIPS 2025) Poster",
-      "journal_ref": "Mech Interp Workshop (NeurIPS 2025) Poster",
-      "doi": "",
-      "venue": "Mech Interp Workshop (NeurIPS 2025) Poster",
-      "venue_id": "NeurIPS.cc/2025/Workshop/MechInterp",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "openreview_venues": [
-        "Mech Interp Workshop (NeurIPS 2025) Poster",
-        "NeurIPS 2025 poster"
-      ],
-      "relevance_score": 48,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -36374,8 +36889,10 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
-      ]
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=sgMH60bn0Y"
     },
     {
       "id": "2504.16489",
@@ -36716,6 +37233,67 @@
       ]
     },
     {
+      "id": "openreview:BOA5Yq51Dz",
+      "versioned_id": "BOA5Yq51Dz",
+      "title": "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+      "authors": [
+        "Xueyu Hu",
+        "Tao Xiong",
+        "Biao Yi",
+        "Zishu Wei",
+        "Ruixuan Xiao",
+        "Yurun Chen",
+        "Jiasheng Ye",
+        "Meiling Tao",
+        "Xiangxin Zhou",
+        "Ziyu Zhao",
+        "Yuhuai Li",
+        "Shengze Xu",
+        "Shenzhi Wang",
+        "Xinchen Xu",
+        "Shuofei Qiao",
+        "Zhaokai Wang",
+        "Kun Kuang",
+        "Tieyong Zeng",
+        "Liang Wang",
+        "Jiwei Li",
+        "Yuchen Eleanor Jiang",
+        "Wangchunshu Zhou",
+        "Guoyin Wang",
+        "Keting Yin",
+        "Zhou Zhao",
+        "Hongxia Yang",
+        "Fan Wu",
+        "Shengyu Zhang",
+        "Fei Wu"
+      ],
+      "abstract": "The dream to create AI assistants as capable and versatile as the fictional J.A.R.V.I.S from Iron Man has long captivated imaginations. With the evolution of (multi\\-modal) large language models ((M)LLMs), this dream is closer to reality, as (M)LLM-based Agents using computers, phones and browsers by operating within the environments and interfaces (e.g., Graphical User Interface (GUI) and Command Line Interface (CLI)) provided by operating systems (OS) to automate tasks have significantly advanced. This paper presents a comprehensive survey of these advanced agents, designated as OS Agents. We begin by elucidating the fundamentals of OS Agents, exploring their key components including the environment, observation space, and action space, and outlining essential capabilities such as understanding, planning, and grounding. We then examine methodologies for constructing OS Agents, focusing on domain-specific foundation models and agent frameworks. A detailed review of evaluation protocols and benchmarks highlights how OS Agents are assessed across diverse tasks. Finally, we discuss current challenges and identify promising directions for future research, including safety and privacy, personalization and self-evolution. This survey aims to consolidate the state of OS Agents research, providing insights to guide both academic inquiry and industrial development. An open-source GitHub repository is maintained as a dynamic resource to foster further innovation in this field.",
+      "published": "2025-04-16T13:23:44+00:00",
+      "updated": "2025-04-16T13:23:44+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=BOA5Yq51Dz",
+      "openreview_url": "https://openreview.net/forum?id=BOA5Yq51Dz",
+      "pdf_url": "https://openreview.net/pdf?id=BOA5Yq51Dz",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
       "id": "2504.11301",
       "versioned_id": "2504.11301v2",
       "title": "Learning to Be A Doctor: Searching for Effective Medical Agent Architectures",
@@ -36748,8 +37326,10 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
-      ]
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=UsyM1tAlV3"
     },
     {
       "id": "2504.09665",
@@ -37506,8 +38086,10 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
-      ]
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=GaHiSvFsQz"
     },
     {
       "id": "2503.23145",
@@ -38057,8 +38639,10 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
-      ]
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=PriitxZTEv"
     },
     {
       "id": "2503.01490",
@@ -38567,6 +39151,43 @@
       "source": "arXiv",
       "sources": [
         "arXiv"
+      ]
+    },
+    {
+      "id": "openreview:QQZjZFTo4I",
+      "versioned_id": "QQZjZFTo4I",
+      "title": "CRADLE: Empowering Foundation Agents Towards General Computer Control",
+      "authors": [
+        "Börje F. Karlsson"
+      ],
+      "abstract": "Despite the success in specific scenarios, existing foundation agents still struggle to generalize across various virtual scenarios, mainly due to the dramatically different encapsulations of environments with manually designed observation and action spaces. To handle this issue, we propose the General Computer Control (GCC) setting to restrict foundation agents to interact with software through the most unified and standardized interface, i.e., using screenshots as input and keyboard and mouse actions as output. We introduce CRADLE, a modular and flexible LMM-powered framework, as a preliminary attempt towards GCC. Enhanced by six key modules: Information Gathering, Self-Reflection, Task Inference, Skill Curation, Action Planning, and Memory, CRADLE is able to understand input screenshots and output executable code for low-level keyboard and mouse control after highlevel planning, so that CRADLE can interact with any software and complete long-horizon complex tasks without relying on any built-in APIs. Experimental results show that CRADLE exhibits remarkable generalizability and impressive performance across four previously unexplored commercial video games, five software applications, and a comprehensive benchmark, OSWorld. To our best knowledge, CRADLE is the first to enable foundation agents to follow the main storyline and complete one-hour-long real missions in the complex AAA game Red Dead Redemption 2 (RDR2). CRADLE can also not only operate daily software, like Chrome, Outlook, and Feishu, but also edit images and videos using Meitu and CapCut. With a unified interface to interact with any software, CRADLE greatly extends the reach of foundation agents by enabling the easy conversion of any software, especially complex games, into benchmarks to evaluate agents’ various abilities and facilitate further data collection, thus paving the way for generalist agents.",
+      "published": "2025-02-23T05:36:08+00:00",
+      "updated": "2025-02-23T05:36:08+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=QQZjZFTo4I",
+      "openreview_url": "https://openreview.net/forum?id=6CAgbrjHTc",
+      "pdf_url": "https://openreview.net/pdf?id=QQZjZFTo4I",
+      "comment": "NeurIPS 2024 Workshop Open-World Agents",
+      "journal_ref": "NeurIPS 2024 Workshop Open-World Agents",
+      "doi": "",
+      "venue": "NeurIPS 2024 Workshop Open-World Agents",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "openreview_venues": [
+        "NeurIPS 2024 Workshop Open-World Agents",
+        "ICML 2025 poster"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -39913,66 +40534,6 @@
       ]
     },
     {
-      "id": "openreview:6CAgbrjHTc",
-      "versioned_id": "6CAgbrjHTc",
-      "title": "Cradle: Empowering Foundation Agents towards General Computer Control",
-      "authors": [
-        "Weihao Tan",
-        "Wentao Zhang",
-        "Xinrun Xu",
-        "Haochong Xia",
-        "Ziluo Ding",
-        "Boyu Li",
-        "Bohan Zhou",
-        "Junpeng Yue",
-        "Jiechuan Jiang",
-        "Yewen Li",
-        "Ruyi An",
-        "Molei Qin",
-        "Chuqiao Zong",
-        "Longtao Zheng",
-        "YuJie Wu",
-        "Xiaoqiang Chai",
-        "Yifei Bi",
-        "Tianbao Xie",
-        "Pengjie Gu",
-        "Xiyun Li",
-        "Ceyao Zhang",
-        "Long Tian",
-        "Chaojie Wang",
-        "Xinrun Wang",
-        "Börje F. Karlsson",
-        "Bo An",
-        "Shuicheng YAN",
-        "Zongqing Lu"
-      ],
-      "abstract": "Despite their success in specific scenarios, existing foundation agents still struggle to generalize across various virtual scenarios, mainly due to the dramatically different encapsulations of environments with manually designed observation and action spaces. To handle this issue, we propose the General Computer Control (GCC) setting to restrict foundation agents to interact with software through the most unified and standardized interface, i.e., using screenshots as input and keyboard and mouse actions as output. We introduce Cradle, a modular and flexible LMM-powered framework, as a preliminary attempt towards GCC. Enhanced by six key modules, Information Gathering, Self-Reflection, Task Inference, Skill Curation, Action Planning, and Memory, Cradle is able to understand input screenshots and output executable code for low-level keyboard and mouse control after high-level planning and information retrieval, so that Cradle can interact with any software and complete long-horizon complex tasks without relying on any built-in APIs. Experimental results show that Cradle exhibits remarkable generalizability and impressive performance across four previously unexplored commercial video games (Red Dead Redemption 2, Cities:Skylines, Stardew Valley and Dealer's Life 2), five software applications (Chrome, Outlook, Feishu, Meitu and CapCut), and a comprehensive benchmark, OSWorld. With a unified interface to interact with any software, Cradle greatly extends the reach of foundation agents thus paving the way for generalist agents.",
-      "published": "2025-01-23T12:06:33+00:00",
-      "updated": "2025-07-23T17:50:30+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=6CAgbrjHTc",
-      "openreview_url": "https://openreview.net/forum?id=6CAgbrjHTc",
-      "pdf_url": "https://openreview.net/pdf?id=6CAgbrjHTc",
-      "comment": "ICML 2025 poster",
-      "journal_ref": "ICML 2025 poster",
-      "doi": "",
-      "venue": "ICML 2025 poster",
-      "venue_id": "ICML.cc/2025/Conference",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 48,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词"
-      ]
-    },
-    {
       "id": "openreview:23iGt7BBtl",
       "versioned_id": "23iGt7BBtl",
       "title": "Understanding Bias Reinforcement in LLM Agents Debate",
@@ -40288,10 +40849,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-07-19T16:05:25+00:00",
-  "last_success": "2026-07-19T16:05:25+00:00",
-  "new_count": 296,
-  "total_cached": 1024,
+  "last_checked": "2026-07-19T16:15:12+00:00",
+  "last_success": "2026-07-19T16:15:12+00:00",
+  "new_count": 16,
+  "total_cached": 1037,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

@@ -66,6 +66,43 @@
       ]
     },
     {
+      "id": "2607.15845",
+      "versioned_id": "2607.15845v1",
+      "title": "Knowledge-Centric Agents for Workflow Generation",
+      "authors": [
+        "Zhendong Li",
+        "Lei Sun",
+        "Ruibo Ming",
+        "He Zhang",
+        "Danda Pani Paudel",
+        "Luc Van Gool",
+        "Jinjin Gu"
+      ],
+      "abstract": "Workflow generation in visual creation systems such as ComfyUI demands not only syntactic accuracy but also expert-level reasoning over modular compositions. Existing large language model (LLM) approaches often treat this as a direct text-to-JSON generation task, struggling with structural brittleness and lacking the experiential knowledge required for effective design. We argue that successful workflow generation requires modeling knowledge itself, including its structure, hierarchy, and reasoning dynamics. To this end, we propose a knowledge-centric framework that learns to invert, inject, and infer with knowledge across multiple abstraction levels. We first perform knowledge inversion to distill hierarchical representations, ranging from full pseudo-codes and skeletons to high-level strategies, from large collections of real-world workflows. We then conduct knowledge injection through supervised fine-tuning, teaching the model to reason from task descriptions to strategies and from strategies to executable structures. During inference, the model performs reversible reasoning to synthesize executable workflows, augmented by self-refinement for structural coherence. Extensive experiments demonstrate that our method produces workflows with richer node diversity, more coherent structures, and higher execution success rates than existing systems, establishing a new foundation for knowledge-driven, agentic workflow generation.",
+      "published": "2026-07-17T11:03:01Z",
+      "updated": "2026-07-17T11:03:01Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.15845v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.15845v1",
+      "comment": "Accepted to ECCV 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-20",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "openreview:HyhfhlbWGh",
       "versioned_id": "HyhfhlbWGh",
       "title": "Towards Long-Horizon Agents: A Survey",
@@ -115,6 +152,42 @@
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2607.15524",
+      "versioned_id": "2607.15524v1",
+      "title": "Recursive Harness Self-Improvement",
+      "authors": [
+        "Hyunin Lee",
+        "Jinglue Xu",
+        "Jeffrey Seely",
+        "Donghyun Lee",
+        "Matei Zaharia",
+        "Yujin Tang"
+      ],
+      "abstract": "Under model--harness co-evolution, harnesses are not merely inference-time scaffolds but data-generating components whose execution traces can shape future foundation models. This motivates harness-in-the-loop learning: optimizing harnesses for both immediate agent performance and the quality of traces used for future model training. However, continually updating provider-built scaffolds is costly and labor-intensive. We therefore investigate whether optimizing user-constructed harnesses in a task-specific manner can improve execution-trace quality while remaining computationally lightweight and requiring only a few update iterations. To this end, we introduce Recursive Harness Self-Improvement (RHI), which represents the harness as a prompt-level specification of the agent loop and iteratively refines it using pairwise feedback over its own revision history. Across 30 synthetic machine-learning research tasks spanning quantitative finance, robotics, and pharmacy, a few RHI iterations suffice to substantially raise the performance ceiling of low-reasoning-effort agents, exceeding the corresponding maximum-reasoning-effort setting while reducing inference cost by up to 60%. We show that these gains arise primarily from improved task-specific context management through more effective inter-agent information flow rather than longer reasoning traces. Finally, we formalize this behavior as an information-theoretic hypothesis for RHI's implicit optimization objective, suggesting RHI as a practical algorithm for continual learning within the paradigm of model--harness co-evolution.",
+      "published": "2026-07-17T00:21:19Z",
+      "updated": "2026-07-17T00:21:19Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2607.15524v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.15524v1",
+      "comment": "This work addresses the first half of the model-harness coevolution loop",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-20",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 55,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词"
       ]
     },
     {
@@ -236,6 +309,49 @@
       ]
     },
     {
+      "id": "2607.15314",
+      "versioned_id": "2607.15314v1",
+      "title": "Cura 1T: Specialized Model for Agentic Healthcare",
+      "authors": [
+        "actAVA AI",
+        ":",
+        "Haolin Chen",
+        "Leon Qi",
+        "Steve Brown",
+        "Deon Metelski",
+        "Tao Xia",
+        "Joonyul Lee",
+        "Qixuan Wang",
+        "Kevin Riley",
+        "Frank Wang",
+        "Weiran Yao"
+      ],
+      "abstract": "Healthcare spans high-stakes communication, expert reasoning, and workflow execution, yet specialized LLMs that cover these use cases together remain limited. A healthcare model must handle patient consultation, clinical reasoning over text and images, interactive diagnosis, and electronic health record (EHR) tool use. These capabilities fail in different ways, and a narrow update for one task can degrade another. We present Cura 1T, a healthcare-specialized LLM trained through a human-gated self-evolution loop. In each evolution round, a training agent plans a target capability, trains the model, evaluates benchmark trajectories, and refines the data mixture from observed failures. This data-centered loop improves the model through targeted synthetic and curated examples rather than a single generic medical-data update. Across the healthcare evaluation suite, Cura 1T ranks at or near the top among frontier baselines, while remaining competitive on out-of-domain reasoning and agentic benchmarks.",
+      "published": "2026-07-15T22:05:23Z",
+      "updated": "2026-07-15T22:05:23Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.15314v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.15314v1",
+      "comment": "Model: https://actava.ai/cura Docs: https://actava.ai/cura/docs Github: https://github.com/actava-ai/Cura",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-20",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2607.13884",
       "versioned_id": "2607.13884v1",
       "title": "Experience Memory Graph: One-Shot Error Correction for Agents",
@@ -310,12 +426,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=SBSalCZOSR",
-      "openreview_venues": [
-        "ICML 2026 AI4Math Workshop Poster"
+        "arXiv"
       ],
       "relevance_score": 53,
       "relevance_reasons": [
@@ -768,7 +879,7 @@
     },
     {
       "id": "2607.10350",
-      "versioned_id": "2607.10350v2",
+      "versioned_id": "2607.10350v3",
       "title": "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
       "authors": [
         "Jiayi Tian",
@@ -802,19 +913,19 @@
         "Jingjing Ma",
         "Mingyang Yin",
         "Zedong Chu",
-        "Ziqiao Li",
+        "Wenbin Tang",
         "Mu Xu"
       ],
       "abstract": "Recent VLM and VLA systems have improved robotic perception and action prediction, yet long-horizon embodied agents still require a general runtime layer for reasoning, memory, tool use, verification, and cross-embodiment execution. We present ABot-AgentOS, a general robotic Agent Operating System that sits above low-level controllers and provides a deliberative agent layer for scene-conditioned planning, context-isolated skill execution, multi-stage verification, multi-modal memory, and edge-cloud collaboration. To evaluate such systems, we introduce EmbodiedWorldBench, an executable benchmark with 16 indoor, outdoor, and hybrid scenes, four difficulty levels, and over 200 tasks involving navigation, object search, NPC dialogue, dynamic events, and trace-grounded scoring. ABot-AgentOS further introduces Universal Multi-modal Graph Memory, a persistent source-grounded substrate that converts dialogue, visual observations, spatial context, temporal relations, and task traces into typed nodes and edges. A failure-driven self-evolution loop converts diagnosed memory failures into gated runtime evo-assets that are promoted only to later evaluation splits, preventing current-split ground-truth leakage while enabling continual improvement. On an initial EmbodiedWorldBench subset, ABot-AgentOS improves over a single-controller baseline in both task success and goal completion. Across memory benchmarks, ABot-AgentOS Static achieves 87.5 on LoCoMo, 59.9 on OpenEQA EM-EQA, 88.6 on Mem-Gallery, and 76.5 Acc@All on NExT-QA; self-evolution further improves LoCoMo to 88.7, OpenEQA to 60.4, and Mem-Gallery to 89.0. These results suggest that a general Agent OS layer can improve long-horizon embodied execution while providing persistent, auditable memory for continual interaction.",
       "published": "2026-07-11T15:24:43Z",
-      "updated": "2026-07-15T07:33:28Z",
+      "updated": "2026-07-17T17:27:03Z",
       "categories": [
         "cs.AI",
         "cs.RO"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.10350v2",
-      "pdf_url": "https://arxiv.org/pdf/2607.10350v2",
+      "arxiv_url": "https://arxiv.org/abs/2607.10350v3",
+      "pdf_url": "https://arxiv.org/pdf/2607.10350v3",
       "comment": "Code: https://github.com/amap-cvlab/ABot-AgentOS Project page: https://amap-cvlab.github.io/ABot-AgentOS",
       "journal_ref": "",
       "doi": "",
@@ -999,12 +1110,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=s9FaZMqYHK",
-      "openreview_venues": [
-        "ACL ARR 2026 May Submission"
+        "arXiv"
       ],
       "relevance_score": 53,
       "relevance_reasons": [
@@ -1436,12 +1542,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=sp3ot5tsG4",
-      "openreview_venues": [
-        "ACL ARR 2026 May Submission"
+        "arXiv"
       ],
       "relevance_score": 58,
       "relevance_reasons": [
@@ -1760,13 +1861,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=ssHKorOwgK",
-      "openreview_venues": [
-        "AI4GOOD Workshop 2026 Regular",
-        "FAGEN@ICML 2026 Poster"
+        "arXiv"
       ],
       "relevance_score": 48,
       "relevance_reasons": [
@@ -2986,12 +3081,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=hLHB7NCuke",
-      "openreview_venues": [
-        "ACL ARR 2026 May Submission"
+        "arXiv"
       ],
       "relevance_score": 53,
       "relevance_reasons": [
@@ -3180,12 +3270,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=T6xK1C35zk",
-      "openreview_venues": [
-        "MLArchSys 2026 Poster"
+        "arXiv"
       ],
       "relevance_score": 63,
       "relevance_reasons": [
@@ -40849,10 +40934,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-07-19T16:15:12+00:00",
-  "last_success": "2026-07-19T16:15:12+00:00",
-  "new_count": 16,
-  "total_cached": 1037,
+  "last_checked": "2026-07-20T03:14:42+00:00",
+  "last_success": "2026-07-20T03:14:42+00:00",
+  "new_count": 3,
+  "total_cached": 1040,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

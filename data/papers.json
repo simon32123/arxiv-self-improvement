@@ -1,6 +1,42 @@
 {
   "papers": [
     {
+      "id": "2607.17352",
+      "versioned_id": "2607.17352v1",
+      "title": "Self-Modifying Lean Proof Agents with Verifier-Grounded Benchmark Coevolution",
+      "authors": [
+        "Yuqing Li",
+        "Zeguan Wu",
+        "Yu Gan",
+        "Junyu Liu"
+      ],
+      "abstract": "Designing effective Lean proof agents is a central challenge in formal mathematical reasoning. Beyond building stronger provers, recent work emphasizes the workflow around Lean: how an agent decomposes proof obligations, uses tools and compiler feedback, diagnoses failures, repairs proofs, and maintains structured proof context. Motivated by code-level self-evolving agents, we study whether such workflows can be evolved rather than hand-designed. We present a self-evolving Lean proof agent in which a small fixed, trusted runtime wraps a fully mutable workspace: the proof workflow, prompts, and tools. Unlike most self-evolving systems, which optimize against a fixed external benchmark, our system coevolves the agent and its benchmark. Between generations, the highest-scoring agent (the champion) revises the active task distribution through a mastery-throttled curriculum update that introduces harder proof obligations only after the current level is mastered, and a single-anchor recalibration re-runs the champion on the updated benchmark to keep scores comparable as difficulty rises. All evolution stays inside a Lean-grounded verification loop: however the agent rewrites itself, a success counts only when its behavior yields Lean-verified proofs under a trusted snapshot, and each attempt must emit a machine-readable, Lean-grounded proof context whose representation may evolve but whose groundedness is enforced. We run the coevolving trajectory and a fixed-benchmark baseline for 15 active generations and compare them on a held-out miniF2F test split. The best coevolving agent reaches a 45.1% held-out solve rate, versus 12.7% for the seed and 32.0% for the best fixed-benchmark agent, showing that verifier-grounded self-evolution can improve Lean proof workflows under a coevolving benchmark.",
+      "published": "2026-07-19T17:26:59Z",
+      "updated": "2026-07-19T17:26:59Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "quant-ph"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.17352v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.17352v1",
+      "comment": "22 pages, 2 figures, 3 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-21",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "openreview:B0oLDKOct6",
       "versioned_id": "B0oLDKOct6",
       "title": "Moral Reasoning Meta-Learning: Axiomatic Ethical Spaces and Functional Gradient Constraints for Next-Generation Artificial General Intelligence",
@@ -35,6 +71,40 @@
       ]
     },
     {
+      "id": "2607.17038",
+      "versioned_id": "2607.17038v1",
+      "title": "Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making",
+      "authors": [
+        "Amez Amanj Ali",
+        "Kuo-Kun Tseng"
+      ],
+      "abstract": "This paper addresses key technical challenges in current large language model (LLM) agent applications, including long-horizon planning, sparse reward attribution, and dynamic environmental interaction, by designing and optimizing an intelligent agent workflow. The proposed architecture is based on the synthesis of core AI paradigms: Visual, Language, Generative, Graph, Multimodal, Reinforcement, and Agent Intelligence. Unlike conventional baseline models that rely on static prompting and lack robust perception-action loops, our approach introduces a Partially Observable Markov Decision Process (POMDP) routing mechanism. This mechanism is augmented with an internal, self-correcting reward model that evaluates decision trajectories before execution. By integrating multimodal inputs and advanced reinforcement learning principles (such as proximal policy optimization and value function approximation), the agent maintains long-term structural memory and dynamically adapts its reasoning pathways to mitigate error accumulation. Empirical experiments on the ALFWorld embodied simulation environment and the WebShop online navigation benchmark demonstrate a 24.5% absolute improvement in task success rate and trajectory efficiency over mainstream baselines like the standard ReAct framework. Comprehensive ablation studies confirm the significant contribution of the reward-driven critique module in suppressing hallucination rates. This research bridges theoretical foundations of reinforcement learning and graph-based memory with autonomous agent workflows. Ultimately, the resulting architecture offers a practical, scalable reference framework for developing artificial intelligence technologies in complex, multi-step autonomous systems. Code is available at https://github.com/01Amez/RLAW_Implementation.",
+      "published": "2026-07-19T02:51:41Z",
+      "updated": "2026-07-19T02:51:41Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.17038v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.17038v1",
+      "comment": "29 pages, 1 table, native TikZ/pgfplots diagrams. Code available at https://github.com/01Amez/RLAW_Implementation",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-21",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "openreview:fx6YvEatX3",
       "versioned_id": "fx6YvEatX3",
       "title": "The Contingency Bottleneck: The Emergence of Protocol Competence in Small Language Models for Interactive Language Games",
@@ -63,6 +133,46 @@
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2607.16621",
+      "versioned_id": "2607.16621v1",
+      "title": "From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents",
+      "authors": [
+        "Bo Tang",
+        "Yang Zhang",
+        "Guomian Zhuang",
+        "Wenqiang Wei",
+        "Gaoyang Zheng",
+        "Lindong Xie",
+        "Yanchao Tan",
+        "Feiyu Xiong",
+        "Qingyu Yang",
+        "Edward Chung",
+        "Zhiyu li"
+      ],
+      "abstract": "Existing memory systems for long-horizon LLM agents often retrieve prior traces as passive context rather than converting them into executable capabilities. In this paper, we propose MSCE, a training-free Memory--Skill Co-Evolution framework that organizes agent experience into grounded step traces, reusable procedural policies, and declarative environmental cognition. MSCE crystallizes evidence-backed L2 policies with positive estimated gain into callable skills that retain evidence links, applicability boundaries, decision guidance, verification rules, and reliability estimates. It further introduces reflection-weighted value backfilling, which propagates sparse terminal feedback through dense local self-reflections to produce evidence-calibrated trace values for governing memory and skill evolution. Experiments on EvoAgentBench and LoCoMo demonstrate that MSCE significantly outperforms state-of-the-art skill-augmented and memory-driven agent baselines, exhibiting strong cross-domain transferability and lifelong-evolution capabilities.",
+      "published": "2026-07-18T03:46:22Z",
+      "updated": "2026-07-18T03:46:22Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2607.16621v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16621v1",
+      "comment": "Submitted into EMNLP'2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-21",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -188,6 +298,49 @@
       "relevance_reasons": [
         "标题命中自进化关键词",
         "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2607.16345",
+      "versioned_id": "2607.16345v1",
+      "title": "AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows",
+      "authors": [
+        "Tejas Singh Anand",
+        "Yuet Ying Christina Wang",
+        "Wanting Jiang",
+        "Steve Masson",
+        "Tian Zheng",
+        "Bingjie Zhou"
+      ],
+      "abstract": "Modern agentic systems increasingly rely on skills: installable packages of natural language and code that teach an LLM agent to perform a domain task. As skill repositories grow, developers need automated quality signals on every change, yet evaluation today is largely anecdotal: a developer asks an agent to \"try the skill,\" watches a demo, and forms a subjective impression. This yields neither reproducibility across runs nor comparability across versions, and scales poorly to marketplaces where one regression can silently break dozens of downstream workflows. We present AEVAL (Agentic Evaluation), a CI-integrated framework that replaces this practice with a deterministic, reproducible test pipeline for agentic skills. Every skill change triggers a test event: the skill runs against a developer-declared evaluation contract (eval.config) inside an automated executor, emitting a structured, evidence-grounded quality signal that downstream CI can route on. A key ingredient is a structural separation between executor and grader, preventing a subtle but pervasive failure mode: an agent that silently self-corrects during execution and then grades its own patched outputs as passing. Our contributions are: (i) a deterministic, change-triggered evaluation protocol with per-skill contracts and per-run artifact schemas; (ii) a formalization of self-correction bias as a distinct failure mode of naive agentic evaluators; (iii) an executor/grader separation with a first-attempt grading rule and explicit self-correction tracking; and (iv) a tiered, grounded-evidence fix-suggestion scheme (LV1 causal, LV2 quality) posted as inline merge-request comments. Validated on real skills in a production agentic stack across multiple agent SDKs, AEVAL converts spurious 100% pass rates into reproducible first-attempt fail signals with an auditable record of every executor fix.",
+      "published": "2026-07-16T21:33:05Z",
+      "updated": "2026-07-16T21:33:05Z",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG",
+        "cs.PF"
+      ],
+      "primary_category": "cs.SE",
+      "arxiv_url": "https://arxiv.org/abs/2607.16345v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16345v1",
+      "comment": "8 pages, 1 figure, 1 table",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=tpEflAIlo5",
+      "openreview_venues": [
+        "ICML 2026 Workshop AgenticUQ Poster"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -10586,44 +10739,6 @@
       "openreview_url": "https://openreview.net/forum?id=Nkcu2E0Wxy",
       "openreview_venues": [
         "ACL ARR 2026 May Submission"
-      ]
-    },
-    {
-      "id": "openreview:tpEflAIlo5",
-      "versioned_id": "tpEflAIlo5",
-      "title": "AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows",
-      "authors": [
-        "Tejas Singh Anand",
-        "Yuet Ying Christina Wang",
-        "Wanting Jiang",
-        "Steve Masson",
-        "Tian Zheng",
-        "Bingjie Zhou"
-      ],
-      "abstract": "Modern agentic systems increasingly rely on skills: installable packages of natural language and code that teach an LLM agent how to perform a domain task. As skill repositories grow, developers need automated, trustworthy quality signals on every change to a skill, yet most evaluation today is anecdotal: a developer asks an agent to \"try the skill,\" watches a demo turn, and forms a subjective impression of whether it works. This produces neither reproducibility across runs nor comparability across versions, and it scales poorly to multi-skill marketplaces where a single regression can silently break dozens of downstream workflows. We present AEVAL (Agentic Evaluation), a CI-integrated framework that replaces this anecdotal practice with a deterministic, reproducible test pipeline for agentic skills. The framework treats every skill change as a triggered test event, runs each skill against a developer-declared evaluation contract (eval.config) inside an automated executor, and emits a structured, evidence-grounded quality signal that downstream CI can route on. A key technical ingredient is a structural separation between the executor and the grader, which prevents a subtle but pervasive failure mode of agentic evaluation: an agent that silently self-corrects during execution and then grades its own patched outputs as passing. Our contributions are: (i) a deterministic, change-triggered evaluation protocol for skills with per-skill evaluation contracts and per-run artifact schemas; (ii) a formalization of self-correction bias as a distinct failure mode of naive agentic evaluators; (iii) a structural executor/grader separation with a first-attempt grading rule and explicit self-correction tracking; and (iv) a tiered, grounded evidence suggestion scheme (LV1 causal fixes, LV2 quality improvements) posted as inline merge-request comments. We validate the framework against a runtime-agnostic interface tested with multiple popular agent SDKs. Across a set of real skills in a production agentic stack, the protocol converts spurious 100% pass rates into reproducible first attempt fail signals with an auditable record of every fix the executor applied, enabling reliable routing and stopping decisions in downstream agentic workflows.",
-      "published": "2026-05-02T00:15:39+00:00",
-      "updated": "2026-07-04T09:27:25+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=tpEflAIlo5",
-      "openreview_url": "https://openreview.net/forum?id=tpEflAIlo5",
-      "pdf_url": "https://openreview.net/pdf?id=tpEflAIlo5",
-      "comment": "ICML 2026 Workshop AgenticUQ Poster",
-      "journal_ref": "ICML 2026 Workshop AgenticUQ Poster",
-      "doi": "",
-      "venue": "ICML 2026 Workshop AgenticUQ Poster",
-      "venue_id": "ICML.cc/2026/Workshop/AgenticUQ",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 48,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -40934,11 +41049,11 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-07-21T01:54:28+00:00",
-  "last_success": "2026-07-21T01:54:28+00:00",
-  "new_count": 0,
-  "total_cached": 1040,
-  "fetch_error": "arXiv HTTPError: HTTP Error 429: Unknown Error",
+  "last_checked": "2026-07-21T03:23:10+00:00",
+  "last_success": "2026-07-21T03:23:10+00:00",
+  "new_count": 4,
+  "total_cached": 1043,
+  "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [
     "(\"self improvement\" OR \"self-improvement\" OR \"self improving\" OR \"self-improving\") AND (\"agent\" OR \"agents\" OR \"agentic\" OR \"multi-agent\" OR \"multiagent\")",

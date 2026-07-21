@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # 09:15 in China Standard Time (UTC+8).
-    - cron: "15 1 * * *"
+    # 14:00 in China Standard Time (UTC+8), after arXiv's daily release peak.
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:

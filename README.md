@@ -78,7 +78,7 @@ python3 fetch_arxiv.py --offline
 
 ## 每日自动运行
 
-仓库已经包含 `.github/workflows/daily-arxiv.yml`，默认每天北京时间 09:15 运行，更新两个来源的论文缓存并发布到 GitHub Pages。首次运行新版任务时，会自动补齐 OpenReview 自 2025 年以来的会议投稿和公开 Archive Direct Upload 历史结果。
+仓库已经包含 `.github/workflows/daily-arxiv.yml`，默认每天北京时间 14:00 运行，更新两个来源的论文缓存并发布到 GitHub Pages。首次运行新版任务时，会自动补齐 OpenReview 自 2025 年以来的会议投稿和公开 Archive Direct Upload 历史结果。
 
 使用方法：
 
@@ -89,7 +89,7 @@ python3 fetch_arxiv.py --offline
 如果只在本机运行，也可以用 `cron`。执行 `crontab -e` 后加入一行，并替换为项目的绝对路径：
 
 ```cron
-15 9 * * * cd /absolute/path/arxiv-self-improvement && /usr/bin/python3 fetch_arxiv.py >> daily-arxiv.log 2>&1
+0 14 * * * cd /absolute/path/arxiv-self-improvement && /usr/bin/python3 fetch_arxiv.py >> daily-arxiv.log 2>&1
 ```
 
 ## 常用参数

@@ -1,6 +1,119 @@
 {
   "papers": [
     {
+      "id": "2607.18973",
+      "versioned_id": "2607.18973v1",
+      "title": "Verifiable Self-Evolution for Open-Ended Dialogue Skills via Future-Feedback Prediction",
+      "authors": [
+        "ChaoJin Zhao",
+        "Xuan Jiang"
+      ],
+      "abstract": "Textual skills provide a lightweight way to improve frozen language-model agents, but their self-evolution normally requires a stable validation signal. Such signals are natural in mathematics or code, where an answer can be checked after it changes, yet are problematic in open-ended dialogue: changing the assistant response also changes the user's next reaction, so a logged reaction cannot directly evaluate a counterfactual response. We propose future-feedback skill evolution, which first redirects self-evolution from prescribing the current answer to predicting whether the observed answer will lead to a positive or negative subsequent user signal. This prediction task is verifiable on fixed logged tuples and therefore supports validation-gated textual optimization. The evolved feedback skill captures interpretable criteria for response quality and can subsequently serve as a diagnostic and optimization target for answer skills. On a proprietary, privacy-preserving sales-assistant dataset, careful quality filtering and a balanced resolved/unresolved split yield more than 75% prediction accuracy. Beyond this result, the central contribution is a formulation that converts otherwise moving conversational feedback into a fixed offline learning target, enabling reproducible skill evolution without placing every candidate skill in live traffic. We discuss the boundary between observational verification and counterfactual validity, and position the method as an offline optimization stage rather than a replacement for final human or online evaluation.",
+      "published": "2026-07-21T11:06:25Z",
+      "updated": "2026-07-21T11:06:25Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2607.18973v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.18973v1",
+      "comment": "I previously submitted another partition, but it has been lagging. I've now switched to a different partition instead. Could you please help me process this quickly? Once it's through, I can take the other partition down. Thanks!",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-22",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 65,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2607.18754",
+      "versioned_id": "2607.18754v1",
+      "title": "AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents",
+      "authors": [
+        "Kunlun Zhu",
+        "Xuyan Ye",
+        "Zhiguang Han",
+        "Yuchen Zhao",
+        "Bingxuan Li",
+        "Weijia Zhang",
+        "Muxin Tian",
+        "Xiangru Tang",
+        "Pan Lu",
+        "James Zou",
+        "Jiaxuan You",
+        "Heng Ji"
+      ],
+      "abstract": "LLM agent failures are difficult to debug because the step where an error surfaces is often not the one that caused it. Existing observability tools replay execution traces but provide little support for identifying the root cause or translating diagnosis into recovery. We present AgentDebugX, an open-source debugging framework that organizes debugging as a closed loop of Detect, Attribute, Recover, and Rerun. At its core, DeepDebug performs multi-turn root-cause diagnosis through global trajectory understanding, structure-guided investigation, and cross-examination. On the Who and When benchmark, DeepDebug achieves the best strict attribution accuracy among the evaluated methods on both tested open-weight backbones, reaching 28.8 percent exact agent-and-step accuracy on qwen3.5-9b versus 21.7 percent for the strongest single-pass baseline. On GAIA, DeepDebug repairs 13 of 73 failed tasks in a single rerun, compared with 4 to 6 for three decoupled self-correction baselines, improving overall accuracy from 55.8 percent to 63.6 percent. AgentDebugX exposes this workflow through a Python library, CLI, web console, and installable agentic skill, and provides an opt-in Error Hub for sharing scrubbed failure-diagnosis-repair bundles and reusing them as debugging memory.",
+      "published": "2026-07-21T06:21:13Z",
+      "updated": "2026-07-21T06:21:13Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.18754v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.18754v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-22",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.18536",
+      "versioned_id": "2607.18536v1",
+      "title": "MAGE: Human-Like Macro Placement via Agentic Multimodal Reasoning",
+      "authors": [
+        "Andrew B. Kahng",
+        "Sayak Kundu",
+        "Bodhisatta Pramanik"
+      ],
+      "abstract": "Macro placement still requires substantial manual refinement in industrial physical design flows. We present MAGE (Macro Placement Agentic Engine), a multimodal multi-agent framework for macro placement refinement. MAGE decomposes the macro placement task into a six-phase workflow that combines structured floorplanning rules, visual checks, and iterative refinement. Expert floorplanning knowledge is encoded through natural-language directives and validation criteria, rather than learned from labeled placement data. A tournament-style refinement mode evaluates multiple candidate placements and propagates feedback from higher-quality solutions. We also introduce four metrics for quantifying human-likeness in macro placement: notch score, whitespace score, pocket score, and alignment score. These metrics capture structural properties used by expert designers but not directly measured by conventional PPA metrics. Across nine designs in NanGate45 and GlobalFoundries 12nm enablements, MAGE achieves geometric-mean improvements of 11.1%-19.3% in WNS and 70.0%-74.0% in TNS over commercial macro placers. On the three NanGate45 designs, for which human-expert and Hier-RTLMP baselines are available, MAGE improves WNS and TNS by 18.3% and 72.5% over the human expert, and by 47.0% and 80.4% over Hier-RTLMP, with comparable wirelength and power. On human-likeness metrics, MAGE improves the overall score by 6%-48% over all baselines. Additional case studies on anonymized netlists, unseen designs, dense rectilinear floorplans, and high-utilization settings show that the framework transfers to new placement settings without design-specific retraining.",
+      "published": "2026-07-20T22:02:22Z",
+      "updated": "2026-07-20T22:02:22Z",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.18536v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.18536v1",
+      "comment": "16 pages",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-22",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2607.17352",
       "versioned_id": "2607.17352v1",
       "title": "Self-Modifying Lean Proof Agents with Verifier-Grounded Benchmark Coevolution",
@@ -302,7 +415,7 @@
     },
     {
       "id": "2607.16345",
-      "versioned_id": "2607.16345v1",
+      "versioned_id": "2607.16345v2",
       "title": "AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows",
       "authors": [
         "Tejas Singh Anand",
@@ -312,9 +425,9 @@
         "Tian Zheng",
         "Bingjie Zhou"
       ],
-      "abstract": "Modern agentic systems increasingly rely on skills: installable packages of natural language and code that teach an LLM agent to perform a domain task. As skill repositories grow, developers need automated quality signals on every change, yet evaluation today is largely anecdotal: a developer asks an agent to \"try the skill,\" watches a demo, and forms a subjective impression. This yields neither reproducibility across runs nor comparability across versions, and scales poorly to marketplaces where one regression can silently break dozens of downstream workflows. We present AEVAL (Agentic Evaluation), a CI-integrated framework that replaces this practice with a deterministic, reproducible test pipeline for agentic skills. Every skill change triggers a test event: the skill runs against a developer-declared evaluation contract (eval.config) inside an automated executor, emitting a structured, evidence-grounded quality signal that downstream CI can route on. A key ingredient is a structural separation between executor and grader, preventing a subtle but pervasive failure mode: an agent that silently self-corrects during execution and then grades its own patched outputs as passing. Our contributions are: (i) a deterministic, change-triggered evaluation protocol with per-skill contracts and per-run artifact schemas; (ii) a formalization of self-correction bias as a distinct failure mode of naive agentic evaluators; (iii) an executor/grader separation with a first-attempt grading rule and explicit self-correction tracking; and (iv) a tiered, grounded-evidence fix-suggestion scheme (LV1 causal, LV2 quality) posted as inline merge-request comments. Validated on real skills in a production agentic stack across multiple agent SDKs, AEVAL converts spurious 100% pass rates into reproducible first-attempt fail signals with an auditable record of every executor fix.",
+      "abstract": "Modern agentic systems increasingly rely on skills: installable packages of natural language and code that teach an LLM agent to perform a domain task. As skill repositories grow, developers need automated quality signals on every change, yet evaluation today is largely anecdotal: a developer asks an agent to \"try the skill,\" watches a demo, and forms a subjective impression. This yields neither reproducibility across runs nor comparability across versions, and scales poorly to marketplaces where one regression can silently break dozens of downstream workflows. We present AEVAL (Agentic Evaluation), a CI-integrated framework that replaces this practice with a deterministic, reproducible test pipeline for agentic skills. Every skill change triggers a test event: the skill runs against a developer declared evaluation contract inside an automated executor, emitting a structured, evidence grounded quality signal that downstream CI can route on. A key ingredient is a structural separation between executor and grader, preventing a subtle but pervasive failure mode: an agent that silently self-corrects during execution and then grades its own patched outputs as passing. Our contributions are: (i) a deterministic, change-triggered evaluation protocol with per-skill contracts and per-run artifact schemas; (ii) a formalization of self correction bias as a distinct failure mode of naive agentic evaluators; (iii) an executor/grader separation with a first-attempt grading rule and explicit self-correction tracking; and (iv) a tiered, grounded evidence fix suggestion scheme (LV1 causal, LV2 quality) posted as inline merge-request comments. Validated on real skills in a production agentic stack across multiple agent SDKs, AEVAL converts spurious 100% pass rates into reproducible first-attempt fail signals with an auditable record of every executor fix.",
       "published": "2026-07-16T21:33:05Z",
-      "updated": "2026-07-16T21:33:05Z",
+      "updated": "2026-07-21T00:27:08Z",
       "categories": [
         "cs.SE",
         "cs.AI",
@@ -322,9 +435,9 @@
         "cs.PF"
       ],
       "primary_category": "cs.SE",
-      "arxiv_url": "https://arxiv.org/abs/2607.16345v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.16345v1",
-      "comment": "8 pages, 1 figure, 1 table",
+      "arxiv_url": "https://arxiv.org/abs/2607.16345v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.16345v2",
+      "comment": "8 pages, 1 figure, 1 table, accepted at the ICML 2026 Workshop on Statistical Frameworks for Uncertainty in Agentic Systems",
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-07-19",
@@ -1096,22 +1209,22 @@
     },
     {
       "id": "2607.13070",
-      "versioned_id": "2607.13070v1",
-      "title": "Falsifiable Release Gates for Self-Improving Systems",
+      "versioned_id": "2607.13070v2",
+      "title": "Falsifiable Release Gates for Self-Improving Systems: Standing Invariants at Scale",
       "authors": [
         "Deepak Soni"
       ],
-      "abstract": "Safety claims on self-improving agent runtimes are almost always self-graded: a policy file, a guardrail, or a README commitment. We describe falsifiable release gates, and a methodology to build and validate such systems, such that every new capability must pass a pre-specified, machine-verifiable acceptance suite before it ships, and a fixed set of standing invariants is preserved at each gate. I think we applied the method in the Antahkarana, an open runtime, via seven gates from basic observability into a self governing loop that suggests changes to its own policy. no action goes to an effector without a safety-critical property capability token minted by a control ring is exhaustively machine-checked over the one million recorded reachable state space of a bounded model and re-checked against execution traces. A purposely broken model gives the shortest counterexample, so the checker has teeth, is apparent. The self-enhancement loop is positively Constrained: the entire write surface is policy rules, tightening changes. may auto-apply loosening changes always require a human merge and a proposal autoclosed is one that mispredicts its own effect; We publish the acceptance measured results for all the seven gates, define precisely the scope of each claim (a bounded of the coordination skeleton (not the learned components) and free the runtime, either command line tools and the gate suite, so the results reproduce, and gates can run against other agent frameworks. Reviewers may repeat the single command central non-bypass in seconds.",
+      "abstract": "Safety claims for self-improving agent runtimes are almost always self-graded: a policy file, a guardrail, a promise in a README. We describe falsifiable release gates, a methodology in which every new capability must pass a pre-declared, machine-checkable acceptance suite before it ships, while a fixed set of standing invariants is preserved across every gate. We instantiate it in Antahkarana, an open runtime, then do what a method paper is only vindicated by: we follow the same runtime as it grows and ask whether the guarantees survive. The safety-critical property, that no action reaches an effector without a capability token minted by a control ring, is machine-checked exhaustively over the reachable states of a bounded model; a deliberately broken model yields the shortest counterexample, so the checker demonstrably has teeth. We then carry the runtime through six further releases. Across every one, the action-safety invariants INV-1 through INV-6 held without a single change, and one release added three capabilities while introducing no new invariant. Under the same teeth discipline, six more machine-checked families were added: memory with provable unlearning, a governed agent, calibrated abstention over a post-quantum record, a harness of many sub-agents, the self-improvement loop itself, and the residency of what it produces. The acceptance suite grew from 122 tests to 563. The load-bearing result sits in the negative space: across more than a doubling of capability, the safety core was neither weakened nor redesigned. The last families are the first on real hardware: gated self-improvement compounds a small model from 20% to 70% accuracy while auto-rejecting a candidate that only inflates confidence, and the whole governed path costs 0.021 ms per request, 0.008% of model inference. We release the runtime, tools, and gate suite; every number reproduces with a single command.",
       "published": "2026-07-11T06:06:34Z",
-      "updated": "2026-07-11T06:06:34Z",
+      "updated": "2026-07-21T11:13:06Z",
       "categories": [
         "cs.SE",
         "cs.AI"
       ],
       "primary_category": "cs.SE",
-      "arxiv_url": "https://arxiv.org/abs/2607.13070v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.13070v1",
-      "comment": "14 pages, 8 figures. Software, gate suite, run artifacts, and TLA+ specification are open source",
+      "arxiv_url": "https://arxiv.org/abs/2607.13070v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.13070v2",
+      "comment": "23 pages, 14 figures. Major revision merging the follow-up \"Standing Invariants at Scale\" into this paper per arXiv moderation: the machine-checked action-safety core preserved across six further releases, six new invariant families with teeth, and real-hardware self-improvement; suite grown from 122 to 563 tests. Software, gate suite, run artifacts, and TLA+ spec are open source",
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-07-17",
@@ -1119,11 +1232,12 @@
       "sources": [
         "arXiv"
       ],
-      "relevance_score": 65,
+      "relevance_score": 70,
       "relevance_reasons": [
         "标题命中自进化关键词",
         "摘要命中 Agent 关键词",
-        "摘要中的两类信号距离接近"
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
       ]
     },
     {
@@ -41049,10 +41163,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-07-21T06:47:21+00:00",
-  "last_success": "2026-07-21T06:47:21+00:00",
-  "new_count": 0,
-  "total_cached": 1043,
+  "last_checked": "2026-07-22T06:48:13+00:00",
+  "last_success": "2026-07-22T06:48:13+00:00",
+  "new_count": 3,
+  "total_cached": 1046,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

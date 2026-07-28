@@ -1,8 +1,235 @@
 {
   "papers": [
     {
+      "id": "2607.24300",
+      "versioned_id": "2607.24300v1",
+      "title": "Self-Authored Verification Is Unreliable in Heuristic Self-Improving Agents",
+      "authors": [
+        "Diandian Guo",
+        "Cong Cao",
+        "Fangfang Yuan",
+        "Yingqi Wang",
+        "Yueshan Wang",
+        "Dakui Wang"
+      ],
+      "abstract": "Self-improving agents accumulate capability by repeatedly rewriting procedural policies, controllers, or heuristic rules. They typically rely on self-authored tests or metrics to decide whether to accept subsequent edits. The agent controls both the optimized object and its verifier. As a result, self-assigned scores can remain near perfect while real deployment performance degrades or stays low. We study this problem through the verifier--deployment gap. This gap refers to the discrepancy between an agent's self-authored verification signal and a sealed deployment evaluation that the agent cannot observe or access. We ask how self-authored verification fails under iterative policy-and-test rewriting, how the failure changes with capability, and how little exogenous trust is sufficient to prevent real regressions from being deployed. To address this problem, we introduce a Sealed Exogenous Acceptance Loop (SEAL). SEAL retains self-authored tests but compares each candidate with the incumbent through a fixed harness-side audit. The agent cannot author or inspect the audit, receives only accept/reject, and the whole incumbent state is retained after a clear regression. Our experiments show that this problem often appears in heuristic learning settings. These settings require trial-and-error discovery of the target objective. We further find that failures of self-written verification are stratified by capability. Weaker agents tend to damage previously acquired strategies behind easy self-tests. Stronger agents are more stable, but they still mismeasure the deployment distribution. Standard self-written constraints do not reliably close this gap. In contrast, SEAL outperforms unprotected baselines across six models and three random seeds. Reliable self-improvement need not abandon self-verification, but it requires at least one deployment-acceptance signal outside the agent's control.",
+      "published": "2026-07-27T11:45:14Z",
+      "updated": "2026-07-27T11:45:14Z",
+      "categories": [
+        "cs.CL",
+        "cs.MA"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2607.24300v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.24300v1",
+      "comment": "9 pages, 6 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
+      "id": "2607.23802",
+      "versioned_id": "2607.23802v1",
+      "title": "From RLVR to RLSVR: Task Transformation Induces Self-Verifiable Rewards for Open-Ended LLM Self-Improvement",
+      "authors": [
+        "Qinsi Wang",
+        "Jing Shi",
+        "Huazheng Wang",
+        "Kun Wan",
+        "Yiran Wu",
+        "Bo Liu",
+        "Qingyun Wu",
+        "Hai Helen Li",
+        "Yiran Chen",
+        "Handong Zhao",
+        "Wentian Zhao"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has driven recent progress in reasoning-oriented large language models (LLMs) by enabling large-scale optimization. However, its applicability remains largely limited to domains such as mathematics and coding, where correctness can be deterministically verified. Open-ended tasks instead often rely on human preferences, reward models, or LLM-based judges, introducing evaluation bias, judge capability bottlenecks, and additional inference costs.Drawing on the principle of self-supervised learning, which constructs pretext tasks to derive supervision from the data itself, we propose Reinforcement Learning with Self-Verifiable Rewards (RLSVR), a task-transformation-based training paradigm for extending RLVR to open-ended tasks. RLSVR transforms open-ended tasks into verifiable proxy environments whose internal rules and interaction outcomes automatically generate reward signals. We instantiate RLSVR with SpyRL, a multi-agent self-play environment inspired by Who Is the Spy?. Agents receive asymmetric information, complete the same target task, and vote to identify a designated spy. Because the spy identity is predetermined, voting outcomes provide fully verifiable rewards, while successful identification remains closely related to output quality. Experiments on text summarization, creative writing, and mathematical reasoning show that SpyRL outperforms existing self-improvement methods on non-verifiable tasks and yields consistent gains on verifiable reasoning tasks. These results demonstrate that task transformation can extend scalable RLVR-based self-improvement beyond inherently verifiable domains. Models and code have been released at https://github.com/wangqinsi1/SpyRL.",
+      "published": "2026-07-26T19:04:33Z",
+      "updated": "2026-07-26T19:04:33Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.23802v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.23802v1",
+      "comment": "COLM 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 60,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.23124",
+      "versioned_id": "2607.23124v1",
+      "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications",
+      "authors": [
+        "Hao Jiang",
+        "Gangtao Xin",
+        "Yingdi Huang",
+        "Guojie Zhu",
+        "Jiangshan Zhang",
+        "Xinyuan Lin",
+        "Yunkun Xu",
+        "Chengyu Shen",
+        "Wenlong Fei",
+        "Jiawei Li",
+        "Yujie Fu",
+        "Sichen Kang",
+        "Tingyu Xie",
+        "Yedi Hu",
+        "Jingren Zhang",
+        "Hongcheng Gao",
+        "Jianshu Zeng",
+        "Chong Chen",
+        "Chang Guo",
+        "Chao Feng",
+        "Feng Wang",
+        "Fulin Lin",
+        "Jinchao Ma",
+        "Lang Mei",
+        "Li Huang",
+        "Liyan Liu",
+        "Qing He",
+        "Shuting Tao",
+        "Siyu Mo",
+        "Xiangnan Chen",
+        "Xiaohan Yu",
+        "Xiaoyang Li",
+        "Yanheng Hou",
+        "Yanyu Wu",
+        "Zhihan Yang",
+        "Wentao Zhang",
+        "Yang Gao",
+        "Zhao Cao"
+      ],
+      "abstract": "Large language model agents have advanced rapidly, yet progress remains fragmented across domains, capabilities, task difficulty, and interaction settings. We frame this as full-scenario agentic scaling and present AgentOmnia, a framework coordinating task-space definition, data synthesis, post-training, evaluation, and improvement across To-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications. An extensible Domain x Capability x Atomic Difficulty taxonomy aligns these stages and enables fine-grained diagnosis with OmniaBench. AgentOmnia combines bidirectional environment-task synthesis with tool-dependency, program-structured, and solver-based pipelines, constructing 5,018 stateful environments with 255,375 tools and 52,361 tasks. Programs, solvers, and verifiers provide correctness signals, while supervised fine-tuning, online agentic reinforcement learning, and a rollback curriculum support post-training. Evaluation failures translate into Product Requirement Documents (PRDs) for targeted self-evolution. Starting from Qwen3-30B-A3B-Thinking-2507, AgentOmnia raises the pass rate on the OmniaBench challenging subset from 9.16% to 37.11% and the macro-average across OmniaBench, $τ^2$-Bench, DeepPlanning, and VitaBench from 22.86% to 41.69%. Under a unified protocol,it leads the evaluated agentic post-trained baselines on OmniaBench and retains the highest four-benchmark macro-average. It also surpasses Qwen3-235B-A22B-Thinking-2507 on all four benchmarks and exceeds Qwen3.5-35B-A3B on the macro-average. Gains span three application splits, ten capability dimensions, eight atomic-difficulty factors, and 76 of 90 level-1 domains, indicating broad rather than category-specific improvement. A one-round study provides initial evidence for PRD-guided self-evolution, motivating validation at larger scales and in industrial settings.",
+      "published": "2026-07-25T09:58:24Z",
+      "updated": "2026-07-25T09:58:24Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.23124v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.23124v1",
+      "comment": "69 pages, 18 figures, 13 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.22529",
+      "versioned_id": "2607.22529v1",
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "authors": [
+        "Siyuan Huang",
+        "Pengyu Cheng",
+        "Haotian Liu",
+        "Tao Chen",
+        "Yihao Liu",
+        "Jingwei Ni",
+        "Shijie Zhou",
+        "Ziyi Yang",
+        "Gangwei Jiang",
+        "Mengyu Zhou",
+        "Yu Cheng",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang"
+      ],
+      "abstract": "LLM training is shifting from manual design and annotation to interaction-driven self-evolution. However, existing self-evolutionary methods face a fundamental dilemma between task diversity and verification reliability: environment-bound methods obtain precise feedback but confine learning to narrow domains, while open-ended self-generation broadens the task space but lacks reliable verification, allowing misleading rewards to pollute the training loop. We identify agent skills as a powerful middle ground to reconcile this tension: each skill ensures deep, verifiable execution in a specific scenario, while dynamic routing across skills maintains open-ended task variety. Leveraging this insight, we introduce Skill Self-Play (Skill-SP), a co-evolutionary framework comprising a proposer, a solver, and a dynamic skill controller. Orchestrated via a reinforcement learning loop, these components co-evolve in a continuous self-play loop: the proposer generates challenging tasks conditioned on dynamically sampled skills; the solver explores candidate solutions to push its capability boundaries; and the skill controller collects execution feedback to update and expand the skill library. This interactive co-evolution effectively bridges the gap between structured verification and open-ended exploration. Empirical evaluations on tool-use and reasoning benchmarks demonstrate that Skill-SP, serving as a robust evolution engine, consistently pushes the performance ceiling of competent backbones while catalyzing striking turnarounds for initially misaligned models. Our code is available at https://github.com/Qwen-Applications/skill-self-play.",
+      "published": "2026-07-24T17:59:22Z",
+      "updated": "2026-07-24T17:59:22Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2607.22529v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.22529v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2607.22511",
+      "versioned_id": "2607.22511v1",
+      "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "authors": [
+        "Jiyuan Tan",
+        "Vasilis Syrgkanis"
+      ],
+      "abstract": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation. A common approach is to close the research loop with a large language model (LLM) reviewer. However, such reviewers remain empirically unreliable: they may accept fabricated papers and detect them at rates close to chance (Bad Scientist, 2025). We present CausalForge, a framework for automated theoretical research in causal inference grounded in the Lean proof assistant. CausalForge combines Causalean, a foundational Lean library for causal inference containing 7,035 machine-checked declarations developed with language-model assistance under human design and review, with CausalSmith, a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Because a machine-checked proof establishes only that a formal statement follows from its assumptions, not that the statement faithfully captures the intended scientific claim, the pipeline augments kernel verification with a statement audit that compares each formal theorem against the informal claim it is intended to express. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalForge.",
+      "published": "2026-07-24T17:32:35Z",
+      "updated": "2026-07-24T17:32:35Z",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG",
+        "econ.EM"
+      ],
+      "primary_category": "stat.ML",
+      "arxiv_url": "https://arxiv.org/abs/2607.22511v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.22511v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2607.21461",
-      "versioned_id": "2607.21461v1",
+      "versioned_id": "2607.21461v2",
       "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
       "authors": [
         "Shuqi Lu",
@@ -11,7 +238,6 @@
         "Zhang Zhang",
         "Hui Wang",
         "Hongwang Xiao",
-        "Zheng Liu",
         "Lei Xiong",
         "Jiahao Wang",
         "Sen Wang",
@@ -20,6 +246,7 @@
         "Yuyang Hu",
         "Hongjin Qian",
         "Bingyu Yan",
+        "Jianlyu Chen",
         "Ziyi Xia",
         "Yingxia Shao",
         "Kang Liu",
@@ -32,13 +259,13 @@
       ],
       "abstract": "Deep research requires agents to find answers that jointly satisfy multiple constraints. Discovering such answers is costly, whereas verifying a candidate can often be decomposed into tractable constraint-wise checks. This discovery--verification asymmetry suggests that a research agent should do more than simply search longer: it should recursively improve its current answer by verifying intermediate results and using the partially verified state to guide subsequent refinement. We introduce AREX, a family of Recursively Self-Improving (RSI) deep research agents. AREX alternates between an inner research loop that gathers evidence and constructs a provisional answer, and an outer self-improvement loop that audits the answer constraint-wise, identifies unresolved claims, and launches targeted follow-up research. To sustain RSI over long horizons, AREX learns an autonomous context-update tool that compresses growing interaction history into a compact improvement state preserving verified evidence and unresolved constraints, without relying on an external model. We train AREX on verified synthetic tasks and high-quality trajectories through agentic mid-training and long-horizon reinforcement learning. To mitigate sparse final rewards during long horizon learning, we emphasize key steps where decisive evidence is acquired or erroneous research directions are corrected. We instantiate a dense 4B model and a 122B-A10B Mixture-of-Experts model. Across BrowseComp, WideSearch, DeepSearchQA, Humanity's Last Exam (HLE), and other reasoning and tool-use benchmarks, AREX substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
       "published": "2026-07-23T16:05:46Z",
-      "updated": "2026-07-23T16:05:46Z",
+      "updated": "2026-07-24T03:34:11Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.21461v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.21461v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.21461v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.21461v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -459,8 +686,8 @@
     },
     {
       "id": "2607.15845",
-      "versioned_id": "2607.15845v1",
-      "title": "Knowledge-Centric Agents for Workflow Generation",
+      "versioned_id": "2607.15845v2",
+      "title": "Knowledge-Centric Agents for Workflow Generation in ComfyUI",
       "authors": [
         "Zhendong Li",
         "Lei Sun",
@@ -472,13 +699,13 @@
       ],
       "abstract": "Workflow generation in visual creation systems such as ComfyUI demands not only syntactic accuracy but also expert-level reasoning over modular compositions. Existing large language model (LLM) approaches often treat this as a direct text-to-JSON generation task, struggling with structural brittleness and lacking the experiential knowledge required for effective design. We argue that successful workflow generation requires modeling knowledge itself, including its structure, hierarchy, and reasoning dynamics. To this end, we propose a knowledge-centric framework that learns to invert, inject, and infer with knowledge across multiple abstraction levels. We first perform knowledge inversion to distill hierarchical representations, ranging from full pseudo-codes and skeletons to high-level strategies, from large collections of real-world workflows. We then conduct knowledge injection through supervised fine-tuning, teaching the model to reason from task descriptions to strategies and from strategies to executable structures. During inference, the model performs reversible reasoning to synthesize executable workflows, augmented by self-refinement for structural coherence. Extensive experiments demonstrate that our method produces workflows with richer node diversity, more coherent structures, and higher execution success rates than existing systems, establishing a new foundation for knowledge-driven, agentic workflow generation.",
       "published": "2026-07-17T11:03:01Z",
-      "updated": "2026-07-17T11:03:01Z",
+      "updated": "2026-07-27T13:53:28Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.15845v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.15845v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.15845v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.15845v2",
       "comment": "Accepted to ECCV 2026",
       "journal_ref": "",
       "doi": "",
@@ -823,7 +1050,7 @@
     },
     {
       "id": "2607.14178",
-      "versioned_id": "2607.14178v1",
+      "versioned_id": "2607.14178v2",
       "title": "ReasFlow: Assisting Reasoning-Centric Scientific Discovery in Applied Mathematics via a Knowledge-Based Multi-Agent System",
       "authors": [
         "Yutong He",
@@ -845,16 +1072,16 @@
         "Zaiwen Wen",
         "Pingwen Zhang"
       ],
-      "abstract": "Recent advances in Large Language Models have fueled autonomous AI agents capable of tackling complex scientific tasks, yet existing automated research systems remain predominantly focused on empirically driven domains with quantitative benchmarks, leaving theory-driven discovery, particularly in mathematically grounded disciplines requiring rigorous proofs and synthesis of domain knowledge, largely underexplored. Key challenges include the difficulty of verifying theoretical reasoning at scale, insufficient reasoning ability for autonomous frontier exploration, and a scarcity of procedural heuristics in the literature. We introduce ReasFlow, an end-to-end autonomous agent system for reasoning-centric scientific discovery that operationalizes a collaborative paradigm where the human expert acts as Principal Investigator while the agent executes rigorous derivations as a capable graduate student. ReasFlow incorporates (i) a robust internal verification loop that audits logical coherence and corrects fundamental errors prior to human inspection, and (ii) an automated knowledge retrieval and self-improvement mechanism that proactively surfaces both declarative facts and overlooked procedural heuristics, substantially reducing expert intervention. The system unifies literature synthesis, algorithm design, theorem proving, experimentation, and manuscript preparation in a single system. Deployed to autonomously generate five complete research papers with rigorous theoretical and empirical content from minimal prompts, ReasFlow consistently achieves the highest evaluation scores among state-of-the-art open-access baselines under a curated LLM-based review rubric. ReasFlow is publicly accessible via the ReasLab platform, providing a collaborative workspace for AI-assisted theoretical research. Github repo: https://github.com/ReasLab/ReasFlow.git.",
+      "abstract": "Recent advances in Large Language Models have fueled autonomous AI agents capable of tackling complex scientific tasks, yet existing automated research systems remain predominantly focused on empirically driven domains with quantitative benchmarks, leaving theory-driven discovery, particularly in mathematically grounded disciplines requiring rigorous proofs and synthesis of domain knowledge, largely underexplored. Key challenges include the difficulty of verifying theoretical reasoning at scale, insufficient reasoning ability for autonomous frontier exploration, and a scarcity of procedural heuristics in the literature. We introduce ReasFlow, an end-to-end autonomous agent system for reasoning-centric scientific discovery that operationalizes a collaborative paradigm where the human expert acts as Principal Investigator while the agent executes rigorous derivations as a capable graduate student. ReasFlow incorporates (i) a robust internal verification loop that audits logical coherence and corrects fundamental errors prior to human inspection, and (ii) an automated knowledge retrieval and self-improvement mechanism that proactively surfaces both declarative facts and overlooked procedural heuristics, substantially reducing expert intervention. The system unifies literature synthesis, algorithm design, theorem proving, experimentation, and manuscript preparation in a single system. Deployed to autonomously generate five complete research papers with rigorous theoretical and empirical content from minimal prompts, ReasFlow consistently achieves the highest evaluation scores among state-of-the-art open-access baselines under a curated LLM-based review rubric. ReasFlow is publicly accessible via the ReasLab platform, providing a collaborative workspace for AI-assisted theoretical research. Github repo: https://github.com/reaslab/ReasFlow.git.",
       "published": "2026-07-15T13:27:20Z",
-      "updated": "2026-07-15T13:27:20Z",
+      "updated": "2026-07-27T06:26:29Z",
       "categories": [
         "cs.AI",
         "cs.MA"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.14178v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.14178v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.14178v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.14178v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -1632,6 +1859,39 @@
       ]
     },
     {
+      "id": "2607.21625",
+      "versioned_id": "2607.21625v1",
+      "title": "Trajectory-Aware Retrieval Agents for Temporal Decision- Making",
+      "authors": [
+        "Jing Wang",
+        "Jie Shen",
+        "Xing Niu"
+      ],
+      "abstract": "We study the problem of decision-making from long-form, temporally structured text using large language model (LLM) agents. Standard retrievalaugmented generation (RAG) pipelines fragment chronological context into isolated snippets, discarding the temporal structure that is often critical for correct downstream decisions. We introduce TLM (Trajectory Language Model), a closed-loop agentic framework that iteratively refines the evidence set using SHAP-guided feedback. The key technical contribution is the latent growth curve model (LGCM) over retrieved chunk embeddings, which provides an interpretable mechanism for detecting trajectory trends, turning points, and information gaps. We show that, under a scorer-calibration assumption (which holds approximately in practice), the iterative refinement procedure is monotonically non-decreasing in the probability assigned to the correct label. Empirically, TLM is evaluated on three temporally grounded decision tasks: medical question answering, earnings call surprise prediction, and overnight stock gap prediction. TLM substantially outperforms both zero-shot LLM baselines and standard retrieval-augmented approaches on the medical task, and yields consistent, economically meaningful gains on the two financial tasks.",
+      "published": "2026-07-07T16:28:38Z",
+      "updated": "2026-07-07T16:28:38Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.21625v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21625v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2607.06452",
       "versioned_id": "2607.06452v1",
       "title": "From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b",
@@ -1753,7 +2013,7 @@
     },
     {
       "id": "2607.05382",
-      "versioned_id": "2607.05382v3",
+      "versioned_id": "2607.05382v4",
       "title": "Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation",
       "authors": [
         "Haozhe Wang",
@@ -1770,14 +2030,14 @@
       ],
       "abstract": "Visual generators excel at rendering, but they confidently fabricate what they do not know. User requests are unbounded, evolving, and deeply long-tailed: new characters, trending entities, post-cutoff events, and more. This world-knowledge bottleneck is structural: generators are trained on fixed corpora, but the visual world is open-ended. We construct SearchGen-20K and SearchGen-Bench, with 20,839 prompts spanning twelve failure categories and twenty-two domains, paired with a pre-executed multimodal SearchGen-Corpus-1M to support offline, reproducible research. On SearchGen-Bench, frontier open generators score only 21 to 28 out of 100, a 40-point collapse invisible to existing benchmarks. The natural remedy is to employ search tools, enabling agentic visual generation. However, we find that naive search fails: it retrieves indiscriminately, injecting noise into prompts the generator already handles. We trace the root cause to a generator-specific, evolving knowledge boundary: the divide between what a generator can internalize through training and what must remain in external context. Although this boundary is hard to specify in advance, we show that it is discoverable through a teach-then-search co-training framework. Even a minimal version of this co-training recipe produces monotonic improvement, laying the foundation for recursive self-improvement in visual generation that can meet world-knowledge-grounded requests. We release the full dataset, co-training corpus, and search corpus as a replayable harness for tool-augmented, world-knowledge-grounded visual generation.",
       "published": "2026-07-06T17:56:12Z",
-      "updated": "2026-07-09T06:57:10Z",
+      "updated": "2026-07-24T20:32:35Z",
       "categories": [
         "cs.CV",
         "cs.AI"
       ],
       "primary_category": "cs.CV",
-      "arxiv_url": "https://arxiv.org/abs/2607.05382v3",
-      "pdf_url": "https://arxiv.org/pdf/2607.05382v3",
+      "arxiv_url": "https://arxiv.org/abs/2607.05382v4",
+      "pdf_url": "https://arxiv.org/pdf/2607.05382v4",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -3997,6 +4257,48 @@
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词",
         "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "openreview:10zf7TEzgX",
+      "versioned_id": "10zf7TEzgX",
+      "title": "Phantom Guardrails: When Self-Improving Agent Harnesses Fix Failures That Never Happened",
+      "authors": [
+        "Su Wang",
+        "Pin Qian",
+        "Yifan Lin",
+        "JingZhou Xu",
+        "Yihang Chen",
+        "Xiaochong Jiang",
+        "Lifei Liu",
+        "Haoran Yu"
+      ],
+      "abstract": "Self-improving AI agents are designed to learn from their mistakes. We show that they can also hallucinate mistakes that never happened. We study this failure mode in automated harness optimization, where an LLM-based proposer edits the scaffold around an agent, including prompts parsers, filters, validators, and guardrails, to make observed failures disappear. But this process rarely asks a prior question: was there a real failure to fix? We introduce the Counterfactual Fabrication Lab, a deterministic micro-lab where the correct action is known in advance to be \"do nothing.\" The lab plants a candidate guardrail for a failure class that provably never occurs, presents only legal episodes, and uses a byte-exact oracle to check every cited violation. The proposer behaves as expected when the violation is real and abstains on featureless legal input. Yet when the legal input contains a harmless pattern that resembles a familiar game rule, it invents a failure: in 15/60 runs, versus 0/60 on featureless input, it enables the nonexistent-rule guardrail and cites a violation the oracle refutes. The effect is structured rather than indiscriminate. In single-shot proposals it appears only when three conditions coincide: a rule-shaped pattern, an open-ended rule set, and an instruction that presupposes failures. Removing any one of these conditions eliminates the fabrication. Because the invented guardrail changes no true outcome and cannot improve an already-perfect suppression score, the phenomenon is neither reward hacking nor over-refusal. It is a phantom guardrail: a fix for a failure that never happened, invisible to suppression-only acceptance. Inside an add-only accept loop it re-enters even without the failure-presupposing instruction, the loop's keep-adding role supplying the demand the instruction supplied in single shot, and once in it stays. We release the Counterfactual Fabrication Lab for measuring fabricated failures in self-improving agent harnesses.",
+      "published": "2026-06-11T23:30:51+00:00",
+      "updated": "2026-07-27T12:03:18+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=10zf7TEzgX",
+      "openreview_url": "https://openreview.net/forum?id=10zf7TEzgX",
+      "pdf_url": "https://openreview.net/pdf?id=10zf7TEzgX",
+      "comment": "Agentic AI Evaluation and Trustworthiness KDD2026",
+      "journal_ref": "Agentic AI Evaluation and Trustworthiness KDD2026",
+      "doi": "",
+      "venue": "Agentic AI Evaluation and Trustworthiness KDD2026",
+      "venue_id": "KDD.org/2026/Workshop/Agentic_AI_Evaluation_and_Trustworthiness",
+      "discovered_on": "2026-07-28",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -41332,11 +41634,11 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-07-27T07:01:23+00:00",
-  "last_success": "2026-07-27T07:01:23+00:00",
-  "new_count": 0,
-  "total_cached": 1050,
-  "fetch_error": "arXiv HTTPError: HTTP Error 503: Service Unavailable",
+  "last_checked": "2026-07-28T06:48:09+00:00",
+  "last_success": "2026-07-28T06:48:09+00:00",
+  "new_count": 7,
+  "total_cached": 1057,
+  "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [
     "(\"self improvement\" OR \"self-improvement\" OR \"self improving\" OR \"self-improving\") AND (\"agent\" OR \"agents\" OR \"agentic\" OR \"multi-agent\" OR \"multiagent\")",

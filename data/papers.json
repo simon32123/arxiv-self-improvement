@@ -8049,7 +8049,7 @@
       "authors": [],
       "abstract": "The evolution of LLM-based agents is essential, as it enables sustained improvement in their problem-solving abilities. Prior work has focused on leveraging training data derived either from an agent's own behavior, such as refining decision sequences, or from stronger external agents, including expert or teacher models, to improve performance on agent tasks. However, when exploring candidate trajectories, these methods allocate their sampling budget uniformly across all decision steps, overlooking that individual actions contribute unequally to the final task outcome. To overcome this limitation, we propose A$^{4}$, a theoretically grounded framework that models the decision process as a tree and decomposes trajectory-level variance into per-step contributions, enabling adaptive allocation of the sampling budget toward high-uncertainty decision points. Extensive experiments across three representative interactive environments demonstrate that A$^{4}$ achieves 11.7\\% relative improvement over the strongest baseline. For reproducibility and future research, we release our code at \\url{https://anonymous.4open.science/r/AAAA-E8BA}.",
       "published": "2026-05-26T09:02:17+00:00",
-      "updated": "2026-07-03T04:24:13+00:00",
+      "updated": "2026-08-01T03:02:39+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -42314,9 +42314,9 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-07-31T06:54:29+00:00",
-  "last_success": "2026-07-31T06:54:29+00:00",
-  "new_count": 10,
+  "last_checked": "2026-08-01T06:46:24+00:00",
+  "last_success": "2026-08-01T06:46:24+00:00",
+  "new_count": 0,
   "total_cached": 1075,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",

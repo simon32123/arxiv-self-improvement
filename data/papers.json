@@ -1,6 +1,147 @@
 {
   "papers": [
     {
+      "id": "2607.29626",
+      "versioned_id": "2607.29626v1",
+      "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+      "authors": [
+        "Tianyu Huai",
+        "Tingshuo Fan",
+        "Xinchi Chen",
+        "Yining Zheng",
+        "Yuxin Wang",
+        "Shuang Chen",
+        "Jie Zhou",
+        "Xuanjing Huang"
+      ],
+      "abstract": "As LLMs evolve from code completion systems into autonomous scientific agents, evaluating their ability to conduct experiments has become increasingly important. Existing benchmarks typically focus on static code generation, paper replication, or final answer correctness, but do not directly assess whether agents can interpret experimental evidence and use it to guide subsequent hyperparameter decisions. To address this gap, we introduce AgentHPOBench, a sequential benchmark comprising 30 executable machine learning tasks across seven research categories. Each task begins with a validated baseline run, after which an agent performs several sequential interventions. At each step, the agent observes the accumulated configurations, metrics, and logs before proposing the next valid configuration. We evaluate 12 widely used agents and conventional HPO baselines under a unified protocol. The results show that current agents exhibit measurable experimental optimization ability across domains, but still face clear limitations in sustained iterative refinement, complex log diagnosis, and consistent progress toward reported reference performance.",
+      "published": "2026-07-31T16:58:00Z",
+      "updated": "2026-07-31T16:58:00Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.29626v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.29626v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.29549",
+      "versioned_id": "2607.29549v1",
+      "title": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+      "authors": [
+        "Rui Zou",
+        "Yutao Zhu",
+        "Mengqi Wei",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "Large language models have demonstrated strong mathematical problem-solving capabilities, yet reliably verifying their candidate answers remains challenging. Existing representative methods mainly revise outputs through natural-language reflection or assist verification by directly generating verification programs; the former may not reliably support exact computation, whereas the latter prematurely couples mathematical modeling with low-level implementation. We propose AMTFV (Agentic Mathematical Tool-Flow Verification). By introducing Mathematical Tool Flow (MTF) as an interrupt--execute--resume interface, AMTFV decouples verification modeling from concrete execution and supports exact computation through a mathematical toolbox. Specifically, the verification agent first constructs a verification workflow, encodes the mathematical objects and computational intent requiring reliable execution in an MTF request, and sends it to the mathematical toolbox agent. The latter parses the request, generates executable calls, and dispatches them to the backend for exact computation. Tool outputs then support candidate-answer adjudication, answer revision, and verification-workflow revision. We evaluate AMTFV on five challenging mathematical reasoning datasets with seven model configurations from DeepSeek, GPT, and Gemini. Experimental results show that AMTFV outperforms the representative baselines evaluated in this study overall; under an individual model configuration, it improves average accuracy over the strongest baseline by up to 8.3 percentage points, with larger gains on samples of medium and high verification complexity.",
+      "published": "2026-07-31T15:42:00Z",
+      "updated": "2026-07-31T15:42:00Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.29549v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.29549v1",
+      "comment": "19 pages, 9 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.28942",
+      "versioned_id": "2607.28942v1",
+      "title": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
+      "authors": [
+        "Duo Xu",
+        "Faramarz Fekri"
+      ],
+      "abstract": "Recently Large Language Models (LLMs) have been increasingly deployed as autonomous agents in applications such as self-reflection, retrieval-augmented generation, and scientific discovery. In these settings, agents must act based on limited observations rather than full environmental states, leading to partial observability. This introduces several key challenges: belief state inference, task objective misalignment, and planning under uncertainty. Prior approaches typically condition actions on full or summarized action-observation histories whose redundant and irrelevant information can mislead the decision making of LLM agent. Inspired by human cognition, we propose a novel neuro-symbolic fast-slow thinking (NeSyFS) framework for LLM agent, addressing the challenges introduced by partial observability in a unified approach. We use a knowledge graph (KG) to represent the belief state, providing triplets as context for every module of NeSyFS. The fast-thinking module performs reactive action, while slow-thinking conducts a new uncertainty-aware planning by following the high-level structure of twisted sequential Monte Carlo (TSMC) algorithm. To mitigate the misalignment of task objective, a reflection module is used to reflect fast-thinking actions, and also switches to the slow-thinking module whenever reactive actions repeatedly fail. Experiments on three representative benchmarks, i.e. ALFWorld, Webshop, and ScienceWorld, demonstrate significant advantages over previous methods.",
+      "published": "2026-07-31T01:53:41Z",
+      "updated": "2026-07-31T01:53:41Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.28942v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.28942v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.28829",
+      "versioned_id": "2607.28829v1",
+      "title": "When Unlearning Fails: Reliable Data Deletion under Post-Training in Agent Networks",
+      "authors": [
+        "Zihao Ding",
+        "Jun Huang",
+        "Liang Dong"
+      ],
+      "abstract": "Self-improving federated agent networks keep training after deployment by collecting new trajectories with the current policy and feeding them back into later rounds. This closed loop makes unlearning harder than a one-time model repair. When a data owner requests deletion, the target data may have already shaped later retained trajectories, so retraining or model-side unlearning can leave an influence echo that returns as the network continues to operate. We show that this echo survives retained-data retraining, grows with the amount of forget-shaped retained data, and can be traced from deployment, collection, and aggregation records. To address this problem, we propose MUTE, a Muting Unlearned Trajectories' Echoes method for reliable deletion in self-improving federated agent networks. MUTE estimates downstream influence from a lightweight server ledger, removes the current residue through a forget-retain update, contains high-influence retained trajectories through quarantine or down-weighting, and audits later behavior to schedule additional erasure under an uplink budget. Experiments on LIBERO with two vision-language-action backbones, three deletion granularities, and a physical Jetson-based edge testbed show that MUTE keeps behavioral leakage and influence regeneration low while preserving task utility and using much less communication than full retraining.",
+      "published": "2026-07-30T20:41:53Z",
+      "updated": "2026-07-30T20:41:53Z",
+      "categories": [
+        "cs.NI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.NI",
+      "arxiv_url": "https://arxiv.org/abs/2607.28829v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.28829v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2607.28568",
       "versioned_id": "2607.28568v1",
       "title": "Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering",
@@ -238,6 +379,38 @@
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近",
         "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2607.28691",
+      "versioned_id": "2607.28691v1",
+      "title": "Code Is the Body: Agent-Owned Software Bodies for Recursive Evolution and Descent",
+      "authors": [
+        "Roy Zhao",
+        "Zhenyu Zhao"
+      ],
+      "abstract": "Personalized AI agents are often configurable without giving users control over the artifacts that determine their future behavior. We present OurArk, an architecture for persistent personal agents centered on an agent-owned software body: an identity-bearing, inspectable, and versioned artifact under human custody. The body contains behavior-defining code, prompts, tools, skills, policies, tests, and evolution mechanisms. Memories and credentials remain private instance state, while model inference is treated as a replaceable external service. OurArk defines governed self-evolution and recursive descent over the same body. Self-evolution produces isolated candidate changes that are validated, reviewed, and merged under human control, enabling human-agent co-development of the agent's software body. Descent creates an independently versioned descendant with a distinct identity, mission, history, and fresh private-state boundary; compatible descendants can themselves source further descent. After divergence, direct-parent changes and peer skills can be inspected for selective local adaptation. We implement the architecture in the open-source Genesis creation engine and Enoch reference agent. A four-agent, three-descent linear lineage and executable regression tests demonstrate recursive creation, inherited validation contracts, isolated body changes, human-controlled review, and failed-update recovery. OurArk provides a concrete substrate for personal agents that people can possess, govern, specialize, and evolve over time.",
+      "published": "2026-07-30T07:36:02Z",
+      "updated": "2026-07-30T07:36:02Z",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "primary_category": "cs.SE",
+      "arxiv_url": "https://arxiv.org/abs/2607.28691v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.28691v1",
+      "comment": "9 pages, 3 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
       ]
     },
     {
@@ -726,7 +899,7 @@
     },
     {
       "id": "2607.23802",
-      "versioned_id": "2607.23802v1",
+      "versioned_id": "2607.23802v2",
       "title": "From RLVR to RLSVR: Task Transformation Induces Self-Verifiable Rewards for Open-Ended LLM Self-Improvement",
       "authors": [
         "Qinsi Wang",
@@ -741,15 +914,15 @@
         "Handong Zhao",
         "Wentian Zhao"
       ],
-      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has driven recent progress in reasoning-oriented large language models (LLMs) by enabling large-scale optimization. However, its applicability remains largely limited to domains such as mathematics and coding, where correctness can be deterministically verified. Open-ended tasks instead often rely on human preferences, reward models, or LLM-based judges, introducing evaluation bias, judge capability bottlenecks, and additional inference costs.Drawing on the principle of self-supervised learning, which constructs pretext tasks to derive supervision from the data itself, we propose Reinforcement Learning with Self-Verifiable Rewards (RLSVR), a task-transformation-based training paradigm for extending RLVR to open-ended tasks. RLSVR transforms open-ended tasks into verifiable proxy environments whose internal rules and interaction outcomes automatically generate reward signals. We instantiate RLSVR with SpyRL, a multi-agent self-play environment inspired by Who Is the Spy?. Agents receive asymmetric information, complete the same target task, and vote to identify a designated spy. Because the spy identity is predetermined, voting outcomes provide fully verifiable rewards, while successful identification remains closely related to output quality. Experiments on text summarization, creative writing, and mathematical reasoning show that SpyRL outperforms existing self-improvement methods on non-verifiable tasks and yields consistent gains on verifiable reasoning tasks. These results demonstrate that task transformation can extend scalable RLVR-based self-improvement beyond inherently verifiable domains. Models and code have been released at https://github.com/wangqinsi1/SpyRL.",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has driven recent progress in reasoning-oriented large language models (LLMs) by enabling large-scale optimization. However, its applicability remains largely limited to domains such as mathematics and coding, where correctness can be deterministically verifiable. Open-ended tasks instead often rely on human preferences, reward models, or LLM-based judges, introducing evaluation bias, judge capability bottlenecks, and additional inference costs. Drawing on the principle of self-supervised learning, which constructs pretext tasks to derive supervision from the data itself, we propose Reinforcement Learning with Self-Verifiable Rewards (RLSVR), a task-transformation-based training paradigm for extending RLVR to open-ended tasks. RLSVR transforms open-ended tasks into verifiable proxy environments whose internal rules and interaction outcomes automatically generate reward signals. We instantiate RLSVR with SpyRL, a Self-PlaY Reinforcement Learning method inspired by social deduction game Who Is the Spy?. Agents receive asymmetric information, complete the same target task, and vote to identify a designated spy. Because the spy identity is predetermined, voting outcomes provide fully verifiable rewards, while successful identification remains closely related to output quality. Experiments on text summarization, creative writing, and mathematical reasoning show that SpyRL outperforms existing self-improvement methods on non-verifiable tasks and yields consistent gains on verifiable reasoning tasks. These results demonstrate that task transformation can extend scalable RLVR-based self-improvement beyond inherently verifiable domains. Models and code have been released at https://github.com/wangqinsi1/RLSVR/tree/SpyRL.",
       "published": "2026-07-26T19:04:33Z",
-      "updated": "2026-07-26T19:04:33Z",
+      "updated": "2026-07-31T02:55:56Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.23802v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.23802v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.23802v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.23802v2",
       "comment": "COLM 2026",
       "journal_ref": "",
       "doi": "",
@@ -1783,6 +1956,42 @@
       ]
     },
     {
+      "id": "2607.13683",
+      "versioned_id": "2607.13683v2",
+      "title": "HarnessBank: Semantic Gene-Bank Search with Gated Verification for Agent-Harness Self-Evolution",
+      "authors": [
+        "Xiaotian Luo",
+        "Dizhan Xue",
+        "Fengxingyu Wang",
+        "Chuanrui Hu",
+        "Yafeng Deng"
+      ],
+      "abstract": "Large Language Models (LLMs) have enabled capable agents across diverse applications. Beyond the foundation model, the performance of an agent is governed by the surrounding agent harness, including prompts, tools, control loops, etc. Automatically evolving this harness offers a promising pathway to agent improvement, yet existing approaches typically rely on greedy candidate selection and noisy self-generated feedback, rendering their gains susceptible to search collapse, task-specific overfitting, and poor verifiability. To tackle these challenges, we introduce HarnessBank, a trustworthy agent-harness self-evolution framework that pairs a task agent with a separate evolver agent for iterative failure diagnosis, harness generation, and evolution verification. HarnessBank maintains a Harness Gene Bank composed of high-performing harnesses of different semantic coordinates. Those harnesses are reinvented, recombined, screened, and selected during the self-evolution procedure. Moreover, we propose a Gated Harness Screening mechanism to efficiently filter high-quality harnesses and reduce the cost of evaluating numerous offspring harnesses. Across seven agent benchmarks, HarnessBank produces consistent performance improvements from 5.1% to 15.4%. Cross-model experiments further verify that the improvements come from the model-specific self-evolving process, instead of a universally optimal harness. Our code will be publicly available upon acceptance.",
+      "published": "2026-07-15T10:26:26Z",
+      "updated": "2026-07-30T08:41:14Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2607.13683v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.13683v2",
+      "comment": "9 pages, 4 figures, 3 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2607.12790",
       "versioned_id": "2607.12790v2",
       "title": "Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents",
@@ -1900,7 +2109,12 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=JyrcEL77Nq",
+      "openreview_venues": [
+        "Under review for TMLR"
       ],
       "relevance_score": 100,
       "relevance_reasons": [
@@ -2894,6 +3108,48 @@
       ]
     },
     {
+      "id": "openreview:YLq4OavTYy",
+      "versioned_id": "YLq4OavTYy",
+      "title": "Harness RL is Meta-Learning: Training to Self-Improve at Test Time",
+      "authors": [
+        "Alvin Zhang",
+        "Zixuan Wang",
+        "Xuecheng Liu",
+        "Fahim Tajwar",
+        "Ruslan Salakhutdinov",
+        "Daniel Khashabi",
+        "Yuda Song",
+        "Andrea Zanette"
+      ],
+      "abstract": "Self-improving agents must learn to update themselves at test time. Meta-learning trains exactly such update rules by optimizing post-adaptation performance, but because its inner loop runs in model weights, it is prohibitively costly at LLM scale. A modern policy, however, is more than weights: it is a frozen model plus a harness of instructions, memory, and tool-use rules. We observe that relocating the inner loop to the harness removes the computational obstacle: harness revision needs no gradients, so the meta-objective becomes a regular RL objective on post-adaptation return. We introduce harness RL: a proposer is trained to revise the harness from observed rollouts while the executor stays frozen, so every gain must flow through the written harness. We test harness RL on reasoning and coding tasks and observe both generalization and test-time scaling. What harness RL improves is thus not performance on a fixed task but the model's ability to improve itself, a capability we call meta-self-improvement.",
+      "published": "2026-07-04T10:03:08+00:00",
+      "updated": "2026-07-31T23:06:55+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=YLq4OavTYy",
+      "openreview_url": "https://openreview.net/forum?id=YLq4OavTYy",
+      "pdf_url": "https://openreview.net/pdf?id=YLq4OavTYy",
+      "comment": "LLA 2026 Poster",
+      "journal_ref": "LLA 2026 Poster",
+      "doi": "",
+      "venue": "LLA 2026 Poster",
+      "venue_id": "colmweb.org/COLM/2026/Workshop/LLA",
+      "discovered_on": "2026-08-03",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
       "id": "2607.03726",
       "versioned_id": "2607.03726v1",
       "title": "SelfMem: Self-Optimizing Memory for AI Agents",
@@ -2925,6 +3181,45 @@
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "openreview:aecfu2gW0b",
+      "versioned_id": "aecfu2gW0b",
+      "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
+      "authors": [
+        "Qinyuan Ye",
+        "Yu Li",
+        "Yada Pruksachatkun",
+        "Jiaxin Zhang",
+        "Chien-Sheng Wu"
+      ],
+      "abstract": "Memory-based self-improving agents—those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank—have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple runs to quantify variance, and (2) randomly shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Empirically, when these methods are applied, we observe the variance across runs increase in 71% of cases, and the gap between the best and worst runs of the same experiment can reach up to 10 percentage points. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. In contrast, when evaluated under a randomly shuffled task order, agent performance degrades (-4.5%) instead of exhibiting the expected improvement (+1.5%). To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. Without clear specifications, agents generate plausible yet inapplicable memories (e.g., recommending API usage in a browser-only environment) that may distract the agent from feasible strategies. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under realistic, challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
+      "published": "2026-07-03T19:02:36+00:00",
+      "updated": "2026-07-31T23:06:55+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=aecfu2gW0b",
+      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
+      "pdf_url": "https://openreview.net/pdf?id=aecfu2gW0b",
+      "comment": "LLA 2026 Poster",
+      "journal_ref": "LLA 2026 Poster",
+      "doi": "",
+      "venue": "LLA 2026 Poster",
+      "venue_id": "colmweb.org/COLM/2026/Workshop/LLA",
+      "discovered_on": "2026-08-03",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -42314,10 +42609,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-02T06:49:20+00:00",
-  "last_success": "2026-08-02T06:49:20+00:00",
-  "new_count": 0,
-  "total_cached": 1075,
+  "last_checked": "2026-08-03T07:00:56+00:00",
+  "last_success": "2026-08-03T07:00:56+00:00",
+  "new_count": 8,
+  "total_cached": 1083,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

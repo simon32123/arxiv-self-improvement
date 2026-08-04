@@ -1,6 +1,190 @@
 {
   "papers": [
     {
+      "id": "2608.01904",
+      "versioned_id": "2608.01904v1",
+      "title": "CoEvoKG: Co-Evolving Knowledge Graphs with Self-Evolving Search Agents",
+      "authors": [
+        "Zhaoyang Li",
+        "Zenghuang Fu",
+        "Qiuyuan Ai",
+        "Ping Jiang",
+        "Haoyu Wu",
+        "Minghui Wu",
+        "Chenxu Zhao",
+        "Jie Song",
+        "Guannan He"
+      ],
+      "abstract": "Large language models can improve with reinforcement learning for search agents, yet existing self play agents repeatedly generate tasks while discarding the knowledge gained during successful searches. We introduce CoEvoKG, a framework that turns a knowledge graph into both a source of verifiable training tasks and a persistent evidence memory for agent evolution. CoEvoKG jointly trains a task generator and a search agent: the generator creates multihop questions from entity chains sampled from the knowledge graph, while the agent learns from rewards for answer correctness and search trajectories whose entity paths are supported by graph evidence. When a search succeeds, CoEvoKG verifies and deduplicates the retrieved evidence, then writes it back to the corresponding graph nodes and edges. Future rounds reuse this enriched graph for task generation and reward computation, closing the loop between model self evolution and knowledge accumulation. Experiments on six QA benchmarks (NQ, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, and Bamboogle) with three backbone models show that CoEvoKG improves macro average accuracy over the corresponding base models by +11.2, +10.1, and +11.6 points on Qwen2.5-3B-Instruct, Qwen2.5-7B-Instruct, and Llama-3.1-8B-Instruct, respectively. Under matched training budgets, CoEvoKG further improves over competitive self play baselines and RL baselines for search agents by +2.6 to +3.7 macro average points across the three backbones. Code is available at https://github.com/lazzy1225/CoEvoKG.",
+      "published": "2026-08-03T08:39:16Z",
+      "updated": "2026-08-03T08:39:16Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.01904v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.01904v1",
+      "comment": "10 pages, 4 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-04",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.01851",
+      "versioned_id": "2608.01851v1",
+      "title": "Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting Weights to Robots that Write their Own Skills",
+      "authors": [
+        "Gaytri Jena",
+        "Kapil Wanaskar",
+        "Vinija Jain",
+        "Aman Chadha",
+        "Vasu Sharma",
+        "Amitava Das"
+      ],
+      "abstract": "Robot learning is splitting into two bets: policies that bake competence into frozen weights (vision-language-action, or VLA, models), and agents that write and refine their own executable skills as code. This survey organises the field around that axis of weights versus skills. Its central analytical contribution is a deep-dive that arranges code-as-policy methods by their degree of self-improvement, from zero-shot program synthesis, through closed-loop self-repair and persistent skill memory, to the sparsely populated cell in which execution feedback, skill memory, and evolutionary search combine into one open-ended loop; only a few very recent systems (for example ASPIRE, ENPIRE, and RoboClaw) occupy that cell. We map the complementary \"skills\" pole, from unsupervised reinforcement-learning skill discovery to large-language-model skill libraries, and show that the word \"skill\" is used in at least five distinct senses, of which only the code sense self-improves without gradient updates. We then connect the taxonomy to the emerging skill economy: commercial robot-skill marketplaces now distribute one-tap skills across robots but ship only static playback, which surfaces open problems of adaptation, cross-embodiment portability, provenance, safety verification, composition, and standardisation. This is a deliberately focused survey. Rather than cataloguing the field exhaustively, it examines 77 representative systems across six technique families through one taxonomy and a set of contrast tables, and it supplies operational definitions of the self-improvement mechanisms together with a statement of what each family cannot do.",
+      "published": "2026-08-03T07:58:35Z",
+      "updated": "2026-08-03T07:58:35Z",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "arxiv_url": "https://arxiv.org/abs/2608.01851v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.01851v1",
+      "comment": "40 pages, 11 figures, 11 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-04",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.01234",
+      "versioned_id": "2608.01234v1",
+      "title": "Learning What to Remember and What to Internalize in LLM Self-Evolution via Adaptive Memory-Parameter Coordination",
+      "authors": [
+        "Tianyun Ji",
+        "Zhenya Huang",
+        "Jiayu Liu",
+        "Zirui Liu",
+        "Yu Su",
+        "Hongbin Pei"
+      ],
+      "abstract": "Large language model agents increasingly operate in dynamic environments where tool interfaces, APIs, and user requirements change after deployment. Existing self-evolution methods mainly follow two paradigms: harness-based approaches, which externalize feedback into editable memories or skills for rapid adaptation, and parameter-based approaches, which internalize experience into model parameters for deeper capability improvement. However, using either mechanism alone creates a trade-off between flexibility and performance. This paper asks how an agent can coordinate both channels to achieve robust self-evolution. We present COVE, a unified agent self-evolution framework that combines harness-based and parameter-based learning through task-aware routing, stage-aware scheduling, and knowledge optimization. Through this design, COVE treats self-evolution not as indiscriminate accumulation of experience, but as a coordinated process that matches tasks and knowledge types to appropriate learning mechanisms. Experiments across multiple task categories show that COVE outperforms single-channel evolution strategies, demonstrating more robust and efficient improvement under changing environments.",
+      "published": "2026-08-02T13:39:01Z",
+      "updated": "2026-08-02T13:39:01Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.01234v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.01234v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-04",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 70,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.00981",
+      "versioned_id": "2608.00981v1",
+      "title": "Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",
+      "authors": [
+        "Wenhui Chen",
+        "Jianlin Chen",
+        "Ziyao Lin",
+        "Chi Man Vong"
+      ],
+      "abstract": "When a self-improving AI-for-science system claims a new capability, the evidence is usually a benchmark delta, a description-length gate, or a p-value. None separates a real gain from extra search, from a changed verifier, or from adaptation to a fallible oracle. We build a two-sided audit whose negative side is a formal fact: a pseudoknot-free oracle provably cannot represent a crossing base pair, so the prior verifier's range is bounded exactly, offline, before any run. \"New\" is relative to the agent's prior self, never to the base model. First, how far a single fallible oracle can inflate a capability claim. An invented, solver-free operator solves 43/60 crossing RNA targets under the predictor it optimizes, above a context-free floor of 0/60; under three predictors, 1/60 survives. Paired on the same 43 targets, a predictor the operator never saw confirms 2 of its designs against 26 for a minimum-free-energy solver (p = 8e-7). No statistic computed from the system and its own oracle sees that gap. Second, agent-written procedures can beat a human-written one under a judge no objective can flatter, at a fraction of the compute. Of six frontier models, the two whose operators ran without timeouts carry over at 0.293 against our 0.095 (n = 951 paired units, target-clustered [+0.108, +0.297], p = 5e-5) while spending 4.6-10x fewer oracle calls. Three rungs: difference under an outside adjudicator (reached), not bought with compute (reached, both directions), mechanism identified and transferable (not reached; seven candidates tested, none moves the statistic). The ceiling is the panel itself: its three predictors share nearest-neighbour thermodynamic parameters, two agreeing at kappa = 0.673. The audit is as unsparing about our own system: matched undirected search is an exact zero, and a search-free probe puts 84% of our headline effect on targets a random sequence already solves.",
+      "published": "2026-08-02T04:15:12Z",
+      "updated": "2026-08-02T04:15:12Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.00981v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.00981v1",
+      "comment": "51 pages, 10 figures, 10 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-04",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.00155",
+      "versioned_id": "2608.00155v1",
+      "title": "AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?",
+      "authors": [
+        "Dong Yan",
+        "Jian Liang",
+        "Dapeng Hu",
+        "Ran He",
+        "Nicholas Jing Yuan",
+        "Qi Zhang",
+        "Tieniu Tan"
+      ],
+      "abstract": "Large language model (LLM) agents can self-evolve by continually improving from their own accumulated experience. However, existing studies predominantly adopt independent evaluation. Consequently, the behavior of self-evolving agents in realistic streaming settings, where agents adapt to diverse and complex task streams, remains poorly understood. To address this gap, we introduce AgentStream, a unified framework that evaluates self-evolving agents spanning diverse evolution components by organizing agentic benchmarks into a configurable task stream and instantiating the \\texttt{Isolated}, \\texttt{Sequential}, and \\texttt{Interleaved} streaming scenarios at test time, which progressively vary the scope and domain composition of the stream. Over these scenarios, we combinatorially evaluate five representative self-evolving methods across three frontier foundation models, disentangling how model capability, method architecture, and streaming scenario jointly shape self-evolution. Our results show that self-evolution reliability varies across streaming scenarios, the benefit of self-evolution is gated by model capability and non-monotonic in model strength, and no single method dominates across models and scenarios. These findings offer concrete guidance for selecting self-evolving methods across models and streaming scenarios. Overall, we advocate that self-evolving agents should be evaluated under realistic task streams rather than isolated single-task settings.",
+      "published": "2026-07-31T17:50:08Z",
+      "updated": "2026-07-31T17:50:08Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.00155v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.00155v1",
+      "comment": "Code is available at https://github.com/Jasper-Yan/AgentStream",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-04",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2607.29626",
       "versioned_id": "2607.29626v1",
       "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
@@ -1697,12 +1881,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=tpEflAIlo5",
-      "openreview_venues": [
-        "ICML 2026 Workshop AgenticUQ Poster"
+        "arXiv"
       ],
       "relevance_score": 48,
       "relevance_reasons": [
@@ -42609,10 +42788,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-03T07:00:56+00:00",
-  "last_success": "2026-08-03T07:00:56+00:00",
-  "new_count": 8,
-  "total_cached": 1083,
+  "last_checked": "2026-08-04T06:47:36+00:00",
+  "last_success": "2026-08-04T06:47:36+00:00",
+  "new_count": 5,
+  "total_cached": 1088,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

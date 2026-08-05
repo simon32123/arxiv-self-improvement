@@ -1,6 +1,39 @@
 {
   "papers": [
     {
+      "id": "openreview:jCDB1rK3Yc",
+      "versioned_id": "jCDB1rK3Yc",
+      "title": "BOFlow: Exploration-Aware Bayesian Optimisation in Workflow Space for Agent Evolution",
+      "authors": [],
+      "abstract": "Designing effective agentic workflows for large language models (LLMs) is crucial for self-evolving agents and involves searching over a vast space of structured compositions of reasoning steps, tool calls, and control logic. While prior work has explored automated workflow generation using methods such as Monte Carlo Tree Search and evolutionary strategies, these approaches often rely on pretrained LLM knowledge and are prone to inefficiencies such as premature convergence and mode collapse. In this work, we take an alternative perspective and formulate workflow discovery as a black-box optimization problem over the latent space of code-represented workflows. Building on this formulation, we introduce an exploration-aware Bayesian optimization framework (BOFlow) that models workflow performance over the space. Our approach optimizes over the workflow manifold to avoid mode collapse, while guiding the search using prior evaluations to promote structurally distinct and optimal workflows. Across a suite of reasoning and program synthesis benchmarks, our method consistently outperforms prior search-based approaches, with particularly strong gains on tasks requiring complex, multi-stage reasoning.",
+      "published": "2026-08-04T07:17:18+00:00",
+      "updated": "2026-08-04T12:34:32+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=jCDB1rK3Yc",
+      "openreview_url": "https://openreview.net/forum?id=jCDB1rK3Yc",
+      "pdf_url": "https://openreview.net/pdf?id=jCDB1rK3Yc",
+      "comment": "ACL ARR 2026 August Submission",
+      "journal_ref": "ACL ARR 2026 August Submission",
+      "doi": "",
+      "venue": "ACL ARR 2026 August Submission",
+      "venue_id": "aclweb.org/ACL/ARR/2026/August/Submission",
+      "discovered_on": "2026-08-05",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2608.01904",
       "versioned_id": "2608.01904v1",
       "title": "CoEvoKG: Co-Evolving Knowledge Graphs with Self-Evolving Search Agents",
@@ -1427,7 +1460,8 @@
       "discovered_on": "2026-07-23",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
       ],
       "relevance_score": 75,
       "relevance_reasons": [
@@ -1436,6 +1470,10 @@
         "摘要中的两类信号距离接近",
         "覆盖多个自进化关键词",
         "属于核心 Agent 相关分类"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=PPk1GEkPIT",
+      "openreview_venues": [
+        "CBW Poster"
       ]
     },
     {
@@ -7140,7 +7178,8 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
       ],
       "relevance_score": 63,
       "relevance_reasons": [
@@ -7148,6 +7187,10 @@
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近",
         "覆盖多个自进化关键词"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=4Q8poz6dA2",
+      "openreview_venues": [
+        "ACL ARR 2026 August Submission"
       ]
     },
     {
@@ -42788,11 +42831,11 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-04T06:47:36+00:00",
-  "last_success": "2026-08-04T06:47:36+00:00",
-  "new_count": 5,
-  "total_cached": 1088,
-  "fetch_error": "",
+  "last_checked": "2026-08-05T06:48:35+00:00",
+  "last_success": "2026-08-05T06:48:35+00:00",
+  "new_count": 1,
+  "total_cached": 1089,
+  "fetch_error": "arXiv HTTPError: HTTP Error 503: Service Unavailable",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [
     "(\"self improvement\" OR \"self-improvement\" OR \"self improving\" OR \"self-improving\") AND (\"agent\" OR \"agents\" OR \"agentic\" OR \"multi-agent\" OR \"multiagent\")",

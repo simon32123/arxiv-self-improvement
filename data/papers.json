@@ -1,6 +1,363 @@
 {
   "papers": [
     {
+      "id": "2608.05144",
+      "versioned_id": "2608.05144v1",
+      "title": "Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning",
+      "authors": [
+        "Boxiu Li",
+        "Zimo Wen",
+        "Yijia Fan",
+        "Junxiang Lei",
+        "Sufeng Guo",
+        "Jiaao Wu",
+        "Ruize Tang",
+        "Mukai Li",
+        "Yifei Shen",
+        "Xiaoyu Chen",
+        "Wanbo Zhang",
+        "Runjing Gu",
+        "Yifei Gao",
+        "Yuheng Wu",
+        "Xuyao Huang",
+        "Zelong Zhao",
+        "Jiachen Zhang",
+        "Shibo Hu",
+        "Hangxi Guo",
+        "Yilin Chen",
+        "Yuzhe Zhang",
+        "Fan Yang",
+        "Chuan Wen",
+        "Xian Zhang",
+        "Xuanhe Zhou",
+        "Zhijie Deng"
+      ],
+      "abstract": "Long-horizon reasoning requires an agentic runtime that can persist when evidence supports its current approach and pivot when measurements reveal failure, hidden constraints, or a misspecified objective. We present Argus, a persistent, self-evolving runtime in which Manager, Planner, Engineer, and Reviewer execute bounded missions over durable project state. Argus separates stable user intent from operational objectives, constraints, and verification criteria, and admits memories, skills, procedures, verifiers, routing decisions, and rejected routes only after role-owned review and, when available, task-native verification. Model weights remain fixed; self-evolution occurs through persistent runtime state and control policy, with autonomous execution between operator-owned escalation points. Across seven GPT-5.5 benchmark arenas, Argus achieves about 78% on SWE-Bench Pro versus 59% for Direct Copilot while using 1.41 times the aggregate tokens. After verification-gated self-evolution, mature SWE-Bench waves use 21% fewer solve-input tokens and 15% less active workflow time per task than startup waves, while recording 34 verifier recoveries and 22 strict review-loop rescues. Argus also reaches 76.8% on AARRI-Bench and a 28.0-point gap on mathematical data synthesis, with competitive GPU-kernel and language-model-training results. Beyond benchmarks, an optimized RWKV6 kernel was merged upstream; a multi-day mathematics campaign retained falsified routes and proof-backed frontier updates; and six paper pipelines completed 254 missions with 16 stage rollbacks. These results show that a fixed-weight, self-evolving harness can revise, recover, and accumulate verified approaches while producing structured trajectories for future supervised and reinforcement learning.",
+      "published": "2026-08-05T17:58:58Z",
+      "updated": "2026-08-05T17:58:58Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.05144v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05144v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.05141",
+      "versioned_id": "2608.05141v1",
+      "title": "OctoLong: Mid-Training On Cross-Repository Code Contexts Enhances Long-Context Modeling",
+      "authors": [
+        "Indraneil Paul",
+        "Falko Helm",
+        "Goran Glavaš",
+        "Iryna Gurevych"
+      ],
+      "abstract": "Context lengths of language models (LMs) have dramatically increased, driven by the demands for in-context learning, self-improvement, and long-horizon agentic workflows. Existing long-context corpora, however, are dominated by books, academic articles, and code repositories, which are finite resources and often scarce in long-distance dependencies. In this work, we introduce OctoLong, a context engineering pipeline that instruments an AST parser, a language server backend, and a package manager to facilitate the recursive retrieval of code references, enabling the curation of dependency-rich code contexts of millions of tokens in length. We then train OctoLong-Instruct, a suite of capable long-context open LMs, derived from base models ranging in size from 600M to 14B parameters, via context-extension mid-training on a ~50B-token mixture containing ~6.2B tokens of OctoLong code contexts, followed by ~10B tokens of instruction tuning. Our training ablations and experimental evaluations against 18 state-of-the-art open-weight long-context LMs show that supplanting just 12% of traditional context-extension corpora with OctoLong data yields substantial gains in long-range retrieval, long-term state tracking, repository-level code understanding, and downstream agentic tasks, while also enhancing API usage in short-context coding scenarios.",
+      "published": "2026-08-05T17:58:15Z",
+      "updated": "2026-08-05T17:58:15Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.05141v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05141v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.04968",
+      "versioned_id": "2608.04968v1",
+      "title": "EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement",
+      "authors": [
+        "Jun Nie",
+        "Yonggang Zhang",
+        "Qianshu Cai",
+        "Yiu-ming Cheung",
+        "Xinmei Tian",
+        "Bo Han"
+      ],
+      "abstract": "The capabilities of an LLM agent depend not only on its model but on the harness: the executable program that constructs context, invokes tools, verifies results, and recovers from failure. Recent work shows that evolving the harness yields persistent improvements without updating model weights. Existing approaches, however, assume that all execution experience can be routed to a single optimizer, which evolves one harness along a sequential trajectory. Real agent ecosystems violate that assumption: users, organizations, and environments generate isolated streams of experience that cannot be pooled, so the experience most worth learning from is exactly the experience that cannot be directly centralized. We introduce EvolveNet, a paradigm of collaborative harness evolution that moves experience extraction to the data. A shared harness is broadcast to data-local agent deployments, each of which evolves it on its own workload. Only the resulting program adaptations are composed into an updated shared harness and redistributed, so that every participating agent inherits operational experience discovered by the others. By shifting the aggregation boundary from raw workloads to learned adaptations, EvolveNet keeps workloads local and allows multiple evolutionary searches to proceed concurrently with reduced serial depth. Because independently modified programs cannot be averaged like model parameters and may conflict when composed, EvolveNet introduces scope-typed, evidence-guided program aggregation. Across five settings spanning text-to-SQL, data-science coding, competitive programming, software engineering, and agentic workflows, EvolveNet improves the shared harness in all five, with the largest gains under heterogeneous workloads, and ablations attribute the improvement to composition of adaptations from different agents rather than to selecting among them.",
+      "published": "2026-08-05T15:37:18Z",
+      "updated": "2026-08-05T15:37:18Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2608.04968v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04968v1",
+      "comment": "20 pages, 3 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.04761",
+      "versioned_id": "2608.04761v1",
+      "title": "InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval",
+      "authors": [
+        "Tsz Ting Chung",
+        "Jiangnan Li",
+        "Jie Zhou",
+        "Mo Yu"
+      ],
+      "abstract": "Self-improving agents accumulate reusable insights from prior trajectories, making retrieval increasingly important for turning accumulated experience into actionable guidance. At each decision step, retrieving the right insight can help the agent progress toward its goal, a setting we refer to as agentic insight retrieval. However, existing retrieval methods primarily model semantic similarity, while overlooking whether a retrieved insight resolves the agent's current decision bottleneck. We propose InsightEmb, a contrastive embedding framework that learns transferable progress-oriented retrieval geometry using only mathematical reasoning data. InsightEmb jointly learns to align concrete situations with abstract heuristic rules and to cluster reasoning trajectories with similar progress structures. We evaluate InsightEmb on dynamic agent tasks and a static skill-retrieval benchmark. Without any environment-specific training, InsightEmb improves over all these evaluations, surpassing the performance of existing reasoning embedding models. These results suggest that the geometry of state-insight matching can transfer across domains, enabling effective training from publicly available reasoning data without expensive environment-specific supervision.",
+      "published": "2026-08-05T12:28:00Z",
+      "updated": "2026-08-05T12:28:00Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.04761v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04761v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.04634",
+      "versioned_id": "2608.04634v1",
+      "title": "HELENA:Hierarchical Sparse Coordination over a Union of Complementary Topologies for MAS",
+      "authors": [
+        "Zhifang Mao",
+        "Linyao Zheng",
+        "Xuhang Shi",
+        "Xiuquan Hou"
+      ],
+      "abstract": "LLM-based multi-agent systems (MAS) typically optimize a single topology, restricting reasoning to a narrow trajectory and limiting comprehensive analytical capacity. Naively merging multiple topologies into a composite graph introduces redundant noise propagation across irrelevant connections, degrading solution quality. To address this dilemma, we propose \\textbf{Hierarchical Sparse Coordination over a Union of Complementary Topologies for MAS (HELENA)}, a multi-agent framework that balances diverse reasoning paths with sparse task-dependent execution. \\helena{} constructs a union MAS graph from complementary candidate topologies selected via Monte Carlo Tree Search and Determinantal Point Process, broadening the reasoning trajectory for comprehensive analysis of complex problems. A Hierarchical Sparse Coordination module then activates only a sparse subgraph at each step while agents exchange compressed latent briefs to suppress redundant noise propagation. Finally, a Local Self-Refinement stage identifies decision units with discrepancy evidence and rewrites them only when contrastive evidence simultaneously confirms a reliable solution-side failure and a challenger-side improvement. Experiments across eight benchmarks show that \\helena{} achieves state-of-the-art results on all benchmarks, with an average gain of \\pctup{3.47} over the strongest baseline and up to \\pctup{10.34} on MMLU-Pro, achieving larger improvements on harder benchmarks at a reasonable additional cost.",
+      "published": "2026-08-05T09:49:30Z",
+      "updated": "2026-08-05T09:49:30Z",
+      "categories": [
+        "cs.MA"
+      ],
+      "primary_category": "cs.MA",
+      "arxiv_url": "https://arxiv.org/abs/2608.04634v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04634v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.04625",
+      "versioned_id": "2608.04625v1",
+      "title": "A/B Agent: A Self-Evolving Agent for Strategy Iteration in Industrial A/B Testing",
+      "authors": [
+        "Zhuohang Jiang",
+        "Yuxin Chen",
+        "Yongsen Pan",
+        "Zheng Hu",
+        "Wenqi Fan",
+        "Qing Li",
+        "Hongyang Wang",
+        "Jun Wang",
+        "Wenwu Ou"
+      ],
+      "abstract": "Industrial recommendation strategy iteration heavily relies on large-scale A/B experimentation. Traditional tuning requires experts to repeatedly design strategies, configure experiments, analyze results, and adjust parameters, making the process labor-intensive and time-consuming. Meanwhile, valuable knowledge from historical experiments is often fragmented, making systematic reuse difficult through manual expert effort alone. Existing RAG agents partially alleviate this burden by retrieving prior strategies, but typically organize experience in a flat manner, overlooking the hierarchical relationships among business scenarios, recommendation stages, optimization objectives, and experimental contexts. This often results in mismatched retrieval and limited cross-scenario transfer, while preventing agents from continuously refining strategies and parameters through sequential A/B feedback. % To address these limitations, we propose A/B Agent, a closed-loop A/B agent for industrial recommendation strategy optimization. The framework comprises three tightly coupled core components: Historical Strategy Knowledge Organization, Autonomous Target-Aware Strategy Generation, and Experiment-Guided Strategy Self-Evolution. It organizes historical strategies into a hierarchical experience tree, retrieves transferable evidence through multi-path Tree-RAG to generate executable strategies, and continuously analyzes online A/B feedback to guide autonomous tuning and update the experience tree for self-evolution. Extensive offline and online evaluations demonstrate its effectiveness, including a 4.829% improvement in GMV in a real-world short-video e-commerce recommendation system while maintaining positive gains across all guardrail metrics.",
+      "published": "2026-08-05T09:28:43Z",
+      "updated": "2026-08-05T09:28:43Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.04625v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04625v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.04003",
+      "versioned_id": "2608.04003v1",
+      "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
+      "authors": [
+        "Shuhan Xue",
+        "Zixin Ding",
+        "Yichen Shen",
+        "Yinjie Wang",
+        "Zhenfei Yin",
+        "Yingcheng Wu",
+        "Yuxin Chen",
+        "Mengdi Wang",
+        "Ling Yang"
+      ],
+      "abstract": "Recursive self-improvement requires agents to turn accumulated experience into better future behavior. Personal AI agents offer a concrete setting for studying this capability because they retain preferences, task histories, tool routines, and learned skills across sessions. Yet whether retained experience actually improves them over time has not been systematically tested. We introduce PAST-Bench, a benchmark designed to isolate this question. Each agent runs through ordered sequences of fresh-session tasks under matched conditions that turn retained experience on and off. It spans 26 scenarios and 204 episodes across memory, procedural reuse, information gathering, and update. We report both later-task gains and whether those gains follow the intended save, retrieve, and update pathway. Across seven base models and four agent frameworks, improvement is real but uneven across capabilities. Agents with the same headline gain can differ markedly in whether that gain is supported by evidence of the intended pathway. Guided by these findings, we develop Hermes+, which extends Hermes with five targeted interventions across stages of the agent loop. Hermes+ raises the average gain from retained experience and provides clearer pathway evidence, with its strongest improvement on tasks requiring outdated state to be replaced, although the effect remains capability- and model-dependent. Together, PAST-Bench and Hermes+ provide an evaluation and diagnostic foundation for studying how persistent agents can progress from retaining experience to systematically improving through it. Code: https://github.com/Gen-Verse/PAST-Bench",
+      "published": "2026-08-04T17:58:05Z",
+      "updated": "2026-08-04T17:58:05Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.04003v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04003v1",
+      "comment": "Code: https://github.com/Gen-Verse/PAST-Bench",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
+      "id": "2608.03764",
+      "versioned_id": "2608.03764v1",
+      "title": "GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks",
+      "authors": [
+        "Leijun Zhou",
+        "Zhihao Liu",
+        "Xiang Qu",
+        "Chenxu Liu",
+        "Yifei Liu",
+        "Yanke Yu",
+        "Jingzhe Xu",
+        "Xuejun Wu",
+        "Buyue Qian",
+        "Xi Chen",
+        "Yaowei Zheng",
+        "Junhao Hu"
+      ],
+      "abstract": "Agent self-evolution updates an agent's persistent state from prior experience and reuses it to solve related tasks more effectively. Evaluating self-evolution is difficult: existing benchmarks provide limited coverage of economically valuable task domains, do not always design training and test tasks such that test-time gains can be attributed to training experience, and remain vulnerable to data contamination. We present GDPevo, an evolution-native benchmark grounded in GDP-related enterprise workflows, together with the fully automated data pipeline that generates it. Its core mechanism, rule hybridization, decomposes each enterprise workflow into atomic business rules, distributes subsets of these rules across training tasks, and recombines them in held-out test tasks so that test-time gains are attributable. GDPevo spans CRM, ERP, finance, healthcare, legal, and data-centric workflows. Its V1 release contains 120 tasks in 12 groups, with five training and five held-out test tasks per group. Full automation enables the pipeline to expand the suite to 240 tasks in 24 groups (V2) within two days, providing a practical response to contamination. Using GDPevo, we evaluate four agents, each comprising a harness and a model, under four supervision types. Self-evolution consistently improves held-out accuracy by up to 16.44 percentage points. But the best evolved agents remain far below the fully informed oracle ceiling of 91.6%, indicating that the self-evolution ability of current agents remains far from fully realized. We publicly release the pipeline, benchmark, and full evaluation results at https://github.com/Prism-Shadow/GDPevo.",
+      "published": "2026-08-04T14:51:56Z",
+      "updated": "2026-08-04T14:51:56Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.03764v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.03764v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "openreview:4afoKmj7e3",
+      "versioned_id": "4afoKmj7e3",
+      "title": "Beyond Self-Reflection: An Execute–Distill–Verify Framework for Agentic Experience Learning",
+      "authors": [],
+      "abstract": "Experience learning enables large language model agents to retain lessons from past tasks and reuse them in future ones. However, existing methods often rely on the same agent to both execute a task and summarize its own behavior. When an execution trajectory contains errors that the agent fails to recognize, the agent may incorrectly regard the execution process as valid and consequently extract erroneous experience from it. Once written into long-term memory, such experience may be repeatedly retrieved and reused in subsequent tasks. We refer to this failure mode as the Self-Confirmation Trap. Our key insight is that long-term experience should not be generated and approved solely through the self-reflection of a single executor. Inspired by how human groups develop knowledge through independent practice, comparison of different experiences, and mutual examination, we propose EDV, an Execute--Distill--Verify framework. EDV allows multiple heterogeneous agents to execute tasks independently, employs a third-party agent to compare their trajectories and distill candidate experience, and verifies the resulting experience before writing it into memory. Experiments on multiple long-horizon agent benchmarks show that EDV effectively improves overall task performance, and that its advantage arises from the synergy among the Execute, Distill, and Verify stages rather than from simply increasing the number of agents.",
+      "published": "2026-08-04T11:54:12+00:00",
+      "updated": "2026-08-04T12:35:24+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=4afoKmj7e3",
+      "openreview_url": "https://openreview.net/forum?id=4afoKmj7e3",
+      "pdf_url": "https://openreview.net/pdf?id=4afoKmj7e3",
+      "comment": "ACL ARR 2026 August Submission",
+      "journal_ref": "ACL ARR 2026 August Submission",
+      "doi": "",
+      "venue": "ACL ARR 2026 August Submission",
+      "venue_id": "aclweb.org/ACL/ARR/2026/August/Submission",
+      "discovered_on": "2026-08-06",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "openreview:jCDB1rK3Yc",
       "versioned_id": "jCDB1rK3Yc",
       "title": "BOFlow: Exploration-Aware Bayesian Optimisation in Workflow Space for Agent Evolution",
@@ -31,6 +388,43 @@
         "标题命中 Agent 关键词",
         "标题同时包含自进化与 Agent 信号",
         "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "openreview:oE3YWSCRQr",
+      "versioned_id": "oE3YWSCRQr",
+      "title": "Encouraging Critical Thinking for Multi-Agent Debate",
+      "authors": [],
+      "abstract": "Large language models (LLMs) have demonstrated remarkable performance across a wide range of tasks in recent years. While prior work has explored leveraging LLMs to generate synthetic data for self-improvement, repeated iterations often suffer from diminishing returns due to the reliance on homogeneous reasoning patterns and limited exploration of alternative perspectives. In this paper, we introduce a novel framework that enriches the reasoning process by encouraging critical thinking among multiple agents. Rather than deploying an ensemble of models with identical prompts, we propose a strategy generator that produces customized instructions tailored to each individual LLM. Acting as a critical thinking agent, the generator is iteratively fine-tuned using carefully selected strategies that are both diverse and effective. This approach fosters specialization within each model while promoting diversity across reasoning paths, enabling the system to maintain varied solution trajectories and achieve sustained performance gains through iterative refinement. We demonstrate the effectiveness of our method across a variety of agentic frameworks and complex reasoning tasks.",
+      "published": "2026-08-04T02:18:31+00:00",
+      "updated": "2026-08-04T12:33:56+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=oE3YWSCRQr",
+      "openreview_url": "https://openreview.net/forum?id=owpU8gxnkM",
+      "pdf_url": "https://openreview.net/pdf?id=oE3YWSCRQr",
+      "comment": "ACL ARR 2026 August Submission",
+      "journal_ref": "ACL ARR 2026 August Submission",
+      "doi": "",
+      "venue": "ACL ARR 2026 August Submission",
+      "venue_id": "aclweb.org/ACL/ARR/2026/August/Submission",
+      "discovered_on": "2026-07-19",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "openreview_venues": [
+        "ACL ARR 2026 August Submission",
+        "Submitted to ICLR 2026"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
       ]
     },
     {
@@ -197,7 +591,8 @@
       "published": "2026-07-31T17:50:08Z",
       "updated": "2026-07-31T17:50:08Z",
       "categories": [
-        "cs.AI"
+        "cs.AI",
+        "cs.LG"
       ],
       "primary_category": "cs.AI",
       "arxiv_url": "https://arxiv.org/abs/2608.00155v1",
@@ -292,8 +687,50 @@
       ]
     },
     {
+      "id": "2608.02636",
+      "versioned_id": "2608.02636v1",
+      "title": "Rethinking Self-Evolving Agent Skills: Feedback Dynamics over Multiple Rounds",
+      "authors": [
+        "Yuxuan Liu",
+        "Zhaochen Su",
+        "Yuhao Zhang",
+        "Jiahe Guo",
+        "Zhongwei Xie",
+        "Huihao Jing",
+        "Lingyun Xie",
+        "Qing Zong",
+        "Yauwai Yim",
+        "Zhixiong Zhang",
+        "Haoran Li",
+        "Yangqiu Song"
+      ],
+      "abstract": "Self-evolving skill systems promise to improve agents by turning execution feedback into persistent skill updates without changing the underlying model. Yet it remains unclear when further evolution helps, how successful and failed trajectories shape revision, and whether extra test-time computation can recover the same gains. To address these questions, we present a controlled evaluation framework across five benchmarks and three models. Our primary study contains 42 feedback runs across 14 supported model-benchmark settings. Within each setting, we hold the executor and optimizer configuration, revision procedure, validation rule, and round budget fixed, while varying only the feedback shown to the optimizer: successes and failures (Normal), failures only, or successes only. Evolution is sparse: only 55 of 388 candidates establish byte-distinct validation bests. Validation-based selection chooses an evolved skill in 11 of 14 settings, nine of which improve released-test performance. All 11 selections come from feedback conditions that include failed trajectories, although the relative ranking of Normal and Fail-only varies across settings. Validation and downstream evaluations on test, robustness, and transfer sometimes favor different feedback views. A broader SearchQA analysis covering eight models shows similarly sparse, feedback-dependent dynamics. In the GPT-5.5 test-time-scaling controls, oracle Parallel Sampling comes within 0.43 points of the evolved SearchQA skill but remains 30.96 points behind on SpreadsheetBench; Sequential Refinement recovers neither gain. Overall, persistent skill self-evolution is better understood as sparse, validation-filtered search with model- and benchmark-dependent returns, rather than steady improvement from additional rounds. The implementation is available at https://github.com/HKUST-KnowComp/rethinkskill.",
+      "published": "2026-07-31T04:02:51Z",
+      "updated": "2026-07-31T04:02:51Z",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "primary_category": "cs.SE",
+      "arxiv_url": "https://arxiv.org/abs/2608.02636v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.02636v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-06",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
       "id": "2607.28942",
-      "versioned_id": "2607.28942v1",
+      "versioned_id": "2607.28942v2",
       "title": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
       "authors": [
         "Duo Xu",
@@ -301,13 +738,13 @@
       ],
       "abstract": "Recently Large Language Models (LLMs) have been increasingly deployed as autonomous agents in applications such as self-reflection, retrieval-augmented generation, and scientific discovery. In these settings, agents must act based on limited observations rather than full environmental states, leading to partial observability. This introduces several key challenges: belief state inference, task objective misalignment, and planning under uncertainty. Prior approaches typically condition actions on full or summarized action-observation histories whose redundant and irrelevant information can mislead the decision making of LLM agent. Inspired by human cognition, we propose a novel neuro-symbolic fast-slow thinking (NeSyFS) framework for LLM agent, addressing the challenges introduced by partial observability in a unified approach. We use a knowledge graph (KG) to represent the belief state, providing triplets as context for every module of NeSyFS. The fast-thinking module performs reactive action, while slow-thinking conducts a new uncertainty-aware planning by following the high-level structure of twisted sequential Monte Carlo (TSMC) algorithm. To mitigate the misalignment of task objective, a reflection module is used to reflect fast-thinking actions, and also switches to the slow-thinking module whenever reactive actions repeatedly fail. Experiments on three representative benchmarks, i.e. ALFWorld, Webshop, and ScienceWorld, demonstrate significant advantages over previous methods.",
       "published": "2026-07-31T01:53:41Z",
-      "updated": "2026-07-31T01:53:41Z",
+      "updated": "2026-08-03T20:04:55Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.28942v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.28942v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.28942v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.28942v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -1268,7 +1705,7 @@
     },
     {
       "id": "2607.22511",
-      "versioned_id": "2607.22511v1",
+      "versioned_id": "2607.22511v2",
       "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
       "authors": [
         "Jiyuan Tan",
@@ -1276,7 +1713,7 @@
       ],
       "abstract": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation. A common approach is to close the research loop with a large language model (LLM) reviewer. However, such reviewers remain empirically unreliable: they may accept fabricated papers and detect them at rates close to chance (Bad Scientist, 2025). We present CausalForge, a framework for automated theoretical research in causal inference grounded in the Lean proof assistant. CausalForge combines Causalean, a foundational Lean library for causal inference containing 7,035 machine-checked declarations developed with language-model assistance under human design and review, with CausalSmith, a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Because a machine-checked proof establishes only that a formal statement follows from its assumptions, not that the statement faithfully captures the intended scientific claim, the pipeline augments kernel verification with a statement audit that compares each formal theorem against the informal claim it is intended to express. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalForge.",
       "published": "2026-07-24T17:32:35Z",
-      "updated": "2026-07-24T17:32:35Z",
+      "updated": "2026-08-04T17:10:35Z",
       "categories": [
         "stat.ML",
         "cs.AI",
@@ -1284,8 +1721,8 @@
         "econ.EM"
       ],
       "primary_category": "stat.ML",
-      "arxiv_url": "https://arxiv.org/abs/2607.22511v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.22511v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.22511v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.22511v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -1463,6 +1900,10 @@
         "arXiv",
         "OpenReview"
       ],
+      "openreview_url": "https://openreview.net/forum?id=PPk1GEkPIT",
+      "openreview_venues": [
+        "CBW Poster"
+      ],
       "relevance_score": 75,
       "relevance_reasons": [
         "标题命中自进化关键词",
@@ -1470,10 +1911,6 @@
         "摘要中的两类信号距离接近",
         "覆盖多个自进化关键词",
         "属于核心 Agent 相关分类"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=PPk1GEkPIT",
-      "openreview_venues": [
-        "CBW Poster"
       ]
     },
     {
@@ -1919,7 +2356,12 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=tpEflAIlo5",
+      "openreview_venues": [
+        "ICML 2026 Workshop AgenticUQ Poster"
       ],
       "relevance_score": 48,
       "relevance_reasons": [
@@ -2047,7 +2489,7 @@
     },
     {
       "id": "2607.15314",
-      "versioned_id": "2607.15314v1",
+      "versioned_id": "2607.15314v2",
       "title": "Cura 1T: Specialized Model for Agentic Healthcare",
       "authors": [
         "actAVA AI",
@@ -2063,16 +2505,16 @@
         "Frank Wang",
         "Weiran Yao"
       ],
-      "abstract": "Healthcare spans high-stakes communication, expert reasoning, and workflow execution, yet specialized LLMs that cover these use cases together remain limited. A healthcare model must handle patient consultation, clinical reasoning over text and images, interactive diagnosis, and electronic health record (EHR) tool use. These capabilities fail in different ways, and a narrow update for one task can degrade another. We present Cura 1T, a healthcare-specialized LLM trained through a human-gated self-evolution loop. In each evolution round, a training agent plans a target capability, trains the model, evaluates benchmark trajectories, and refines the data mixture from observed failures. This data-centered loop improves the model through targeted synthetic and curated examples rather than a single generic medical-data update. Across the healthcare evaluation suite, Cura 1T ranks at or near the top among frontier baselines, while remaining competitive on out-of-domain reasoning and agentic benchmarks.",
+      "abstract": "Healthcare AI agents handle patient consultation, clinical reasoning over text and images, interactive diagnosis, and electronic health record (EHR) tool use, yet specialized agentic models that cover these use cases together remain limited. These capabilities fail in different ways, and a narrow update for one task can degrade another. We present Cura 1T, a healthcare-specialized LLM built on the open-weight Kimi-K2.6 and trained through a human-gated recursive self-improvement (RSI) loop. Specifically, in each round, the RSI harness plans a target capability, trains the model, evaluates benchmark trajectories, and refines the data mixture from observed failures with targeted synthetic and curated examples rather than a single generic medical-data update. Across the healthcare evaluation suite, Cura 1T ranks at or near the top among frontier baselines while remaining competitive on out-of-domain reasoning and agentic benchmarks.",
       "published": "2026-07-15T22:05:23Z",
-      "updated": "2026-07-15T22:05:23Z",
+      "updated": "2026-08-04T04:26:54Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.15314v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.15314v1",
-      "comment": "Model: https://actava.ai/cura Docs: https://actava.ai/cura/docs Github: https://github.com/actava-ai/Cura",
+      "arxiv_url": "https://arxiv.org/abs/2607.15314v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.15314v2",
+      "comment": "Model: https://actava.ai/cura; Docs: https://actava.ai/cura/docs; Github: https://github.com/actava-ai/Cura",
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-07-20",
@@ -2080,11 +2522,11 @@
       "sources": [
         "arXiv"
       ],
-      "relevance_score": 63,
+      "relevance_score": 58,
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词",
-        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词",
         "属于核心 Agent 相关分类"
       ]
     },
@@ -6707,7 +7149,7 @@
       "authors": [],
       "abstract": "LLM agents hold significant promise for advancing scientific research. To accelerate this progress, we introduce AIRS-Bench (the AI Research Science Benchmark), a suite of 20 tasks sourced from state-of-the-art machine learning papers. These tasks span diverse domains, including language modeling, mathematics, bioinformatics, and time series forecasting. AIRS-Bench tasks assess agentic capabilities over the full research lifecycle—including idea generation, experiment analysis and iterative refinement—without providing baseline code. The AIRS-Bench task format is versatile, enabling easy integration of new tasks and rigorous comparison across different agentic frameworks. We establish baselines using frontier models paired with both sequential and parallel scaffolds. Our results show that agents exceed human SOTA in seven tasks but fail to match it in thirteen others. Even when agents surpass human benchmarks, they do not reach the theoretical performance ceiling for the underlying tasks. These findings indicate that AIRS-Bench is far from saturated and offers substantial room for improvement. We open-source the AIRS-Bench task definitions and evaluation code to catalyze further development in autonomous scientific research.",
       "published": "2026-06-03T08:49:06+00:00",
-      "updated": "2026-07-24T20:37:44+00:00",
+      "updated": "2026-08-03T09:48:23+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -31631,45 +32073,6 @@
       ]
     },
     {
-      "id": "openreview:owpU8gxnkM",
-      "versioned_id": "owpU8gxnkM",
-      "title": "ENCOURAGING CRITICAL THINKING FOR MULTIAGENT DEBATE",
-      "authors": [
-        "Jing Wu",
-        "Suiyao Chen",
-        "Inseok Heo",
-        "Alexander Gutfraind",
-        "Michael Sharps"
-      ],
-      "abstract": "Large language models (LLMs) have demonstrated remarkable performance across a wide range of tasks in recent years. While prior work has explored leveraging LLMs to generate synthetic data for self-improvement, repeated iterations often suffer from diminishing returns due to the reliance on homogeneous reasoning patterns and limited exploration of alternative perspectives. In this paper, we introduce a novel framework that enriches the reasoning process by encouraging critical thinking among multiple agents. Rather than deploying an ensemble of models with identical prompts, we propose a strategy generator that produces customized instructions tailored to each individual LLM. Acting as a critical thinking agent, the generator is iteratively fine-tuned using carefully selected strategies that are both diverse and effective. This approach fosters specialization within each model while promoting diversity across reasoning paths, enabling the system to maintain varied solution trajectories and achieve sustained performance gains through iterative refinement. We demonstrate the effectiveness of our method across a variety of agentic frameworks and complex reasoning tasks.",
-      "published": "2025-09-04T18:34:10+00:00",
-      "updated": "2026-02-11T10:13:38+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=owpU8gxnkM",
-      "openreview_url": "https://openreview.net/forum?id=owpU8gxnkM",
-      "pdf_url": "https://openreview.net/pdf?id=owpU8gxnkM",
-      "comment": "Submitted to ICLR 2026",
-      "journal_ref": "Submitted to ICLR 2026",
-      "doi": "",
-      "venue": "Submitted to ICLR 2026",
-      "venue_id": "ICLR.cc/2026/Conference/Rejected_Submission",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 63,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词",
-        "摘要中的两类信号距离接近",
-        "覆盖多个自进化关键词"
-      ]
-    },
-    {
       "id": "2509.04575",
       "versioned_id": "2509.04575v3",
       "title": "Bootstrapping Task Spaces for Self-Improvement",
@@ -42831,11 +43234,11 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-05T06:48:35+00:00",
-  "last_success": "2026-08-05T06:48:35+00:00",
-  "new_count": 1,
-  "total_cached": 1089,
-  "fetch_error": "arXiv HTTPError: HTTP Error 503: Service Unavailable",
+  "last_checked": "2026-08-06T06:50:05+00:00",
+  "last_success": "2026-08-06T06:50:05+00:00",
+  "new_count": 11,
+  "total_cached": 1099,
+  "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [
     "(\"self improvement\" OR \"self-improvement\" OR \"self improving\" OR \"self-improving\") AND (\"agent\" OR \"agents\" OR \"agentic\" OR \"multi-agent\" OR \"multiagent\")",

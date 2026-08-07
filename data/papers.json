@@ -1,6 +1,86 @@
 {
   "papers": [
     {
+      "id": "2608.06144",
+      "versioned_id": "2608.06144v1",
+      "title": "FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in Professional Financial Workflows",
+      "authors": [
+        "Bo Deng",
+        "Kang Zhou",
+        "Lifan Guo",
+        "Chongyang Tao",
+        "Xuanren Chen",
+        "Chenggang Xie",
+        "Renzhao Liang",
+        "Feng Chen",
+        "Chi Zhang"
+      ],
+      "abstract": "Most agent benchmarks evaluate tasks independently and cannot measure whether experience from one task helps with later tasks. Existing self-evolution benchmarks do not jointly cover professional workflows, open-ended deliverables, and multi-aspect evaluation. We introduce FinEvo-Bench, a longitudinal benchmark with 120 real-case-grounded tasks, 20 business scenes across six financial domains. Institution-provided professional procedures define the required operations and constraints. Eligible institution-provided and publicly documented cases supply the task facts. Each scene contains six related but substantively distinct cases that share a professional procedure and a manually reviewed rubric for task quality and financial compliance. We compare four self-evolving agent scaffolds using the same Qwen3.7-Max backbone and three independently shuffled, globally interleaved task streams. Paired non-evolving controls estimate each scaffold's self-evolution gain from retained experience, while an independent Claude Code scoring agent backed by Claude Opus 4.6 evaluates all outputs. Letta achieves the highest evolved score (91.65) and fewest compliance issues (0.09 per task); Codex achieves the largest self-evolution gain (+19.37). Across scaffolds, the evolving condition raises scores by 9.33-19.37 points and reduces compliance issues by 0.12-0.44 per task. Paired score gains at within-scene ranks 4-6 exceed those at ranks 1-3 by 6.10-8.70 points. In Claude Code, skill-only evolution produces higher task quality and fewer compliance issues than memory-only and combined memory-skill evolution. Across all four scaffolds, rubric feedback also yields higher scores and fewer compliance issues than reference-answer feedback. FinEvo-Bench measures both professional performance and self-evolution ability: how effectively an agent turns prior experience into later improvement.",
+      "published": "2026-08-06T15:14:54Z",
+      "updated": "2026-08-06T15:14:54Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.06144v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06144v1",
+      "comment": "22 pages, 4 figures; includes appendices",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-07",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.05810",
+      "versioned_id": "2608.05810v1",
+      "title": "When Self-Evolution Backfires: Pre-Commit Gating against Skill Contamination in LLM Agents",
+      "authors": [
+        "Linfang Shang",
+        "Ming Xu",
+        "Yiding Sun",
+        "Tianle Xia",
+        "Lingxiang Hu",
+        "Lan Xu",
+        "Ning Zheng"
+      ],
+      "abstract": "Self-evolving agents accumulate capability by distilling reusable skills from their execution trajectories, but we find this process is not monotonic: past a critical pool size, newly added skills degrade performance instead of improving it. We formalize this capability-contamination phase transition and trace it to a structural cause: once a defective skill enters the decision context, it becomes reference material for distilling later skills, forming cross-round contamination chains. We further show the contamination is structurally irreversible: removing a source skill after the fact cannot erase the flawed reasoning its descendants have already inherited, so post-hoc rollback recovers only a small fraction of the lost performance. This makes skill admission a pre-commit necessity rather than a post-hoc fix, and motivates Verifier-as-Gatekeeper (VaG): a progressive trust hierarchy whose three heterogeneous critics - structural validity, behavioral harmlessness, and semantic consistency - filter each skill individually, coupled with a marginal-gain subset selection that removes combinatorial contamination at the top tier before skills reach the runtime context. On Terminal-Bench 2, unconditional accumulation rises to a peak and then degrades, giving back most of its gains as the pool keeps growing, and post-hoc removal of the culprit skills recovers only a small part of the drop - the empirical signature of irreversibility. In contrast, VaG improves every round, reaching 72% pass@1 with a pool roughly 5x smaller, and its frozen skill pool transfers positively to four other backbones and a second benchmark without re-evolution. Ablations confirm the three critics are complementary and mutually non-substitutable, each intercepting a largely disjoint class of harmful skills.",
+      "published": "2026-08-06T09:43:04Z",
+      "updated": "2026-08-06T09:43:04Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.05810v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05810v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-07",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.05144",
       "versioned_id": "2608.05144v1",
       "title": "Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning",
@@ -131,8 +211,52 @@
       ]
     },
     {
+      "id": "2608.05245",
+      "versioned_id": "2608.05245v1",
+      "title": "Search2Skill: Skill Distillation Beyond Knowledge Boundaries Via Rubric-Based Reinforcement Learning",
+      "authors": [
+        "Muyang Ye",
+        "Tian Lan",
+        "Feihu Jiang",
+        "Yongshi Ye",
+        "Wuyunsiqin",
+        "Bin Zhu",
+        "Qianghuai Jia",
+        "Zhao Xu",
+        "Weihua Luo",
+        "Ye Wang",
+        "Jinyang Zhang",
+        "Longyue Wang",
+        "Lingfeng Bao"
+      ],
+      "abstract": "Reusable skills, which encapsulate the procedural knowledge required to solve real-world professional tasks, offer LLM-based agents a path toward self-evolution in expert domains. Existing self-evolving skill methods construct skills internally from the model's parametric knowledge or trajectories, and are therefore bounded by what the model already knows. However, the domain conventions and standard procedures underlying professional skills often lie beyond this boundary and are hard to elicit from the agent alone. To address this issue, we therefore propose a novel framework, Search2Skill, that automatically identifies the agent's capability gaps, searches external sources to address them, and distills the retrieved evidence into structured, reusable skills. Specifically, Search2Skill is optimized by a rubric-based reinforcement learning scheme that jointly improves when to search, how to search, and how to generate skills. Experiments on eight expert-level domains from three benchmarks show that Search2Skill consistently outperforms both search-augmented and trajectory-based skill-learning baselines under both streaming and held-out evaluation protocols. Further analyses show that the gains arise from skill abstraction rather than raw retrieved evidence, and that the acquired skills transfer across model scales.",
+      "published": "2026-08-05T15:09:07Z",
+      "updated": "2026-08-05T15:09:07Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.05245v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05245v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-07",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.04761",
-      "versioned_id": "2608.04761v1",
+      "versioned_id": "2608.04761v2",
       "title": "InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval",
       "authors": [
         "Tsz Ting Chung",
@@ -142,14 +266,14 @@
       ],
       "abstract": "Self-improving agents accumulate reusable insights from prior trajectories, making retrieval increasingly important for turning accumulated experience into actionable guidance. At each decision step, retrieving the right insight can help the agent progress toward its goal, a setting we refer to as agentic insight retrieval. However, existing retrieval methods primarily model semantic similarity, while overlooking whether a retrieved insight resolves the agent's current decision bottleneck. We propose InsightEmb, a contrastive embedding framework that learns transferable progress-oriented retrieval geometry using only mathematical reasoning data. InsightEmb jointly learns to align concrete situations with abstract heuristic rules and to cluster reasoning trajectories with similar progress structures. We evaluate InsightEmb on dynamic agent tasks and a static skill-retrieval benchmark. Without any environment-specific training, InsightEmb improves over all these evaluations, surpassing the performance of existing reasoning embedding models. These results suggest that the geometry of state-insight matching can transfer across domains, enabling effective training from publicly available reasoning data without expensive environment-specific supervision.",
       "published": "2026-08-05T12:28:00Z",
-      "updated": "2026-08-05T12:28:00Z",
+      "updated": "2026-08-06T03:36:33Z",
       "categories": [
         "cs.CL",
         "cs.AI"
       ],
       "primary_category": "cs.CL",
-      "arxiv_url": "https://arxiv.org/abs/2608.04761v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.04761v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.04761v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.04761v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -1897,12 +2021,7 @@
       "discovered_on": "2026-07-23",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=PPk1GEkPIT",
-      "openreview_venues": [
-        "CBW Poster"
+        "arXiv"
       ],
       "relevance_score": 75,
       "relevance_reasons": [
@@ -2356,12 +2475,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=tpEflAIlo5",
-      "openreview_venues": [
-        "ICML 2026 Workshop AgenticUQ Poster"
+        "arXiv"
       ],
       "relevance_score": 48,
       "relevance_reasons": [
@@ -2768,12 +2882,7 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=JyrcEL77Nq",
-      "openreview_venues": [
-        "Under review for TMLR"
+        "arXiv"
       ],
       "relevance_score": 100,
       "relevance_reasons": [
@@ -43234,10 +43343,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-06T06:50:05+00:00",
-  "last_success": "2026-08-06T06:50:05+00:00",
-  "new_count": 11,
-  "total_cached": 1099,
+  "last_checked": "2026-08-07T06:21:35+00:00",
+  "last_success": "2026-08-07T06:21:35+00:00",
+  "new_count": 3,
+  "total_cached": 1102,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

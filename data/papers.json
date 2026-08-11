@@ -1,6 +1,481 @@
 {
   "papers": [
     {
+      "id": "2608.09819",
+      "versioned_id": "2608.09819v1",
+      "title": "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA",
+      "authors": [
+        "Mind Lab",
+        ":",
+        "Vin Bo",
+        "Asher Cai",
+        "Jingwei Cao",
+        "Song Cao",
+        "Vic Cao",
+        "Amelia Chen",
+        "Andrew Chen",
+        "Kaijie Chen",
+        "Cleon Cheng",
+        "Steven Chiang",
+        "Kaixuan Fan",
+        "Hera Feng",
+        "Huan Feng",
+        "Arthur Fu",
+        "Jun Gao",
+        "Pyke Han",
+        "Nolan Ho",
+        "Ori Hong",
+        "Hailee Hou",
+        "Piers Hua",
+        "Charles Huang",
+        "Miles Jiang",
+        "Nora Jiang",
+        "Yuyi Jiang",
+        "Qiuyu Jin",
+        "Fancy Kong",
+        "Kuss Koo",
+        "Jaron Lee",
+        "Andrew Lei",
+        "Alexy Li",
+        "Dawn Li",
+        "Lucian Li",
+        "Ray Li",
+        "Ricardo Li",
+        "Smith Li",
+        "Theo Li",
+        "Allen Lin",
+        "Elliot Lin",
+        "Fan Lin",
+        "Chen Ling",
+        "Kairus Liu",
+        "Kieran Liu",
+        "Logan Liu",
+        "Neo Liu",
+        "Xiang Liu",
+        "Yuxin Lu",
+        "Maeve Luo",
+        "Pony Ma",
+        "Verity Niu",
+        "Cole Qiao",
+        "Guian Qiu",
+        "Vince Qu",
+        "Sentry",
+        "Niko Song",
+        "Vincent Wang",
+        "Bo Wu",
+        "Rio Yang",
+        "Evelyn Ye",
+        "Fiona Ye",
+        "Ina Ye",
+        "Regis Ye",
+        "Josh Ying",
+        "Atlas Zeng",
+        "Danney Zeng",
+        "Salmon Zhan",
+        "Anya Zhang",
+        "Di Zhang",
+        "Mia Zhang",
+        "Sueky Zhang",
+        "Wei Zhao",
+        "Ada Zhou",
+        "Adrian Zhou",
+        "Yuhua Zhou",
+        "Juno Zhu",
+        "Murphy Zhuang"
+      ],
+      "abstract": "Macaron-V1 is an open agent-model family for experiential intelligence: learning from experience in real environments and continuing to learn after deployment. It is organized around two system goals. Adaptation is pursued through recursive improvement of versioned model-harness pairs, where experience from one configuration is evaluated under an external contract and used to construct its successor. Collaboration is pursued via the Mixture-of-LoRA (MoL) architecture that freezes a base model, composes specialist LoRA adapters, and selects one LoRA per user turn. The flagship Macaron-V1-Venti combines a 744B GLM-5.2 base with four LoRAs for chat, agent, coding, and GenUI; the Qwen3.6-based Macaron-V1-Tall (50B) uses the same design for local deployment. This report presents Macaron-V1 as a co-designed system spanning architecture, algorithms, and infrastructure. The MoL architecture supports continual learning through extensible LoRA specialists. The algorithm combines Model-Harness Co-design and recursive self-improvement loop, including the UI4A component-native GenUI harness, a stateful action substrate, versioned HCP contract, and the agentic RL framework MindForge. The supporting infrastructure includes the post-training platform MinT, the long-context RL method LongStraw, and stability techniques for sparse MoE and DSA base models. We evaluate Macaron-V1 on Personal Intelligence, GenUI, and general capability benchmarks against frontier baselines. Our results validate the current system, while compounding gains from continual learning and collective intelligence remain open questions.",
+      "published": "2026-08-10T16:39:55Z",
+      "updated": "2026-08-10T16:39:55Z",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2608.09819v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09819v1",
+      "comment": "49 pages, technical report",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 70,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
+      "id": "2608.09380",
+      "versioned_id": "2608.09380v1",
+      "title": "OpenLoopEvolve: A Verifiable Self-Evolution Framework for Loop Policies in Long-Horizon Complex Tasks",
+      "authors": [
+        "Siqi Wang",
+        "Xinlin Li",
+        "Zhenglin Li",
+        "Li Li"
+      ],
+      "abstract": "Long-horizon complex tasks require agents to repeatedly observe states, formulate plans, invoke tools, verify results, and recover from failures in continuously changing environments. However, such control experience often remains confined to a single context or a fixed prompt, and is difficult to accumulate and reuse across historical traces. This paper presents OpenLoopEvolve (OLE), a self-evolution framework centered on the Loop Policy. OLE represents an agent's observation, planning, memory, action, verification, recovery, stopping, and budget control as portable policy assets with versions and lineages, and provides online and offline evolution modes that can be selected according to practical needs: the online mode triggers candidate generation based on feedback from continuous operation, whereas the offline mode searches for candidate policies from archived traces and failure evidence. Both modes share an evolution mechanism consisting of autonomous proposals by a large language model, Champion--Challenger paired evaluation, and robust release. Policies released online are activated at a subsequent task boundary, monitored using subsequent feedback, and rolled back to their parent versions when degradation conditions are met. On the simulated business benchmark YC-Bench, both modes improve aggregate task performance, task success rate, and risk metrics relative to a fixed initial Loop Policy. The results indicate that treating the Loop Policy as a governable asset can support the accumulation, comparison, release, and reuse of control experience and improve agent performance on long-horizon complex tasks.",
+      "published": "2026-08-10T09:57:26Z",
+      "updated": "2026-08-10T09:57:26Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.09380v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09380v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 70,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.09292",
+      "versioned_id": "2608.09292v1",
+      "title": "Beyond the Capability Boundary: Zeroth-Order Optimization for Self-Evolving LLM Agents",
+      "authors": [
+        "Bingzhen Liu",
+        "Xiaomeng Fan",
+        "Yuwei Wu",
+        "Zhi Gao",
+        "Mingyang Gao",
+        "Chuanhao Li",
+        "Yunde Jia"
+      ],
+      "abstract": "Self-evolving methods improve the capabilities of LLM agents by sampling trajectories from the underlying LLMs and learning from these trajectories. However, these methods struggle to learn beyond the inherent capability boundary of the agents, since the agents cannot sample correct trajectories on difficult examples for further improvements. In this paper, we propose a zeroth-order self-evolution framework that enables agents to learn beyond their capability boundary by perturbing LLM parameters to adapt to difficult examples without any trajectory annotations. Specifically, we perturb LoRA parameters of LLMs, run the agent, compute the losses under the perturbed and original parameters, and use the loss difference to estimate gradients and further update the LoRA parameters. We sample trajectories using the updated LLMs for supervised fine-tuning to break through the capability boundary of the agents, forming a closed self-evolution loop. We introduce a parallel perturbation inference mechanism and an adaptive lookup mechanism to reduce time consumption in zeroth-order optimization, with an answer perplexity loss that provides smooth and stable zeroth-order loss values. Experiments on multiple deep research benchmarks show that our method obtains substantially more successful trajectories and consistently outperforms strong baselines, especially on difficult examples. The code and released artifacts are available at https://github.com/hidk1911/ZOForLLMAgents.",
+      "published": "2026-08-10T08:45:48Z",
+      "updated": "2026-08-10T08:45:48Z",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2608.09292v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09292v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.09128",
+      "versioned_id": "2608.09128v1",
+      "title": "Social Gym and SPaRTan: Benchmarking and Improving LLM Social Reasoning via Multi-Agent Game Tournaments",
+      "authors": [
+        "Keyu He",
+        "Xuhui Zhou",
+        "Maarten Sap"
+      ],
+      "abstract": "LLM agents are increasingly deployed in multi-agent social settings where they must cooperate, negotiate, and adapt to other agents. Measuring and improving these social skills is hard because, unlike math or logic, social interaction offers no objective ground truth: evaluations fall back on LLM judges, which are costly, subjective, and noisy, and models get no reliable signal to learn from. To address both, we first introduce Social Gym, an environment of 21 multi-agent social games (e.g., Werewolves, Resistance, Spyfall) whose rule-decided outcomes make agent performance verifiable and objective, with an Elo tournament that produces a cross-game leaderboard. Benchmarking experiments show that while GPT-5-mini tops the leaderboard, no model excels at all games uniformly or in all game roles, pointing to limitations of social reasoning. Motivated by this, we additionally propose SPaRTan (Self-Play and Reflect-Transfer), a training-free self-improvement loop: a model plays a game, reflects on its trajectories and their outcomes to produce a transferable playbook, and applies that playbook in subsequent games. Our results show that SPaRTan playbooks help GPT-5-mini agents level their performance on weaker roles, but largely do not improve Qwen3-32B's performance. Together, Social Gym and SPaRTan offer a reproducible, verifiable foundation for measuring and improving LLM social reasoning without weight updates.",
+      "published": "2026-08-10T05:12:56Z",
+      "updated": "2026-08-10T05:12:56Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.09128v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09128v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=PMIla0klB7",
+      "openreview_venues": [
+        "ACL ARR 2026 May Submission"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.09044",
+      "versioned_id": "2608.09044v1",
+      "title": "Tree-of-Experience: Hierarchical Experience Management for Self-Evolving Agents",
+      "authors": [
+        "Zihao Deng",
+        "Yining Zhu",
+        "Leiming Wang",
+        "Jingfei Lu",
+        "Junbo Wang",
+        "Chuncheng Ran",
+        "Yu Yang",
+        "Dixuan Yang",
+        "Jikun Shen"
+      ],
+      "abstract": "Continual self-evolution requires LLM agents to transform environmental interactions into reliable and reusable experience. Existing methods typically refine individual trajectories or abstract shared knowledge from related trajectories, but their experience representations are often disconnected from the underlying reasoning process. This limits feedback attribution, cross-task transfer, and update and retrieval efficiency, particularly in complex reasoning tasks with outcome-level feedback. To overcome this limitation, we propose \\textbf{T}ree-\\textbf{o}f-\\textbf{E}xperience (ToE), a structured experience-management framework that aligns experience organization with the hierarchical reasoning process of LLM agents. Specifically, ToE organizes the experience into a shared tree of analytical perspectives and reasoning paths, whose reliability is calibrated through environmental outcomes to support systematic updating, transfer, and efficient retrieval. The experimental results on \\textsc{Game of 24} and \\textsc{FinEvolveBench} show that ToE substantially improves both problem-solving performance and efficiency. On \\textsc{Game of 24}, ToE achieves a 31.4\\% relative improvement in accuracy over the experience-free ToT baseline. On \\textsc{FinEvolveBench}, ToE improves tsIC by an average of 41.24\\% over the experience-free pipeline across 12 evaluation settings, whereas conventional experience-management methods often underperform experience-free baselines.",
+      "published": "2026-08-10T02:49:38Z",
+      "updated": "2026-08-10T02:49:38Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.09044v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09044v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.08466",
+      "versioned_id": "2608.08466v1",
+      "title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
+      "authors": [
+        "Tailin Zhou"
+      ],
+      "abstract": "Modern LLM agents are often improved by modifying prompts, tools, or workflows manually, while the executable scaffold surrounding the model---the \\emph{harness}---is typically treated as a fixed artifact after deployment. This work studies an alternative where the harness is \\emph{task-specific and continuously evolvable}: each task family maintains its own harness, which is hot-swapped across iterations through a fixed task-injection seam and rewritten using environment feedback. We introduce \\textbf{Hierarchical Self-Improvement (HSI)}, a framework in which a single frozen LLM $M$ operates across three hierarchical scopes: a task harness $H$ that executes tasks, an evolver that rewrites $H$, and a meta-evolver that rewrites the evolver's strategy code under a frozen outer anchor. A thinking-on/off design isolates the contribution of harness evolution by disabling reasoning during task execution while enabling it during self-modification. HSI is bounded by two factors: a \\emph{feedback-fidelity bound}, since evolution requires informative reward signals to guide selection, and a \\emph{backbone capability bound}, since harness redesign cannot overcome limitations of the frozen model. On BALROG with DeepSeek-V4-Flash-Preview as the frozen backbone, HSI achieves consistent gains over the initial harness on moderate-difficulty tasks ($+39.3$ on BabyAI, $+33.0$ on Crafter, $+25.0$ on TextWorld, and $+15.0$ on MiniHack, all in raw \\% Progress), while obtaining strong held-out generalization on BabaIsAI sub-suites ($0.98$ best-test on BreakStop and $1.00$ on GoTo from a $20\\%$ unseen split). On tasks beyond the backbone's capability (NLE), harness evolution provides no improvement. These results demonstrate task-specific harness evolution as a viable axis for improving frozen LLM agents under clear empirical limits. Code is available at https://github.com/TailinZhou/hsi.",
+      "published": "2026-08-09T04:17:11Z",
+      "updated": "2026-08-09T04:17:11Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.08466v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08466v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.07978",
+      "versioned_id": "2608.07978v1",
+      "title": "Verication-driven closed-loop multi-agent large language modelframework for code-compliant structural design",
+      "authors": [
+        "Jianbin Luo",
+        "Weibin Lin",
+        "Yiran Lin",
+        "Qing Wei",
+        "Wei Guo"
+      ],
+      "abstract": "Multi-agent large language model(LLM)systems are applied to structural design,yet most use one-shot generation and cannot verify their output,leaving themill-suited to safety-critical tasks.Rather than trusting LLM self-correction,thisframework injects feedback from an external physics-based verier into a closedrepair loop.The framework couples a three-layernite-element verication systemwith a dual-node loop.Node 1 turns code violations into hard repair constraints,Node 2 turns a four-dimensional quality score into safety-rst soft constraints,and a retrieval-augmented code base makes every violation traceable to a clause.Overve structure types and 44 cases,code compliance rises from 56.8%to 98.6%and the composite score from 63.8 to 71.4(p<0.000001),using about 5.8%lessmaterial.Removing either node degrades performance,and compliance does notchange detectably across the two backbone LLMs tested,indicating that it ishere attributed to the external verier rather than the model.The framework,the 44-case benchmark and all experiment scripts are released as open source forreplicability.",
+      "published": "2026-08-08T07:26:44Z",
+      "updated": "2026-08-08T07:26:44Z",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "primary_category": "cs.SE",
+      "arxiv_url": "https://arxiv.org/abs/2608.07978v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07978v1",
+      "comment": "20 pages, 21 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.07952",
+      "versioned_id": "2608.07952v1",
+      "title": "Persistent Semantic Entities in Tool-Augmented LLM Systems",
+      "authors": [
+        "Zhaohui Wang"
+      ],
+      "abstract": "Tool-augmented LLM agents can harbor implicit state that persists across sessions, activates through events, and propagates across agent boundaries---largely invisible to standard debugging. We formalize this as Persistent Semantic Entities (PSEs): constructs defined by name binding, event triggering, and cross-boundary propagation, and evaluate them across 24 models from 11 families (1.5B--1T parameters). First, every tested model is susceptible (20--100% on the 20-model susceptibility panel), with name binding as the necessary and dominant mechanism: without it, contamination is 0%. Second, persistence depends on contamination type rather than scale or deployment: preference contamination persists undecayed on every model probed (100% at t=10) and instruction contamination persists wherever adopted, persona-style injection decays partially (90%$\\to$10%), while factual injection is model-dependent---self-corrected on Llama-3.1-8B and GPT-4o-mini but held at ceiling on both Qwen2.5-coder variants, so we do not claim it self-corrects in general. The preference and instruction results hold across providers in our controlled setting. Third, context-isolated self-verification achieves 20--79% reduction (median 36.5%) without oracle references while keyword-based detection produces systematic false positives, and contamination compounds 1.9$\\times$ along a four-stage agent pipeline (40%$\\to$75%). Preference and instruction contamination---persistent, lacking self-correction, and poorly captured by standard monitoring---represent a particularly concerning attack surface for deployed agent systems.",
+      "published": "2026-08-08T06:31:00Z",
+      "updated": "2026-08-08T06:31:00Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR",
+        "cs.SE"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2608.07952v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07952v1",
+      "comment": "Accepted at the 43rd International Conference on Machine Learning (ICML 2026). Camera-ready version; 32 pages . The openreview url is https://openreview.net/forum?id=zPjmtawzT8&noteId=CXB95ws5so and ICML poster url is https://icml.cc/virtual/2026/poster/60521",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=zPjmtawzT8",
+      "openreview_venues": [
+        "ICML 2026 regular"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.07905",
+      "versioned_id": "2608.07905v1",
+      "title": "GraphThink: Graph-Enhanced LLM Thinking for Long-Horizon Embodied Task Planning",
+      "authors": [
+        "Chen Li",
+        "Sijie Cheng",
+        "Yuelin Zhang",
+        "Junxi Li",
+        "Maozhi Huang",
+        "Yang Liu",
+        "Wenbing Huang"
+      ],
+      "abstract": "Embodied agents using LLM-based planners often struggle with physical hallucinations, poor generalization to long-horizon tasks, and lack of environmental awareness. We propose GraphThink, a novel framework that integrates a task graph to provide structured knowledge for robust planning and a scene graph to maintain environmental memory for event-driven replanning. Specifically, the task graph guides LLM thinking through contextual prompting and iterative refinement, effectively mitigating planning hallucinations. Furthermore, within the GRPO framework, the task graph offers delicate reward design to train the LLM planner, enhancing long-horizon planning capabilities and improving generalization. Finally, an event-driven replanning module, powered by the scene graph, enables closed-loop environment awareness and error correction. GraphThink achieves state-of-the-art performance on the ALFRED benchmark. In particular, our high-level planner surpasses leading API-based LLMs on both the validation set and held-out long-horizon tasks, underscoring its robust zero-shot and few-shot capabilities. Additional evaluations further demonstrate strong out-of-distribution generalization to novel tasks and environments.",
+      "published": "2026-08-08T04:05:05Z",
+      "updated": "2026-08-08T04:05:05Z",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.07905v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07905v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 38,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.07700",
+      "versioned_id": "2608.07700v1",
+      "title": "Towards Researcher Agents for Knowledge-Graph Question Answering",
+      "authors": [
+        "Tommaso Soru",
+        "Abdulsobur Oyewale"
+      ],
+      "abstract": "Translating a natural-language question into a SPARQL query that can be executed against a large knowledge graph requires resolving lexical ambiguity, grounding surface terms in the target ontology, and producing graph patterns that are both syntactically valid and semantically faithful. We present an agentic text-to-SPARQL system that goes one step beyond static tool-using agents: a researcher agent that, after each round of inference on a validation set, proposes and tests changes to its own prompts, rules, and tool-orchestration code. We instantiate the loop on DBpedia, evolve nine successive versions of the agent driven by a low-cost reasoning model, and deploy the best-performing configuration with two stronger backbone models. The study yields three observations: (i) self-improvement converges quickly and then achieves 0.22 overall accuracy on the 2025 DBpedia validation set; (ii) the bottleneck is consistently in basic-graph-pattern predicate selection, not in SPARQL syntax or modifiers; and (iii) several benchmark items appear to penalise correct queries due to property ambiguity in DBpedia, suggesting that future Text-to-SPARQL benchmarks should be scored using a combination of machine translation and information retrieval metrics.",
+      "published": "2026-08-07T18:42:53Z",
+      "updated": "2026-08-07T18:42:53Z",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.07700v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07700v1",
+      "comment": "Second International TEXT2SPARQL Challenge, co-located with Text2KG at ESWC 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.07645",
+      "versioned_id": "2608.07645v1",
+      "title": "Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution",
+      "authors": [
+        "Changzhi Liu",
+        "Yilun Liu",
+        "Sikuan Yan",
+        "Volker Tresp",
+        "Yunpu Ma"
+      ],
+      "abstract": "Self-improving coding agents that iteratively rewrite their own source code have demonstrated impressive performance on coding tasks. However, existing solutions generally derive self-modification from a single failure trajectory at a time, overlooking rich comparative signals available in the agent's expanding archive of past attempts. According to Mendelian principles of controlled inheritance, we introduce Mendel Gödel Machine (MGM). In addition to the general single-trajectory clonal mutation, MGM includes two new types of self-modification that better utilizes evidences accumulated: the reaction-norm mutation edits an agent based on its trajectories on multiple tasks simultaneously, and the cross-lineage hybridization edits an agent using the trajectory of a reference agent from another lineage on the same task. Under an additive fitness landscape model, we prove theoretically and demonstrate via controlled surrogate simulation that the new strategies facilitate a faster and better convergence over single-trajectory baselines. Experiments on SWE-bench and Polyglot confirm MGM's consistent improvement in performance, efficiency, and generalizability.",
+      "published": "2026-08-07T16:46:44Z",
+      "updated": "2026-08-07T16:46:44Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.07645v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07645v1",
+      "comment": "Project Page at https://reallcz.github.io/MGM; Code at https://github.com/RealLcz/MGM",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.06694",
       "versioned_id": "2608.06694v1",
       "title": "A Multi-Agent Framework for Automated Coarse-Grained Molecular Dynamics of Polymers",
@@ -160,45 +635,46 @@
     },
     {
       "id": "2608.05144",
-      "versioned_id": "2608.05144v1",
-      "title": "Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning",
+      "versioned_id": "2608.05144v2",
+      "title": "Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks",
       "authors": [
         "Boxiu Li",
         "Zimo Wen",
         "Yijia Fan",
-        "Junxiang Lei",
-        "Sufeng Guo",
-        "Jiaao Wu",
-        "Ruize Tang",
-        "Mukai Li",
-        "Yifei Shen",
-        "Xiaoyu Chen",
-        "Wanbo Zhang",
-        "Runjing Gu",
-        "Yifei Gao",
-        "Yuheng Wu",
-        "Xuyao Huang",
-        "Zelong Zhao",
-        "Jiachen Zhang",
-        "Shibo Hu",
-        "Hangxi Guo",
-        "Yilin Chen",
-        "Yuzhe Zhang",
-        "Fan Yang",
         "Chuan Wen",
+        "Fan Yang",
+        "Hangxi Guo",
+        "Jiaao Wu",
+        "Jiachen Zhang",
+        "Junxiang Lei",
+        "Mukai Li",
+        "Ruize Tang",
+        "Runjing Gu",
+        "Shibo Hu",
+        "Sihan Chen",
+        "Sufeng Guo",
+        "Wanbo Zhang",
         "Xian Zhang",
+        "Xiaoyu Chen",
         "Xuanhe Zhou",
+        "Xuyao Huang",
+        "Yifei Gao",
+        "Yifei Shen",
+        "Yilin Chen",
+        "Yuheng Wu",
+        "Yuzhe Zhang",
+        "Zelong Zhao",
         "Zhijie Deng"
       ],
       "abstract": "Long-horizon reasoning requires an agentic runtime that can persist when evidence supports its current approach and pivot when measurements reveal failure, hidden constraints, or a misspecified objective. We present Argus, a persistent, self-evolving runtime in which Manager, Planner, Engineer, and Reviewer execute bounded missions over durable project state. Argus separates stable user intent from operational objectives, constraints, and verification criteria, and admits memories, skills, procedures, verifiers, routing decisions, and rejected routes only after role-owned review and, when available, task-native verification. Model weights remain fixed; self-evolution occurs through persistent runtime state and control policy, with autonomous execution between operator-owned escalation points. Across seven GPT-5.5 benchmark arenas, Argus achieves about 78% on SWE-Bench Pro versus 59% for Direct Copilot while using 1.41 times the aggregate tokens. After verification-gated self-evolution, mature SWE-Bench waves use 21% fewer solve-input tokens and 15% less active workflow time per task than startup waves, while recording 34 verifier recoveries and 22 strict review-loop rescues. Argus also reaches 76.8% on AARRI-Bench and a 28.0-point gap on mathematical data synthesis, with competitive GPU-kernel and language-model-training results. Beyond benchmarks, an optimized RWKV6 kernel was merged upstream; a multi-day mathematics campaign retained falsified routes and proof-backed frontier updates; and six paper pipelines completed 254 missions with 16 stage rollbacks. These results show that a fixed-weight, self-evolving harness can revise, recover, and accumulate verified approaches while producing structured trajectories for future supervised and reinforcement learning.",
       "published": "2026-08-05T17:58:58Z",
-      "updated": "2026-08-05T17:58:58Z",
+      "updated": "2026-08-07T16:35:04Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2608.05144v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.05144v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.05144v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.05144v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -886,6 +1362,52 @@
         "标题同时包含自进化与 Agent 信号",
         "标题中的两类信号距离接近",
         "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.07545",
+      "versioned_id": "2608.07545v1",
+      "title": "DarwinX: Evolving Agent Harnesses Through Natural Selection",
+      "authors": [
+        "Yifan Zhang",
+        "Yutong Dai",
+        "Juntao Tan",
+        "Luyu Yang",
+        "Rishi Mullur",
+        "Thai Hoang",
+        "Zhiyuan Hu",
+        "James Zhu",
+        "Phil Mui",
+        "Silvio Savarese",
+        "Ran Xu",
+        "Zeyuan Chen"
+      ],
+      "abstract": "An LLM agent's capability depends not only on model weights but on its harness: prompts, tools, skills, and control flow. Self-improvement loops already edit harnesses, yet single-lineage search is path-dependent and local wins often regress other tasks. We introduce DarwinX, which treats self-evolution as selection over a population of harnesses with the model frozen: a preserve-and-extend contract admits only variants that extend coverage without regressing, an archive keeps alternative lineages for recombination, and failure-, teacher-, and self-derived evidence share one edit interface. Fitness comes from each benchmark's own verifier: no gold solutions, no hand-picked winners. Across four benchmarks that progressively separate the evolution signal from the test, one loop adds about 17 points on average: Terminal-Bench 2.1 rises +7.7 to 83.2% on a matched base and to the verified frontier at 84.7% on a stronger one; TerminalWorld's held-out split reaches 68.3%, ahead of every off-the-shelf agent; WebArena-Infinity real-task pass@1 rises from 43.5% to 93.0% audit-clean; and a Terminal-Bench 2.1 harness transfers unchanged to SWE-bench Verified. What evolves is general agent competence, not benchmark-specific patches, so it survives changes of task, verifier, and base model. A frozen model need not be a fixed agent: harness selection turns evaluation compute into durable capability.",
+      "published": "2026-07-31T05:34:02Z",
+      "updated": "2026-07-31T05:34:02Z",
+      "categories": [
+        "cs.NE",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "primary_category": "cs.NE",
+      "arxiv_url": "https://arxiv.org/abs/2608.07545v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07545v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
       ]
     },
     {
@@ -2145,6 +2667,48 @@
       ]
     },
     {
+      "id": "2608.07527",
+      "versioned_id": "2608.07527v1",
+      "title": "DocAtlas: Long-Document Understanding as Mutable-State Interaction",
+      "authors": [
+        "Hongchen Wei",
+        "Yuanzhe Wang",
+        "Bei Liu",
+        "Yifan Yang",
+        "Qi Dai",
+        "Kai Qiu",
+        "Yunsheng Li",
+        "Dongdong Chen",
+        "Chong Luo",
+        "Zhenzhong Chen",
+        "Baining Guo"
+      ],
+      "abstract": "Long-document understanding requires models to find and combine evidence across many pages, layouts, tables, figures, and charts. Existing retrieval-augmented systems usually select evidence from a static index before generation, while recent agentic systems add multi-turn tool use but often rely on frozen proprietary backbones whose behavior is set by prompts. We present DocAtlas, a system that treats long-document understanding as a mutable-state information-seeking process. We instantiate DocAtlas as a mutable document harness: an external environment that determines what document information is searched, read, stored, reviewed, and shown to the model at each step. Given a document and question, the harness exposes search, reading, note-taking, and review tools, maintains a hierarchical tree and note store, and updates both as the agent records evidence. DocAtlas combines self-improving retrieval, selective evidence access, and active working memory under a fixed context budget. The same harness supports inference-time use with large VLMs and end-to-end reinforcement learning for compact VLM agents. With GPT-5.4, DocAtlas reaches 71.4\\% on MMLongBench-Doc, exceeding the human-expert reference of 65.8\\%. A Qwen3.5-4B VLM trained with end-to-end RL in the DocAtlas environment reaches 63.7\\%, compared with a 54.4\\% direct-input baseline, showing that mutable document-harness design can improve compact document agents by a large margin.",
+      "published": "2026-07-21T09:45:34Z",
+      "updated": "2026-07-21T09:45:34Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.07527v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07527v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 43,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2607.18754",
       "versioned_id": "2607.18754v1",
       "title": "AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents",
@@ -2724,7 +3288,7 @@
     },
     {
       "id": "2607.13884",
-      "versioned_id": "2607.13884v1",
+      "versioned_id": "2607.13884v2",
       "title": "Experience Memory Graph: One-Shot Error Correction for Agents",
       "authors": [
         "Wenjun Wang",
@@ -2735,13 +3299,13 @@
       ],
       "abstract": "Large Language Model (LLM) agents have shown remarkable capabilities in autonomous decision-making by generating sequential trajectories of states, actions, and observations. However, in complex, long-horizon tasks, these agents frequently suffer from compounding errors and struggle to recover from failures. Existing self-correction mechanisms rely on prompt-based reflection, which is inherently brittle, incurs heavy time and API costs due to iterative trial-and-error loops, and produces task-specific memory that may be hard to generalize to new scenarios. To address this, we propose Experience Memory Graph (EMG), a framework that reformulates agent failure recovery as a graph matching problem. At training time, we convert both failed exploration trajectories and successful expert trajectories into directed action decision graphs. By matching these graphs, we extract common subgraphs (successful workflows) and graph edit paths that explicitly indicate how to correct failures (e.g., which actions to add, delete, or relabel under a given observation), and store them in a memory graph with intra-task nodes and cross-task edges. At test time, EMG retrieves relevant insights and guides the agent in a single, loop-free execution. Experiments on ALFWorld and ScienceWorld show that EMG consistently outperforms state-of-the-art reflection baselines in success rate and average reward, while requiring no test-time trial-and-error.",
       "published": "2026-07-15T14:33:15Z",
-      "updated": "2026-07-15T14:33:15Z",
+      "updated": "2026-08-10T09:35:30Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2607.13884v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.13884v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.13884v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.13884v2",
       "comment": "11 pages, 6 figures",
       "journal_ref": "",
       "doi": "",
@@ -9141,37 +9705,6 @@
       "arxiv_url": "https://openreview.net/forum?id=9dNSyhxeWo",
       "openreview_url": "https://openreview.net/forum?id=9dNSyhxeWo",
       "pdf_url": "https://openreview.net/pdf?id=9dNSyhxeWo",
-      "comment": "ACL ARR 2026 May Submission",
-      "journal_ref": "ACL ARR 2026 May Submission",
-      "doi": "",
-      "venue": "ACL ARR 2026 May Submission",
-      "venue_id": "aclweb.org/ACL/ARR/2026/May/Submission",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 48,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词"
-      ]
-    },
-    {
-      "id": "openreview:PMIla0klB7",
-      "versioned_id": "PMIla0klB7",
-      "title": "Social Gym and SPaRTan: Benchmarking and Improving LLM Social Reasoning via Multi-Agent Game Tournaments",
-      "authors": [],
-      "abstract": "Current evaluations for LLMs in multi-agent social interaction settings, where agents must negotiate and collaborate, lag behind other domains with objective ground-truth (e.g. math, logic), instead relying on human ratings or LLM-as-judge scoring, which are subjective, costly, and hard to verify at scale. To address this evaluation gap, we introduce Social Gym, an environment of 21 multi-agent social games where agent performance is verifiable and objective (e.g., Werewolves, Resistance, Spyfall, etc.) organized into five categories along the information-and-communication axes, with a Elo tournament that produces a cross-game leaderboard. Motivated by benchmarking experiments showing limitations of current LLM agents, we propose SPaRTan (Self-Play and Reflect-Transfer), a training-free self-improvement loop where a model plays a game, reflects on its trajectories to produce a transferable playbook, and applies that playbook in subsequent games. Our experiments on GPT-5-mini show that agents armed with a SPaRTan playbook gain on the structurally weaker side of asymmetric hidden-role games, and that the same playbook transfers across games and into weaker student models; the effect is capacity-dependent, however: an open-weights replication with Qwen3-32B is largely null except on Prisoner's Dilemma. Together, Social Gym and SPaRTan offer a reproducible, verifiable foundation for measuring and improving LLM social reasoning without weight updates.",
-      "published": "2026-05-26T09:03:53+00:00",
-      "updated": "2026-06-20T03:34:06+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=PMIla0klB7",
-      "openreview_url": "https://openreview.net/forum?id=PMIla0klB7",
-      "pdf_url": "https://openreview.net/pdf?id=PMIla0klB7",
       "comment": "ACL ARR 2026 May Submission",
       "journal_ref": "ACL ARR 2026 May Submission",
       "doi": "",
@@ -20450,40 +20983,6 @@
       "openreview_url": "https://openreview.net/forum?id=6cqHd3LMBD",
       "openreview_venues": [
         "Anonymous Preprint Submission"
-      ]
-    },
-    {
-      "id": "openreview:zPjmtawzT8",
-      "versioned_id": "zPjmtawzT8",
-      "title": "Persistent Semantic Entities in Tool-Augmented LLM Systems",
-      "authors": [
-        "Zhaohui Geoffrey Wang"
-      ],
-      "abstract": "Tool-augmented LLM agents can harbor implicit state that persists across sessions, activates through events, and propagates across agent boundaries—all invisible to standard debugging. We formalize this as Persistent Semantic Entities (PSE): constructs defined by name binding, event triggering, and cross-boundary propagation, and evaluate them across 20 models from 9 families (3B–671B parameters). First, all tested models are susceptible to contamination (20–100%), with name binding as the dominant mechanism: without it, contamination is 0%. Second, persistence depends on contamination type rather than scale or deployment—factual injection conflicting with parametric knowledge self-corrects, but preference, persona, and instruction contamination persists at 100% over a 10-turn horizon with no decay, an effect that holds across providers in our controlled setting and is consistent with a model-intrinsic explanation. Third, context-isolated self-verification achieves 20–79% reduction without oracle references while keyword-based detection produces systematic false positives, and contamination compounds 3× across multi-agent pipelines. Preference and instruction contamination—persistent, lacking self-correction, and invisible to standard monitoring—represents a particularly concerning attack surface for deployed agent systems.",
-      "published": "2026-01-24T04:13:02+00:00",
-      "updated": "2026-06-24T23:19:08+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=zPjmtawzT8",
-      "openreview_url": "https://openreview.net/forum?id=zPjmtawzT8",
-      "pdf_url": "https://openreview.net/pdf?id=zPjmtawzT8",
-      "comment": "ICML 2026 regular",
-      "journal_ref": "ICML 2026 regular",
-      "doi": "",
-      "venue": "ICML 2026 regular",
-      "venue_id": "ICML.cc/2026/Conference",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 43,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "摘要命中 Agent 关键词",
-        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -43421,10 +43920,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-10T06:23:37+00:00",
-  "last_success": "2026-08-10T06:23:37+00:00",
-  "new_count": 2,
-  "total_cached": 1104,
+  "last_checked": "2026-08-11T06:15:21+00:00",
+  "last_success": "2026-08-11T06:15:21+00:00",
+  "new_count": 13,
+  "total_cached": 1115,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

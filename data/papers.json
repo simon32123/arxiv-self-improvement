@@ -1,6 +1,188 @@
 {
   "papers": [
     {
+      "id": "2608.11079",
+      "versioned_id": "2608.11079v1",
+      "title": "SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure",
+      "authors": [
+        "Xiaofan Bai",
+        "Hongqiang Lin",
+        "Chao Liu",
+        "Yantao Zhang",
+        "Xuan Jin",
+        "Xipeng Cao",
+        "Yuhong Li"
+      ],
+      "abstract": "Self-evolving agents accumulate reusable skills by appending successful procedures and failure fixes. Over time, the same requirement is often restated in several branches, examples, and warnings, while common action sequences are copied rather than reused. The resulting skill becomes expensive to inject and difficult to maintain. Generic prompt compression is ill-suited to this setting because a skill is not a flat passage: its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity, and rare exceptions may remain essential even when no sampled task activates them. Evaluation-guided compression can test these behaviors, but it introduces rollouts, cost, and dependence on the compression-time evaluation set. We present SkillZip, an evaluation-free method that compresses a skill by finding its shortest faithful structural explanation. The intuition is explain once, reference many: state a repeated rule once at the scope where it applies, factor a repeated action sequence into a shared procedure, and keep only the differences as explicit exceptions. We formalize this intuition as a typed minimum description-length objective over a skill contract and a residual, subject to a hard coverage constraint for every extracted trigger, workflow edge, tool requirement, obligation, and output field. The formulation provides simple sharing thresholds, preserves unique rare rules by construction, and supports efficient local updates. SkillZip has a one-shot mode with one structured extraction call and deterministic optimization, and a continual Zip-on-Write mode that integrates each self-evolution patch without replaying tasks or reparsing the full history. Through comprehensive experimental evaluations, we demonstrate the effectiveness and superiority of SkillZip in compression performance, generalizability, and cost overhead.",
+      "published": "2026-08-11T15:41:19Z",
+      "updated": "2026-08-11T15:41:19Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.11079v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11079v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-12",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.10504",
+      "versioned_id": "2608.10504v1",
+      "title": "MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph",
+      "authors": [
+        "Jung Hwan Lee",
+        "Kyu Ho Lee",
+        "Gwang Hoon Yoo"
+      ],
+      "abstract": "As coding agents increasingly handle implementation, the central challenge shifts from building individual agents to building an infrastructure that systematically improves them. Current approaches optimize agent systems without accumulating transferable knowledge, accumulate knowledge without compositional reasoning over it, and lack a mechanism for that knowledge to self-evolve through operational evidence. MEGA (Meta Evaluation-Grounded Adaptation) addresses these gaps as a self-evolving infrastructure: each optimization cycle produces durable assets, compositional reasoning over those assets guides subsequent optimization, and operational evidence refines both the accumulated wisdom and the reasoning that governs it. Layer 1 distills reusable wisdom from agent sessions through behavioral-pattern clustering and empirical A/B validation, transforming each process into a durable asset. Layer 2 decomposes these assets into atomic PCR (Primary-Context-Resultant) units within a typed Wisdom Graph and performs deductive, abductive, and inductive reasoning to expand implicit relations; it then assembles context-specific execution plans through compositional retrieval that surfaces bridging knowledge unreachable by embedding similarity alone. Layer 3 performs multi-agent collaborative optimization over heterogeneous agent workflows (code nodes, LLM calls, and tool-using agents), attributing improvement effects to specific strategy changes through controlled evaluation that eliminates data variance. Evidence fed back from Layer 3 drives the self-evolution of both the curation strategies that govern wisdom composition and the optimization trajectories accumulated across runs. The result is an infrastructure in which optimizing an agent system and evolving the knowledge that guides optimization are one and the same process.",
+      "published": "2026-08-11T05:21:16Z",
+      "updated": "2026-08-11T05:21:16Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.10504v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10504v1",
+      "comment": "29 pages, 10 figures. Technical report",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-12",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.10430",
+      "versioned_id": "2608.10430v1",
+      "title": "Actionable Hallucination Detection: Translating Latent Uncertainty into Agentic Critique",
+      "authors": [
+        "Sanidhya Vijayvargiya",
+        "Rahul Lokesh"
+      ],
+      "abstract": "Large Language Models (LLMs) deployed as AI agents frequently exhibit user specification-grounding failures, executing hallucinated, undesired actions to force a resolution rather than expressing uncertainty. Existing detection methods fail to provide actionable, real-time correction as they either do not localize the hallucinations, or incur prohibitive inference latency. We introduce the Latent Critic, a lightweight low-rank adapter (LoRA) that operates concurrently with a frozen base LLM's generation to actively restructure the transformer's residual stream---amplifying latent grounding signals and translating them into localized, natural language feedback within a single sequence. By refining the base model's native uncertainty signals, this manipulation of the latent space enables reliable, granular detection without the overhead of secondary inference loops. Mechanistic analysis via activation patching and layer-wise probing shows that this rank-invariant behavior restructures pre-existing uncertainty geometry into a linearly separable representation that transfers more reliably than base model representations alone. Using tool-calling as an instantiation of granular hallucinations, we validate the detection and downstream improvements enabled by the Latent Critic architecture across Qwen and Llama-based models. Demonstrating superior real-time efficacy, our approach significantly outperforms equivalent-scale fine-tuned external detectors, semantic entropy baselines, and passive internal probes in isolating hallucinations, achieving 0.966 AUROC and >80% accuracy in localization (e.g., ungrounded: date). When deployed in a closed-loop ReAct environment, the Critic acts as a negligible latency guardrail, intercepting hallucinations before execution to prevent undesired actions while simultaneously leveraging this specific localized feedback to enable efficient agent self-correction.",
+      "published": "2026-08-11T03:26:16Z",
+      "updated": "2026-08-11T03:26:16Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2608.10430v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10430v1",
+      "comment": "22 pages, 6 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-12",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.10299",
+      "versioned_id": "2608.10299v1",
+      "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+      "authors": [
+        "Qing Zong",
+        "Jiayu Liu",
+        "Junhao Shen",
+        "Zecong Tang",
+        "Linsi Wu",
+        "Yuxuan Liu",
+        "Rui Wang",
+        "Zhaowei Wang",
+        "Weiqi Wang",
+        "Cheng Qian",
+        "Xiusi Chen",
+        "Yangqiu Song"
+      ],
+      "abstract": "Agentic systems are increasingly expected to improve after deployment, yet single-entity self-evolution is often bounded by a static learning context, such as fixed tasks and feedback. This survey focuses on co-evolution in agentic systems, a multi-component form of self-evolution in which multiple agents and their environment impose adaptive pressure on one another. To organize existing papers, we propose a progressive three-stage taxonomy that traces how the system gradually sheds human-engineered constraints. Agent--Agent Co-Evolution studies how agents adapt through dynamic peers, including adversarial, collaborative, and organizational adaptation. Agent--Environment Co-Evolution extends this loop to adaptive tasks, feedback, and interaction spaces that change with the agents. Meta Co-Evolution further explores the possibility of making the evolution mechanism itself evolvable. We also discuss open challenges in evaluating such systems, scaling them across multiple components, and keeping increasingly autonomous evolutionary processes safe and controllable. This survey provides a unified foundation for building robust and open-ended agentic systems that can improve beyond fixed human-designed paths.",
+      "published": "2026-08-10T23:10:40Z",
+      "updated": "2026-08-10T23:10:40Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.10299v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10299v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-12",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.10157",
+      "versioned_id": "2608.10157v1",
+      "title": "SBCO: Self-Supervised, Verifier-Grounded Harness Optimization For Planning Agents",
+      "authors": [
+        "Vivek Kulkarni",
+        "Sudipta Paul",
+        "Aounon Kumar",
+        "Nicholas Tzou",
+        "Srinivas Chappidi"
+      ],
+      "abstract": "Self-improving agents seek to reduce the human engineering effort behind AI systems by enabling them to evolve and self-improve their performance over time. Recently, methods like the Darwin Gödel Machine and the Huxley Gödel Machine have been proposed which enable open-ended, recursive self-improvement through self-reference where a coding agent edits its own code. Such self-referential self-improvement methods require that the competence required to perform the task coincides or aligns well with the competence required for self-modification which is the case for coding tasks. For domains or tasks, which do not satisfy the alignment needed, self-referential self-improvement is not available. In such cases, it is possible to adapt the above algorithms to other tasks by removing the self-referential aspect or introducing explicit self-modification of a meta-agent -- both computationally expensive, relying on population or self-modification search over many candidate agents. For planning tasks with explicit constraints, we propose a far cheaper alternative. We introduce SBCO (Self-supervised Block Coordinate Optimizer), a verifier-grounded harness optimizer in the same closed-loop, improve-from-experience family as the Gödel-machine methods, but self-supervised rather than self-referential. Given an agentic harness, SBCO learns a decomposed bank of verifiers and a harness policy via approximate block coordinate ascent, improving the agent's outputs from its own graded feedback---with a fixed meta-agent and no human labels. Across two domains SBCO matches or exceeds a customized self-modifying baseline while using 4-5.5 times less compute budget.",
+      "published": "2026-08-10T19:25:59Z",
+      "updated": "2026-08-10T19:25:59Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.10157v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10157v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-12",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 68,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.09819",
       "versioned_id": "2608.09819v1",
       "title": "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA",
@@ -207,12 +389,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=PMIla0klB7",
-      "openreview_venues": [
-        "ACL ARR 2026 May Submission"
+        "arXiv"
       ],
       "relevance_score": 48,
       "relevance_reasons": [
@@ -353,12 +530,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=zPjmtawzT8",
-      "openreview_venues": [
-        "ICML 2026 regular"
+        "arXiv"
       ],
       "relevance_score": 33,
       "relevance_reasons": [
@@ -2621,7 +2793,12 @@
       "discovered_on": "2026-07-23",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=PPk1GEkPIT",
+      "openreview_venues": [
+        "CBW Poster"
       ],
       "relevance_score": 75,
       "relevance_reasons": [
@@ -3524,7 +3701,8 @@
       "discovered_on": "2026-07-17",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
       ],
       "relevance_score": 100,
       "relevance_reasons": [
@@ -3534,6 +3712,10 @@
         "标题中的两类信号距离接近",
         "覆盖多个自进化关键词",
         "属于核心 Agent 相关分类"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=JyrcEL77Nq",
+      "openreview_venues": [
+        "Under review for TMLR"
       ]
     },
     {
@@ -28660,7 +28842,8 @@
       ],
       "openreview_url": "https://openreview.net/forum?id=q4vuDMtYgF",
       "openreview_venues": [
-        "Decision pending for TMLR"
+        "Decision pending for TMLR",
+        "Accepted by TMLR"
       ]
     },
     {
@@ -43920,10 +44103,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-11T06:15:21+00:00",
-  "last_success": "2026-08-11T06:15:21+00:00",
-  "new_count": 13,
-  "total_cached": 1115,
+  "last_checked": "2026-08-12T06:25:29+00:00",
+  "last_success": "2026-08-12T06:25:29+00:00",
+  "new_count": 5,
+  "total_cached": 1120,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

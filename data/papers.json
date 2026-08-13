@@ -1,6 +1,122 @@
 {
   "papers": [
     {
+      "id": "2608.12290",
+      "versioned_id": "2608.12290v1",
+      "title": "Beyond Trial-and-Error: Agentic Optimization for Image-to-Video Adherence",
+      "authors": [
+        "Aman Tyagi",
+        "Hemanth Boinpally",
+        "Jonathan Chen",
+        "Douglas Gebert",
+        "Steven Hickson"
+      ],
+      "abstract": "Modern black-box Image-to-Video (I2V) models offer powerful capabilities in automated content creation, yet their lack of fine-grained control and reliability presents significant challenges in professional workflows. Their inherent stochasticity causes minor variations in textual prompts or hyperparameters to yield drastically different outputs often necessitating inefficient, brute-force trial-and-error processes. To address these limitations, we introduce the ``Agentic Self-Improvement\" framework, which reframes video synthesis into a closed-loop, goal-directed optimization. Our framework systematically navigates the generation parameter space using a novel two-stage approach. In the first stage, an iterative prompt optimization loop uses a multimodal Large Language Model (mLLM) to refine the input prompt. This refinement implements two automated evaluations: Davidsonian Scene Graph (DSG) queries ensure semantic adherence, and Common Mistake Questions (CMQ) for artifact detection. At the second stage, we use Bayesian optimization to efficiently co-optimize stochastic seeds and CFG scales. This search is guided by a suite of quality metrics, including the novel Video-Text Adherence (VTA) score derived from the DSG and CMQ evaluations. Our framework significantly outperforms unguided search methods: in human preference studies, videos generated via our agentic approach were strongly preferred over baseline outputs, achieving win rates up to 69\\%. This work provides a practical and extensible methodology for enhancing the predictability and control of state-of-the-art video generation models, moving the field beyond speculative curiosities toward reliable, production-ready tools.",
+      "published": "2026-08-12T17:35:16Z",
+      "updated": "2026-08-12T17:35:16Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.12290v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12290v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-13",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.11772",
+      "versioned_id": "2608.11772v1",
+      "title": "Diagnosis Before Recovery: Turning Agent Failures into Selective Self-Correction",
+      "authors": [
+        "Pan Wang",
+        "Yihao Hu",
+        "Hang Wang",
+        "Zirui Lv",
+        "Xin Zhang",
+        "Jianshe Li",
+        "Jiang-Ming Yang",
+        "Wei Wu",
+        "Yongqi Tong"
+      ],
+      "abstract": "Self-correction is particularly useful when a failure constrains the next repair. Coding agents benefit from this property because compilers, tests, and execution traces turn many failures into typed recovery signals, but broad language-agent tasks often expose only a coarse task failure. This creates a tension for generic recovery playbooks: they broaden the agent's context precisely when the system needs a narrower repair interface, mixing incompatible signals for invalid actions, missing procedures, and strict-format errors. Our insight is that development-set failures can recover part of the missing diagnostic substrate by deciding which recovery interventions are admissible before test-time correction. We propose DARC, a diagnosis-guided recovery harness that profiles task-family failure modes, prunes mismatched interventions from a shared recovery library, and freezes a verifier-selected success-cost policy for deployment. This causal order makes correction selective: the harness first determines what kind of failure can be repaired, then decides how much recovery evidence to spend. In ALFWorld, AppWorld, and XBRL Finance, the same protocol yields an action-validity harness, a procedural-recovery fallback, and a format-precision retrieval policy; in each evaluated setting it improves average task performance over base agents and broad playbooks while reducing environment steps or retrieval budget. Our experiments show that failures need not trigger uniformly more context: DARC turns self-correction from prompt expansion into recovery-interface design. DARC provides a practical route toward more reliable agents in domains where compiler-like feedback is absent: making failures actionable before making contexts larger.",
+      "published": "2026-08-12T08:14:45Z",
+      "updated": "2026-08-12T08:14:45Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.11772v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11772v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-13",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.11738",
+      "versioned_id": "2608.11738v1",
+      "title": "Advancing MLLM-based UAV Image Understanding and Reasoning: A Benchmark and a Training-Free Multi-Agent System",
+      "authors": [
+        "Haoyu Zhang",
+        "Shuoxun Zhang",
+        "Peng Ye",
+        "Lin Zhang",
+        "Jiakang Yuan",
+        "Shenghong Yi",
+        "Yuening Wang",
+        "Tao Chen"
+      ],
+      "abstract": "Multimodal Large Language Model (MLLM)-based UAV aerial image understanding and reasoning is essential for aerial intelligence yet poses distinct challenges arising from extreme scale variation, arbitrary camera orientations, and high object density. Despite growing interest, existing evaluations remain fragmented across individual datasets and narrow tasks, leaving a critical gap in unified assessment of UAV understanding and reasoning capabilities. To fill this gap, we construct UAVQA-Bench, a benchmark of 1,500 human-annotated QA pairs drawn from 13 public UAV datasets, covering 6 capability dimensions and 16 tasks in both multiple-choice and visual grounding formats. Systematic evaluation of a broad range of open-source and closed-source MLLMs as well as agent-based systems on UAVQA-Bench identifies three key failure modes: domain-toolset mismatch, unchecked error propagation, and static reasoning. Motivated by these findings, we propose UAV-MAS, a training-free multi-agent system for MLLM-based UAV aerial image understanding and reasoning, comprising a Domain-Specific Perception Engine (DSPE) that routes queries to task-appropriate visual tools, a Context-Aware Iterative Refinement module (CAIR) that validates intermediate reasoning to curb error accumulation, and a Difficulty-Aware Adaptive Search mechanism (DAAS) that adjusts search depth to question difficulty. UAV-MAS with a 32B open-source MLLM achieves 77.0% overall accuracy on UAVQA-Bench, surpassing Gemini 3 Pro by 4.0\\%, while the 8B variant improves 8.7\\% over its base model.",
+      "published": "2026-08-12T07:25:32Z",
+      "updated": "2026-08-12T07:25:32Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.11738v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11738v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-13",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2608.11079",
       "versioned_id": "2608.11079v1",
       "title": "SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure",
@@ -398,6 +514,52 @@
       ]
     },
     {
+      "id": "openreview:CGO1hDTHNe",
+      "versioned_id": "CGO1hDTHNe",
+      "title": "Diving into Reliable Self-Evolving Agents: A Survey",
+      "authors": [
+        "Kaiqi Wang",
+        "Wenjin Hou",
+        "Yuchen Yan",
+        "Hongrui Jia",
+        "Zhisheng Zhong",
+        "Botao Ren",
+        "Yifei Chen",
+        "Songyang Zhang",
+        "Yongliang Shen",
+        "Jun Xiao",
+        "Yi Yang",
+        "Yueting Zhuang",
+        "Hehe Fan"
+      ],
+      "abstract": "Self-evolving agents use information produced during their own execution to revise current outputs or modify retained agent components that shape later behavior and future updating. As these systems gain broader and more persistent self-modification capabilities, reliability becomes a central concern. Two questions guide this survey: what changes during self-evolution, and what evidence can support claims of improvement. The literature is organized by self-evolution depth, defined by the deepest evolution target whose change takes effect--from the current output to retained components that shape future behavior, updates, or judgments. Accordingly, we classify self-evolution into five levels: Output-Level Self-Evolution (L0), Model-Level Self-Evolution (L1), Scaffold-Level Self-Evolution (L2), Improver-Level Self-Evolution (L3), and Criterion-Level Self-Evolution (L4). For each level, we survey representative systems and compare their evolution mechanisms, changed objects, persistence conditions, and reliability challenges. We then provide a cross-level synthesis of these concerns and develop a reliability ladder that pairs each evolution target with evidence and controls outside the corresponding update boundary. Reliable self-evolution thus depends not on self-evolution depth alone, but on whether evaluation and oversight remain independent of the update and cover the relevant tasks, conditions, and constraints. Finally, we discuss key challenges and future research directions. We aim for this survey to serve both as a structured reference for existing work and as guidance for developing the next generation of capable and reliable self-evolving agents.",
+      "published": "2026-08-10T03:40:14+00:00",
+      "updated": "2026-08-10T03:40:14+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=CGO1hDTHNe",
+      "openreview_url": "https://openreview.net/forum?id=CGO1hDTHNe",
+      "pdf_url": "https://openreview.net/pdf?id=CGO1hDTHNe",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-08-13",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2608.09044",
       "versioned_id": "2608.09044v1",
       "title": "Tree-of-Experience: Hierarchical Experience Management for Self-Evolving Agents",
@@ -434,6 +596,39 @@
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "openreview:5Ao2fsN8oX",
+      "versioned_id": "5Ao2fsN8oX",
+      "title": "MemoGen: Experience-Driven Self-Evolution for Text-to- Image Generation Agents",
+      "authors": [],
+      "abstract": "Modern text-to-image models exhibit strong synthesis capabilities, yet they remain unreliable on requests involving implicit visual constraints, relational reasoning, or external knowledge. Many such failures do not arise solely from limitations of the image generator, but from the absence of a control system that can interpret underspecified instructions, acquire supporting evidence, organize references, and verify generated pixels. We therefore introduce MemoGen, a training-free, self-evolving agentic harness for text-to-image generation. MemoGen organizes generation as a controllable and verifiable execution process around a frozen image generator. It preserves the original instruction as an invariant task target, converts implicit requirements into an explicit rubric, and maintains a mutable working state containing the generation plan, retrieved evidence, selected references, working prompt, and generation configuration. A multimodal controller dynamically selects tools according to this state, while the generated image is inspected against the rubric at the pixel level. An unsatisfied result is retained as the episode output, and its diagnosed gaps become targeted repair signals for a later evolution round. This design makes tool use and output diagnosis traceable to explicit requirements rather than unconstrained prompt rewriting. On top of the execution harness, MemoGen converts each completed trajectory into independently verified experience, including successful strategies, reference choices, failure diagnoses, and repair constraints. These records are retrieved in later tasks and evolution rounds, enabling the system to improve without updating either the controller or the generator. Experiments on WISE and Mind-Bench show that the agentic harness produces the largest immediate improvement over direct generation, while accumulated experience provides further gains, repairs recurring failures, and transfers to rule-guided analogical prompts with changed entities and scenes. MemoGen achieves an overall score of 0.96 on WISE and 0.58 on Mind-Bench. Component ablations, cross-task transfer, failure analysis, and human evaluation demonstrate that reliable text-to-image self-evolution depends on both verifiable agentic execution and explicit experience reuse.",
+      "published": "2026-08-09T13:55:04+00:00",
+      "updated": "2026-08-11T17:35:15+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=5Ao2fsN8oX",
+      "openreview_url": "https://openreview.net/forum?id=5Ao2fsN8oX",
+      "pdf_url": "https://openreview.net/pdf?id=5Ao2fsN8oX",
+      "comment": "Under review for TMLR",
+      "journal_ref": "Under review for TMLR",
+      "doi": "",
+      "venue": "Under review for TMLR",
+      "venue_id": "TMLR/Under_Review",
+      "discovered_on": "2026-08-13",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -2143,7 +2338,7 @@
     },
     {
       "id": "2607.26722",
-      "versioned_id": "2607.26722v1",
+      "versioned_id": "2607.26722v2",
       "title": "DREvo: Distilling Recalibrated Historical Experience for Harness Self-Evolution",
       "authors": [
         "Hanghui Guo",
@@ -2158,14 +2353,14 @@
       ],
       "abstract": "Harness plays a critical role in large language model agent performance, and building a high-performing harness requires substantial expert effort. Therefore, recent research has increasingly explored harness self-evolution, which iteratively proposes, evaluates, and improves harnesses using historical trial experience. However, accumulated historical experience does not always translate into stable search guidance, and performance often fluctuates substantially across evolution iterations, making it difficult to reliably discover high-performing harnesses under a limited evolution budget. We identify two limitations in how existing harness self-evolution methods leverage historical experience: (1) Lack of dynamic reassessment of whether historical experience remains valid for the current harness, and (2) Lack of explicit mechanisms for translating valid historical experience into actionable search directions. To address these limitations, we propose a new harness self-evolution method, named DREvo, which integrates function-level evidence anchoring, state-dependent evidence recalibration, and role-conditioned search intent distillation to determine which historical evidence remains valid and where the harness should evolve next. Under limited evolution budgets, DREvo exhibits smoother evolution trajectories, achieves the highest accuracy on all five benchmarks, and delivers average gains of 16.2% and 14.2% over the evaluated baselines on domain reasoning and agentic tasks, respectively.",
       "published": "2026-07-29T10:12:49Z",
-      "updated": "2026-07-29T10:12:49Z",
+      "updated": "2026-08-12T03:09:25Z",
       "categories": [
         "cs.MA",
         "cs.LG"
       ],
       "primary_category": "cs.MA",
-      "arxiv_url": "https://arxiv.org/abs/2607.26722v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.26722v1",
+      "arxiv_url": "https://arxiv.org/abs/2607.26722v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.26722v2",
       "comment": "9 pages",
       "journal_ref": "",
       "doi": "",
@@ -2546,6 +2741,46 @@
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-07-28",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.11224",
+      "versioned_id": "2608.11224v1",
+      "title": "Harnessing agent memory to build lifelong AI partners for materials scientists",
+      "authors": [
+        "Siyu Liu",
+        "Bo Hu",
+        "Beilin Ye",
+        "He Cao",
+        "David J. Srolovitz",
+        "Tongqi Wen"
+      ],
+      "abstract": "Materials research advances through accumulated experience - scripts that work, protocols that are trusted, warnings attached to failed calculations or experiments, and judgement that links a new question to an old result. This experience is essential for reproducibility and knowledge transfer, yet it is usually fragmented across notebooks, repositories, job logs and individual memory, and it is rarely portable across artificial-intelligence agents. Here we argue that a lifelong AI partner for materials science can be designed around persistent memory rather than around a particular agent implementation. We introduce a self-evolving memory framework that stores scientific experience as inspectable facts and executable skills, so that observations, failure boundaries, protocols and validation checks can be retrieved, revised and migrated across models. We evaluate the idea in three computational settings that expose different layers of materials-research competence. In 49 real-world materials-tool-use questions comprising 138 executable subtasks, memory nearly doubles GPT-5.2 task success without model-parameter updates. In elemental-solid equation-of-state calculations, memory converts a wavefunction-initialization failure into a pre-execution guardrail, improving outcomes from 22/1/4 to 25/2/0 Correct/Partial/Error and avoiding 92% of repeated errors. In 13 practical material simulation workflows, remembered skills and failure facts halve the aggregate trace burden (tokens) and reduce tool calls by over a factor of two by the third round, while preserving physically meaningful outputs in band-gap, phonon, vacancy and work-function analyses. These results show that agent memory can serve as a durable scientific asset; a portable, self-improving record of materials-research experience that outlives any single model or agent stack.",
+      "published": "2026-07-25T09:11:52Z",
+      "updated": "2026-07-25T09:11:52Z",
+      "categories": [
+        "cs.AI",
+        "cond-mat.mtrl-sci",
+        "cs.CE",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.11224v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11224v1",
+      "comment": "21 pages, 7 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-13",
       "source": "arXiv",
       "sources": [
         "arXiv"
@@ -44103,10 +44338,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-12T06:25:29+00:00",
-  "last_success": "2026-08-12T06:25:29+00:00",
-  "new_count": 5,
-  "total_cached": 1120,
+  "last_checked": "2026-08-13T06:26:42+00:00",
+  "last_success": "2026-08-13T06:26:42+00:00",
+  "new_count": 6,
+  "total_cached": 1126,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

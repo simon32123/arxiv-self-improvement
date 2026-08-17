@@ -1,6 +1,75 @@
 {
   "papers": [
     {
+      "id": "2608.13951",
+      "versioned_id": "2608.13951v1",
+      "title": "HELIX: Model-Harness Co-evolution for Recursive Self-Improvement",
+      "authors": [
+        "Tianyu Fan",
+        "Chao Huang"
+      ],
+      "abstract": "Scaling agent capability has largely focused on improving the model, yet an interactive agent acts through a runtime harness that mediates context, tools, control flow, and stopping. The harness shapes both what a model can accomplish and the trajectories from which it learns. This coupling motivates model-harness co-evolution for recursive self-improvement: build harnesses for a fixed model, update the model from verified sibling trajectories, and rebuild the harnesses as model capabilities change. Realizing this loop requires a controlled way to evolve harnesses while preserving intervention identity and effect. We present HELIX, a source-traceable substrate for harness evolution. HELIX decomposes agent systems into typed ports, reusable atoms, recipes, product shells, and runtime policies. It makes interventions explicit and auditable while retaining trajectories, test outcomes, and provenance. Harness evolution thus serves two linked roles: improving fixed-model execution and producing matched successes, regressions, near misses, and alternative solutions as data for subsequent model improvement. We evaluate HELIX in one evolution round on code repair. A 65-candidate portfolio discovers a fixed harness that improves task coverage by 4.0% over Pi, while the full portfolio exposes up to 58.0% more verified coverage through complementary sibling behavior. Selected candidates are assessed with repeated runs and the SWE-bench evaluator. A 200-slot sibling slice yields 438 verified SFT, critic, filter, and preference records. These results show how harness, model, and data form a feedback system: harness evolution expands current capability and creates learning signal for the next model; model updates motivate the next round of harness evolution. HELIX provides an auditable interface for studying this recursive process. Code is available at https://github.com/HKUDS/HELIX.",
+      "published": "2026-08-14T04:44:53Z",
+      "updated": "2026-08-14T04:44:53Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.13951v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13951v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-17",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 65,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "覆盖多个自进化关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.13833",
+      "versioned_id": "2608.13833v1",
+      "title": "AdsWorldEngine: A Self-Evolving Conversational Advertising Agent through Orchestrator and Tool Coevolution",
+      "authors": [
+        "Simiao Zuo",
+        "Chenhui Xu",
+        "Yimeng Jia",
+        "Qiang Lou",
+        "Jian Jiao",
+        "Denis Charles"
+      ],
+      "abstract": "Conversational advertising aims to deliver useful ads within multi-turn assistant interactions. Unlike conventional query-based advertising, where the user's intent is often expressed in a short standalone query, conversational ads must infer latent commercial intent from the current user query, the assistant response, and dialogue history while also deciding whether an ad would be helpful rather than intrusive. We propose AdsWorldEngine, an agentic framework for conversational advertising. AdsWorldEngine uses an Opportunity Gate to determine whether ads should be shown, an Orchestrator to generate commercial intents, call advertising tools, and construct a top-3 ad slate, and an Evaluator to score delivered ads for offline optimization. The central contribution is an iterative actor-tool training procedure: we first train the Orchestrator with supervised fine-tuning and agentic reinforcement learning, then use high- and low-reward rollouts to construct preference data to train tools. This creates a self-improving loop in which the system learns not only how to use advertising tools, but also how to improve them from rewarded behavior. To support subjective production decisions, we introduce label grounded judgment modeling, which trains judgment models from human labels collected under explicit guidelines. It enriches labels with thinking traces, filters inconsistent rationales through reflection, and further optimizes binary judgments with a cost sensitive GRPO variant that preserves asymmetric reward gaps. Offline, AdsWorldEngine improves diversity by 60% and relevance by 80% over the current production ad delivery system. In an online A/B test, it increases RPM by 22% and ads coverage by 74%.",
+      "published": "2026-08-13T23:53:05Z",
+      "updated": "2026-08-13T23:53:05Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "primary_category": "cs.IR",
+      "arxiv_url": "https://arxiv.org/abs/2608.13833v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13833v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-17",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
       "id": "2608.13560",
       "versioned_id": "2608.13560v1",
       "title": "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design",
@@ -44585,10 +44654,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-16T06:04:45+00:00",
-  "last_success": "2026-08-16T06:04:45+00:00",
-  "new_count": 0,
-  "total_cached": 1132,
+  "last_checked": "2026-08-17T06:06:36+00:00",
+  "last_success": "2026-08-17T06:06:36+00:00",
+  "new_count": 2,
+  "total_cached": 1134,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

@@ -1,6 +1,119 @@
 {
   "papers": [
     {
+      "id": "2608.18066",
+      "versioned_id": "2608.18066v1",
+      "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
+      "authors": [
+        "Qinyuan Ye",
+        "Yu Li",
+        "Yada Pruksachatkun",
+        "Jiaxin Zhang",
+        "Chien-Sheng Wu"
+      ],
+      "abstract": "Memory-based self-improving agents--those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank--have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple runs to quantify variance, and (2) randomly shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
+      "published": "2026-08-18T17:55:07Z",
+      "updated": "2026-08-18T17:55:07Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.18066v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.18066v1",
+      "comment": "Code: https://github.com/SalesforceAIResearch/self-improve-fragility Data: https://huggingface.co/datasets/Salesforce/self-improve-fragility",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-03",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
+      "openreview_venues": [
+        "LLA 2026 Poster"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.17684",
+      "versioned_id": "2608.17684v1",
+      "title": "Auditing Self-Evolution in Financial Agents: Capability Gains, Security Drift, and Execution-Interface Mismatch",
+      "authors": [
+        "Jialong Li",
+        "Jialing Zhu"
+      ],
+      "abstract": "Self-evolving agents turn experience into reusable skills, workflows, or memories, but post-evolution accuracy alone does not show whether learned behavior preserves previously correct behavior or security. We audit SkillOpt, Agent Workflow Memory (AWM), and ReasoningBank in simulated e-banking using matched benign acquisition trajectories, sealed evaluation endpoints, execution-grounded checks, and independent state replay. On Qwen 3.7 Flash, SkillOpt raises benign utility from 0.741 to 0.837 while exposure to injected content rises from 0.820 to 0.943. Conditional attack success after exposure falls from 0.605 to 0.562, yet overall attack success rate (ASR) rises from 0.496 to 0.530 and unauthorized financial state changes rise to 0.685. Across three independently evolved lineages, capability, exposure, and unauthorized-state changes increase in all three, whereas ASR increases in only two. ReasoningBank raises utility to 0.859 without increasing aggregate ASR, although unauthorized state changes remain slightly above Static. AWM reveals a separate evaluation hazard: a literal WebArena text-action envelope disrupts tool execution in our native function-calling executor. In a post-hoc sensitivity test, removing only that envelope restores utility from 0.319 to 0.756, while exposure rises from 0.299 to 0.909 and ASR from 0.195 to 0.575. Auditing self-evolving financial agents therefore requires tracking regressions, attack-surface contact, unauthorized financial-state change, and artifact-executor compatibility, not accuracy alone.",
+      "published": "2026-08-18T11:57:44Z",
+      "updated": "2026-08-18T11:57:44Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.17684v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17684v1",
+      "comment": "8 pages, 2 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.17588",
+      "versioned_id": "2608.17588v1",
+      "title": "TRUSS: Towards Task-Reliable and User-Safe Automated Agent Skill Generation",
+      "authors": [
+        "Zhibo Zhang",
+        "Zhen Ouyang",
+        "Ling Shi",
+        "Kailong Wang"
+      ],
+      "abstract": "Agent Skills package reusable natural language procedures with executable resources, enabling software agents to acquire task specific capabilities without model adaptation. Automatically generating such Skills can improve task performance, yet evaluating a candidate solely from its artifact or final task outcome leaves unresolved which actions the equipped agent will perform and which side effects those actions will produce. We present TRUSS, an evidence guided framework for generating functionally effective and safety reliable Agent Skills. TRUSS first inspects functional claims against source and domain evidence while evaluating the complete artifact under nine predefined safety properties. Candidates admitted by this static gate are loaded by a shadow agent inside a Controllable Execution Environment, where brokered tools expose requested actions to policy enforcement and record their results as provenance preserving execution traces. Functional failures and property violations are linked back to the responsible Skill content and used to guide iterative refinement. We evaluate TRUSS on 168 SkillInject artifacts, 155 SkillSafetyBench cases, and all 187 tasks in SkillGenBench. TRUSS achieves 100.00\\% precision and recall in vulnerability detection. Repair reduces attack success from 38.71\\% to 19.35\\% with GPT 5.5 and from 46.45\\% to 29.68\\% with GPT 5.4, with zero attack regression. For Skill generation, TRUSS raises task effectiveness from 17.11\\% without Skills to 52.94\\%, while increasing the benchmark Security rate from 50.80\\% to 100.00\\%. These results show that execution evidence can expose behavioral failures missed by artifact inspection and can guide Skill generation toward jointly verified functional and safety outcomes.",
+      "published": "2026-08-18T09:52:57Z",
+      "updated": "2026-08-18T09:52:57Z",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.17588v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17588v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.16742",
       "versioned_id": "2608.16742v1",
       "title": "TDD-Agent: Test-Driven Reasoning for Code Generation",
@@ -29,12 +142,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=jZOO2JVztt",
-      "openreview_venues": [
-        "ACL ARR 2026 May Submission"
+        "arXiv"
       ],
       "relevance_score": 48,
       "relevance_reasons": [
@@ -518,27 +626,27 @@
     },
     {
       "id": "2608.12841",
-      "versioned_id": "2608.12841v1",
+      "versioned_id": "2608.12841v2",
       "title": "AQuA: Recursively Self-Improving Quantitative Trading Research Agents",
       "authors": [
         "Jiacheng Guo",
         "Suozhi Huang",
         "Yunlong Gao",
         "Zihao Li",
-        "Jian Ge",
+        "Jason Ge",
         "Xu Kuang",
         "Mengdi Wang"
       ],
       "abstract": "We study recursive self-improvement at the level of quantitative-investment research: whether an autonomous system can use evidence from earlier experiments to improve the hypotheses and candidates proposed in later iterations. We present AQuA, which comprises two separate language-model-driven research systems: one for symbolic factor discovery and one for trainable model development. The two systems do not share agents, memories, candidate spaces, or research state. Instead, each independently closes its own research loop by retaining validated evidence and using it to guide subsequent proposals. In this bounded sense, both systems implement recursive self-improvement at the level of the research process. Each system also uses its own sealed sandbox, which fixes the data splits, feature and label definitions, and evaluator while allowing the model to act only through constrained factor expressions or configuration diffs. The factor system, a manager-mediated multi-agent pipeline, discovers and combines factors into a signal that reaches a combined information coefficient of about $0.190$ on a crypto universe. The model system, a config-driven loop over a hybrid time-series architecture, reaches a per-stock information coefficient of $+0.0843$ on US equities and converts it into a threshold long/short strategy with a held-out Sharpe of up to $+2.50$ at a two-leg cost. The strategy is positive in every year from 2021 to 2025.",
       "published": "2026-08-13T05:25:42Z",
-      "updated": "2026-08-13T05:25:42Z",
+      "updated": "2026-08-17T23:50:10Z",
       "categories": [
         "cs.CL",
         "cs.AI"
       ],
       "primary_category": "cs.CL",
-      "arxiv_url": "https://arxiv.org/abs/2608.12841v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.12841v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.12841v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.12841v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -593,6 +701,47 @@
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近",
         "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.12313",
+      "versioned_id": "2608.12313v2",
+      "title": "AVA-Encoder: Towards Agent-Native Video Representation Learning",
+      "authors": [
+        "Chuyue Li",
+        "Jinpeng Yu",
+        "Haozhe Wang",
+        "Tian Xueyun",
+        "Zhijing Zhang",
+        "Bingnan Li",
+        "Shuqi Gu",
+        "Kan Ren",
+        "Jiaming Liu",
+        "Ruihua Huang"
+      ],
+      "abstract": "Video creative agents still lack an effective way to learn from high-quality human films, limiting their ability to produce cinematic-grade videos. A key challenge is the absence of a structured video representation that is both faithful to film content and directly usable for agentic reasoning and manipulation. To address the challenge, we propose the Agentic Video Auto-Encoder (AVA-Encoder), a novel auto-encoding framework driven by agentic self-evolution to learn agent-native video representations. AVA-Encoder transforms a video into a Film Knowledge Graph (KG) representation and then reconstructs it back into video. This Film KG representation explicitly captures entities, events, assets, and their multimodal relationships in a structured form that can be easily understood, queried, and manipulated by agents. The reconstruction residual drives a dual-loop textual-gradient optimization framework that jointly improves the Film KG representation and the Agentic Video Encoder. Extensive experiments show that AVA-Encoder achieves a 20.7-percentage-point absolute gain, or a 73.1% relative improvement, over the strongest external baseline. In the controlled policy-only setting, its pseudo-trained Agentic Video Encoder policy also outperforms a carefully human-tuned policy while using 74.3% fewer shot-level and 70.1% fewer keyframe-level system-prompt tokens. We release the complete AVA-Encoder framework, a reliable agentic video reconstruction benchmark, and the first dataset of high-quality Film KG representations.",
+      "published": "2026-08-12T17:58:02Z",
+      "updated": "2026-08-18T14:28:00Z",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.12313v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.12313v2",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -5608,45 +5757,6 @@
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近"
-      ]
-    },
-    {
-      "id": "openreview:aecfu2gW0b",
-      "versioned_id": "aecfu2gW0b",
-      "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
-      "authors": [
-        "Qinyuan Ye",
-        "Yu Li",
-        "Yada Pruksachatkun",
-        "Jiaxin Zhang",
-        "Chien-Sheng Wu"
-      ],
-      "abstract": "Memory-based self-improving agents—those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank—have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple runs to quantify variance, and (2) randomly shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Empirically, when these methods are applied, we observe the variance across runs increase in 71% of cases, and the gap between the best and worst runs of the same experiment can reach up to 10 percentage points. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. In contrast, when evaluated under a randomly shuffled task order, agent performance degrades (-4.5%) instead of exhibiting the expected improvement (+1.5%). To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. Without clear specifications, agents generate plausible yet inapplicable memories (e.g., recommending API usage in a browser-only environment) that may distract the agent from feasible strategies. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under realistic, challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
-      "published": "2026-07-03T19:02:36+00:00",
-      "updated": "2026-07-31T23:06:55+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=aecfu2gW0b",
-      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
-      "pdf_url": "https://openreview.net/pdf?id=aecfu2gW0b",
-      "comment": "LLA 2026 Poster",
-      "journal_ref": "LLA 2026 Poster",
-      "doi": "",
-      "venue": "LLA 2026 Poster",
-      "venue_id": "colmweb.org/COLM/2026/Workshop/LLA",
-      "discovered_on": "2026-08-03",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 90,
-      "relevance_reasons": [
-        "标题命中自进化关键词",
-        "标题命中 Agent 关键词",
-        "标题同时包含自进化与 Agent 信号",
-        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -44912,10 +45022,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-18T06:05:30+00:00",
-  "last_success": "2026-08-18T06:05:30+00:00",
-  "new_count": 7,
-  "total_cached": 1140,
+  "last_checked": "2026-08-19T06:06:02+00:00",
+  "last_success": "2026-08-19T06:06:02+00:00",
+  "new_count": 4,
+  "total_cached": 1143,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

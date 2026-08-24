@@ -1,6 +1,113 @@
 {
   "papers": [
     {
+      "id": "2608.21345",
+      "versioned_id": "2608.21345v1",
+      "title": "Asymmetric Capacity Allocation in Self-Refinement Pipelines",
+      "authors": [
+        "Zhuoyi Yang",
+        "Ian G. Harris",
+        "Salar Hashemitaheri",
+        "Cassie Huang",
+        "Yuangang Li",
+        "Hyunwoo Oh",
+        "Paul Dourish",
+        "Tony Givargis",
+        "Mohsen Imani",
+        "Li Zhang"
+      ],
+      "abstract": "Self-refinement, typically structured as generation, critique, and revision, is a widely adopted paradigm for improving LLM generation and serves as a core mechanism in many LLM agents. While the three stages involve different cognitive demands, most existing approaches conveniently treat the model size as an implementation detail rather than a subject of study, which may lead to a waste of resources. Little work has systematically examined how model size affects each stage or whether effective self-refinement requires equally capable models for generation, critique, and revision. We present the first stage-wise model size study of the self-refinement pipeline on 5 benchmarks from different domains using 6 model sizes of Qwen3 and 4 model sizes of Gemma 3. We conclude that larger generators and refiners generally improve the pipeline, whereas an undersized refiner can even harm performance. Second, performance is highly insensitive to the size of the critic, although including even a small critic consistently outperforms omitting critique altogether. Our findings demonstrate that model capacity should not be allocated uniformly across self-refinement pipelines. Instead, different stages exhibit distinct size scaling characteristics, providing practical guidance for designing more computationally efficient multi-stage language model systems.",
+      "published": "2026-08-21T17:52:17Z",
+      "updated": "2026-08-21T17:52:17Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2608.21345v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.21345v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-24",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 65,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.21156",
+      "versioned_id": "2608.21156v1",
+      "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
+      "authors": [
+        "Yuyuan Feng",
+        "Zhishang Xiang",
+        "Chaobin Yang",
+        "Qichao Ma",
+        "Zerui Chen",
+        "Yujing Zhang",
+        "Ke Huang",
+        "Chuanjie Wu",
+        "Zhaoxu Liu",
+        "Yili Wang",
+        "Xin He",
+        "Jiapu Wang",
+        "Zijin Hong",
+        "Hao Chen",
+        "Yuanchen Bei",
+        "Kun Wang",
+        "Shengyuan Chen",
+        "Ningyu Zhang",
+        "Enyan Dai",
+        "Linhao Luo",
+        "Qingyi Pan",
+        "Qi Wang",
+        "Wenqi Fan",
+        "Guangjing Wang",
+        "Na Zou",
+        "Yangqiu Song",
+        "Xin Wang",
+        "Zechao Li",
+        "Xia Hu",
+        "Qing Li",
+        "Xiao Huang",
+        "Zhihong Zhang",
+        "Jinsong Su",
+        "Qinggang Zhang",
+        "Yi Chang"
+      ],
+      "abstract": "LLMs have evolved from language generators to autonomous agents capable of complex, long-horizon tasks. This evolution has produced paradigms including Prompt Engineering to elicit model capabilities, Context Engineering to manage information access, Harness Engineering to organize external tools and resources, and Loop Engineering to support continual reflection and self-improvement. Yet as tasks grow more complex, individual intelligence faces a fundamental limit: many tasks require heterogeneous expertise, interdependent subtasks, parallel execution, independent verification, and persistent state, exceeding any single agent's organizational capacity. Augmenting one agent's capabilities or context cannot resolve this architectural mismatch; intelligence must instead be distributed across specialized agents and organized at the system level. We call this System Intelligence: an agent system's ability to organize and coordinate multiple intelligent components into a coherent, adaptive whole pursuing a shared objective. Achieving it requires more than adding agents; it demands explicit structures to organize work, coordinate heterogeneous agents, and maintain evolving execution states. We introduce Graph Engineering, an emerging paradigm for next-generation agent systems. Unlike prior paradigms that mainly optimize individual interactions or agent-level behavior, Graph Engineering constructs explicit, dynamic, evolving graph structures representing tasks, agents, and system states. These abstractions provide a unified foundation for organizing complex objectives, orchestrating heterogeneous agents, modeling system dynamics, and enabling scalable agent evolution. We systematically review the principles, methodologies, and applications of Graph Engineering for LLM agents. Related papers, open-source data, and projects are collected at https://github.com/DEEP-JLU/Awesome-Graph-Engineering.",
+      "published": "2026-08-21T14:27:57Z",
+      "updated": "2026-08-21T14:27:57Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "primary_category": "cs.IR",
+      "arxiv_url": "https://arxiv.org/abs/2608.21156v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.21156v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-24",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
       "id": "2608.20318",
       "versioned_id": "2608.20318v1",
       "title": "AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement",
@@ -159,7 +266,12 @@
       "discovered_on": "2026-08-03",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
+      "openreview_venues": [
+        "LLA 2026 Poster"
       ],
       "relevance_score": 95,
       "relevance_reasons": [
@@ -1431,28 +1543,24 @@
     },
     {
       "id": "2608.09044",
-      "versioned_id": "2608.09044v1",
+      "versioned_id": "2608.09044v2",
       "title": "Tree-of-Experience: Hierarchical Experience Management for Self-Evolving Agents",
       "authors": [
         "Zihao Deng",
         "Yining Zhu",
         "Leiming Wang",
-        "Jingfei Lu",
         "Junbo Wang",
-        "Chuncheng Ran",
-        "Yu Yang",
-        "Dixuan Yang",
-        "Jikun Shen"
+        "Jingfei Lu"
       ],
       "abstract": "Continual self-evolution requires LLM agents to transform environmental interactions into reliable and reusable experience. Existing methods typically refine individual trajectories or abstract shared knowledge from related trajectories, but their experience representations are often disconnected from the underlying reasoning process. This limits feedback attribution, cross-task transfer, and update and retrieval efficiency, particularly in complex reasoning tasks with outcome-level feedback. To overcome this limitation, we propose \\textbf{T}ree-\\textbf{o}f-\\textbf{E}xperience (ToE), a structured experience-management framework that aligns experience organization with the hierarchical reasoning process of LLM agents. Specifically, ToE organizes the experience into a shared tree of analytical perspectives and reasoning paths, whose reliability is calibrated through environmental outcomes to support systematic updating, transfer, and efficient retrieval. The experimental results on \\textsc{Game of 24} and \\textsc{FinEvolveBench} show that ToE substantially improves both problem-solving performance and efficiency. On \\textsc{Game of 24}, ToE achieves a 31.4\\% relative improvement in accuracy over the experience-free ToT baseline. On \\textsc{FinEvolveBench}, ToE improves tsIC by an average of 41.24\\% over the experience-free pipeline across 12 evaluation settings, whereas conventional experience-management methods often underperform experience-free baselines.",
       "published": "2026-08-10T02:49:38Z",
-      "updated": "2026-08-10T02:49:38Z",
+      "updated": "2026-08-21T09:01:00Z",
       "categories": [
         "cs.CL"
       ],
       "primary_category": "cs.CL",
-      "arxiv_url": "https://arxiv.org/abs/2608.09044v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.09044v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.09044v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.09044v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -2246,7 +2354,7 @@
       "authors": [],
       "abstract": "Experience learning enables large language model agents to retain lessons from past tasks and reuse them in future ones. However, existing methods often rely on the same agent to both execute a task and summarize its own behavior. When an execution trajectory contains errors that the agent fails to recognize, the agent may incorrectly regard the execution process as valid and consequently extract erroneous experience from it. Once written into long-term memory, such experience may be repeatedly retrieved and reused in subsequent tasks. We refer to this failure mode as the Self-Confirmation Trap. Our key insight is that long-term experience should not be generated and approved solely through the self-reflection of a single executor. Inspired by how human groups develop knowledge through independent practice, comparison of different experiences, and mutual examination, we propose EDV, an Execute--Distill--Verify framework. EDV allows multiple heterogeneous agents to execute tasks independently, employs a third-party agent to compare their trajectories and distill candidate experience, and verifies the resulting experience before writing it into memory. Experiments on multiple long-horizon agent benchmarks show that EDV effectively improves overall task performance, and that its advantage arises from the synergy among the Execute, Distill, and Verify stages rather than from simply increasing the number of agents.",
       "published": "2026-08-04T11:54:12+00:00",
-      "updated": "2026-08-04T12:35:24+00:00",
+      "updated": "2026-08-23T22:20:24+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -15279,7 +15387,12 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=6uS3Xogu5u",
+      "openreview_venues": [
+        "COLM 2026"
       ]
     },
     {
@@ -17163,6 +17276,56 @@
       ]
     },
     {
+      "id": "openreview:QcAiEdP4aF",
+      "versioned_id": "QcAiEdP4aF",
+      "title": "CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery",
+      "authors": [
+        "Ao Qu",
+        "Han Zheng",
+        "Zijian Zhou",
+        "Yihao Yan",
+        "Yihong Tang",
+        "Shao Yong Ong",
+        "Fenglu Hong",
+        "Kaichen Zhou",
+        "Chonghe Jiang",
+        "Minwei Kong",
+        "Jiacheng Zhu",
+        "Sirui Li",
+        "Cathy Wu",
+        "Bryan Kian Hsiang Low",
+        "Jinhua Zhao",
+        "Paul Pu Liang"
+      ],
+      "abstract": "Large language model (LLM)-based evolution is a promising approach for open-ended discovery, where progress requires sustained search and knowledge accumulation. Existing methods still rely heavily on fixed heuristics and hard-coded exploration rules, which limit the autonomy of LLM agents. We present CORAL, the first framework for autonomous multi-agent evolution on open-ended problems. CORAL replaces rigid control with long-running agents that explore, reflect, and collaborate through shared persistent memory, asynchronous multi-agent execution, and heartbeat-based interventions. It also provides practical safeguards, including isolated workspaces, evaluator separation, resource management, and agent session and health management. Evaluated on diverse mathematical, algorithmic, and systems optimization tasks, CORAL sets new state-of-the-art results on 10 tasks, achieving 3--10X higher improvement rates with far fewer evaluations than fixed evolutionary search baselines across tasks. On Anthropic's kernel engineering task, four co-evolving agents improve the best known score from 1363 to 1103 cycles. Mechanistic analyses further show how these gains arise from knowledge reuse and multi-agent exploration and communication. Together, these results suggest that greater agent autonomy and multi-agent evolution can substantially improve open-ended discovery. Code is available at \\url{https://anonymous.4open.science/r/coral_anon-DA07/}.",
+      "published": "2026-03-26T21:39:46+00:00",
+      "updated": "2026-08-24T02:06:16+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=QcAiEdP4aF",
+      "openreview_url": "https://openreview.net/forum?id=QcAiEdP4aF",
+      "pdf_url": "https://openreview.net/pdf?id=QcAiEdP4aF",
+      "comment": "COLM 2026",
+      "journal_ref": "COLM 2026",
+      "doi": "",
+      "venue": "COLM 2026",
+      "venue_id": "colmweb.org/COLM/2026/Conference",
+      "discovered_on": "2026-08-24",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2603.25697",
       "versioned_id": "2603.25697v1",
       "title": "The Kitchen Loop: User-Spec-Driven Development for a Self-Evolving Codebase",
@@ -18490,7 +18653,12 @@
       ],
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=6iF9u6VQuo",
+      "openreview_venues": [
+        "COLM 2026"
       ]
     },
     {
@@ -45148,10 +45316,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-23T06:05:27+00:00",
-  "last_success": "2026-08-23T06:05:27+00:00",
-  "new_count": 0,
-  "total_cached": 1146,
+  "last_checked": "2026-08-24T06:09:30+00:00",
+  "last_success": "2026-08-24T06:09:30+00:00",
+  "new_count": 3,
+  "total_cached": 1149,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

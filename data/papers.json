@@ -1,6 +1,207 @@
 {
   "papers": [
     {
+      "id": "2608.23552",
+      "versioned_id": "2608.23552v1",
+      "title": "Prime Agent: A Self-Improving RLM Harness",
+      "authors": [
+        "Seth Karten",
+        "Alex L. Zhang",
+        "Kevin Thomas",
+        "Sebastian Müller",
+        "Elie Bakouch",
+        "Daniel Auras",
+        "Mika Senghaas",
+        "Fares Obeid",
+        "Konstantin Dunas",
+        "Johannes Hagemann",
+        "Sami Jaghouar"
+      ],
+      "abstract": "Language models are sequential processors, but long-horizon agency requires external information and computation beyond model weights and active context. Prime Agent is an open-source harness for long-horizon evaluation and coding-agent workflows. A persistent IPython REPL follows the Recursive Language Model abstraction for programmatic context processing and test-time compute, while Continual Harness preserves histories, memories, skills, prompts, and subagent specifications across trajectories. Recursive subagents coordinate through direct agent-to-agent communication, and the Agents View lets humans inspect and manage daemon-backed sessions. Prime Agent standardizes execution, recovery, verification, and resource accounting while leaving strategy construction to the model. This low-friction, expressive membrane prevents harness failures from becoming model failures and pushes measurement toward the model's true maximal underlying capability. Prime Agent raises ARC-AGI-3 RHAE Best@1 from 30% to 95.5% and matches or exceeds native and popular harnesses across long-context coding, GPU-kernel generation, emulator construction, and autonomous nanoGPT speedruns. On Factorio, we find refinement allows for continuous technology progression and dedicated subagents enable parallelized work. Code is available at https://github.com/PrimeIntellect-ai/prime-agent.",
+      "published": "2026-08-24T17:54:19Z",
+      "updated": "2026-08-24T17:54:19Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.23552v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23552v1",
+      "comment": "16 pages, 10 figures. Technical report. Code: https://github.com/PrimeIntellect-ai/prime-agent",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-25",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.23493",
+      "versioned_id": "2608.23493v1",
+      "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning",
+      "authors": [
+        "Jialong Liu",
+        "Yuling Shi",
+        "Ning Yang",
+        "Xiaodong Gu",
+        "Zuchao Li"
+      ],
+      "abstract": "Self-reflection is a powerful mechanism for credit assignment in human learning, converting sparse outcome feedback into actionable guidance. However, its potential for post-training Large Language Models (LLMs) remains underexplored. We propose Self-Reflective Policy Optimization (SRPO), a framework that internalizes this capability. SRPO enables LLMs to analyze their own completed trajectories, synthesize errors into concise \"reflection patches,\" and use reflection-conditioned teacher scores on student on-policy rollouts as dense token-level training signals. This process effectively transforms sparse terminal supervision into dense, token-level learning signals without requiring external critics, separate reward models, or larger teacher models. We demonstrate that SRPO achieves state-of-the-art performance across mathematical reasoning and long-horizon agentic benchmarks with exceptional data efficiency. Using a Qwen3-8B base model, SRPO attains 73.3% on AIME'24 using only 8% (0.08x) of the training FLOPs required by scaled supervised fine-tuning, while significantly improving success rates on WebShop (64.7%), ALFWorld (76.8%), and SWE-Bench-Lite (31.2%). Code is available at https://github.com/Galleons2029/SRPO",
+      "published": "2026-08-24T16:55:09Z",
+      "updated": "2026-08-24T16:55:09Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.23493v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23493v1",
+      "comment": "Accepted to ICML 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=N8aP1JWy03",
+      "openreview_venues": [
+        "ICML 2026 regular"
+      ],
+      "relevance_score": 38,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.23397",
+      "versioned_id": "2608.23397v1",
+      "title": "MediSkill-Evo: Process-Constrained Self-Evolution for Evidence-Grounded Clinical Interaction",
+      "authors": [
+        "Ruoyu Wu",
+        "Shenfu Xie",
+        "Yinqian Sun",
+        "Haibo Tong",
+        "Feifei Zhao"
+      ],
+      "abstract": "Interactive clinical agents must gather decisive evidence and convert it into grounded actions under partial observability. A correct final diagnosis alone does not show that an agent respected evidence and care-process constraints. We introduce MediSkill-Evo, a clinical agent that evolves governed process knowledge without backbone fine-tuning. It separates experience into four typed banks for clinical skills, process rules, symbolic schemas, and measurement procedures. Provenance, support, replay, and controller-defined safety checks govern publication to a frozen test-time snapshot. A Process-Constrained Preference Harness binds evidence to its source, rejects controller-invalid candidates, and ranks actions with a safety-prioritized Clinical Process Critic. We evaluate complete agent systems across two backbone endpoints and six controlled stress dimensions under the same Doctor-turn limit. On 300 held-out Qwen encounters, MediSkill-Evo improves diagnosis accuracy from 61.33 percent to 69.00 percent and treatment-intent coverage from 33.62 percent to 66.44 percent, while reducing automatically scored critical failures from 31.00 percent to 16.33 percent relative to AgentClinic. On 180 hard-isolation conditions derived from 30 cases, target recovery reaches 93.61 percent under patient-behavior pressure, 100.00 percent for temporal evidence, and 92.22 percent for triage red flags. An exploratory 100-case MedSAM comparison evaluates request-gated tool-interface feasibility. These results provide descriptive end-to-end evidence for the complete system on fixed evaluation suites, not causal evidence for an individual bank or clinical validation of the automatic judge.",
+      "published": "2026-08-24T15:45:26Z",
+      "updated": "2026-08-24T15:45:26Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.23397v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23397v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-25",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 60,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.22793",
+      "versioned_id": "2608.22793v1",
+      "title": "TRACE: A Self-Evolving Skill Bank for Consistent, Limit-Aware LLM Agents",
+      "authors": [
+        "Wenhao Wu",
+        "Menghao Zhang",
+        "Xin Wang",
+        "Zhi Wang",
+        "Kun Shao",
+        "Jian Luan"
+      ],
+      "abstract": "Reliable deployment of LLM agents in user-facing products depends not on raw task-solving ability but on consistency and limit-awareness: behaving the same way across repeated trials, and recognizing when a request cannot, or cannot yet, be safely fulfilled. CAR-bench exposes this reliability gap in the domain of in-car assistants: an LLM-simulated user issues incomplete or ambiguous requests, requiring the agent to resolve uncertainty through multi-turn dialogue and tool use while strictly adhering to domain policies. Even frontier models show a substantial gap between what they can solve at least once (Pass@3) and what they solve consistently across trials (Pass^k). We bridge this gap with TRACE (TRAjectory-Contrastive Evolution), which iteratively improves a skill-based agent's behavioral knowledge without modifying model weights. This knowledge is organized as a Skill Bank of modular, retrievable skills, each encoding a self-contained set of tool-use rules and behavioral guidelines. TRACE evolves this bank through an agentic self-evolution loop: after each evaluation round, it groups trajectories by the skills invoked and refines each skill by contrasting successful and failed behaviors. The updated bank then guides subsequent rounds, while during deployment the Actor performs state-conditioned skill orchestration at every turn. On GPT-5.5, TRACE improves consistency (Pass^3) by 34.6 points, from 59.9% to 94.5%, while shrinking the gap between potential and reliable performance to just 4.0 points. On the official hidden set, TRACE achieved first place using GPT-5.6-Sol, attaining a Pass^3 score of 70%-a 40% relative improvement over the baseline. These results show that TRACE converts high model potential into stable, consistent performance gain. Project homepage: https://darwin-agent.github.io/Car-bench-TRACE.",
+      "published": "2026-08-24T04:36:03Z",
+      "updated": "2026-08-24T04:36:03Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.22793v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.22793v1",
+      "comment": "9 pages, 5 figures, 2 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-25",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.22339",
+      "versioned_id": "2608.22339v1",
+      "title": "When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents",
+      "authors": [
+        "Zihan Lin",
+        "Zhenyu Chen",
+        "Jiawen Wei",
+        "Xiaohan Wang",
+        "Jie Cao",
+        "Jiajun Chai",
+        "Wei Lin",
+        "Guojun Yin",
+        "Ran He"
+      ],
+      "abstract": "Extracting skills from past successes is critical for the efficient evolution of Large Language Model (LLM) agents. Prevailing agent self-evolution paradigms typically rely on a core assumption: equipping LLMs with skill memories derived from successful trajectories will monotonically improve their problem-solving capabilities. However, probe analyses reveal that extracting skills solely from successful trajectories traps the model in a \\textbf{Skill Imitation Trap}. For tasks that resemble past successes but require different tools, retrieving more skills paradoxically increases the model's confidence in wrong tool calls---procedure skills raise the wrong-tool margin by $47\\%$ over a memory-free baseline. To overcome this limitation, we propose \\textbf{Boundary-Aware Skill Memory} (BASM), which augments each skill with explicit boundary fields---applicability conditions, risk cues, avoidance rules, and recovery notes. These fields transform each retrieved skill from an unconditional action template into state-conditioned guidance: the agent applies the skill when its conditions hold, suppresses inapplicable tool calls when they do not, and issues targeted repairs when execution fails. Across three agent benchmarks and four model scales, BASM consistently outperforms success-distilled skill-memory baselines: it improves task success rate by up to $23.8\\%$ on AppWorld, accuracy by up to $5.0\\%$ on BFCL, and reduces attack success rate by $4.6\\%$ on AgentDojo, while simultaneously reducing average AppWorld steps by up to $6.6\\%$ relative to the memory-free baseline.",
+      "published": "2026-08-23T10:16:06Z",
+      "updated": "2026-08-23T10:16:06Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.22339v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.22339v1",
+      "comment": "Accepted by EMNLP2026 Findings",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=RDFo3ZSav1",
+      "openreview_venues": [
+        "ACL ARR 2026 May Submission"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2608.21345",
       "versioned_id": "2608.21345v1",
       "title": "Asymmetric Capacity Allocation in Self-Refinement Pipelines",
@@ -154,7 +355,7 @@
     },
     {
       "id": "2608.19197",
-      "versioned_id": "2608.19197v1",
+      "versioned_id": "2608.19197v2",
       "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
       "authors": [
         "Bo Liu",
@@ -178,14 +379,14 @@
       ],
       "abstract": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
       "published": "2026-08-19T17:58:56Z",
-      "updated": "2026-08-19T17:58:56Z",
+      "updated": "2026-08-24T17:59:18Z",
       "categories": [
         "cs.CL",
         "cs.AI"
       ],
       "primary_category": "cs.CL",
-      "arxiv_url": "https://arxiv.org/abs/2608.19197v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.19197v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.19197v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.19197v2",
       "comment": "Work in progress. Project page: https://spade-rl.github.io ; Code: https://github.com/spade-rl/spade",
       "journal_ref": "",
       "doi": "",
@@ -1282,7 +1483,7 @@
     },
     {
       "id": "2608.09819",
-      "versioned_id": "2608.09819v1",
+      "versioned_id": "2608.09819v2",
       "title": "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA",
       "authors": [
         "Mind Lab",
@@ -1301,6 +1502,7 @@
         "Hera Feng",
         "Huan Feng",
         "Arthur Fu",
+        "Aaron Guan",
         "Jun Gao",
         "Pyke Han",
         "Nolan Ho",
@@ -1314,6 +1516,7 @@
         "Qiuyu Jin",
         "Fancy Kong",
         "Kuss Koo",
+        "Echo Lee",
         "Jaron Lee",
         "Andrew Lei",
         "Alexy Li",
@@ -1340,10 +1543,12 @@
         "Guian Qiu",
         "Vince Qu",
         "Sentry",
+        "Zhuoran Shen",
         "Niko Song",
         "Vincent Wang",
         "Bo Wu",
         "Rio Yang",
+        "Schacter Yang",
         "Evelyn Ye",
         "Fiona Ye",
         "Ina Ye",
@@ -1356,24 +1561,26 @@
         "Di Zhang",
         "Mia Zhang",
         "Sueky Zhang",
+        "Xuening Zhang",
         "Wei Zhao",
         "Ada Zhou",
         "Adrian Zhou",
         "Yuhua Zhou",
         "Juno Zhu",
-        "Murphy Zhuang"
+        "Murphy Zhuang",
+        "Mindverse Team"
       ],
-      "abstract": "Macaron-V1 is an open agent-model family for experiential intelligence: learning from experience in real environments and continuing to learn after deployment. It is organized around two system goals. Adaptation is pursued through recursive improvement of versioned model-harness pairs, where experience from one configuration is evaluated under an external contract and used to construct its successor. Collaboration is pursued via the Mixture-of-LoRA (MoL) architecture that freezes a base model, composes specialist LoRA adapters, and selects one LoRA per user turn. The flagship Macaron-V1-Venti combines a 744B GLM-5.2 base with four LoRAs for chat, agent, coding, and GenUI; the Qwen3.6-based Macaron-V1-Tall (50B) uses the same design for local deployment. This report presents Macaron-V1 as a co-designed system spanning architecture, algorithms, and infrastructure. The MoL architecture supports continual learning through extensible LoRA specialists. The algorithm combines Model-Harness Co-design and recursive self-improvement loop, including the UI4A component-native GenUI harness, a stateful action substrate, versioned HCP contract, and the agentic RL framework MindForge. The supporting infrastructure includes the post-training platform MinT, the long-context RL method LongStraw, and stability techniques for sparse MoE and DSA base models. We evaluate Macaron-V1 on Personal Intelligence, GenUI, and general capability benchmarks against frontier baselines. Our results validate the current system, while compounding gains from continual learning and collective intelligence remain open questions.",
+      "abstract": "Macaron-V1 is an open agent-model family for experiential intelligence: learning from experience in real environments and continuing to learn after deployment. It is organized around two system goals. Adaptation is pursued through recursive improvement of versioned model-harness pairs, where experience from one configuration is evaluated under an external contract and used to construct its successor. Collaboration is pursued via the Mixture-of-LoRA (MoL) architecture that freezes a base model, composes specialist LoRA adapters, and selects one LoRA per user turn. The flagship Macaron-V1-Venti (748B) combines a 744B GLM-5.2 base with four LoRAs for chat, agent, coding, and GenUI; the Qwen3.6-35B-based Macaron-V1-Tall (50B) uses the same design for local deployment. This report presents Macaron-V1 as a co-designed system spanning architecture, algorithms, and infrastructure. The MoL architecture supports continual learning through extensible LoRA specialists. The algorithm combines Model-Harness Co-design and recursive self-improvement loop, including the UI4A component-native GenUI harness, a stateful action substrate, versioned Harness Context Protocol contract, and the agentic RL framework MindForge. The supporting infrastructure includes the post-training platform MinT, the long-context RL method LongStraw, and stability techniques for sparse MoE and DSA base models. We evaluate Macaron-V1 on Personal Intelligence, GenUI, and general capability benchmarks against frontier baselines. Our results validate the current system, while compounding gains from continual learning and collective intelligence remain open questions.",
       "published": "2026-08-10T16:39:55Z",
-      "updated": "2026-08-10T16:39:55Z",
+      "updated": "2026-08-24T16:00:18Z",
       "categories": [
         "cs.LG",
         "cs.CL"
       ],
       "primary_category": "cs.LG",
-      "arxiv_url": "https://arxiv.org/abs/2608.09819v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.09819v1",
-      "comment": "49 pages, technical report",
+      "arxiv_url": "https://arxiv.org/abs/2608.09819v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.09819v2",
+      "comment": "50 pages, technical report",
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-08-11",
@@ -12804,38 +13011,6 @@
       ]
     },
     {
-      "id": "openreview:RDFo3ZSav1",
-      "versioned_id": "RDFo3ZSav1",
-      "title": "When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents",
-      "authors": [],
-      "abstract": "Extracting skills from past successes is critical for the efficient evolution of Large Language Model (LLM) agents. Prevailing agent self-evolution paradigms typically rely on a core assumption: equipping LLMs with skill memories derived from successful trajectories will monotonically improve their problem-solving capabilities. However, probe analyses reveal that extracting skills solely from successful trajectories traps the model in a **Skill Imitation Trap**. For tasks that resemble past successes but require different tools, retrieving more skills paradoxically increases the model's confidence in wrong tool calls—procedure skills raise the wrong-tool margin by 47% over a memory-free baseline. To overcome this limitation, we propose **Boundary-Aware Skill Memory** (BASM), which augments each skill with explicit boundary fields—applicability conditions, risk cues, avoidance rules, and recovery notes. These fields transform each retrieved skill from an unconditional action template into state-conditioned guidance: the agent applies the skill when its conditions hold, suppresses inapplicable tool calls when they do not, and issues targeted repairs when execution fails. Across three agent benchmarks and four model scales, BASM consistently outperforms success-distilled skill-memory baselines: it improves task success rate by up to 23.8% on AppWorld, accuracy by up to 5.0% on BFCL, and reduces attack success rate by 4.6% on AgentDojo, while simultaneously reducing average AppWorld steps by up to 6.6% relative to the memory-free baseline.",
-      "published": "2026-05-21T04:01:11+00:00",
-      "updated": "2026-07-03T08:16:53+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=RDFo3ZSav1",
-      "openreview_url": "https://openreview.net/forum?id=RDFo3ZSav1",
-      "pdf_url": "https://openreview.net/pdf?id=RDFo3ZSav1",
-      "comment": "ACL ARR 2026 May Submission",
-      "journal_ref": "ACL ARR 2026 May Submission",
-      "doi": "",
-      "venue": "ACL ARR 2026 May Submission",
-      "venue_id": "aclweb.org/ACL/ARR/2026/May/Submission",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 58,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词",
-        "摘要中的两类信号距离接近"
-      ]
-    },
-    {
       "id": "openreview:X9lJT3TxCF",
       "versioned_id": "X9lJT3TxCF",
       "title": "RL-ADA: Co-Evolutionary Adversarial Training for Self-Improving Customer Support Agents Without Human Feedback",
@@ -17357,6 +17532,46 @@
       ]
     },
     {
+      "id": "openreview:3UH5bILEBI",
+      "versioned_id": "3UH5bILEBI",
+      "title": "Dr. Zero: Self-Evolving Search Agents without Training Data",
+      "authors": [
+        "Zhenrui Yue",
+        "Kartikeya Upasani",
+        "Xianjun Yang",
+        "Suyu Ge",
+        "Shaoliang Nie",
+        "Yuning Mao",
+        "Zhe Liu",
+        "Dong Wang"
+      ],
+      "abstract": "As high-quality data becomes increasingly difficult to obtain, self-evolution without curated training data has emerged as a promising paradigm. This approach allows large language models (LLMs) to autonomously generate and solve complex problems, thereby improving their reasoning capabilities. However, multi-turn search agents struggle in this setting due to limited question diversity and the substantial compute required for multi-step reasoning and tool use. In this work, we introduce \\ours, a framework that enables search agents to effectively self-evolve without human-annotated training data, relying solely on an external search engine as their knowledge environment. In particular, we design a self-evolution feedback loop where a proposer generates structurally diverse questions to train a solver initialized from the same base model. As the solver evolves, it incentivizes the proposer to produce increasingly difficult yet solvable tasks, thus establishing an automated curriculum to refine both agents. To enhance training efficiency, we also introduce \\hrpolong (\\hrpo). This method clusters structurally similar questions to construct group-level baselines, effectively minimizing the sampling overhead in evaluating each query's individual difficulty and solvability. Consequently, \\hrpo significantly reduces the compute requirements for proposer training and reward estimation without compromising performance or stability. Extensive experimental results demonstrate that \\ours matches or surpasses fully supervised search agents on several question answering benchmarks, showing that strong agentic search and evidence-grounded reasoning can emerge solely through self-evolution.",
+      "published": "2026-03-26T05:29:41+00:00",
+      "updated": "2026-08-24T02:06:09+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=3UH5bILEBI",
+      "openreview_url": "https://openreview.net/forum?id=3UH5bILEBI",
+      "pdf_url": "https://openreview.net/pdf?id=3UH5bILEBI",
+      "comment": "COLM 2026",
+      "journal_ref": "COLM 2026",
+      "doi": "",
+      "venue": "COLM 2026",
+      "venue_id": "colmweb.org/COLM/2026/Conference",
+      "discovered_on": "2026-08-25",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
       "id": "2603.24866",
       "versioned_id": "2603.24866v1",
       "title": "How Far Are Vision-Language Models from Constructing the Real World? A Benchmark for Physical Generative Reasoning",
@@ -18506,6 +18721,47 @@
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "openreview:I9siUH3wEc",
+      "versioned_id": "I9siUH3wEc",
+      "title": "EvoSkillBank: Hierarchical Skill Self-Evolution and Skill-Bank Governance for Continual Agent Learning",
+      "authors": [
+        "Shuaiyu Zhou",
+        "Jiaying Zhang",
+        "Taoyuan Li",
+        "Lei Shi",
+        "Fengpeng Yue",
+        "Cao Liu",
+        "Ke Zeng"
+      ],
+      "abstract": "Agent skills are a natural substrate for continual learning in large language model agents because they allow useful procedural knowledge to be loaded only when needed rather than kept in context at all times, which support progressive disclosure of external experience and tools. However, practical skill learning still faces two coupled challenges: skills must keep evolving from execution-time experience to adapt to tasks, and, once large numbers of new skills are appended, there is no effective governance mechanism that respects the unique properties of skills as reusable procedural objects. In this paper, we introduce **EvoSkillBank**, a controlled continual skill learning framework that enables agents to self-evolve skills from benchmark interaction traces while maintaining a persistent and governed SkillBank. EvoSkillBank combines a test-time self-evolution process for turning raw trajectories into reusable skill candidates with a SkillBank evolution framework that regulates how newly generated skills are added, merged, deprecated, or rejected. Experiments on ALFWorld, WebShop, QA show that EvoSkillBank consistently improves over direct inference and static skill repositories, while yielding a compact and increasingly stable SkillBank under continual growth. We release the repository for both our self-evolution framework and the governed skill storage system to support future research on controlled continual skill learning for agentic LLMs.",
+      "published": "2026-03-13T10:36:35+00:00",
+      "updated": "2026-08-24T02:05:54+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=I9siUH3wEc",
+      "openreview_url": "https://openreview.net/forum?id=I9siUH3wEc",
+      "pdf_url": "https://openreview.net/pdf?id=I9siUH3wEc",
+      "comment": "COLM 2026",
+      "journal_ref": "COLM 2026",
+      "doi": "",
+      "venue": "COLM 2026",
+      "venue_id": "colmweb.org/COLM/2026/Conference",
+      "discovered_on": "2026-08-25",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -22298,43 +22554,6 @@
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近",
         "覆盖多个自进化关键词"
-      ]
-    },
-    {
-      "id": "openreview:N8aP1JWy03",
-      "versioned_id": "N8aP1JWy03",
-      "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning",
-      "authors": [
-        "Jialong Liu",
-        "Yuling Shi",
-        "Ning Yang",
-        "Xiaodong Gu",
-        "Zuchao Li"
-      ],
-      "abstract": "Self-reflection is a powerful mechanism for credit assignment in human learning, converting sparse outcome feedback into actionable guidance. However, its potential for post-training Large Language Models (LLMs) remains underexplored. We propose Self-Reflective Policy Optimization (SRPO), a framework that internalizes this capability. SRPO enables LLMs to analyze their own completed trajectories, synthesize errors into concise \"reflection patches,\" and use these reflection-conditioned rollouts as high-quality, on-policy distillation targets. This process effectively transforms sparse terminal supervision into dense, token-level learning signals without requiring external critics, separate reward models, or larger teacher models. We demonstrate that SRPO achieves state-of-the-art performance across mathematical reasoning and long-horizon agentic benchmarks with exceptional data efficiency. Using a Qwen3-8B base model, SRPO attains 73.3\\% on AIME’24 using only 8\\% (0.08$\\times$) of the training FLOPs required by scaled supervised fine-tuning, while significantly improving success rates on WebShop (64.7\\%), ALFWorld (76.8\\%), and SWE-Bench-Lite (31.2\\%).",
-      "published": "2026-01-24T08:58:30+00:00",
-      "updated": "2026-06-24T23:20:13+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=N8aP1JWy03",
-      "openreview_url": "https://openreview.net/forum?id=N8aP1JWy03",
-      "pdf_url": "https://openreview.net/pdf?id=N8aP1JWy03",
-      "comment": "ICML 2026 regular",
-      "journal_ref": "ICML 2026 regular",
-      "doi": "",
-      "venue": "ICML 2026 regular",
-      "venue_id": "ICML.cc/2026/Conference",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 33,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "摘要命中 Agent 关键词"
       ]
     },
     {
@@ -45316,10 +45535,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-24T06:09:30+00:00",
-  "last_success": "2026-08-24T06:09:30+00:00",
-  "new_count": 3,
-  "total_cached": 1149,
+  "last_checked": "2026-08-25T06:06:23+00:00",
+  "last_success": "2026-08-25T06:06:23+00:00",
+  "new_count": 7,
+  "total_cached": 1154,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

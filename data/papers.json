@@ -1,6 +1,275 @@
 {
   "papers": [
     {
+      "id": "2608.24876",
+      "versioned_id": "2608.24876v1",
+      "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+      "authors": [
+        "Zhaochen Yu",
+        "Yingcheng Wu",
+        "Zhenfei Yin",
+        "Kaiyuan Chen",
+        "Zhe Zhao",
+        "Mengdi Wang",
+        "Shuicheng Yan",
+        "Ling Yang"
+      ],
+      "abstract": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+      "published": "2026-08-25T17:56:35Z",
+      "updated": "2026-08-25T17:56:35Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.24876v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24876v1",
+      "comment": "Code: https://github.com/Gen-Verse/Recuris",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 68,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.24794",
+      "versioned_id": "2608.24794v1",
+      "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
+      "authors": [
+        "Boyang Liu",
+        "Senjie Jin",
+        "Peixin Wang",
+        "Zhangyue Yin",
+        "Yibo Wang",
+        "Yuhao Zhou",
+        "Xinbing Liang",
+        "Shizheng Zhu",
+        "Yuhui Wang",
+        "Jingqi Tong",
+        "Zhiheng Xi",
+        "Jiazheng Zhang",
+        "Clive Bai",
+        "Clarenceai",
+        "Blaze Chen",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang"
+      ],
+      "abstract": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rewards neither localize intermediate errors nor redirect an ongoing trajectory before those errors compound. Treating corrective feedback as a learned in-trajectory intervention couples the two roles: the agent must decide when to request and use feedback, while the critic must infer useful corrections from outcome-confounded rollouts whose failure patterns shift as the agent improves. We introduce CAFE (Coupled Agent--Feedback Evolution), a framework in which a shared-parameter model alternates between search-agent and critic roles. CAFE initializes feedback-conditioned recovery from trajectories built around the base agent's own failures, then couples online and offline optimization. During online RL, a comparative feedback estimate uses a prompt-level call--skip success gap to shape request returns, while feedback-aware advantage shaping reweights token advantages before and after feedback. Offline, rollout-derived preference optimization learns feedback from matched successful and unsuccessful trajectories. On seven agentic search benchmarks, CAFE outperforms the evaluated RL-based search agents on average, retains its gains across all six out-of-domain benchmarks, and reduces answer-level hallucinations. One-sided ablations show that improving only the agent or only the critic eventually plateaus, whereas alternating the two updates continues to improve performance. These findings suggest that a self-improving search agent needs feedback that co-evolves with the policy it guides.",
+      "published": "2026-08-25T16:39:00Z",
+      "updated": "2026-08-25T16:39:00Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.24794v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24794v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.24735",
+      "versioned_id": "2608.24735v1",
+      "title": "Meta$^n$: Recursive Self-Improvement through Emergent Depth",
+      "authors": [
+        "Zae Myung Kim",
+        "Young-Jun Lee",
+        "Seungyeon Jwa",
+        "Dongyeop Kang"
+      ],
+      "abstract": "Self-improving LLM agents refine answers, not the process that produces those answers. Systems that add a meta-level hold that level fixed, and those that edit themselves must leave part of their own editing machinery untouched to stay stable, capping the meta-depth they realize at roughly two. We present Meta$^n$, which keeps the meta-operation fixed and recurses on its input instead. That operation, $Ω$, is applied repeatedly to its own products, reading the traces of the solver stack below together with the code that produced them, then writing the next layer as a strategic pre-process and a library of callable helpers. Because $Ω$ never changes, it cannot destabilize the system, and because its input strictly grows, each layer reasons from a higher vantage than the last. Depth is set by convergence rather than fixed in advance, and an evolutionary archive searches over layer chains. Across two backbones, Meta$^n$ outperforms prior self-improving agents on all eight benchmark families. The sharpest case is ARC-AGI-2, built to resist skill memorization, where it alone scores above zero. Ablations indicate that most of the gain from recursion comes from the conditioning each layer passes to the next, and distinct layer roles emerge with depth although no prompt prescribes them. Code available at https://github.com/minnesotanlp/meta-n",
+      "published": "2026-08-25T15:44:25Z",
+      "updated": "2026-08-25T15:44:25Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "eess.SY"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.24735v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24735v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 75,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.24302",
+      "versioned_id": "2608.24302v1",
+      "title": "VideoHarness-RSI: Recursive Harness Self-Improvement for Long-Video Understanding with Frozen Vision-Language Models",
+      "authors": [
+        "Guoyang Xu",
+        "Hao Chen"
+      ],
+      "abstract": "Long-video understanding depends critically on how a limited model context is constructed from a much longer video. Existing approaches improve this process through compression, retrieval, memory, and agentic evidence acquisition, but these mechanisms are typically introduced as part of a manually designed inference system or optimized together with other components. This makes it difficult to isolate a simpler question: how much can be gained by improving the executable context-construction program alone? We study this question through VIDEOHARNESS-RSI, a controlled baseline for recursively searching executable context constructors around a frozen vision-language model (VLM). An outer-loop proposer uses prior programs, evaluation outcomes, and execution traces to generate candidate harnesses, which are executed and evaluated end to end before successful variants are retained for further search. This makes long-video understanding a controlled instance of automated harness design: the searchable object is executable program structure, while the answering model and interface remain fixed. Starting from uniform sampling, recursive harness search consistently finds room for improvement and surpasses several weaker hand-crafted baselines. Starting instead from a stronger hand-crafted baseline, the same RSI process yields a further improvement. The selected harness also transfers to additional long-video benchmarks without further search. Together, these results establish executable context construction as a distinct optimization layer and provide a reproducible baseline for studying harness discovery and transfer around frozen VLMs.",
+      "published": "2026-08-25T09:27:47Z",
+      "updated": "2026-08-25T09:27:47Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.24302v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24302v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 60,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.24103",
+      "versioned_id": "2608.24103v1",
+      "title": "ACE: A Self-Correcting Agentic Canvas Editor for Multi-Slide Presentation Automation",
+      "authors": [
+        "JooYoung Jang",
+        "Taegyeong Lee",
+        "Jihyeon Park",
+        "Nojun Kwak"
+      ],
+      "abstract": "Commercial design platforms increasingly edit documents through large language model (LLM) agents, but two practical problems block reliable deployment: legacy document formats expose only \\emph{flat}, absolutely positioned elements, so agents must recompute coordinates and routinely break layouts; and design has no unique ground truth, so diff-against-reference metrics penalize valid-but-different outputs. We present \\textbf{ACE}, an agentic canvas editor over a \\emph{hierarchical scene-graph} with a presentation-specialized action space (98 tools), paired with \\textbf{CARE}, a content-aware router that feeds the agent only the relevant slice of each deck (avg.\\ $\\sim$89\\% input-token reduction), and a \\emph{self-correction} loop driven by a \\emph{ground-truth-free} instruction-following (IF) judge whose natural-language critique is fed back as the next-turn instruction. With a fixed backbone, a scene-graph editor in a \\emph{single turn} already matches a same-backbone \\emph{agentic} HTML pipeline that iterates internally; adding self-correction lifts ACE significantly above it on instruction following (IF 4.23 vs.\\ 3.81 on the full 94-task benchmark, paired $p{=}.010$, replicated by an out-of-loop judge) at 1.75$\\times$ the speed and $\\sim$44\\% lower cost. VQ means are statistically indistinguishable, but 26 blind raters prefer ACE overall (58.7\\% decisive win-rate) and prefer the self-corrected output 81\\% of the time; the ranking is invariant across three judge families, and out-of-loop judges retain two-thirds of the self-correction gain, bounding circularity. 66\\% of cases halt after one pass, and a strict-peak rollback removes every observed regression.",
+      "published": "2026-08-25T06:05:17Z",
+      "updated": "2026-08-25T06:05:17Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.24103v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24103v1",
+      "comment": "26 pages, 12 figures, EMNLP 2026 Industry Track (Main paper)",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.23956",
+      "versioned_id": "2608.23956v1",
+      "title": "Recursive Agentic Reasoning",
+      "authors": [
+        "Shengxin Zhang",
+        "Xiaomin Wu",
+        "Xiyang Wu",
+        "Jing Xie"
+      ],
+      "abstract": "Test-time reasoning methods such as iterative refinement, decomposition, and repeated sampling are often evaluated in isolation, making their gains difficult to compare across models, benchmarks, and evaluation pipelines. We introduce a unified view of these methods as recursion operators over an agent's reasoning trace: GROW, which deepens a single reasoning path; PRUNE, which decomposes and recomposes the problem; and BRANCH, which samples alternative reasoning paths and selects among them. We evaluate all three operators against a single-pass chain-of-thought baseline under a shared harness with identical prompts, token budgets, and grading code. Across five benchmarks and three frontier models, comprising 14 model-benchmark settings, 49,327 graded items, and 151,876 model calls, BRANCH improves accuracy in all 14 settings by an average of 5.98 percentage points and is the best-performing operator in 12. In contrast, GROW yields a mean gain of 2.18 points and degrades performance in two settings, while PRUNE improves accuracy by 0.94 points on average. Analysis shows that BRANCH's advantage arises not only from exploring multiple reasoning paths, but also from recovering from truncation: its gains strongly correlate with the baseline rate of empty, budget-exhausted outputs (r = 0.72). These results weaken the hypothesis that different problems require routing among test-time reasoning operators; at this level of abstraction, repeated branching is consistently dominant. Finally, we show that unpaired evaluation and treating scoring-pipeline failures as model errors can materially change, and even reverse, comparative conclusions, motivating paired scoring as a standard protocol for test-time-compute evaluation.",
+      "published": "2026-08-25T01:34:08Z",
+      "updated": "2026-08-25T01:34:08Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.23956v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23956v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.23719",
+      "versioned_id": "2608.23719v1",
+      "title": "ADE: Agentic Data Evolution Framework for Human-Centered Objectives",
+      "authors": [
+        "Yang Yu",
+        "Yilin Jiang",
+        "Zexuan Fei",
+        "Yiming Luo",
+        "Xingkai Song",
+        "Kaiyi Huang",
+        "Aimin Zhou",
+        "Xin Lin",
+        "Fei Tan"
+      ],
+      "abstract": "Aligning large language models to human-centered objectives is difficult when targets are non-executable and context-dependent, limiting reliable verification and scalable supervision. Although synthetic data expands coverage, weak verification shifts the bottleneck from generation to selection. Noisy signals destabilize iterative refinement and can cause silent regressions. We propose Agentic Data Evolution (ADE), a data-centric framework that organizes synthetic supervision as evolving data snapshots. ADE improves data snapshots through a closed-loop Observation-Variation-Selection (OVS) procedure, where a steady-state admission mechanism acts as a quality ratchet that conservatively gates updates for sustained cross-round improvement. We validate these improvements through complementary intrinsic trend tracking and extrinsic post-training evaluation. On DEV300, ADE raises the intrinsic win rate from 50% to 75.81% and the extrinsic win rate from 55.20% to 68.86%, consistent performance gains across diverse benchmarks. Blind expert evaluation further confirms this, with a 66.11% preference for evolved answers. These gains extend across post-training methods, model scales, and tasks beyond the target weakly verifiable educational objectives. Resources are available at https://github.com/ZeroLoss-Lab/Agentic-Data-Evolution.",
+      "published": "2026-08-24T18:07:40Z",
+      "updated": "2026-08-24T18:07:40Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.23719v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23719v1",
+      "comment": "accepted by EMNLP 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-26",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2608.23552",
       "versioned_id": "2608.23552v1",
       "title": "Prime Agent: A Self-Improving RLM Harness",
@@ -71,12 +340,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=N8aP1JWy03",
-      "openreview_venues": [
-        "ICML 2026 regular"
+        "arXiv"
       ],
       "relevance_score": 38,
       "relevance_reasons": [
@@ -87,7 +351,7 @@
     },
     {
       "id": "2608.23397",
-      "versioned_id": "2608.23397v1",
+      "versioned_id": "2608.23397v2",
       "title": "MediSkill-Evo: Process-Constrained Self-Evolution for Evidence-Grounded Clinical Interaction",
       "authors": [
         "Ruoyu Wu",
@@ -96,15 +360,15 @@
         "Haibo Tong",
         "Feifei Zhao"
       ],
-      "abstract": "Interactive clinical agents must gather decisive evidence and convert it into grounded actions under partial observability. A correct final diagnosis alone does not show that an agent respected evidence and care-process constraints. We introduce MediSkill-Evo, a clinical agent that evolves governed process knowledge without backbone fine-tuning. It separates experience into four typed banks for clinical skills, process rules, symbolic schemas, and measurement procedures. Provenance, support, replay, and controller-defined safety checks govern publication to a frozen test-time snapshot. A Process-Constrained Preference Harness binds evidence to its source, rejects controller-invalid candidates, and ranks actions with a safety-prioritized Clinical Process Critic. We evaluate complete agent systems across two backbone endpoints and six controlled stress dimensions under the same Doctor-turn limit. On 300 held-out Qwen encounters, MediSkill-Evo improves diagnosis accuracy from 61.33 percent to 69.00 percent and treatment-intent coverage from 33.62 percent to 66.44 percent, while reducing automatically scored critical failures from 31.00 percent to 16.33 percent relative to AgentClinic. On 180 hard-isolation conditions derived from 30 cases, target recovery reaches 93.61 percent under patient-behavior pressure, 100.00 percent for temporal evidence, and 92.22 percent for triage red flags. An exploratory 100-case MedSAM comparison evaluates request-gated tool-interface feasibility. These results provide descriptive end-to-end evidence for the complete system on fixed evaluation suites, not causal evidence for an individual bank or clinical validation of the automatic judge.",
+      "abstract": "Interactive clinical agents operate under partial observability, so reliable care depends on reaching the correct diagnosis through evidence-grounded, safe interactions. Yet existing agents struggle to convert experience into reusable process knowledge with explicit provenance and authority. To address this gap, we introduce MediSkill-Evo, which self-evolves governed process knowledge without fine-tuning the backbone. It realizes this self-evolution by updating clinical, process, symbolic, and visual knowledge in four typed banks under type-specific validation and scope rules. The Process-Constrained Preference Harness then turns validated knowledge into action by grounding candidates in evidence and prioritizing safer decisions. We evaluate on 300 MIMIC-IV-derived FullChain encounters, 180 hard-isolation conditions covering six process obligations, and 100 multimodal NEJM image-diagnosis cases. On Qwen FullChain, MediSkill-Evo improves diagnosis accuracy by 7.81% and treatment-intent coverage by 70.67% over the best-performing prior agent, while reducing critical failures by 43.04%. Under stress, it improves the stress-process composite by 7.77% and required-action completion by 12.41% over the best-performing agent for each metric, with stronger patient-fact, temporal-evidence, and triage-red-flag recovery and no controller-scored errors in unavailable-evidence, treatment, and triage safety checks. On multimodal NEJM diagnosis, MediSkill-Evo with optional MedSAM localization improves diagnosis accuracy by 2.56% and core score by 18.96% over the best-performing memory agent. Code is available at https://anonymous.4open.science/r/mediskill-evo_anonymous-68E7.",
       "published": "2026-08-24T15:45:26Z",
-      "updated": "2026-08-24T15:45:26Z",
+      "updated": "2026-08-25T10:41:01Z",
       "categories": [
         "cs.AI"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2608.23397v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.23397v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.23397v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.23397v2",
       "comment": "",
       "journal_ref": "",
       "doi": "",
@@ -187,12 +451,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=RDFo3ZSav1",
-      "openreview_venues": [
-        "ACL ARR 2026 May Submission"
+        "arXiv"
       ],
       "relevance_score": 58,
       "relevance_reasons": [
@@ -467,12 +726,7 @@
       "discovered_on": "2026-08-03",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
-      "openreview_venues": [
-        "LLA 2026 Poster"
+        "arXiv"
       ],
       "relevance_score": 95,
       "relevance_reasons": [
@@ -2594,7 +2848,7 @@
       "authors": [],
       "abstract": "Designing effective agentic workflows for large language models (LLMs) is crucial for self-evolving agents and involves searching over a vast space of structured compositions of reasoning steps, tool calls, and control logic. While prior work has explored automated workflow generation using methods such as Monte Carlo Tree Search and evolutionary strategies, these approaches often rely on pretrained LLM knowledge and are prone to inefficiencies such as premature convergence and mode collapse. In this work, we take an alternative perspective and formulate workflow discovery as a black-box optimization problem over the latent space of code-represented workflows. Building on this formulation, we introduce an exploration-aware Bayesian optimization framework (BOFlow) that models workflow performance over the space. Our approach optimizes over the workflow manifold to avoid mode collapse, while guiding the search using prior evaluations to promote structurally distinct and optimal workflows. Across a suite of reasoning and program synthesis benchmarks, our method consistently outperforms prior search-based approaches, with particularly strong gains on tasks requiring complex, multi-stage reasoning.",
       "published": "2026-08-04T07:17:18+00:00",
-      "updated": "2026-08-04T12:34:32+00:00",
+      "updated": "2026-08-25T06:11:49+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -45535,10 +45789,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-25T06:06:23+00:00",
-  "last_success": "2026-08-25T06:06:23+00:00",
+  "last_checked": "2026-08-26T06:06:42+00:00",
+  "last_success": "2026-08-26T06:06:42+00:00",
   "new_count": 7,
-  "total_cached": 1154,
+  "total_cached": 1161,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

@@ -3004,7 +3004,7 @@
       "authors": [],
       "abstract": "Experience learning enables large language model agents to retain lessons from past tasks and reuse them in future ones. However, existing methods often rely on the same agent to both execute a task and summarize its own behavior. When an execution trajectory contains errors that the agent fails to recognize, the agent may incorrectly regard the execution process as valid and consequently extract erroneous experience from it. Once written into long-term memory, such experience may be repeatedly retrieved and reused in subsequent tasks. We refer to this failure mode as the Self-Confirmation Trap. Our key insight is that long-term experience should not be generated and approved solely through the self-reflection of a single executor. Inspired by how human groups develop knowledge through independent practice, comparison of different experiences, and mutual examination, we propose EDV, an Execute--Distill--Verify framework. EDV allows multiple heterogeneous agents to execute tasks independently, employs a third-party agent to compare their trajectories and distill candidate experience, and verifies the resulting experience before writing it into memory. Experiments on multiple long-horizon agent benchmarks show that EDV effectively improves overall task performance, and that its advantage arises from the synergy among the Execute, Distill, and Verify stages rather than from simply increasing the number of agents.",
       "published": "2026-08-04T11:54:12+00:00",
-      "updated": "2026-08-23T22:20:24+00:00",
+      "updated": "2026-08-27T15:30:06+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -45978,8 +45978,8 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-29T06:03:01+00:00",
-  "last_success": "2026-08-29T06:03:01+00:00",
+  "last_checked": "2026-08-30T06:03:23+00:00",
+  "last_success": "2026-08-30T06:03:23+00:00",
   "new_count": 0,
   "total_cached": 1166,
   "fetch_error": "",

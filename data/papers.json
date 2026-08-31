@@ -1,6 +1,220 @@
 {
   "papers": [
     {
+      "id": "2608.28490",
+      "versioned_id": "2608.28490v1",
+      "title": "LLM-Based Agents for Software and Systems Security: Approaches, Applications, and Assessment",
+      "authors": [
+        "Jingjing Nie",
+        "Jiawei Guo",
+        "Krishna Meda",
+        "Haipeng Cai"
+      ],
+      "abstract": "Software and systems security workflows are typically procedural: analysts inspect heterogeneous artifacts, form hypotheses, invoke tools, interpret outputs, and revise plans. Large language model (LLM)-based agents, which can plan, use tools, retain state, and revise actions across multi-step workflows, are being rapidly adopted to automate this work. Given the consequences of delegating security decisions to autonomous systems, understanding how such agents are built, used, and assessed is crucial. Yet to this date, there remains a lack of systematic understanding of what has been done and how far we are in this field: the term \"agent\" is applied inconsistently, applications differ sharply in risk, and assessment protocols are often incomparable. To gain a comprehensive and coherent view of this area hence inform relevant future research, this paper provides a systematic literature review of the (1) technical approaches, including agent architecture, perception, memory, reasoning and planning, action space, orchestration, and self-improvement, (2) applications, with respect to the security tasks served, and (3) assessment, including the datasets, outcome and trajectory metrics, safety measures, and baselines considered, over the peer-reviewed literature spanning the emergence of this area (2023--2026). Our synthesis reveals a field that has built agents able to act but not yet agents whose authority is bounded or whose behavior is auditable. In addition to knowledge systematization, we also extend our insights into the limitations of and challenges faced by current approach, application, and assessment designs, which shed light on potentially promising future research directions.",
+      "published": "2026-08-28T16:19:01Z",
+      "updated": "2026-08-28T16:19:01Z",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CR",
+      "arxiv_url": "https://arxiv.org/abs/2608.28490v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28490v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-31",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.28363",
+      "versioned_id": "2608.28363v1",
+      "title": "EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses",
+      "authors": [
+        "Tanmay Sah",
+        "Dolly Sah",
+        "Harshul Jain",
+        "Tanya Sah"
+      ],
+      "abstract": "LLM agents increasingly modify their own prompts, tools, middleware, resources, and execution harnesses at runtime. Such self-evolution can improve capability, but a successful mutation may leave persistent effects that cannot be safely reversed in states different from the one in which it was created. We introduce EvoUndo, a framework for representing, synthesizing, diagnosing, and independently verifying recoverability of model-generated self-modifications across counterfactual states. Across 600 unseen one-shot self-evolution tasks, we identify 197 capability-improving mutations that fail recoverability verification. Under the original recovery representation, conventional repair strategies recover 0/197 of these natural failures. Deterministic oracle analysis recovers 48/197 under the original recovery language L0, while the extended recovery calculus increases empirical oracle recovery to 191/197. A protocol-locked 2x2 grounding-by-expressivity intervention then separates two bottlenecks: exact state-address grounding increases successful recovery from 0/48 to 38/48 (79.2%) when the original language is sufficient, while extending the recovery language enables recovery on 142/143 (99.3%) failures in the oracle-defined S1 stratum. On the primary gpt-oss-120b backbone, adding exact-address diagnostics to the richer language reduces recovery to 133/143 (93.0%); a Qwen3.8-27B replication preserves the grounding and expressivity effects but not this negative interaction, indicating that the latter is model-dependent. These results indicate that reliable agent self-evolution requires co-designing verification, state grounding, witness semantics, and recovery-language expressivity rather than relying on iterative prompting alone.",
+      "published": "2026-08-28T14:15:36Z",
+      "updated": "2026-08-28T14:15:36Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.28363v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28363v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-31",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.28264",
+      "versioned_id": "2608.28264v1",
+      "title": "Finding Where the Buck Stops: An Automated Failure Attribution-Based Reflection Framework for Multi-Agent Collaboration",
+      "authors": [
+        "Xiaoqing Wang",
+        "Keman Huang",
+        "Bin Liang",
+        "Hongyu Li",
+        "Xiaoyong Du",
+        "Wuqiong Pan"
+      ],
+      "abstract": "Multi-agent systems (MAS) powered by large language models have shown promise for complex tasks but suffer from high failure rates. Current self-reflection methods for MAS require all agents to reflect upon failure, overlooking a critical reality: failures typically stem from a specific agent leading the task astray, namely the decisive error agent, while others merely fulfill their regular duties. Forcing regular-behaving agents to reflect contaminates their memory with wrong insights. Hence, we propose DoCtOR (Diagnose-then-Correct PPO-enhanced Reflection), a novel reflection framework that enhances multi-agent collaboration. DoCtOR first identifies the decisive error step and decisive error agent through automated failure attribution, then employs counterfactual reasoning to generate a corrected decisive error step, and finally engages only the decisive error agent to produce targeted reflections. Experimental results show DoCtOR achieves 22%, 26%, and 27% improvements over initial success rates on HotPotQA, ChartQAPro, and Mind2Web datasets, outperforming Reflexion, Retroformer, and COPPER. We further establish the generalizability of our diagnose-then-correct paradigm and demonstrate that in low-resource settings, focusing reflection on reasoning steps after the decisive error step achieves comparable quality to reflecting on the complete failure trajectory.",
+      "published": "2026-08-28T12:26:03Z",
+      "updated": "2026-08-28T12:26:03Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.28264v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28264v1",
+      "comment": "Accepted by EMNLP 2026 main",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-31",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.28001",
+      "versioned_id": "2608.28001v1",
+      "title": "FocusGen: Expanding Visual Design Exploration with a Simulated Focus Group of Persona Agents",
+      "authors": [
+        "Jaewon Choi",
+        "Helena Vasconcelos",
+        "Hyun Lee",
+        "Carolyn Zou",
+        "Tak Yeon Lee",
+        "Michael Bernstein"
+      ],
+      "abstract": "Creative professionals rarely design for themselves--they design for audiences whose preferences they must anticipate. Yet current text-to-image exploration tools derive diversity entirely from the designer's own input--their prompts, their chosen dimensions, their search queries--confining exploration to what the designer already knows to look for. We present FocusGen, an interactive system that introduces external perspectives into visual design exploration through a \"virtual focus group\" of simulated persona agents. In contrast to prior persona systems in which multiple agents converge as critics on a single evolving artifact, FocusGen uses personas as parallel generators: each agent--constructed from demographic data, a procedurally generated backstory, and aesthetic preferences elicited through interviews--independently drives an iterative generation loop that produces its own visual concept, transforming one design brief into a spectrum of audience-conditioned directions. With real human participants, we confirm that the iterative refinement loop produces outputs people prefer over zero-shot generation. With synthetic agents at scale, we show that persona conditioning yields higher visual diversity than a generic-assistant baseline--measured by CLIP distance and corroborated by human perceptual judgments--and that open-ended preference interviews yield more diverse outputs than structured ones for both human and synthetic cohorts, while also revealing that agent cohorts recover only part of the diversity of comparable human cohorts. A qualitative study with 16 creative professionals suggests FocusGen helps designers discover unanticipated directions, overcome fixation, and probe audience contexts--while surfacing stereotyping risks that we analyze. We position FocusGen as a divergence scaffold for early-stage ideation rather than a substitute for audience research.",
+      "published": "2026-08-28T07:12:25Z",
+      "updated": "2026-08-28T07:12:25Z",
+      "categories": [
+        "cs.HC",
+        "cs.MA"
+      ],
+      "primary_category": "cs.HC",
+      "arxiv_url": "https://arxiv.org/abs/2608.28001v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28001v1",
+      "comment": "18 pages, 7 figures, 6 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-31",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.27869",
+      "versioned_id": "2608.27869v1",
+      "title": "See, Hypothesize, Validate: Multimodal Agentic Framework for Discovering Governing PDEs",
+      "authors": [
+        "Sarang Manoj Pekhale",
+        "Amartya Roy",
+        "Rajat Sarkar",
+        "Souvik Chakraborty"
+      ],
+      "abstract": "Discovering governing partial differential equations (PDEs) from observational data remains a core challenge across the sciences. Existing sparse-regression, symbolic-regression, and LLM-based approaches can be constrained by predefined libraries, noise sensitivity, hallucination, or limited iterative refinement. We introduce \\textbf{MAGE} (\\textbf{M}ultimodal \\textbf{A}gentic \\textbf{G}overning \\textbf{E}quation Discovery), an agentic framework that organizes PDE discovery as a \\textit{confidence governed hypothesis validation loop} inspired by the scientific cycle of observation, hypothesis, and falsification. Four role-specialized agents collaborate: a \\textit{Differential Observer} computing derivatives and diagnostic visualizations; a VLM-powered \\textit{Phenomenology Extractor} distilling qualitative cues from multimodal diagnostics; an LLM-driven \\textit{Governing Law Synthesizer} proposing candidates without a predefined library; and an \\textit{Equation Arbiter} fitting coefficients and assigning confidence scores. Discovery iterates until the top candidate clears a user-specified threshold, providing a structured process with an explicit accept-reject protocol. On the evaluated canonical PDE suite, MAGE obtains \\textbf{8/8} exact structural recovery and the lowest coefficient error among the compared methods on \\textbf{7/8} systems, with improvements of up to \\textbf{4 orders of magnitude} and a geometric-mean improvement of approximately \\textbf{3 orders of magnitude}. The pipeline also recovers the expected operators in two complex geometries and, on one laboratory sensor record, selects a cubic restoring-force model with held-out $R^2=0.98538$. These results support further study of structured agentic reasoning for library-free governing-law discovery, while broader generalization remains to be evaluated.",
+      "published": "2026-08-28T03:20:33Z",
+      "updated": "2026-08-28T03:20:33Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.27869v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.27869v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-31",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.27796",
+      "versioned_id": "2608.27796v1",
+      "title": "ReToolSQL: Agentic Reinforcement Learning for Robust Text-to-SQL",
+      "authors": [
+        "Pratik Kakkar",
+        "Chandra Dhir",
+        "Ravi Shankar",
+        "Pareekshit Reddy Gaddam",
+        "Anup Shirgaonkar"
+      ],
+      "abstract": "Recent work has shown that reinforcement learning from execution feedback can substantially improve text-to-SQL performance, often enabling smaller models to match or exceed much larger systems. However, most existing approaches treat SQL generation as a single-turn task, limiting the model's ability to recover from errors through iterative refinement. We present ReToolSQL, a two-stage training framework for text-to-SQL that combines (i) a supervised warm-start on rejection-sampled reasoning traces with (ii) agentic reinforcement fine-tuning (RFT) over multi-turn tool-use trajectories. The key insight is that the two stages act on complementary axes, the supervised fine-tuning (SFT) on verified privileged-teacher traces expands the set of solvable questions (raising pass@k coverage on the hardest cases), while RFT converts that expanded capability into higher single-pass accuracy by teaching the model when to verify, what evidence to retrieve, and how to repair faulty SQL from execution feedback. Applied to Gemma 4 instruction-tuned (31B), RFT alone achieves 73.66% execution accuracy (EX) on the BIRD-SQL development benchmark (74.12% EX with self-consistency). Initializing RFT from the SFT checkpoint (SFT$\\to$RFT) yields our strongest model at 74.32% EX single-pass and 74.77% EX with self-consistency. At the time of writing, this ranked first on the BIRD single-model development-set leaderboard. The approach uses composite rewards anchored on execution correctness, requires no human annotation beyond the benchmark itself, and operates within a single dense 31B model, showing that a properly designed SFT$\\to$RFT pipeline over tool-use trajectories is a practical path toward robust enterprise-grade text-to-SQL.",
+      "published": "2026-08-28T00:23:31Z",
+      "updated": "2026-08-28T00:23:31Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.27796v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.27796v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-08-31",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.27266",
       "versioned_id": "2608.27266v1",
       "title": "Naive Prompt Optimization: Rethinking the Need for Complex Prompt Search",
@@ -910,12 +1124,7 @@
       "discovered_on": "2026-08-03",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
-      "openreview_venues": [
-        "LLA 2026 Poster"
+        "arXiv"
       ],
       "relevance_score": 95,
       "relevance_reasons": [
@@ -45978,10 +46187,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-30T06:03:23+00:00",
-  "last_success": "2026-08-30T06:03:23+00:00",
-  "new_count": 0,
-  "total_cached": 1166,
+  "last_checked": "2026-08-31T06:04:41+00:00",
+  "last_success": "2026-08-31T06:04:41+00:00",
+  "new_count": 6,
+  "total_cached": 1172,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

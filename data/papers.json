@@ -1,6 +1,379 @@
 {
   "papers": [
     {
+      "id": "2608.31111",
+      "versioned_id": "2608.31111v1",
+      "title": "Aspire: Can Models Self-Evolve from Vague Goals?",
+      "authors": [
+        "Yuhao Wu",
+        "Jingyuan Zhang",
+        "Jiajun Shi",
+        "Yuxuan Zhang",
+        "Xinping Lei",
+        "Junting Zhou",
+        "Zexuan Wang",
+        "Yuchen Wu",
+        "Huan Zhou",
+        "Duo Wang",
+        "Yinzhu Piao",
+        "Yongchang Peng",
+        "Yunfeng Shi",
+        "Jin Chen",
+        "Zuo Wang",
+        "Jinkai Liu",
+        "Jiaheng Liu",
+        "Wenxuan Zhang",
+        "Shen Yan",
+        "Wenhao Huang",
+        "Ge Zhang"
+      ],
+      "abstract": "Many important forms of human learning begin with a vague goal, such as \"become a better physicist\" or \"improve at research.\" Learners must interpret the goal, identify capability gaps, decide how to learn, and determine whether they have actually improved. In contrast, existing work on LLM self-evolution typically begins with tasks and evaluation metrics specified by humans, reducing self-evolution to optimizing an explicit objective rather than deciding what and how to learn. We introduce ASPIRE, a benchmark for vague-goal-driven self-evolution. ASPIRE provides only a natural-language capability goal while downstream evaluation tasks remain hidden. The agent must operationalize the goal by choosing data and update methods, constructing training and validation signals, and deciding when to evaluate. ASPIRE supports both model-weight and agent-harness evolution in a unified interactive environment and evaluates the resulting systems on a hidden, expert-authored set of 520 items spanning six goals. Our experiments show that vague goals redirect search effort toward goal interpretation. Current agents routinely complete training and harness-editing loops, but weight-level gains remain sparse and unstable, and the strongest evolved harness remains below the engineered Qwen-Agent reference. Agents often train on mismatched data and trust narrow self-evaluations, so local gains fail to transfer to hidden evaluation and continued search and training can erase earlier improvements.",
+      "published": "2026-08-31T17:14:59Z",
+      "updated": "2026-08-31T17:14:59Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.31111v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.31111v1",
+      "comment": "https://self-developing-agents.github.io/",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.31100",
+      "versioned_id": "2608.31100v1",
+      "title": "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?",
+      "authors": [
+        "Jiajun Shi",
+        "Siyuan Tao",
+        "Yuhao Wu",
+        "Zexuan Wang",
+        "Jingyuan Zhang",
+        "Jiaheng Liu",
+        "Xinping Lei",
+        "Xinrong Zhang",
+        "Siyuan Fang",
+        "Zhewen Tan",
+        "Tianle Cai",
+        "Junhao Fang",
+        "Jiameng Huang",
+        "Yueyang Wang",
+        "Jinkai Liu",
+        "Yuxuan Zhang",
+        "Jian Yang",
+        "Zhoujun Li",
+        "Shen Yan",
+        "Wenhao Huang",
+        "Ge Zhang"
+      ],
+      "abstract": "Large language models (LLMs) increasingly interact with external environments and accumulate substantial behavioral experience, yet existing agent benchmarks largely evaluate them as fixed policies. It therefore remains unclear whether an agent can actively test its behavior, judge the resulting experience, and use that experience to improve future decisions. We introduce \\textbf{S\\textsuperscript{3}Gym}, an interactive benchmark for evaluating LLM self-improvement through three coupled capabilities: \\textbf{Self-Testing}, \\textbf{Self-Judging}, and \\textbf{Self-Improvement}. S$^3$Gym separates permissive exploration from strict held-out evaluation and instantiates this protocol in seven text-based games with executable environment verifiers. We evaluate three pathways for incorporating interaction experience: direct History ICL, score-conditioned Summary Memory, and parameter Training. Our experiments reveal that self-improvement is neither automatic nor uniform. Context-level experience improves performance for several model--game pairs, but the most effective pathway depends strongly on the task structure: summaries are beneficial when experience can be compressed into reusable strategic rules, yet often underperform raw history when success depends on precise, state-contingent information. Parameter training produces substantial gains on some tasks, but also exhibits unstable improvement and severe negative transfer on others. These findings show that recognizing successful actions is insufficient; agents must also transform feedback into executable and transferable policies. S$^3$Gym provides a unified framework for diagnosing this process and identifying the bottlenecks that prevent agents from translating interaction experience into reliable self-improvement.",
+      "published": "2026-08-31T17:05:41Z",
+      "updated": "2026-08-31T17:05:41Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.31100v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.31100v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 55,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.30959",
+      "versioned_id": "2608.30959v1",
+      "title": "LOCI: A Locator-Critic with Refinement Loop",
+      "authors": [
+        "Walid Bousselham",
+        "Mathilde Caron",
+        "Arsha Nagrani",
+        "Cordelia Schmid"
+      ],
+      "abstract": "Vision-Language Models (VLMs) still struggle on tasks requiring complex visual understanding. We argue that the core issue is not high-level reasoning, but instead failing to locate critical details in the image. Due to this shortcoming, VLMs generate often plausible but incorrect reasoning based on flawed perceptual grounding. To address this, we propose Locator-Critic (LOCI), a training-free framework that decouples visual search from evidence verification. LOCI employs a Locator agent to propose candidate visual evidence and a separate Critic agent to evaluate its relevance and sufficiency. These agents engage in an iterative refinement loop, progressively improving the evidence until it is adequate to answer the given question. This decoupled, self-correcting process yields substantial performance gains, achieving state-of-the-art results on multiple complex visual benchmarks. LOCI improves accuracy for both open-weight models like Qwen3-VL (+12.1 on V*, +5.8 on HR-Bench and +11.2 on VisualProbe-Hard) and proprietary models like Gemini 2.5 Pro (+8.9 on V*, +4.3 on HR-Bench, +4.8 on VisualProbe-Hard).",
+      "published": "2026-08-31T15:26:00Z",
+      "updated": "2026-08-31T15:26:00Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.30959v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.30959v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 43,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.30461",
+      "versioned_id": "2608.30461v1",
+      "title": "From Final Artifacts to Trajectories: Retrospective Process Supervision for Evidence-Grounded Long-Form Generation",
+      "authors": [
+        "Junjie Huang",
+        "Jiarui Qin",
+        "Di Yin",
+        "Weiwen Liu",
+        "Yong Yu",
+        "Xing Sun",
+        "Weinan Zhang"
+      ],
+      "abstract": "Trajectory data is getting more vital for training large language models for boosting the agentic abilities. Unlike the verifiable domains such as coding or mathematics, scaling trajectory data for open-ended tasks is much more difficult because these tasks lack singular ground truth and are costly to annotate or verify. In this paper, we propose RetroGen, a self-improving framework of retrospective process supervision. Our key observation is that although expert trajectories are scarce, high-quality final artifacts such as literature reviews, analyst reports and legal judgments, are abundant in pre-training data and can be viewed as compressed traces of the evidence-seeking processes that produced them. RetroGen reconstructs candidate latent trajectories from expert artifacts, verifies them against both the artifact and supporting evidence, and trains models on their own successful reconstruction data, without requiring trajectory data from stronger models. Experiments show that RetroGen improves grounding, faithful synthesis, and long-form evidence-seeking agent tasks.",
+      "published": "2026-08-31T08:47:39Z",
+      "updated": "2026-08-31T08:47:39Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.30461v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.30461v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.30207",
+      "versioned_id": "2608.30207v1",
+      "title": "SIR: Self-improving Red-teaming for Compute Use Agents",
+      "authors": [
+        "Chen Xiong",
+        "Zhiyuan He",
+        "Pin-Yu Chen",
+        "Stjepan Picek",
+        "Tsung-Yi Ho"
+      ],
+      "abstract": "Computer use agents (CUAs) are vision-language models that perceive a screen and act on a real operating system through mouse, keyboard, and terminal, and they are increasingly deployed to automate everyday digital tasks. Because they can be exposed to untrusted content while operating, they are vulnerable to indirect prompt injection (IPI), in which an adversary plants instructions in content the agent will read and redirects it toward actions that violate the user's intent. Existing CUA safety benchmarks evaluate fixed injections written by hand, which may underestimate the risk posed by an adaptive adversary. We present SIR, a black box IPI attack that (i) composes stealthy injections from a small library of reusable principles stated in plain language and (ii) wraps composition in an iterative feedback loop that diagnoses the victim's failed trajectories and distills the bypasses into new, named strategies that are reapplied across tasks. Unlike prior red teaming of web agents, we target CUAs at the operating system level and score attacks with a fully deterministic oracle, using checks on filesystem, service, and permission state rather than an LLM judge. On experiment, we evaluate three frontier CUAs. Composing principles with feedback raises the attack success rate over a baseline written by hand, for example from 4% to 24% on Claude Opus 4.8 and from 0% to 28% on Gemini 3.5 Flash, while the benign task still completes. Principles discovered against one model further transfer to a different architecture with no additional feedback.",
+      "published": "2026-08-31T03:39:43Z",
+      "updated": "2026-08-31T03:39:43Z",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CR",
+      "arxiv_url": "https://arxiv.org/abs/2608.30207v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.30207v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.29621",
+      "versioned_id": "2608.29621v1",
+      "title": "CineForge: Self-Improving Agents for Long-Horizon Video Generation",
+      "authors": [
+        "Junxiang Liu",
+        "Lin Wang",
+        "Haiyu Shi",
+        "Hongxu Ma",
+        "Xiaoyu Yang",
+        "Chunjie Chen",
+        "Xiaoxiao Xu",
+        "Kaiqiao Zhan",
+        "Boao Wang",
+        "Shuizhou Shi",
+        "Tianyun Zhu",
+        "Jie Li",
+        "Jiangtong Li"
+      ],
+      "abstract": "Long-horizon story-driven video generation requires a production agent to coordinate narrative decomposition, state tracking, shot design, prompt construction, rendering, and revision across interdependent scenes. Existing adaptive video systems primarily refine requests or reusable skills, leaving recurring production failures disconnected from persistent, stage-targeted improvements across stories. We introduce CineForge, a self-evolving video-production agent framework that couples CineForge-Produce for video generation with CineForge-Evolve for cross-story policy evolution. CineForge-Produce organizes each source story into typed narrative, character, spatial, and cinematic states, uses them to coordinate asset and clip generation, and records the process as a canonical production trajectory. CineForge-Evolve applies Case-to-Pattern-to-Policy Evolution (CPPE) to review trajectory evidence, consolidate recurrent findings into bounded stage-local patches, and deploy validated updates through structural replay and confidence-controlled paired evaluation. To measure complete story realization, we introduce CineScope, which combines a 100-script CineScope-Data suite with a human-aligned, multiscale CineScope-Metric spanning causal state, directorial orchestration, pacing and resource allocation, and character arc. Across CineScope-Data and two public benchmarks, the evolved CineForge policy improves CineScope-Metric from 4.024 to 4.380, outperforms three long-video baselines with consistent gains under ScriptAgent, and reduces review LLM calls by 37.0% on new stories. These results establish production trajectories as actionable experience for video agents that improve cumulatively across long-form storytelling tasks.",
+      "published": "2026-08-30T07:29:46Z",
+      "updated": "2026-08-30T07:29:46Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.29621v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.29621v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.29483",
+      "versioned_id": "2608.29483v1",
+      "title": "GeoAgent: Evaluating VLM Geolocalization Through Embodied Navigation",
+      "authors": [
+        "Arka Mukherjee",
+        "Soham Roy",
+        "Kartikeya Trivedi",
+        "Shreya Ghosh"
+      ],
+      "abstract": "Modern Vision-Language Models (VLMs) perform well above the human baseline in image geolocalization, a task critically important in disaster response, OSINT verification, and location privacy. However, most efforts to study AI behavior on the task remain limited to static image-based retrieval, classification, and predictions. We argue that faithful recreation of the task should involve embodied navigation, where a multimodal agent autonomously explores its surroundings to gather observations before submitting a prediction. To this end, we introduce \\textbf{GeoAgent}, an agentic environment-based benchmark that requires agents to navigate Street View environments to refine their geolocalization through sequential reasoning. Our analysis shows that modern VLMs struggle to discern regional patterns while succeeding at country- and continent-level predictions. When compared to static image-based baselines, agentic navigation significantly improves accuracy across established metrics. We also note severe bias in a developed/developing region context across frontier model architectures and poor self-improvement capabilities given incorrect priors. Overall, our work establishes the challenges of embodied navigation and geospatial reasoning. We publicly release our code and the GeoAgent environment: https://geoagent-benchmark.github.io",
+      "published": "2026-08-30T00:19:49Z",
+      "updated": "2026-08-30T00:19:49Z",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.29483v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.29483v1",
+      "comment": "Accepted to EMNLP 2026 Findings",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=9oj8sepjpZ",
+      "openreview_venues": [
+        "ACL ARR 2026 March Submission"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2608.29481",
+      "versioned_id": "2608.29481v1",
+      "title": "SIC-Agents: Benchmarking and Building an Adaptive Simulator for Pediatric Serious Illness Communication Training",
+      "authors": [
+        "Zihan Wang",
+        "Anita Marie Slominska",
+        "Rennie Bimman",
+        "Elizabeth Di Flumeri",
+        "Amanda Mayappo-Neeposh",
+        "Conall Francoeur",
+        "Tamara Ellen Carver",
+        "Xiao-Wen Chang",
+        "Doina Precup",
+        "Esin Darici Haritaoglu",
+        "Ismail Haritaoglu",
+        "Akshatha Arodi",
+        "Naomi Goloff"
+      ],
+      "abstract": "Pediatric serious illness communication (SIC) is critically important, yet scalable communication training for clinicians remains limited. Compared with other dialogue simulation settings, pediatric SIC poses additional challenges, including multi-party interactions, response to parental distress and strong dependence on feedback dynamics. Existing LLM-based simulators optimize generic dialogue quality rather than curriculum-contingent behavior required for effective SIC training. In collaboration with educators and pediatric clinicians, we introduce the first benchmark suite and simulation framework tailored to pediatric SIC training. Our benchmarks, PitfallBench and DialogueBench, evaluate simulators both at the turn-level and across full dialogues. We further propose SIC-Agents, a self-improving framework that generates a clinician-editable skill document to guide simulator behavior. Our experiments show that SIC-Agents outperforms static expert prompting. To support future research, we release our benchmarks for parent simulation in pediatric SIC at https://github.com/Beikewzh/sic-benchmarks",
+      "published": "2026-08-30T00:19:44Z",
+      "updated": "2026-08-30T00:19:44Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2608.29481v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.29481v1",
+      "comment": "Accepted to EMNLP 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2608.28790",
+      "versioned_id": "2608.28790v1",
+      "title": "ASTRA - Agentic System for Ticket Resolution and Analysis",
+      "authors": [
+        "Shashidhar Reddy Javaji",
+        "Mohamed Trabelsi",
+        "Jin Cao",
+        "Huseyin Uzunalioglu"
+      ],
+      "abstract": "Technical operations teams resolve large volumes of incidents by synthesizing fragmented evidence from ticket text, historical cases, system logs, and technical documentation. Existing automation often relies on monolithic generation without explicit evidence modeling or provenance, making outputs difficult to verify when critical signals are sparse across sources. We propose ASTRA, an agentic system for ticket resolution in which a central orchestrator coordinates three specialist information-gathering agents and drives a judge-orchestrator refinement loop to produce evidence-backed troubleshooting reports. TicketSimilarityAgent retrieves relevant historical precedents through dense retrieval and LLM reranking; LogAgent distills hundreds of thousands of log lines into structured, quote-grounded findings using deterministic filtering and constrained LLM analysis; and DomainKnowledgeAgent retrieves relevant technical knowledge via the Model Context Protocol (MCP). Their outputs are transformed into a claim-evidence representation linking each claim to a verbatim source passage, assigning a support level, and preventing cross-attribution. A JudgeAgent scores the report on five criteria, while the OrchestratorAgent converts low scores into targeted follow-up queries for bounded iterative refinement. Evaluated on 987 real-world telecom fault tickets across seven product lines, ASTRA achieves a mean quality score of 4.13/5.0, with 59.9% of reports identifying the fault area at the component-family level or better. Relevance and Clarity scores are 4.88 and 4.94, respectively, while fabricated technical details remain below 3% of error cases. Stratification by fault type reveals that hardware faults remain substantially harder than software or configuration faults (Cohen's d=0.80), pointing to a fundamental limitation of text-based evidence channels for hardware fault diagnosis.",
+      "published": "2026-08-28T18:50:17Z",
+      "updated": "2026-08-28T18:50:17Z",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "primary_category": "cs.MA",
+      "arxiv_url": "https://arxiv.org/abs/2608.28790v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28790v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.28490",
       "versioned_id": "2608.28490v1",
       "title": "LLM-Based Agents for Software and Systems Security: Approaches, Applications, and Assessment",
@@ -211,6 +584,40 @@
         "摘要命中自进化关键词",
         "标题命中 Agent 关键词",
         "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.28704",
+      "versioned_id": "2608.28704v1",
+      "title": "ORDDAR: Observation-Driven Reasoning for Distortion-Resilient Decision, Action, and Cognitive Recovery",
+      "authors": [
+        "Deblina Kar",
+        "Anant Nawalgaria",
+        "Shyamal Kumar Das Mandal"
+      ],
+      "abstract": "AI agents increasingly perform long-term reasoning, planning, tool use, memory integration, and autonomous decision making, yet erroneous intermediate states can propagate and cause inconsistent decisions and unreliable outputs. Existing reasoning approaches mainly rely on iterative planning, self-reflection, augmented memory, or verification, but rarely localize and selectively repair faulty reasoning. We present ORDDAR (Observation-Driven Reasoning for Distortion-Resilient Decision, Action, and Cognitive Recovery), a reasoning framework that models reasoning as cognitive state transitions, detects localized distortions, retrieves related reasoning from prior experiences, and repairs only the affected states. ORDDAR therefore performs recovery at the local reasoning-transition level rather than regenerating the complete trajectory. Experiments across mathematical, commonsense, multi-hop, and clinical reasoning benchmarks demonstrate improved reasoning quality, recovery ability, and interpretability over multiple evaluated reasoning baselines.",
+      "published": "2026-08-27T17:05:54Z",
+      "updated": "2026-08-27T17:05:54Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2608.28704v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28704v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 38,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
         "属于核心 Agent 相关分类"
       ]
     },
@@ -557,6 +964,44 @@
         "标题命中自进化关键词",
         "摘要命中 Agent 关键词",
         "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2608.28675",
+      "versioned_id": "2608.28675v1",
+      "title": "Multi-Agent Self-Improving Reinforcement Learning for Video Reasoning",
+      "authors": [
+        "Mingwen Zhang",
+        "Jisheng Dang",
+        "Minqiang Yang",
+        "Bimei Wang",
+        "Bin Hu",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "Video reasoning tasks such as grounded video question answering and temporal grounding require selecting temporal evidence that supports the query. In many current training setups, temporal supervision is applied through local objectives such as boundary regression or span generation, while verification is used mainly to rerank candidate segments at inference time. We study whether a frozen verifier can also guide training. Our multi-agent framework couples a trainable \\emph{Grounder} with a frozen \\emph{Verifier}: the Grounder samples candidate trajectories and evidence segments, the Verifier assigns query-conditioned segment scores, a group-relative policy-gradient objective favors trajectories that outperform their within-input peers, and a bootstrapped calibration loss steers temporal predictions toward verifier-preferred spans. Trained on source tasks and evaluated without target-dataset fine-tuning, a two-billion-parameter instantiation transfers zero-shot across grounded question answering, temporal grounding, and long-video question answering, reaching 28.7\\% intersection-over-union and 25.4\\% answer-grounding accuracy on a grounded-question-answering benchmark, 46.1\\% intersection-over-union on a temporal-grounding benchmark, and 54.1\\% on a long-video question-answering benchmark. Relative to a strong same-scale baseline, the gains are modest but consistent, with the clearest improvements on relevance-oriented metrics such as intersection-over-union and moderate-overlap recall. Within the tested benchmarks and transfer setting, the results support frozen verification as a training signal for evidence selection, while showing that strict boundary precision remains comparatively weaker. Code and models are available at https://anonymous.4open.science/r/MASIRL-E50C/",
+      "published": "2026-08-25T07:46:32Z",
+      "updated": "2026-08-25T07:46:32Z",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "https://arxiv.org/abs/2608.28675v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28675v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-01",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
       ]
     },
     {
@@ -1012,7 +1457,7 @@
     },
     {
       "id": "2608.19197",
-      "versioned_id": "2608.19197v2",
+      "versioned_id": "2608.19197v3",
       "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
       "authors": [
         "Bo Liu",
@@ -1036,14 +1481,14 @@
       ],
       "abstract": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
       "published": "2026-08-19T17:58:56Z",
-      "updated": "2026-08-24T17:59:18Z",
+      "updated": "2026-08-31T08:59:04Z",
       "categories": [
         "cs.CL",
         "cs.AI"
       ],
       "primary_category": "cs.CL",
-      "arxiv_url": "https://arxiv.org/abs/2608.19197v2",
-      "pdf_url": "https://arxiv.org/pdf/2608.19197v2",
+      "arxiv_url": "https://arxiv.org/abs/2608.19197v3",
+      "pdf_url": "https://arxiv.org/pdf/2608.19197v3",
       "comment": "Work in progress. Project page: https://spade-rl.github.io ; Code: https://github.com/spade-rl/spade",
       "journal_ref": "",
       "doi": "",
@@ -1401,7 +1846,7 @@
     },
     {
       "id": "2608.15071",
-      "versioned_id": "2608.15071v1",
+      "versioned_id": "2608.15071v2",
       "title": "Evo-Harness: Context-to-Harness Skill Compilation for Self-Evolving Agents",
       "authors": [
         "Tianxin Wei",
@@ -1424,15 +1869,15 @@
       ],
       "abstract": "Learning from experience is critical for developing capable, self-improving large language model (LLM) agents. Existing methods typically extract knowledge from accumulated trajectories via reflection, memory, rules, or skills. However, agents in realistic environments continuously encounter novel tasks, often offering only a one-shot opportunity to improve. These executions yield rich but highly noisy contexts, entangling broadly useful lessons with task-specific artifacts. Critically, prior works rarely validate their effectiveness on complex real-world tasks or isolate the underlying drivers of improvement. To address these gaps, we formulate online harness learning, where a frozen agent improves by continually updating a structured harness across sequential tasks. This formulation enables a systematic study of key self-improvement factors through our proposed Evo-Harness. At its core, context-to-harness skill compilation distills noisy, single-shot executions into reusable skill harnesses for cross-domain and topic-level adaptation. To demonstrate the efficacy of one-shot skill compilation, we evaluate across five realistic benchmarks (TerminalBench2, SWE-bench, CL-Bench, -bench, WebArena-Infinity). Our extensive analysis demonstrates the effectiveness of Evo-Harness and provides a principled understanding of how LLM agents can effectively learn on the fly. Our code is available at https://github.com/A-EVO-Lab/a-evolve/tree/release/evo-harness.",
       "published": "2026-08-15T06:43:56Z",
-      "updated": "2026-08-15T06:43:56Z",
+      "updated": "2026-08-30T19:47:36Z",
       "categories": [
         "cs.AI",
         "cs.CL"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2608.15071v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.15071v1",
-      "comment": "",
+      "arxiv_url": "https://arxiv.org/abs/2608.15071v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.15071v2",
+      "comment": "EMNLP 2026 Main",
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-08-18",
@@ -19099,38 +19544,6 @@
       "openreview_url": "https://openreview.net/forum?id=XgVZyybzHr",
       "openreview_venues": [
         "ICML 2026 regular"
-      ]
-    },
-    {
-      "id": "openreview:9oj8sepjpZ",
-      "versioned_id": "9oj8sepjpZ",
-      "title": "GeoAgent: Evaluating VLM Geolocalization Through Embodied Navigation",
-      "authors": [],
-      "abstract": "Modern Vision-Language Models (VLMs) perform well above the human baseline in geolocalization tasks. However, most efforts to study AI behavior on the task remain limited to static image-based retrieval, classification, and predictions. We argue that faithful recreation of the task should involve embodied navigation, where a multimodal agent autonomously explores its surroundings to gather observations before submitting a prediction. To this end, we introduce \\textbf{GeoAgent}, a benchmark that requires agents to navigate Street View environments to sequentially refine their geolocalization through reasoning. Our analysis shows modern VLMs struggle with discerning regional patterns while succeeding at country and continent-level guesses. When compared to static image-based baselines, agentic navigation significantly improves accuracy across established metrics. We also note severe bias in a developed/developing region context across frontier model architectures and poor self-improvement capabilities given incorrect priors. Overall, our work establishes the challenges of embodied navigation and geospatial reasoning. We publicly release our code: \\url{anonymous.4open.science/r/geoagent-F40E/}",
-      "published": "2026-03-16T16:31:09+00:00",
-      "updated": "2026-06-07T04:00:14+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=9oj8sepjpZ",
-      "openreview_url": "https://openreview.net/forum?id=9oj8sepjpZ",
-      "pdf_url": "https://openreview.net/pdf?id=9oj8sepjpZ",
-      "comment": "ACL ARR 2026 March Submission",
-      "journal_ref": "ACL ARR 2026 March Submission",
-      "doi": "",
-      "venue": "ACL ARR 2026 March Submission",
-      "venue_id": "aclweb.org/ACL/ARR/2026/March/Submission",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 43,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "摘要命中 Agent 关键词",
-        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -46187,10 +46600,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-08-31T06:04:41+00:00",
-  "last_success": "2026-08-31T06:04:41+00:00",
-  "new_count": 6,
-  "total_cached": 1172,
+  "last_checked": "2026-09-01T06:03:50+00:00",
+  "last_success": "2026-09-01T06:03:50+00:00",
+  "new_count": 11,
+  "total_cached": 1182,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

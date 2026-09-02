@@ -1,6 +1,168 @@
 {
   "papers": [
     {
+      "id": "2609.01409",
+      "versioned_id": "2609.01409v1",
+      "title": "EdiTikZ: Scientific Figure Editing from Revision Trajectories",
+      "authors": [
+        "Christian Greisinger",
+        "Zhixue Zhao",
+        "Steffen Eger"
+      ],
+      "abstract": "Vision-language models (VLMs) have shown strong performance in generating scientific figures from text or images. However, producing publication-ready figures requires iterative refinement, making scientific figure editing an important yet largely unexplored task. Existing approaches rely on costly proprietary agentic systems, focus primarily on evaluation, or construct training supervision from synthetically generated edits. Instead, we leverage naturally occurring scientific revision and development trajectories as a scalable source of supervision. To this end, we introduce DaEdiTikZ, the first large-scale dataset of revision-derived scientific figure edits, constructed by mining 391K plausible TikZ edit pairs from arXiv, GitHub, and TeX SE and inferring 781K directed edit instructions with a VLM conditioned on rendered figures and TikZ code. We further introduce DaEdiTikZ-Bench, a human-refined benchmark with 790 instances, and train two compact Qwen3.5-based EdiTikZ models (4B and 9B) by jointly learning reconstruction and editing, followed by reinforcement learning (RL) with complementary rewards for rendered fidelity and edit application. Automatic evaluation places our 9B model above all tested baselines, while human evaluation with 9 annotators and 4,320 ratings places it above GPT-5.6-Sol and on par with Gemini-3.1-Pro. Under severe out-of-distribution shifts, it remains competitive with GPT-5.6-Sol near its 2K training sequence-length regime. Models and datasets will be released.",
+      "published": "2026-09-01T15:29:52Z",
+      "updated": "2026-09-01T15:29:52Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.01409v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.01409v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-02",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 48,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2609.01058",
+      "versioned_id": "2609.01058v1",
+      "title": "ARISE-RL: Agentic Rubric-Grounded Iterative Self-Evolution with Reinforcement Learning",
+      "authors": [
+        "Fanrui Zhang",
+        "Ruixue Ding",
+        "Qiang Zhang",
+        "Xi Chen",
+        "Boli Chen",
+        "Shihang Wang",
+        "Qiuchen Wang",
+        "Hongmin Zhan",
+        "Jinxin Bian",
+        "Li xingchao",
+        "Peijin Zheng",
+        "Hao cheng",
+        "Pengjun Xie",
+        "Kaipeng Zhang",
+        "Jiawei Liu",
+        "Zheng-Jun Zha"
+      ],
+      "abstract": "Training open-ended agents via reinforcement learning (RL) is hindered by the lack of verifiable gold answers and scalable rubrics. Moreover, even near the model's capability boundary, long-horizon open-ended agentic tasks often yield brittle and unstable rewards, resulting in weak or noisy rollout contrast that obscures fine-grained optimization signals for group-based policy learning. To address these challenges, we propose ARISE-RL, a novel full-cycle self-evolution framework that couples a task/rubric Generator and a reasoning Solver through rubric-mediated co-evolution. The Generator grounds tool-related rubric criteria in real tool observations and is rewarded for producing valid, intermediate-difficulty tasks aligned with the Solver's evolving capability boundary. The Solver, in turn, learns from fine-grained rubric satisfaction signals through multi-step reasoning and tool use. We further introduce Reward-Gated Self-Evolution Distillation (RG-SED), which selectively distills a memory-augmented variant of the same policy back into itself only when the memory yields empirical reward improvement, thereby reducing distribution mismatch and avoiding blind imitation of noisy guidance. Finally, to support rigorous evaluation, we present ECR-Bench, an expert-calibrated rubric benchmark suite covering single-tool deep research and multi-tool travel planning. Extensive experiments demonstrate that ARISE-RL consistently achieves robust and stable overall state-of-the-art performance across all evaluated benchmarks.",
+      "published": "2026-09-01T10:54:13Z",
+      "updated": "2026-09-01T10:54:13Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.01058v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.01058v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-02",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2609.00829",
+      "versioned_id": "2609.00829v1",
+      "title": "HarnessEvolve: Learning from Reference Trajectories for Reliable Agent Self-Evolution",
+      "authors": [
+        "Wen Jiang",
+        "Mingmin Chu",
+        "Yimeng Tian",
+        "Qianxin Zhang",
+        "Haofei Yang",
+        "Rui Yang",
+        "Yang Liu",
+        "Tao Lv",
+        "Fangming Li"
+      ],
+      "abstract": "Self-evolving agents advance toward autonomy by optimizing their harness---prompts, skills, tools, and execution logic---based on environmental feedback. This paradigm, however, is hampered by three challenges: \\textit{credit assignment failure}, where terminal success/failure feedback makes it ambiguous which step caused the error; \\textit{shortcut learning}, where agents memorize task-specific patterns rather than acquire generalizable capabilities; and \\textit{catastrophic forgetting}, where unguarded updates degrade previously acquired competence. In this paper, we introduce HarnessEvolve, a self-evolving framework that learns from reference trajectories to achieve reliable agent self-evolution. HarnessEvolve decouples the execution agent from the evolutionary pipeline, assigning execution, evaluation, optimization, and gating to independent agent modules, enabling generalizable and stable harness improvements. Specifically, HarnessEvolve overcomes credit assignment failure by generating reference trajectories (execution paths produced when given the ground-truth answers) and aligning failed executions against them to extract error signals, which are clustered to reveal systematic failure patterns. To prevent shortcut learning and catastrophic forgetting, candidate harness updates must pass two gates: a quality gate that filters data leakage and prompt bloat, and a performance gate that accepts each update if it improves on the current batch without degrading recent batches, with epoch-end validation on a held-out set selecting the best-performing accepted agent snapshot. We conduct extensive experiments on several benchmarks spanning open-domain and enterprise scenarios, using different models and agent frameworks. Results demonstrate that HarnessEvolve consistently outperforms state-of-the-art baselines across all benchmarks and settings, confirming reliability across task domains.",
+      "published": "2026-09-01T07:31:18Z",
+      "updated": "2026-09-01T07:31:18Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "https://arxiv.org/abs/2609.00829v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.00829v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-02",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2609.00226",
+      "versioned_id": "2609.00226v1",
+      "title": "ConvDeck: Conversational Paper-to-Slide Generation via Stage-Specific User Feedback",
+      "authors": [
+        "Tarik Can Ozden",
+        "Sachidanand VS",
+        "Furkan Horoz",
+        "Ozgur Kara",
+        "Dilek Hakkani-Tür",
+        "Junho Kim",
+        "James Matthew Rehg"
+      ],
+      "abstract": "Automatic academic paper-to-slide generation is inherently iterative, because creating an effective presentation requires repeated cycles of generation, critique, and revision. Recent multi-agent systems partially acknowledge this through internal critique-and-revise loops, while conversational approaches allow users to refine generated slide decks through dialog. However, these refinement processes either remain largely closed to the user or introduce feedback only after a complete deck has been produced, limiting the user's ability to participate in the iterative refinement of narrative flow, content allocation, and presentation emphasis. To address this gap, we introduce ConvDeck, a multi-agent pipeline for conversational paper-to-slide generation that distributes interaction across the pipeline through stage-specific loops, allowing users to iteratively refine both the presentation outline and the final slide deck at the stages where each kind of decision is made. These loops are driven by a refinement mechanism in which agents can think, speak, and act, enabling them to either directly apply edits or respond conversationally to clarify user feedback and discuss revision options. Our evaluation shows that stage-specific conversational feedback improves user-goal satisfaction while preserving narrative coherence, content quality, and visual presentation.",
+      "published": "2026-08-31T18:34:25Z",
+      "updated": "2026-08-31T18:34:25Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.00226v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.00226v1",
+      "comment": "Accepted to Findings of EMNLP 2026. Project webpage: https://convdeck.github.io/",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-02",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 38,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2608.31111",
       "versioned_id": "2608.31111v1",
       "title": "Aspire: Can Models Self-Evolve from Vague Goals?",
@@ -209,6 +371,75 @@
       ]
     },
     {
+      "id": "2609.00070",
+      "versioned_id": "2609.00070v1",
+      "title": "AutoXRD: Autonomous LLM Agents and Comprehensive Evaluation for Powder Diffraction Analysis",
+      "authors": [
+        "Yuetong Wu",
+        "Maojun Sun"
+      ],
+      "abstract": "Powder X-ray diffraction (XRD) is central to materials characterization, yet reliable end-to-end automation remains challenging. An XRD agent must interpret diffraction evidence, operate refinement software, manage coupled parameters in a defensible order, and distinguish numerical improvement from physical validity. In this paper, we propose AutoXRD, an autonomous large language model (LLM) agent framework that organizes powder-XRD analysis as stepwise refinement, grounds actions in observed evidence, and applies deterministic crystallographic and physical checks before accepting results. We further introduce XRDBench with two complementary tracks. XRDBench-QA contains 100 bounded diagnostic tasks that isolate scientific reasoning and decision-making, whereas XRDBench-E2E contains 34 executable workflows that test whether agents can compose these capabilities into complete analyses requiring file inspection, crystallographic-software execution, iterative refinement, evidence preservation, and reporting. We evaluate ten recent LLMs across 1,340 model--task runs. Models average only 57.8 out of 100, falling from 61.9 on XRDBench-QA to 53.7 on XRDBench-E2E. They perform best on refinement-history assessment and result acceptance, but remain substantially weaker on refinement-action selection, phase quantification, indexing, and Rietveld refinement. GPT-5.6 Sol achieves the highest overall score of 81.1, GPT-5.6 Terra the highest XRDBench-E2E point estimate of 81.0, and GPT-5.6 Luna the best score--cost trade-off. Ablations show that all six AutoXRD components consistently improve performance, supporting the framework design. Finally, execution-trace analysis reveals recurring failures in coupled-parameter control, quantitative reasoning, evidence preservation, and workflow termination, motivating stronger scientific constraints, uncertainty-aware decisions, and more efficient planning.",
+      "published": "2026-08-30T18:05:21Z",
+      "updated": "2026-08-30T18:05:21Z",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cs.AI"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "arxiv_url": "https://arxiv.org/abs/2609.00070v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.00070v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-02",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2609.00069",
+      "versioned_id": "2609.00069v1",
+      "title": "Auditing Harness Tampering in Self-Improving Agents",
+      "authors": [
+        "Xing Wang",
+        "Xiaoyi Zhang",
+        "Jie Shao"
+      ],
+      "abstract": "Self-improving agents iteratively modify their own harness to push the frontier of their performance. However, such modifications can produce illusory performance gains or compromise integrity constraints such as authorization, provenance, and completeness without genuinely improving capability. We term this phenomenon as harness tampering, which extends the concept from reward and measurement tampering to the full self-improvement lifecycle. To systematically study this problem, we propose a two-axis taxonomy that categorizes each misaligned edit by the harness functional role in which it occurs and the obligation it violates. Then we build an annotated corpus by seeding tampered-benign edit pairs into the real trajectories of self-improving agents. We adapt and benchmark diverse audit methods on tampering classification and localization tasks. Finally we systematically audit real trajectories of self-improving agents. The results demonstrate that harness tampering consistently occurs in real runs from different agents, often persists in the lineage of the best agent, and forms distinct system-specific profiles across the taxonomy.",
+      "published": "2026-08-30T17:18:56Z",
+      "updated": "2026-08-30T17:18:56Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2609.00069v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.00069v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-02",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
       "id": "2608.29621",
       "versioned_id": "2608.29621v1",
       "title": "CineForge: Self-Improving Agents for Long-Horizon Video Generation",
@@ -279,12 +510,7 @@
       "discovered_on": "2026-07-19",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=9oj8sepjpZ",
-      "openreview_venues": [
-        "ACL ARR 2026 March Submission"
+        "arXiv"
       ],
       "relevance_score": 33,
       "relevance_reasons": [
@@ -3691,7 +3917,7 @@
       "authors": [],
       "abstract": "Designing effective agentic workflows for large language models (LLMs) is crucial for self-evolving agents and involves searching over a vast space of structured compositions of reasoning steps, tool calls, and control logic. While prior work has explored automated workflow generation using methods such as Monte Carlo Tree Search and evolutionary strategies, these approaches often rely on pretrained LLM knowledge and are prone to inefficiencies such as premature convergence and mode collapse. In this work, we take an alternative perspective and formulate workflow discovery as a black-box optimization problem over the latent space of code-represented workflows. Building on this formulation, we introduce an exploration-aware Bayesian optimization framework (BOFlow) that models workflow performance over the space. Our approach optimizes over the workflow manifold to avoid mode collapse, while guiding the search using prior evaluations to promote structurally distinct and optimal workflows. Across a suite of reasoning and program synthesis benchmarks, our method consistently outperforms prior search-based approaches, with particularly strong gains on tasks requiring complex, multi-stage reasoning.",
       "published": "2026-08-04T07:17:18+00:00",
-      "updated": "2026-08-25T06:11:49+00:00",
+      "updated": "2026-09-01T15:32:09+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -46600,10 +46826,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-09-01T06:03:50+00:00",
-  "last_success": "2026-09-01T06:03:50+00:00",
-  "new_count": 11,
-  "total_cached": 1182,
+  "last_checked": "2026-09-02T06:03:42+00:00",
+  "last_success": "2026-09-02T06:03:42+00:00",
+  "new_count": 6,
+  "total_cached": 1188,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

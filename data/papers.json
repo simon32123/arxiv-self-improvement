@@ -4162,7 +4162,7 @@
       "authors": [],
       "abstract": "Large language models (LLMs) have demonstrated remarkable performance across a wide range of tasks in recent years. While prior work has explored leveraging LLMs to generate synthetic data for self-improvement, repeated iterations often suffer from diminishing returns due to the reliance on homogeneous reasoning patterns and limited exploration of alternative perspectives. In this paper, we introduce a novel framework that enriches the reasoning process by encouraging critical thinking among multiple agents. Rather than deploying an ensemble of models with identical prompts, we propose a strategy generator that produces customized instructions tailored to each individual LLM. Acting as a critical thinking agent, the generator is iteratively fine-tuned using carefully selected strategies that are both diverse and effective. This approach fosters specialization within each model while promoting diversity across reasoning paths, enabling the system to maintain varied solution trajectories and achieve sustained performance gains through iterative refinement. We demonstrate the effectiveness of our method across a variety of agentic frameworks and complex reasoning tasks.",
       "published": "2026-08-04T02:18:31+00:00",
-      "updated": "2026-08-20T21:46:44+00:00",
+      "updated": "2026-08-26T07:19:35+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -11003,7 +11003,7 @@
       "authors": [],
       "abstract": "LLM agents hold significant promise for advancing scientific research. To accelerate this progress, we introduce AIRS-Bench (the AI Research Science Benchmark), a suite of 20 tasks sourced from state-of-the-art machine learning papers. These tasks span diverse domains, including language modeling, mathematics, bioinformatics, and time series forecasting. AIRS-Bench tasks assess agentic capabilities over the full research lifecycle—including idea generation, experiment analysis and iterative refinement—without providing baseline code. The AIRS-Bench task format is versatile, enabling easy integration of new tasks and rigorous comparison across different agentic frameworks. We establish baselines using frontier models paired with both sequential and parallel scaffolds. Our results show that agents exceed human SOTA in seven tasks but fail to match it in thirteen others. Even when agents surpass human benchmarks, they do not reach the theoretical performance ceiling for the underlying tasks. These findings indicate that AIRS-Bench is far from saturated and offers substantial room for improvement. We open-source the AIRS-Bench task definitions and evaluation code to catalyze further development in autonomous scientific research.",
       "published": "2026-06-03T08:49:06+00:00",
-      "updated": "2026-08-03T09:48:23+00:00",
+      "updated": "2026-09-03T18:49:15+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -11011,11 +11011,11 @@
       "arxiv_url": "https://openreview.net/forum?id=ELg8kRK9Wd",
       "openreview_url": "https://openreview.net/forum?id=ELg8kRK9Wd",
       "pdf_url": "https://openreview.net/pdf?id=ELg8kRK9Wd",
-      "comment": "Under review for TMLR",
-      "journal_ref": "Under review for TMLR",
+      "comment": "Decision pending for TMLR",
+      "journal_ref": "Decision pending for TMLR",
       "doi": "",
-      "venue": "Under review for TMLR",
-      "venue_id": "TMLR/Under_Review",
+      "venue": "Decision pending for TMLR",
+      "venue_id": "TMLR/Decision_Pending",
       "discovered_on": "2026-07-19",
       "source": "OpenReview",
       "sources": [
@@ -47038,8 +47038,8 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-09-05T06:03:10+00:00",
-  "last_success": "2026-09-05T06:03:10+00:00",
+  "last_checked": "2026-09-06T06:03:13+00:00",
+  "last_success": "2026-09-06T06:03:13+00:00",
   "new_count": 0,
   "total_cached": 1194,
   "fetch_error": "",

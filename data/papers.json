@@ -1,6 +1,384 @@
 {
   "papers": [
     {
+      "id": "2609.09156",
+      "versioned_id": "2609.09156v1",
+      "title": "ReCite: Agentic Reasoning for Faithful Citation",
+      "authors": [
+        "Yuyang Huang",
+        "Bobo Li",
+        "Jiajia Song",
+        "Yuzhe Ding",
+        "Chong Teng",
+        "Fei Li",
+        "Donghong Ji"
+      ],
+      "abstract": "Accurate citations are the foundation of academic writing, tracing intellectual origins and substantiating core claims. However, manually navigating the growing volume of scientific literature is increasingly difficult, prompting reliance on automatic citation recommendation. While modern retrieval-augmented architectures have largely mitigated the fabrication of non-existent papers, current systems relying on semantic similarity struggle with misattribution, often citing authentic papers that fail to logically support the author's claim. To address this challenge, we argue that accurate citation requires a shift from similarity-based search to active, claim-level reasoning. We propose ReCite, a decoupled agentic framework that orchestrates location perception, intent-aware query planning, and reflective verification. Trained on synthesized reasoning trajectories, our agent verifies claim-evidence consistency and triggers self-correction loops when retrieved candidates lack logical support. Experiments demonstrate that our lightweight framework outperforms state-of-the-art massive generative models in strict citation accuracy. By grounding literature matching in verifiable logic rather than semantic overlap, ReCite establishes a reliable foundation for automated academic writing.",
+      "published": "2026-09-08T17:59:50Z",
+      "updated": "2026-09-08T17:59:50Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2609.09156v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.09156v1",
+      "comment": "Findings of EMNLP 2026. Project page: https://hyy279.github.io/ReCite",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-07-19",
+      "source": "arXiv",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=Rmhg7yt5sd",
+      "openreview_venues": [
+        "ACL ARR 2026 May Submission"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2609.09153",
+      "versioned_id": "2609.09153v1",
+      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
+      "authors": [
+        "Yuxing Lu",
+        "Yicheng Chen",
+        "Shanchan Wu",
+        "Sercan Ö. Arık"
+      ],
+      "abstract": "Large language models are increasingly deployed as agents that plan over long horizons and act through external tools. Most agents select actions through unconstrained generation over an accumulating history, leaving implicit the procedural knowledge of what to do, in what order, and under which conditions. As trajectories lengthen, agents can lose track of their objectives, invoke tools out of order, and repeat unproductive actions. We introduce the Procedural Graph: just as a knowledge graph organizes factual knowledge into (entity, relation, entity) triplets for what-is questions, a Procedural Graph organizes procedural knowledge into (procedure, relation, procedure) triplets for what-to-do questions. At each decision step, the framework localizes the agent's active node, and a guidance model translates the surrounding subgraph into step-level situational guidance that biases the solver's next action without dictating it. The graph is self-evolving: an LLM refiner contrasts failed trajectories with successful ones and edits the graph's topology and attributes, committing edits that preserve or improve held-out validation performance while retaining rejected ones to discourage repetition. Starting from a minimal skeleton, the loop builds graphs that match or surpass hand-designed ones. It can also repair a flawed expert prior. Across multiple datasets, task types, and LLMs, the Procedural Graph delivers consistent gains over memory-based baselines, and self-evolution further improves performance without manual engineering.",
+      "published": "2026-09-08T17:59:41Z",
+      "updated": "2026-09-08T17:59:41Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.09153v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.09153v1",
+      "comment": "36 pages including references and appendices, 6 figures, 11 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 53,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2609.09113",
+      "versioned_id": "2609.09113v1",
+      "title": "SAEScientist-Bench: Can AI Agents Conduct Autonomous SAE Interpretability Research?",
+      "authors": [
+        "Yuqiao Tan",
+        "Shizhu He",
+        "Jun Zhao",
+        "Kang Liu"
+      ],
+      "abstract": "While research on recursive self-improvement (RSI) has predominantly automated model training pipelines, reliable autonomous development demands a missing pillar: post-hoc monitoring and auditing to understand what models learn and ensure safe alignment. Mechanistic interpretability tools are essential to bridge this gap, among which Sparse Autoencoders (SAEs) serve as a cornerstone by isolating interpretable features for model inspection and steering. In this paper, we introduce SAEScientist-Bench to evaluate whether AI agents can act as scientists utilizing SAE tools for autonomous mechanistic discovery. Given a target concept, an agent designs contrastive probes and navigates a Gemma Scope dictionary of 131K+ features in Gemma-2-9B-IT to discover the optimal feature, evaluated against curated expert reference features anchored on Neuronpedia across activation rank, concept selectivity on contrastive texts, and causal steering. Across 10 agent configurations and 20 tasks, frontier agents demonstrate genuine discovery capabilities and lead different evaluation dimensions, but remain well behind the expert baseline, approaching expert levels on separating target concepts from contrastive controls while lagging substantially in causal generation steering. Further analysis reveals that although agents can design contrasts to rule out spurious candidates, they frequently misinterpret experimental measurements. These results establish experimental model understanding as a measurable capability for closed-loop autonomous AI R&D. Our code is available at https://github.com/Trae1ounG/SAEScientist.",
+      "published": "2026-09-08T17:45:09Z",
+      "updated": "2026-09-08T17:45:09Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.09113v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.09113v1",
+      "comment": "Preprint. Work in Progress",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "覆盖多个自进化关键词",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2609.08944",
+      "versioned_id": "2609.08944v1",
+      "title": "SkillAdam: Stable and Efficient Skill Evolution for Agents",
+      "authors": [
+        "Gaoyuan Li",
+        "Meihao Fan",
+        "Yizhe Liu",
+        "Shaolei Zhang",
+        "Ju Fan",
+        "Siyi Wang",
+        "Jiaheng Hou",
+        "Xudong Weng",
+        "Honghan Tian",
+        "Zang Li"
+      ],
+      "abstract": "Agent skills provide a lightweight way to equip frozen language-model agents with domain knowledge and procedural guidance, yet obtaining high-quality skills remains costly and difficult to scale. Expert-written skills require substantial human effort. Recent skill self-evolution methods automate an iterative loop that uses execution feedback to revise skills, but their heuristic update strategies often yield unstable optimization and low iteration efficiency. We identify two challenges in realizing stable and efficient skill self-evolution. Direction Stability requires effective corrections to accumulate rather than be overwritten by iteration-local feedback. Update Adaptivity requires the scope of each revision to reflect the consistency of recent case-level improvements. We introduce SkillAdam, an Adam-inspired framework for optimizing discrete and non-differentiable skill documents. As a functional analogue of Adam's first moment, an optimization memory records identified problems and the outcomes of prior solution attempts to stabilize the update direction. As a functional analogue of Adam's second moment, a volatility-driven edit budget tracks the history-weighted variation of recent case-level improvements and adaptively controls the update magnitude. Across seven benchmarks that span short- and long-horizon tasks, SkillAdam achieves state-of-the-art performance with more stable optimization dynamics. It also obtains stronger skills with substantially fewer optimization iterations and lower cost than prior methods. Code repository: https://github.com/ruc-datalab/SkillAdam",
+      "published": "2026-09-08T16:04:45Z",
+      "updated": "2026-09-08T16:04:45Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.08944v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.08944v1",
+      "comment": "17 pages, 4 figures, 6 tables",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 63,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2609.08919",
+      "versioned_id": "2609.08919v1",
+      "title": "Experience Funnel: A State-Policy Alternating Loop for Self-Evolving Agents",
+      "authors": [
+        "Wenbo Gao",
+        "Zhaomou Song",
+        "Zhiyuan Ji",
+        "Renxi Liu",
+        "Xing Li",
+        "Xianzhi Yu",
+        "Xiaoguang Li",
+        "James Chung-wai Cheung",
+        "Weizhe Lin",
+        "Yaoyuan Wang"
+      ],
+      "abstract": "Autonomous agents powered by large language models (LLMs) continuously accumulate experience through interaction, creating an opportunity to improve future behavior through self-evolution. A fundamental challenge is how to transform abundant, task-specific interaction experience into reusable model competence without sacrificing the ability to adapt rapidly to newly observed evidence. Explicit textual states, such as skills and agent harnesses, provide fast, human-readable and editable adaptation, but incur persistent dependence on external context; parametric policies provide compact and reusable competence, but are substantially slower to update. We present \\textit{Experience Funnel}, a self-evolving framework that couples fast state adaptation with slow policy consolidation in an alternating loop. Interaction trajectories are first distilled into an explicit textual state, where newly acquired experience can be rapidly incorporated and validated. The framework then selectively identifies state-enabled behavior that remains useful across state revisions and consolidates it into the policy through transition-aware distillation. The updated state--policy pair subsequently generates new rollouts, providing fresh evidence for the next round of state adaptation and policy consolidation. Experiments across diverse agent benchmarks show that \\textit{Experience Funnel} consistently improves agent capability over state-only evolution and policy-internalization approaches, while progressively converting useful explicit experience into autonomous policy competence.",
+      "published": "2026-09-08T15:48:11Z",
+      "updated": "2026-09-08T15:48:11Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2609.08919v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.08919v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "2609.08183",
+      "versioned_id": "2609.08183v1",
+      "title": "NeoHorse-1: Towards Recursive Self-Improvement via Agentic Post-Training with Routing Harness",
+      "authors": [
+        "NeoHorse Team",
+        "Guoliang Cao",
+        "Guohao Dai",
+        "Tianyu Guo",
+        "Kai Han",
+        "Hailin Hu",
+        "Zihan Jiang",
+        "Xiang Kuang",
+        "Boxun Li",
+        "Yulong Li",
+        "Zehua Pei",
+        "Yuchuan Tian",
+        "Jiamin Wang",
+        "Yu Wang",
+        "Yunhe Wang",
+        "Yihong Wu",
+        "Haiyang Xu",
+        "Shuo Zhang",
+        "Hang Zhou",
+        "Siyang Cheng",
+        "Jiayu Fan",
+        "Wei He",
+        "Qingrui Jiao",
+        "Hongguang Li",
+        "Zhiyuan Li",
+        "Runke Liu",
+        "Xi Liu",
+        "Xinchen Liu",
+        "Sinno Jialin Pan",
+        "Yi Ren",
+        "Liuyang Song",
+        "Chenyu Wang",
+        "Bei Yu",
+        "Quanlu Zhang",
+        "Xiangyu Zhang",
+        "Mengyu Zheng",
+        "Yingjie Zong"
+      ],
+      "abstract": "Recursive self-improvement (RSI) requires a concrete mechanism through which an AI system observes its capabilities and converts that evidence into the next round of learning. We present NeoHorse-1, a family of agent-native models developed to explore this path through agentic post-training. Our system combines a heterogeneous model pool with intelligent routing, recording the predicted capability demand, selected service tier, and subsequent interaction for each user turn. These records are converted into training examples that preserve interleaved reasoning, tool calls, and harness context, and are admitted through structural validation, six-dimensional semantic evaluation, and subscene-level labeling. Routing signals organize supervised fine-tuning into a three-stage curriculum and extend to routing-guided on-policy distillation, where a teacher supervises student-generated responses under the same progression. Capability-guided allocation then converts evaluation feedback into the next training mixture, closing an evaluation-selection-update loop in which what the system learns to do shapes what it learns from next. Across eleven benchmarks covering harness-based agents, tool use, coding, and instruction following, post-training raises the macro-average from 58.94 to 64.87 at 4B and from 65.60 to 69.04 at 9B, substantially narrowing the aggregate gap between the post-trained 4B model and the 9B base model. NeoHorse-1 provides an initial prototype of this feedback-driven process and a path toward harness-mediated RSI across successive iterations.",
+      "published": "2026-09-08T03:14:54Z",
+      "updated": "2026-09-08T03:14:54Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2609.08183v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.08183v1",
+      "comment": "Huggingface: https://hf.co/collections/TokenRhythm/neohorse-1; Github: https://github.com/TokenRhythm/NeoHorse",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
+      "id": "2609.08175",
+      "versioned_id": "2609.08175v1",
+      "title": "Safe Harness Self-Evolution: A Theoretical Analysis of Feasibility and Limits",
+      "authors": [
+        "Qianshu Cai",
+        "Yonggang Zhang",
+        "Jun Nie",
+        "Maohao Ran",
+        "Huajiang Zheng",
+        "Jun Song",
+        "Xinmei Tian",
+        "Yike Guo",
+        "Wei Xue"
+      ],
+      "abstract": "Harness self-evolution is the process by which an agent modifies its prompts, tools, code, or orchestration in response to task feedback while keeping the underlying language model frozen, with changes persisting across subsequent tasks. We provide a systematic theoretical analysis of the feasibility and limits of safe harness self-evolution, connecting modification generation, finite-data certification and selection, safe adoption, and behavior after an update. Under a fixed user-task distribution, we establish conditions guaranteeing overall expected-reward improvement while controlling changes on retained tasks, characterize the probability of generating qualified modifications, and derive finite-data bounds for safe selection and adoption. Our analysis shows that generation and certification impose distinct constraints: current task performance does not determine the probability of generating qualified modifications, and generating more candidates need not improve the guarantee of a successful update when evaluation is limiting. Stagnation may therefore arise even when improvement opportunities remain. We further show that worst-case evaluation cost for recognizing genuine improvements diverges as expected reward approaches its upper bound. Across successive updates, certified improvement guarantees accumulate over a finite run, but a successful update does not by itself guarantee that further improvement remains possible. These results provide a basis for diagnosing bottlenecks and designing safer self-evolution mechanisms.",
+      "published": "2026-09-08T03:04:39Z",
+      "updated": "2026-09-08T03:04:39Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.08175v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.08175v1",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 70,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
+      "id": "2609.07362",
+      "versioned_id": "2609.07362v1",
+      "title": "BlueprintAgent: Constraint-Triggered Targeted Revisits for Simulation-Ready Generation from Scanned Structural Blueprints",
+      "authors": [
+        "Zhouyuan Xu",
+        "Chen Yang",
+        "Linhao Wang",
+        "Jiansheng Fan",
+        "Chen Wang"
+      ],
+      "abstract": "Converting in-service reinforced-concrete (RC) building blueprints into simulation-ready models---structured frame representations that support deterministic FEM export and qualified-engineer review---underpins safety assessment and seismic retrofit, but the process remains manual. Direct prompting of a multimodal large language model (MLLM) over a scanned sheet is unreliable: outputs often violate engineering constraints on beam--column support, span count, or 3D continuity. We present BlueprintAgent (BPA), a constraint-triggered multimodal agent for simulation-ready frame extraction from scanned blueprints. BPA treats the MLLM as the primary reader and decision maker, with OCR and computer vision supplying localized evidence. Its central mechanism realizes engineering constraints as callable validators whose entity-level conflict reports trigger targeted MLLM revisits over the local region---an inference-time control distinct from fixed pipelines and free-form self-reflection. We evaluate BPA on 300 real scanned blueprint sheets from 20 anonymized RC frame projects, against five baselines and six ablations. BPA reaches a macro-averaged Beam F1 of 0.994, against 0.301 for single-MLLM zero-shot and 0.820 for a fixed pipeline; removing MLLM-led axis adjudication collapses Beam and Column F1 on complex multi-sheet projects. For dense technical drawings, engineering constraints are best deployed as triggers for entity-level targeted revisits rather than as post-hoc output filters.",
+      "published": "2026-09-07T11:29:29Z",
+      "updated": "2026-09-07T11:29:29Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2609.07362v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.07362v1",
+      "comment": "Accepted to Findings of EMNLP 2026. 14 pages, 4 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 33,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2609.05992",
+      "versioned_id": "2609.05992v1",
+      "title": "MOAE: Multi-Objective Agent Evolution with Pareto-Preserving Search",
+      "authors": [
+        "Hengle Jiang",
+        "Qijun Cai",
+        "Ziying Luo",
+        "Ke Tang"
+      ],
+      "abstract": "As LLM-based agents continue to advance, their evaluation has become increasingly multifaceted: a capable agent must not only achieve high task completion accuracy but also perform well in interaction quality, safety, and efficiency, raising a central question: can these objectives be optimized simultaneously? Existing methods have considered multiple objectives, but many collapse heterogeneous measurements into a fixed scalar score. Such scalarization depends on metric normalization and preference weights and may discard candidates that represent useful deployment trade-offs. We introduce Multi-Objective Agent Evolution (MOAE), which organizes iterative in-context refinement as a Pareto-preserving evolutionary search over complete agent rollouts. Given a limited rollout budget, MOAE maintains an empirical archive of non-dominated candidates, uses objective-specific diagnostics to guide offspring generation, and applies constraint-aware selection only at deployment. This separates candidate preservation during search from the preference used to return a final solution. The procedure requires no parameter updates and allows each objective to be replaced by any measurable property, which we instantiate as task performance, trajectory quality, and safety. Experiments on TravelPlanner and AgentDojo show that MOAE consistently improves task performance and trajectory quality while maintaining strong safety under matched rollout budgets. Search-behavior analysis further shows that Pareto preservation expands the attainable objective region and increases the frequency of joint improvement. These results demonstrate the potential of Pareto-preserving in-context evolution for optimizing multiple agent properties without committing to a fixed scalarization during search.",
+      "published": "2026-09-05T09:31:34Z",
+      "updated": "2026-09-05T09:31:34Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.05992v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.05992v1",
+      "comment": "18 pages, 3 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "属于核心 Agent 相关分类"
+      ]
+    },
+    {
       "id": "2609.03546",
       "versioned_id": "2609.03546v1",
       "title": "Dalek: A Constructive Agent Machine",
@@ -543,6 +921,44 @@
       "relevance_reasons": [
         "摘要命中自进化关键词",
         "摘要命中 Agent 关键词"
+      ]
+    },
+    {
+      "id": "2609.05511",
+      "versioned_id": "2609.05511v1",
+      "title": "SCAFFOLD: Self-Improving Web Agents via Recursive Parametric Skill Abstraction",
+      "authors": [
+        "Bowei He",
+        "Xiaokun Zhang",
+        "Meng Ding",
+        "Xue Liu"
+      ],
+      "abstract": "Web agents need to navigate visually rich, long-horizon interfaces that change across sites, yet most previous agents still learn each task in isolation and discard the procedural knowledge they accumulate. Recent skill-augmented frameworks take an important first step, but they treat the skill library as a flat or two-tier prompt-side cache and offer no principled mechanism for compressing redundancy or composing skills recursively. We introduce \\textsc{Scaffold}, a self-improving framework for visual web agents that (i) induces parametric, executable skills from successful trajectories under a multi-instance abstraction constraint, (ii) maintains a recursively composed hierarchy in which higher-level skills invoke lower-level ones, (iii) compacts the library via a minimum-description-length (MDL) criterion and behavioral equivalence checking, and (iv) periodically distills skill-augmented trajectories back into model weights to internalize the abstractions. Across WebArena, VisualWebArena, and a held-out split of Online-Mind2Web, \\textsc{Scaffold} improves success rate by $11.1$--$17.2$ absolute points over the strongest skill-augmented baseline and shows monotonic gains across five self-improvement iterations without library collapse. We release the code and documents in the Github \\href{https://github.com/BokwaiHo/SCAFFOLD}{repository}.",
+      "published": "2026-08-31T08:16:56Z",
+      "updated": "2026-08-31T08:16:56Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "https://arxiv.org/abs/2609.05511v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.05511v1",
+      "comment": "Accepted by EMNLP 2026",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-09",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 100,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "覆盖多个自进化关键词",
+        "属于核心 Agent 相关分类"
       ]
     },
     {
@@ -1981,7 +2397,7 @@
     },
     {
       "id": "2608.18066",
-      "versioned_id": "2608.18066v1",
+      "versioned_id": "2608.18066v2",
       "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
       "authors": [
         "Qinyuan Ye",
@@ -1990,29 +2406,24 @@
         "Jiaxin Zhang",
         "Chien-Sheng Wu"
       ],
-      "abstract": "Memory-based self-improving agents--those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank--have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple runs to quantify variance, and (2) randomly shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
+      "abstract": "Memory-based self-improving agents--those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank--have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple self-improving runs to quantify variance, and (2) shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
       "published": "2026-08-18T17:55:07Z",
-      "updated": "2026-08-18T17:55:07Z",
+      "updated": "2026-09-06T01:12:37Z",
       "categories": [
         "cs.AI",
         "cs.CL",
         "cs.LG"
       ],
       "primary_category": "cs.AI",
-      "arxiv_url": "https://arxiv.org/abs/2608.18066v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.18066v1",
+      "arxiv_url": "https://arxiv.org/abs/2608.18066v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.18066v2",
       "comment": "Code: https://github.com/SalesforceAIResearch/self-improve-fragility Data: https://huggingface.co/datasets/Salesforce/self-improve-fragility",
       "journal_ref": "",
       "doi": "",
       "discovered_on": "2026-08-03",
       "source": "arXiv",
       "sources": [
-        "arXiv",
-        "OpenReview"
-      ],
-      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
-      "openreview_venues": [
-        "LLA 2026 Poster"
+        "arXiv"
       ],
       "relevance_score": 95,
       "relevance_reasons": [
@@ -13504,38 +13915,6 @@
         "标题同时包含自进化与 Agent 信号",
         "标题中的两类信号距离接近",
         "覆盖多个自进化关键词"
-      ]
-    },
-    {
-      "id": "openreview:Rmhg7yt5sd",
-      "versioned_id": "Rmhg7yt5sd",
-      "title": "ReCite: Agentic Reasoning for Faithful Citation",
-      "authors": [],
-      "abstract": "Accurate citations are the foundation of academic writing, tracing intellectual origins and substantiating core claims. However, manually navigating the growing volume of scientific literature is increasingly difficult, prompting reliance on automatic citation recommendation. While modern retrieval-augmented architectures have largely mitigated the fabrication of non-existent papers, current systems relying on semantic similarity struggle with misattribution, often citing authentic papers that fail to logically support the author's claim. To address this challenge, we argue that accurate citation requires a shift from similarity-based search to active, claim-level reasoning. We propose ReCite, a decoupled agentic framework that orchestrates location perception, intent-aware query planning, and reflective verification.Trained on synthesized reasoning trajectories, our agent verifies claim-evidence consistency and triggers self-correction loops when retrieved candidates lack logical support. Experiments demonstrate that our lightweight framework outperforms state-of-the-art massive generative models in strict citation accuracy. By grounding literature matching in verifiable logic rather than semantic overlap, ReCite establishes a reliable foundation for automated academic writing.",
-      "published": "2026-05-25T13:10:47+00:00",
-      "updated": "2026-06-24T07:16:43+00:00",
-      "categories": [
-        "OpenReview"
-      ],
-      "primary_category": "OpenReview",
-      "arxiv_url": "https://openreview.net/forum?id=Rmhg7yt5sd",
-      "openreview_url": "https://openreview.net/forum?id=Rmhg7yt5sd",
-      "pdf_url": "https://openreview.net/pdf?id=Rmhg7yt5sd",
-      "comment": "ACL ARR 2026 May Submission",
-      "journal_ref": "ACL ARR 2026 May Submission",
-      "doi": "",
-      "venue": "ACL ARR 2026 May Submission",
-      "venue_id": "aclweb.org/ACL/ARR/2026/May/Submission",
-      "discovered_on": "2026-07-19",
-      "source": "OpenReview",
-      "sources": [
-        "OpenReview"
-      ],
-      "relevance_score": 58,
-      "relevance_reasons": [
-        "摘要命中自进化关键词",
-        "标题命中 Agent 关键词",
-        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -47043,10 +47422,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-09-08T06:03:31+00:00",
-  "last_success": "2026-09-08T06:03:31+00:00",
-  "new_count": 0,
-  "total_cached": 1194,
+  "last_checked": "2026-09-09T06:03:25+00:00",
+  "last_success": "2026-09-09T06:03:25+00:00",
+  "new_count": 10,
+  "total_cached": 1203,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

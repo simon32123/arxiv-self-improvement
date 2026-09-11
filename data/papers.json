@@ -1,6 +1,92 @@
 {
   "papers": [
     {
+      "id": "2609.10922",
+      "versioned_id": "2609.10922v1",
+      "title": "Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System",
+      "authors": [
+        "Ming Li",
+        "Dai Li",
+        "Xuying Ning",
+        "Bo Sun",
+        "Rui Li",
+        "Yi Zhang",
+        "Silvia Gong",
+        "Xuan Cao",
+        "Rui Li",
+        "Cornelia Carapcea",
+        "Qunshu Zhang",
+        "Zhigang Wang",
+        "Yinglong Xia",
+        "Andy Wang"
+      ],
+      "abstract": "Auto-research agents have shown the potential to automate hypothesis generation, experiment execution, and iterative refinement. However, scaling this paradigm to industry-scale recommendation models introduces two challenges: (1) long feedback loops, where model training can take days, making serial iteration prohibitively slow and requiring parallel exploration across multiple research directions; and (2) system complexity, where large configurations, fragile infrastructure dependencies, and multi-day GPU jobs require robust and recoverable execution. We present Auto-RecSys, an autonomous research system for long-horizon experimentation on industry-scale recommendation models. Auto-RecSys addresses these challenges through three harness designs: (1) distributed asynchronous execution for running multiple experiments in parallel across servers, (2) centralized cross-server memory for persistent and recoverable execution across sessions and failures, and (3) cognitive-procedural separation, where natural-language skill files guide LLM reasoning while deterministic scripts enforce operational correctness. Auto-RecSys further employs a dual-loop self-evolving architecture: an Execution Evolution Loop in which model-specific playbooks accumulate operational knowledge by recording failed attempts and crystallizing successful pipelines, and an Idea Evolution Loop in which experimental outcomes inform subsequent ideation. Evaluated on recommendation models, Auto-RecSys significantly reduces the human time required per experiment cycle and improves execution reliability as its playbooks mature.",
+      "published": "2026-09-10T00:09:18Z",
+      "updated": "2026-09-10T00:09:18Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "https://arxiv.org/abs/2609.10922v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.10922v1",
+      "comment": "16 pages, 4 figures",
+      "journal_ref": "",
+      "doi": "",
+      "discovered_on": "2026-09-11",
+      "source": "arXiv",
+      "sources": [
+        "arXiv"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
+      ]
+    },
+    {
+      "id": "openreview:I3fKQbRUGy",
+      "versioned_id": "I3fKQbRUGy",
+      "title": "Towards AI That Improves Itself: A Survey of Recursive Self-Improvement",
+      "authors": [
+        "Hanjing Li",
+        "Qiguang Chen",
+        "Chenyuan Zhang",
+        "Qionglin Qiu",
+        "Fanqing Meng",
+        "Mengkang Hu",
+        "Libo Qin",
+        "Min Zhang"
+      ],
+      "abstract": "Recent advances in agentic systems allow AI systems to conduct experiments, interpret feedback, and modify their own workflows, transforming Recursive Self-Improvement (RSI) from a theoretical concept into an engineering problem. However, the field still lacks a unified account of what constitutes RSI and how its improvement loop should be evaluated, making it difficult to distinguish one off revision, persistent self-evolution, meta-evolution, and genuinely recursive improvement. To address this gap, we formalize the operational boundaries of RSI through four stages: evolution, self-evolution, meta-evolution, and recursive self-improvement. We anchor recursion in state inheritance, where an accepted improvement becomes part of the starting state of a later improvement cycle, and treat recursive progress as a stronger claim requiring separate evidence that the inherited state improves the improver itself. Across these stages, we introduce a common Proposal → Feedback → Optimization loop that covers candidate generation, execution and verification, and the decision to retain, revise, reject, promote, or roll back a change. We then organize RSI-related methods and systems by four evolution targets: behavior, agent systems, models and data, and research processes, while characterizing how the loop governs exploration and evidence quality. Finally, we identify major research gaps and outline future directions across seven dimensions, emphasizing evidence-based acceptance, reuse across improvement cycles, and transfer beyond the tasks or evaluators that produced the gains. This structured overview supports rigorous comparison and guides the development of verifiable, persistent, and increasingly autonomous RSI systems. An accompanying website maintains the living bibliography and updates at https: //github.com/Lee1003-lee/Awesome-RSI-Research.",
+      "published": "2026-09-09T06:49:23+00:00",
+      "updated": "2026-09-09T06:49:23+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=I3fKQbRUGy",
+      "openreview_url": "https://openreview.net/forum?id=I3fKQbRUGy",
+      "pdf_url": "https://openreview.net/pdf?id=I3fKQbRUGy",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-09-11",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 70,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "摘要命中 Agent 关键词",
+        "摘要中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
       "id": "2609.09156",
       "versioned_id": "2609.09156v1",
       "title": "ReCite: Agentic Reasoning for Faithful Citation",
@@ -2457,7 +2543,12 @@
       "discovered_on": "2026-08-03",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
+      ],
+      "openreview_url": "https://openreview.net/forum?id=aecfu2gW0b",
+      "openreview_venues": [
+        "LLA 2026 Poster"
       ],
       "relevance_score": 95,
       "relevance_reasons": [
@@ -4546,7 +4637,7 @@
       "authors": [],
       "abstract": "Experience learning enables large language model agents to retain lessons from past tasks and reuse them in future ones. However, existing methods often rely on the same agent to both execute a task and summarize its own behavior. When an execution trajectory contains errors that the agent fails to recognize, the agent may incorrectly regard the execution process as valid and consequently extract erroneous experience from it. Once written into long-term memory, such experience may be repeatedly retrieved and reused in subsequent tasks. We refer to this failure mode as the Self-Confirmation Trap. Our key insight is that long-term experience should not be generated and approved solely through the self-reflection of a single executor. Inspired by how human groups develop knowledge through independent practice, comparison of different experiences, and mutual examination, we propose EDV, an Execute--Distill--Verify framework. EDV allows multiple heterogeneous agents to execute tasks independently, employs a third-party agent to compare their trajectories and distill candidate experience, and verifies the resulting experience before writing it into memory. Experiments on multiple long-horizon agent benchmarks show that EDV effectively improves overall task performance, and that its advantage arises from the synergy among the Execute, Distill, and Verify stages rather than from simply increasing the number of agents.",
       "published": "2026-08-04T11:54:12+00:00",
-      "updated": "2026-08-27T15:30:06+00:00",
+      "updated": "2026-09-09T00:58:48+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -47456,10 +47547,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-09-10T06:03:47+00:00",
-  "last_success": "2026-09-10T06:03:47+00:00",
-  "new_count": 1,
-  "total_cached": 1204,
+  "last_checked": "2026-09-11T06:03:29+00:00",
+  "last_success": "2026-09-11T06:03:29+00:00",
+  "new_count": 2,
+  "total_cached": 1206,
   "fetch_error": "",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

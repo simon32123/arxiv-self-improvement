@@ -1,6 +1,41 @@
 {
   "papers": [
     {
+      "id": "openreview:56AtQbWUdX",
+      "versioned_id": "56AtQbWUdX",
+      "title": "Learning the Orchestration Layer: Self-Improving Agents for Language-Based Moment Retrieval",
+      "authors": [
+        "Yunxiang Fu"
+      ],
+      "abstract": "Video moment retrieval requires an agent to map a free-form language query onto a precise time window within an untrimmed video, a task commonly framed under the umbrella of video temporal grounding. For systems built on top of frozen video-language encoders, the behavior of the agent is governed less by the underlying model than by the orchestration layer—the set of routines and textual directives that steer preliminary localization and correct it through successive passes. Manually improving this orchestration layer is costly and error-prone, since a single grounding failure may trace back to either a faulty interaction sequence or a poorly worded instruction, and repairing one often perturbs the other. To address this, we develop a method that treats the orchestration layer as an evolvable program. It expresses agent behavior through a structured representation that fixes the interfaces between stages—what we term stage interfaces—while allowing the executable logic and the natural-language guidance to mutate, thereby improving the quality of the temporal predictions each iteration produces. A branch-level search keeps viable code paths alive for further refinement, a validation step discriminates productive changes from regressions, and execution feedback informs fine-grained edits. Experiments on multiple datasets show improved retrieval accuracy relative to static agent designs, with notable gains in grounding performance, and component analyses reveal that both the evolved executable logic and the accompanying instructions jointly drive the gains. These findings indicate that self-improving orchestration—achieved by letting our search harness evolution to diagnose grounding failures and propagate only the useful corrections—offers a compelling alternative to manual agent design for video grounding.",
+      "published": "2026-09-19T11:01:49+00:00",
+      "updated": "2026-09-19T11:01:49+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=56AtQbWUdX",
+      "openreview_url": "https://openreview.net/forum?id=56AtQbWUdX",
+      "pdf_url": "https://openreview.net/pdf?id=56AtQbWUdX",
+      "comment": "",
+      "journal_ref": "",
+      "doi": "",
+      "venue": "",
+      "venue_id": "OpenReview.net/Archive",
+      "discovered_on": "2026-09-20",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 90,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近"
+      ]
+    },
+    {
       "id": "2609.17523",
       "versioned_id": "2609.17523v1",
       "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
@@ -28702,6 +28737,47 @@
       ]
     },
     {
+      "id": "openreview:SK4zfEUG2N",
+      "versioned_id": "SK4zfEUG2N",
+      "title": "VISTA: A Test-Time Self-Improving Video Generation Agent",
+      "authors": [
+        "Do Xuan Long",
+        "Xingchen Wan",
+        "Hootan Nakhost",
+        "Chen-Yu Lee",
+        "Tomas Pfister",
+        "Sercan Ö. Arik"
+      ],
+      "abstract": "Despite rapid advances in text-to-video synthesis, generated video quality remains critically dependent on precise user prompts. Existing test-time optimization methods, successful in other domains, struggle with the multi-faceted nature of video. In this work, we introduce VISTA (Video Iterative Self-improvemenT Agent), a novel multi-agent system that autonomously improves video generation through refining prompts in an iterative loop. VISTA first decomposes a user's idea into a structured temporal plan. After generation, the best video is identified through a robust pairwise tournament. This winning video is then critiqued by a trio of specialized agents focusing on visual, audio, and contextual fidelity. Finally, a reasoning agent synthesizes this feedback to introspectively rewrite and enhance the prompt for the next generation cycle. Experiments on single- and multi-scene video generation scenarios show that while prior methods yield inconsistent gains, VISTA consistently improves video quality and alignment with user intent, achieving up to 60% pairwise win rate against state-of-the-art baselines. Human evaluators concur, preferring VISTA's outputs in 66.4% of comparisons.",
+      "published": "2025-12-08T18:57:42+00:00",
+      "updated": "2026-09-17T14:48:04+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=SK4zfEUG2N",
+      "openreview_url": "https://openreview.net/forum?id=SK4zfEUG2N",
+      "pdf_url": "https://openreview.net/pdf?id=SK4zfEUG2N",
+      "comment": "CVPR 2026",
+      "journal_ref": "CVPR 2026",
+      "doi": "",
+      "venue": "CVPR 2026",
+      "venue_id": "thecvf.com/CVPR/2026/Conference",
+      "discovered_on": "2026-09-20",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 95,
+      "relevance_reasons": [
+        "标题命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "标题同时包含自进化与 Agent 信号",
+        "标题中的两类信号距离接近",
+        "覆盖多个自进化关键词"
+      ]
+    },
+    {
       "id": "2512.07287",
       "versioned_id": "2512.07287v3",
       "title": "Experience-Evolving Multi-Turn Tool-Use Agent with Hybrid Episodic-Procedural Memory",
@@ -48232,10 +48308,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-09-19T06:03:12+00:00",
-  "last_success": "2026-09-19T06:03:12+00:00",
-  "new_count": 0,
-  "total_cached": 1223,
+  "last_checked": "2026-09-20T06:03:20+00:00",
+  "last_success": "2026-09-20T06:03:20+00:00",
+  "new_count": 2,
+  "total_cached": 1225,
   "fetch_error": "arXiv HTTPError: HTTP Error 406: Not Acceptable",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [

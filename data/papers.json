@@ -312,7 +312,8 @@
       "discovered_on": "2026-09-16",
       "source": "arXiv",
       "sources": [
-        "arXiv"
+        "arXiv",
+        "OpenReview"
       ],
       "relevance_score": 75,
       "relevance_reasons": [
@@ -321,7 +322,8 @@
         "摘要中的两类信号距离接近",
         "覆盖多个自进化关键词",
         "属于核心 Agent 相关分类"
-      ]
+      ],
+      "openreview_url": "https://openreview.net/forum?id=xMexhY7hF7"
     },
     {
       "id": "2609.14858",
@@ -25339,7 +25341,7 @@
       ],
       "abstract": "The efficacy of Large Language Model (LLM) agents is fundamentally determined by the quality of tool-calling training data. However, current synthesis paradigms mainly rely on successful trajectories only and static pipelined workflows. This approach not only makes agents prone to crashing on runtime errors, but also misses many unexplored scenarios. To bridge this gap, we propose $\\textbf{AMAS}$, a hierarchical and Asynchronous Multi-Agent data Synthesis framework based on a bilevel architecture. By decoupling centralized planning from distributed execution, our framework supports dynamic task scheduling and accommodates trials and errors inherent in realistic tool-calling tasks. This adaptive mechanism transforms tool execution exceptions which were traditionally discarded as waste into robust self-correction training signals. Comprehensive evaluations show that our method simultaneously enhances data robustness and diversity, context efficiency, and synthesis quality compared to source baselines. Empirically, fine-tuning Qwen3-4B with synthetic data yields consistent improvements across BFCL and $\\tau^2$-bench. We hope this work will help inspire community to explore the boundaries of LLM agentic data progress.",
       "published": "2026-01-24T03:17:01+00:00",
-      "updated": "2026-06-24T23:06:15+00:00",
+      "updated": "2026-09-22T09:26:22+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -25414,7 +25416,7 @@
       ],
       "abstract": "Large language model (LLM)-based multi-agent systems (MAS) show strong promise for complex reasoning, planning, and tool-augmented tasks, but designing effective MAS architectures remains labor-intensive, brittle, and hard to generalize. Existing automatic MAS generation methods either rely on code generation, which often leads to executability and robustness failures, or impose rigid architectural templates that limit expressiveness and adaptability. We propose Evolutionary Generation of Multi-Agent Systems (EvoMAS), which formulates MAS generation as structured configuration generation. EvoMAS performs evolutionary generation in configuration space. Specifically, EvoMAS selects initial configurations from a pool, applies feedback-conditioned mutation and crossover guided by execution traces, and iteratively refines both the candidate pool and an experience memory. We evaluate EvoMAS on diverse benchmarks, including BBEH, SWE-Bench, and WorkBench, covering reasoning, software engineering, and tool-use tasks. EvoMAS consistently improves task performance over both human-designed MAS and prior automatic MAS generation methods, while producing generated systems with higher executability and runtime robustness. EvoMAS outperforms the agent evolution method EvoAgent by +10.5 points on BBEH reasoning and +7.1 points on WorkBench. With Claude-4.5-Sonnet, EvoMAS also reaches 79.1% on SWE-Bench-Verified, matching the top of the leaderboard. Code is available at https://github.com/amazon-science/EvoMAS",
       "published": "2026-01-23T20:48:16+00:00",
-      "updated": "2026-06-24T23:19:37+00:00",
+      "updated": "2026-09-22T08:57:04+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -25460,7 +25462,7 @@
       ],
       "abstract": "Multimodal Large Language Model (MLLM) agents facilitate Graphical User Interface (GUI) automation but struggle with long-horizon, cross-application tasks due to limited context windows. While memory systems provide a viable solution, existing paradigms struggle to adapt to dynamic GUI environments, suffering from a granularity mismatch between high-level intent and low-level execution, and context pollution where the static accumulation of outdated experiences drives agents into hallucination. To address these bottlenecks, we propose the Darwinian Memory System (DMS), a self-evolving architecture that constructs memory as a dynamic ecosystem governed by the law of \"survival of the fittest.\" DMS decomposes complex trajectories into independent, reusable units for compositional flexibility, and implements Utility-driven Natural Selection to track survival value, actively pruning suboptimal paths and inhibiting high-risk plans. This evolutionary pressure compels the agent to derive superior strategies. Extensive experiments on real-world multi-app benchmarks validate that DMS boosts general-purpose MLLMs without training costs or architectural overhead, achieving average gains of 18.0% in success rate and 33.9% in execution stability, while reducing task latency, establishing it as an effective self-evolving memory system for GUI tasks. The implementation is available at https://anonymous.4open.science/r/DMS-C48C.",
       "published": "2026-01-23T15:51:22+00:00",
-      "updated": "2026-06-24T23:19:20+00:00",
+      "updated": "2026-09-22T08:56:53+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -25583,7 +25585,7 @@
       ],
       "abstract": "Agentic reinforcement learning (RL) for web search is prohibitively expensive due to long context lengths and costly environment interactions, and this inefficiency is further exacerbated by group-based optimization, which discards learning signals from entire rollout groups with zero reward variance. In this work, we propose EVOLVING ROLLOUTS, an RL framework for web-search agents that moves beyond episodic training and distills collected rollouts into in-context guidance for future policy behavior. By extracting the reward-labeled trajectories into strategic experiences, our method augments standard parameter-space optimization with implicit context-space optimization guided by prior experience. This enables the agent to recover learning signals from zero-variance rollouts, thereby fostering co-evolution between the policy and the experience repository. EVOLVING ROLLOUTS improves sample efficiency and task performance across representative web search benchmarks, with Qwen3-8B surpassing the much larger Qwen3-30B-A3B in average performance across GAIA, xBench, and HLE, and Qwen3-4B attaining comparable results on GAIA and HLE.",
       "published": "2026-01-22T11:40:15+00:00",
-      "updated": "2026-06-24T23:19:27+00:00",
+      "updated": "2026-09-22T08:56:02+00:00",
       "categories": [
         "OpenReview"
       ],
@@ -28775,6 +28777,44 @@
         "标题同时包含自进化与 Agent 信号",
         "标题中的两类信号距离接近",
         "覆盖多个自进化关键词"
+      ]
+    },
+    {
+      "id": "openreview:W292mJHDsh",
+      "versioned_id": "W292mJHDsh",
+      "title": "Agentic Video Summarization via Self-Reflecting Multimodal Understanding",
+      "authors": [
+        "Miaotian Guo",
+        "Shuguang Dou",
+        "Yin Li",
+        "Aidong Men",
+        "Dongsheng Jiang"
+      ],
+      "abstract": "The rise of AI agents powered by large language models (LLMs) has transformed intelligent systems by enabling autonomous tool utilizing, reasoning, and action across diverse tasks. Despite this rapid progress, existing video summarization approaches primarily focus on feature extraction or frame-level importance regression but lack the autonomous reasoning, self-correction, and decision-making capabilities that define true agent-based intelligence. To bridge this gap, we propose AgenticVS—the first agentic workflow for video summarization that leverages multimodal large language models (MLLMs) to complete the summarization–verify–reflection loop in a fully autonomous manner. Rather than designing new architectures for feature extraction or regression, we exploit the understanding and reflective reasoning abilities of MLLMs to build an adaptive summarization framework with a self-reflecting workflow. Experiments on SumMe and TVSum demonstrate that our agentic workflow outperforms state-of-the-art methods, enhancing interpretability, adaptability, and paving the way for agent-based multimodal video understanding.",
+      "published": "2025-12-08T18:56:49+00:00",
+      "updated": "2026-09-17T14:52:03+00:00",
+      "categories": [
+        "OpenReview"
+      ],
+      "primary_category": "OpenReview",
+      "arxiv_url": "https://openreview.net/forum?id=W292mJHDsh",
+      "openreview_url": "https://openreview.net/forum?id=W292mJHDsh",
+      "pdf_url": "https://openreview.net/pdf?id=W292mJHDsh",
+      "comment": "CVPR 2026",
+      "journal_ref": "CVPR 2026",
+      "doi": "",
+      "venue": "CVPR 2026",
+      "venue_id": "thecvf.com/CVPR/2026/Conference",
+      "discovered_on": "2026-09-23",
+      "source": "OpenReview",
+      "sources": [
+        "OpenReview"
+      ],
+      "relevance_score": 58,
+      "relevance_reasons": [
+        "摘要命中自进化关键词",
+        "标题命中 Agent 关键词",
+        "摘要中的两类信号距离接近"
       ]
     },
     {
@@ -48308,10 +48348,10 @@
   "query": "((ti:\"self improvement\" OR abs:\"self improvement\") OR (ti:\"self-improvement\" OR abs:\"self-improvement\") OR (ti:\"self improving\" OR abs:\"self improving\") OR (ti:\"self-improving\" OR abs:\"self-improving\") OR (ti:\"recursive self-improvement\" OR abs:\"recursive self-improvement\") OR (ti:\"self-refinement\" OR abs:\"self-refinement\") OR (ti:\"self-reflection\" OR abs:\"self-reflection\") OR (ti:\"self-correction\" OR abs:\"self-correction\") OR (ti:\"self-evolution\" OR abs:\"self-evolution\") OR (ti:\"autonomous improvement\" OR abs:\"autonomous improvement\") OR (ti:\"continual self-training\" OR abs:\"continual self-training\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"learning from self-generated feedback\" OR abs:\"learning from self-generated feedback\") OR (ti:\"agent evolution\" OR abs:\"agent evolution\")) AND ((ti:\"agent\" OR abs:\"agent\") OR (ti:\"agents\" OR abs:\"agents\") OR (ti:\"agentic\" OR abs:\"agentic\") OR (ti:\"multi-agent\" OR abs:\"multi-agent\") OR (ti:\"multiagent\" OR abs:\"multiagent\")) AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.MA) AND submittedDate:[202501010000 TO 209912312359]",
   "source": "arXiv + OpenReview",
   "source_url": "https://export.arxiv.org/api/query",
-  "last_checked": "2026-09-22T06:03:51+00:00",
-  "last_success": "2026-09-22T06:03:51+00:00",
-  "new_count": 0,
-  "total_cached": 1225,
+  "last_checked": "2026-09-23T06:03:31+00:00",
+  "last_success": "2026-09-23T06:03:31+00:00",
+  "new_count": 1,
+  "total_cached": 1226,
   "fetch_error": "arXiv HTTPError: HTTP Error 406: Not Acceptable",
   "relevance_method": "explainable-keyword-v1",
   "openreview_query": [
